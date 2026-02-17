@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          <li><a href="{{ '/docs/getting-started' | relative_url }}" {% if page.url contains 'getting-started' %}class="active"{% endif %}>Introduction</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          <li><a href="{{ '/docs/offline/overview' | relative_url }}" {% if page.url contains 'offline/overview' %}class="active"{% endif %}>Overview</a></li>
+          <li><a href="{{ '/docs/offline/instructor-setup' | relative_url }}" {% if page.url contains 'offline/instructor-setup' %}class="active"{% endif %}>Instructor Setup</a></li>
+          <li><a href="{{ '/docs/offline/building-executable' | relative_url }}" {% if page.url contains 'offline/building-executable' %}class="active"{% endif %}>Building an Executable</a></li>
+          <li><a href="{{ '/docs/offline/student-usage' | relative_url }}" {% if page.url contains 'offline/student-usage' %}class="active"{% endif %}>Student Usage</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Online Autograder</span>
+        <ul>
+          <li><a href="{{ '/docs/online/overview' | relative_url }}" {% if page.url contains 'online/overview' %}class="active"{% endif %}>Overview</a></li>
+          <li><a href="{{ '/docs/online/instructor-setup' | relative_url }}" {% if page.url contains 'online/instructor-setup' %}class="active"{% endif %}>Instructor Setup</a></li>
+          <li><a href="{{ '/docs/online/student-setup' | relative_url }}" {% if page.url contains 'online/student-setup' %}class="active"{% endif %}>Student Setup</a></li>
+          <li><a href="{{ '/docs/online/managing-assignments' | relative_url }}" {% if page.url contains 'online/managing-assignments' %}class="active"{% endif %}>Managing Assignments</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="{{ '/docs/getting-started' | relative_url }}">Docs</a>
+      {% if page.section %} / <span>{{ page.section }}</span>{% endif %}
+      / <span>{{ page.title }}</span>
+    </div>
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+    <div class="doc-footer">
+      {% if page.prev_doc %}
+      <a href="{{ page.prev_doc | relative_url }}" class="doc-nav-btn prev">← {{ page.prev_title }}</a>
+      {% endif %}
+      {% if page.next_doc %}
+      <a href="{{ page.next_doc | relative_url }}" class="doc-nav-btn next">{{ page.next_title }} →</a>
+      {% endif %}
+    </div>
+  </article>
+</div>

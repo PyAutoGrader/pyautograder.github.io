@@ -1,0 +1,7 @@
+url: "https://pyautograder.github.io"
+baseurl: "/dev"
+
+environment: development
+
+# Show draft/WIP pages in dev
+show_drafts: true
