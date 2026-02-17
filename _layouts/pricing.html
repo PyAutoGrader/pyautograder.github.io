@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="pricing-section">
+      <div class="pricing-grid">
+        {% for plan in page.plans %}
+        <div class="pricing-card {% if plan.disabled %}pricing-card--disabled{% endif %}">
+          <div class="pricing-tier">{{ plan.tier }}</div>
+          <div class="pricing-price">
+            {{ plan.price }}
+            {% if plan.period %}<span>/ {{ plan.period }}</span>{% endif %}
+          </div>
+          <div class="pricing-desc">
+            {% if plan.badge %}<span class="badge-coming-soon">{{ plan.badge }}</span>{% else %}{{ plan.description }}{% endif %}
+          </div>
+          <ul class="pricing-features">
+            {% for feature in plan.features %}
+            <li {% if feature.disabled %}class="disabled"{% endif %}>{{ feature.text }}</li>
+            {% endfor %}
+          </ul>
+          {% if plan.cta %}
+          <a href="{{ plan.cta.url | relative_url }}"
+             class="btn {{ plan.cta.style }}"
+             style="width:100%; justify-content:center;"
+             {% if plan.disabled %}aria-disabled="true"{% endif %}>
+            {{ plan.cta.label }}
+          </a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% if page.footnote %}
+      <p class="pricing-footnote">{{ page.footnote }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

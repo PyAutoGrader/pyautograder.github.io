@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+  <div class="container page-content">
+    <div class="faq-section" style="padding-top:0;">
+      {% for group in page.groups %}
+      <div class="faq-group-label">{{ group.name }}</div>
+      {% for item in group.items %}
+      <div class="faq-item">
+        <button class="faq-question">{{ item.q }}</button>
+        <div class="faq-answer">{{ item.a }}</div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

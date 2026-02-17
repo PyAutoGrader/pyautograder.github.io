@@ -1,0 +1,75 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+
+  <div class="page-hero">
+    <div class="container">
+      {% if page.badge %}<div class="product-hero-badge">{{ page.badge }}</div>{% endif %}
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+      {% if page.cta %}
+      <div class="hero-actions" style="margin-top:28px;">
+        {% for btn in page.cta %}
+        <a href="{{ btn.url | relative_url }}" class="btn {{ btn.style }}">{{ btn.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="container page-content">
+
+    {% if page.notice %}
+    <div class="callout">{{ page.notice }}</div>
+    {% endif %}
+
+    {% for section in page.sections %}
+    <section class="content-section">
+      <h2>{{ section.title }}</h2>
+      {% if section.body %}<p>{{ section.body }}</p>{% endif %}
+
+      {% if section.items %}
+      <ul class="feature-list">
+        {% for item in section.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if section.subsections %}
+      {% for sub in section.subsections %}
+      <div class="subsection">
+        <h3>{{ sub.title }}</h3>
+        {% if sub.body %}<p>{{ sub.body }}</p>{% endif %}
+        {% if sub.badge %}<div style="margin:12px 0;"><span class="badge-coming-soon">{{ sub.badge }}</span></div>{% endif %}
+        {% if sub.items %}
+        <ul class="feature-list">
+          {% for item in sub.items %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if sub.cta %}
+        <div class="section-actions">
+          {% for btn in sub.cta %}
+          <a href="{{ btn.url | relative_url }}" class="btn {{ btn.style }}">{{ btn.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      {% endif %}
+
+      {% if section.cta %}
+      <div class="section-actions">
+        {% for btn in section.cta %}
+        <a href="{{ btn.url | relative_url }}" class="btn {{ btn.style }}">{{ btn.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </section>
+    {% endfor %}
+
+  </div>
+</div>

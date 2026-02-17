@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+
+  <div class="container page-content">
+
+    {% if page.intro %}<p class="page-intro">{{ page.intro }}</p>{% endif %}
+    {% if page.notice %}<div class="callout">{{ page.notice }}</div>{% endif %}
+
+    <div class="download-cards">
+      {% for client in page.clients %}
+      <div class="download-card">
+        <div class="download-icon">{{ client.icon }}</div>
+        <h3>{{ client.title }}</h3>
+        <p>{{ client.description }}</p>
+        {% if client.badge %}<span class="badge-coming-soon">{{ client.badge }}</span><br/><br/>{% endif %}
+        {% if client.downloads %}
+        <div class="download-buttons">
+          {% for dl in client.downloads %}
+          <a href="{{ dl.url }}" class="btn btn-primary btn-sm">{{ dl.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if client.docs_url %}
+        <a href="{{ client.docs_url | relative_url }}" class="btn btn-outline" style="margin-top:12px;">{{ client.docs_label }}</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if page.setup_steps %}
+    <h2 style="margin-top:56px;">{{ page.setup_title }}</h2>
+    {% for step in page.setup_steps %}
+    <h3>Step {{ forloop.index }} — {{ step.title }}</h3>
+    <p>{{ step.body }}</p>
+    {% endfor %}
+    {% if page.setup_cta %}
+    <div style="margin-top:24px;">
+      <a href="{{ page.setup_cta.url | relative_url }}" class="btn btn-primary">{{ page.setup_cta.label }}</a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+  </div>
+</div>

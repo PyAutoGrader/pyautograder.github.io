@@ -106,3 +106,38 @@ Add new pages to the sidebar in `_layouts/doc.html`.
 ## Contact Form
 
 The contact page uses [Formspree](https://formspree.io). Replace `YOUR_FORM_ID` in `contact.md` with your actual Formspree form endpoint.
+
+---
+
+## First-Time Setup Checklist
+
+Things to fill in before or shortly after going live:
+
+- [ ] Replace `YOUR_FORM_ID` in `contact.md` with your [Formspree](https://formspree.io) endpoint
+- [ ] Add a favicon at `assets/images/favicon.png` (32×32 or 64×64 PNG)
+- [ ] Add your logo image to `assets/images/` if you want to replace the inline SVG in `_includes/nav.html` and `_includes/footer.html`
+- [ ] Enable GitHub Pages in your repo settings (Settings → Pages → Source → GitHub Actions)
+- [ ] Create a `dev` branch so the preview workflow has a target
+
+---
+
+## Uploading to GitHub (Fresh Repo)
+
+If starting from scratch, the cleanest approach is one commit with all files:
+
+```bash
+# Clone your empty repo
+git clone https://github.com/PyAutoGrader/pyautograder.github.io.git
+cd pyautograder.github.io
+
+# Copy all unzipped site files into this folder, then:
+git add .
+git commit -m "Initial site setup"
+git push origin main
+
+# Create the dev branch
+git checkout -b dev
+git push origin dev
+```
+
+After pushing `main`, the production workflow will fire automatically and your site will be live at `pyautograder.github.io` within a minute or two.

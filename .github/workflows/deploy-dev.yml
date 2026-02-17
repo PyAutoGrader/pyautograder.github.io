@@ -1,0 +1,45 @@
+name: Deploy Dev Preview
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+
+# Only one dev deployment at a time
+concurrency:
+  group: "pages-dev"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy Dev Preview
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build with Jekyll (Dev)
+        # Merges _config.yml then _config.dev.yml — dev values override production
+        run: bundle exec jekyll build --config _config.yml,_config.dev.yml
+        env:
+          JEKYLL_ENV: development
+
+      # Deploy to gh-pages branch under /dev subfolder
+      - name: Deploy dev build to gh-pages/dev
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          destination_dir: dev
+          publish_branch: gh-pages-dev
+          commit_message: "dev preview: ${{ github.sha }}"

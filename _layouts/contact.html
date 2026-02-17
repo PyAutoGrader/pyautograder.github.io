@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+  <div class="container page-content">
+    {% if page.notice %}<div class="callout">{{ page.notice }}</div>{% endif %}
+
+    <h2>{{ page.form_title }}</h2>
+    <div class="contact-form">
+      <form action="{{ page.form_action }}" method="POST">
+        {% for field in page.fields %}
+        <div class="form-group">
+          <label for="{{ field.id }}">{{ field.label }}</label>
+          {% if field.type == "textarea" %}
+          <textarea id="{{ field.id }}" name="{{ field.id }}" placeholder="{{ field.placeholder }}"></textarea>
+          {% elsif field.type == "select" %}
+          <select id="{{ field.id }}" name="{{ field.id }}">
+            {% for opt in field.options %}
+            <option value="{{ opt.value }}">{{ opt.label }}</option>
+            {% endfor %}
+          </select>
+          {% else %}
+          <input type="{{ field.type }}" id="{{ field.id }}" name="{{ field.id }}"
+                 placeholder="{{ field.placeholder }}"
+                 {% if field.required %}required{% endif %} />
+          {% endif %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">{{ page.submit_label }}</button>
+      </form>
+      {% if page.form_note %}
+      <p class="form-note">{{ page.form_note }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

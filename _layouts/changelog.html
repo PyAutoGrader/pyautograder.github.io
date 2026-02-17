@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+  <div class="container page-content">
+    <div class="changelog-section" style="padding-top:0; max-width:780px;">
+
+      {% if page.releases %}
+      {% for release in page.releases %}
+      <div class="changelog-entry">
+        <div class="changelog-meta">
+          <span class="changelog-version">{{ release.version }}</span>
+          <span class="changelog-date">{{ release.date }}</span>
+          {% if release.tag %}<span class="changelog-tag {{ release.tag }}">{{ release.tag }}</span>{% endif %}
+        </div>
+        <div class="changelog-body">
+          <h3>{{ release.title }}</h3>
+          <ul>
+            {% for change in release.changes %}
+            <li>{{ change }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="placeholder-notice">
+        <div class="big-icon">📋</div>
+        <h2>Changelog Coming Soon</h2>
+        <p>Release notes will be posted here as versions are published.</p>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
