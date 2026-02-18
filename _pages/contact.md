@@ -7,7 +7,7 @@ permalink: /contact/
 notice: To request an <strong>Online Autograder instructor account</strong>, fill out the form below with your institution and contact details. You will receive login credentials by email.
 
 form_title: Request Instructor Access
-form_action: "https://formspree.io/f/YOUR_FORM_ID"
+form_action: "https://formspree.io/f/xpqjlrqa"
 submit_label: Send Request
 
 fields:
