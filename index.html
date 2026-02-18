@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PyAutoGrader — Automated Python Grading for Educators | PyAutoGrader</title>
-  <meta name="description" content="Automated Python grading for educators — offline or online." />
+  <meta name="description" content="Automated Python grading for educators" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>PyAutoGrader — Automated Python Grading for Educators | PyAutoGrader</title>
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="PyAutoGrader — Automated Python Grading for Educators" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Automated Python grading for educators — offline or online." />
-<meta property="og:description" content="Automated Python grading for educators — offline or online." />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
 <link rel="canonical" href="https://pyautograder.github.io/" />
 <meta property="og:url" content="https://pyautograder.github.io/" />
 <meta property="og:site_name" content="PyAutoGrader" />
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="PyAutoGrader — Automated Python Grading for Educators" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators — offline or online.","headline":"PyAutoGrader — Automated Python Grading for Educators","name":"PyAutoGrader","url":"https://pyautograder.github.io/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"PyAutoGrader — Automated Python Grading for Educators","name":"PyAutoGrader","url":"https://pyautograder.github.io/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -85,13 +85,13 @@
           <span class="dot green"></span>
         </div>
         <pre><span class="cm"># Running test suite...</span>
-<span class="kw">def</span> <span class="fn">test_fibonacci</span>():
-    result = fibonacci(10)
-    assert result == 55
+<span class="kw">def</span> <span class="fn">quadratic</span>(x, a, b, c):
+    result = a * x**2 + b * x + c
+    return result
 
-<span class="gr">✓</span> test_fibonacci         <span class="gr">PASS</span>
-<span class="gr">✓</span> test_edge_cases        <span class="gr">PASS</span>
-<span class="gr">✓</span> test_type_handling     <span class="gr">PASS</span>
+<span class="gr">✓</span> Verify Function Name   <span class="gr">PASS</span>
+<span class="gr">✓</span> Test Function #1       <span class="gr">PASS</span>
+<span class="gr">✓</span> Test Function #2       <span class="gr">PASS</span>
 
 <span class="gr">Score: 100/100</span>  3 tests passed</pre>
       </div>
@@ -121,7 +121,7 @@
         <ul class="product-features">
           <li>Instructor builds a self-contained executable</li>
           <li>Students run it on their own machine</li>
-          <li>No internet connection required</li>
+          <li>Students submit their Autograder files</li>
           <li>Instant pass/fail feedback for students</li>
           <li>Completely free, forever</li>
         </ul>
@@ -139,8 +139,7 @@
           <li>Instructor dashboard to manage assignments</li>
           <li>Student client for submitting work</li>
           <li>Centralized results and grade tracking</li>
-          <li>Instructor login by request</li>
-          <li>Free tier available — paid tier coming soon</li>
+          <li>Free tier available</li>
         </ul>
         <a href="/online" class="btn btn-outline">Learn More</a>
       </div>
