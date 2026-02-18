@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
 
-# Only one dev deployment at a time
 concurrency:
   group: "pages-dev"
   cancel-in-progress: true
@@ -19,8 +18,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout dev branch
         uses: actions/checkout@v4
+        with:
+          ref: dev
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -28,18 +29,30 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Build with Jekyll (Dev)
-        # Merges _config.yml then _config.dev.yml — dev values override production
+      - name: Build with Jekyll (Dev config)
         run: bundle exec jekyll build --config _config.yml,_config.dev.yml
         env:
           JEKYLL_ENV: development
 
-      # Deploy to gh-pages branch under /dev subfolder
-      - name: Deploy dev build to gh-pages/dev
-        uses: peaceiris/actions-gh-pages@v4
+      # Checkout gh-pages into a subfolder so we can surgically
+      # update only /dev without touching the production build
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          destination_dir: dev
-          publish_branch: gh-pages-dev
-          commit_message: "dev preview: ${{ github.sha }}"
+          ref: gh-pages
+          path: gh-pages-output
+          fetch-depth: 0
+
+      - name: Copy dev build into /dev subfolder
+        run: |
+          mkdir -p gh-pages-output/dev
+          cp -r _site/. gh-pages-output/dev/
+
+      - name: Commit and push to gh-pages
+        run: |
+          cd gh-pages-output
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dev/
+          git commit -m "dev preview: ${{ github.sha }}" || echo "Nothing to commit"
+          git push origin gh-pages
