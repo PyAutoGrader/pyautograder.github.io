@@ -24,12 +24,12 @@ plans:
     description: Request an instructor account to get started.
     features:
       - text: Instructor and student clients
-      - text: Hosted grading server
+      - text: All assignments, submission, and files hosted server side
       - text: Assignment management
       - text: Real-time submission results
-      - text: Priority support
+      - text: Limited classes
         disabled: true
-      - text: Advanced analytics
+      - text: Limited enrollment
         disabled: true
     cta:
       label: Request Access
@@ -43,14 +43,12 @@ plans:
     disabled: true
     features:
       - text: Everything in Free tier
-      - text: Priority support
-      - text: Advanced analytics
+      - text: More classes
       - text: Larger class sizes
-      - text: Custom branding options
     cta:
       label: Coming Soon
       url: "#"
       style: btn-outline
 
-footnote: Have questions about pricing? <a href="/contact/">Get in touch</a>.
+footnote: Have questions? <a href="/contact/">Get in touch</a>.
 ---

@@ -1,5 +1,5 @@
 title: PyAutoGrader
-description: Automated Python grading for educators — offline or online.
+description: Automated Python grading for educators
 url: "https://pyautograder.github.io"
 baseurl: ""
 
@@ -33,6 +33,10 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# Include _pages folder
+include:
+  - _pages
 
 # Exclude from build
 exclude:
