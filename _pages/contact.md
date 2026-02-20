@@ -48,6 +48,5 @@ fields:
     placeholder: "Anything else you'd like us to know..."
 
 form_note: >
-  This form uses Formspree for email delivery. Replace YOUR_FORM_ID in _config.yml
-  with your actual Formspree endpoint once you have set up your account.
+  This form uses Formspree for email delivery.
 ---

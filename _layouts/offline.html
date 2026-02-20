@@ -1,0 +1,158 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+
+  <div class="page-hero">
+    <div class="container">
+      {% if page.badge %}<div class="product-hero-badge">{{ page.badge }}</div>{% endif %}
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+
+  <div class="container page-content">
+
+    {% if page.notice %}<div class="callout">{{ page.notice }}</div>{% endif %}
+
+    <!-- WORKFLOW SECTION -->
+    <section class="content-section">
+      <h2>{{ page.workflow.title }}</h2>
+      <p>{{ page.workflow.body }}</p>
+
+      <!-- DIAGRAM
+           To replace this SVG with your own image:
+           1. Add your image to assets/images/ (e.g. offline-workflow.png)
+           2. Delete the {% raw %}{% include offline-diagram.svg %}{% endraw %} line below
+           3. Uncomment the <img> line and update the filename to match your image
+           4. Adjust the max-width if needed
+      -->
+      <div class="workflow-diagram">
+        <!-- <img src="{{ '/assets/images/offline-workflow.png' | relative_url }}" alt="Offline Autograder Workflow" style="max-width:100%; border-radius: 12px;" /> -->
+        {% include offline-diagram.svg %}
+      </div>
+    </section>
+
+    <!-- INSTRUCTOR DOWNLOAD SECTION -->
+    <section class="content-section">
+      <h2>{{ page.download.title }}</h2>
+      <p>{{ page.download.body }}</p>
+
+      <div class="os-download-card">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="os-primary-download" class="os-primary">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="os-other-downloads">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+      {% if page.download.note %}
+      <p class="form-note">{{ page.download.note }}</p>
+      {% endif %}
+    </section>
+
+    <!-- HOW IT WORKS STEPS -->
+    <section class="content-section">
+      <h2>{{ page.steps.title }}</h2>
+      <div class="step-list">
+        {% for step in page.steps.items %}
+        <div class="step-item">
+          <div class="step-number">{{ forloop.index }}</div>
+          <div class="step-body">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.body }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- STUDENT SECTION -->
+    <section class="content-section">
+      <h2>{{ page.student.title }}</h2>
+      <p>{{ page.student.body }}</p>
+      {% if page.student.cta %}
+      <div class="section-actions">
+        {% for btn in page.student.cta %}
+        <a href="{{ btn.url | relative_url }}" class="btn {{ btn.style }}">{{ btn.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </section>
+
+    <!-- LEGACY SECTION (optional) -->
+    {% if page.classic %}
+    <section class="content-section legacy-section">
+      <p class="legacy-text">
+        {{ page.classic.text }}
+        <a href="{{ page.classic.url | relative_url }}">Learn about PyAutoGrader Classic →</a>
+      </p>
+    </section>
+    {% endif %}
+
+  </div>
+</div>
+
+<script>
+// OS Detection — recommends the right download based on the visitor's platform
+// Downloads are defined in the page front matter and passed via data attributes
+const downloads = {
+  windows: {
+    label: "Windows",
+    icon: "🪟",
+    url: "{{ page.download.windows | default: '#' }}",
+    filename: "PyAutoGrader-Instructor-Windows.exe"
+  },
+  mac: {
+    label: "macOS",
+    icon: "🍎",
+    url: "{{ page.download.mac | default: '#' }}",
+    filename: "PyAutoGrader-Instructor-macOS.dmg"
+  },
+  linux: {
+    label: "Linux",
+    icon: "🐧",
+    url: "{{ page.download.linux | default: '#' }}",
+    filename: "PyAutoGrader-Instructor-Linux.AppImage"
+  }
+};
+
+function detectOS() {
+  const p = navigator.platform.toLowerCase();
+  const u = navigator.userAgent.toLowerCase();
+  if (p.includes('win') || u.includes('windows')) return 'windows';
+  if (p.includes('mac') || u.includes('mac')) return 'mac';
+  return 'linux';
+}
+
+function renderDownloads() {
+  const detected = detectOS();
+  const primary = document.getElementById('os-primary-download');
+  const others = document.getElementById('os-other-downloads');
+  const dl = downloads[detected];
+
+  primary.innerHTML = `
+    <a href="${dl.url}" class="btn btn-primary btn-download" ${dl.url === '#' ? 'aria-disabled="true"' : ''}>
+      <span>${dl.icon}</span>
+      <span>Download for ${dl.label}</span>
+      ${dl.url === '#' ? '<span class="coming-soon-inline">Coming Soon</span>' : ''}
+    </a>
+    ${dl.url !== '#' ? `<span class="download-filename">${dl.filename}</span>` : ''}
+  `;
+
+  const otherKeys = Object.keys(downloads).filter(k => k !== detected);
+  others.innerHTML = otherKeys.map(k => {
+    const o = downloads[k];
+    return `<a href="${o.url}" class="btn btn-outline btn-sm ${o.url === '#' ? 'btn-disabled' : ''}">
+      ${o.icon} ${o.label} ${o.url === '#' ? '<span class="coming-soon-inline">Soon</span>' : ''}
+    </a>`;
+  }).join('');
+}
+
+renderDownloads();
+</script>

@@ -1,0 +1,105 @@
+<!-- Offline Autograder Workflow Diagram
+     Generated SVG — replace this include with an <img> tag if you have your own image.
+     See comments in _layouts/offline.html for instructions.
+-->
+<svg viewBox="0 0 900 280" fill="none" xmlns="http://www.w3.org/2000/svg"
+     style="width:100%; max-width:900px; margin: 32px auto; display:block;">
+
+  <!-- Background -->
+  <rect width="900" height="280" rx="16" fill="#f8fafc"/>
+
+  <!-- ── STEP 1: Instructor downloads executable ── -->
+  <g transform="translate(40, 50)">
+    <!-- Box -->
+    <rect width="160" height="160" rx="12" fill="#1a2744"/>
+    <!-- Icon: download arrow -->
+    <circle cx="80" cy="64" r="28" fill="rgba(255,255,255,0.1)"/>
+    <path d="M80 46 L80 70 M70 62 L80 74 L90 62" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="60" y="76" width="40" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+    <!-- Label -->
+    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Instructor</text>
+    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Downloads</text>
+    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Executable</text>
+    <!-- Step badge -->
+    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
+    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 1</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <g transform="translate(210, 118)">
+    <path d="M0 12 L50 12" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3"/>
+    <path d="M44 6 L56 12 L44 18" fill="#cbd5e1"/>
+  </g>
+
+  <!-- ── STEP 2: Instructor creates .agr file ── -->
+  <g transform="translate(272, 50)">
+    <rect width="160" height="160" rx="12" fill="#1a2744"/>
+    <!-- Icon: file -->
+    <rect x="52" y="38" width="56" height="56" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <path d="M68 38 L68 52 L80 52" stroke="white" stroke-width="2" fill="none"/>
+    <rect x="63" y="60" width="34" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
+    <rect x="63" y="67" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
+    <rect x="63" y="74" width="34" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
+    <!-- .agr badge -->
+    <rect x="56" y="84" width="48" height="18" rx="4" fill="#4ade80"/>
+    <text x="80" y="97" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">.agr file</text>
+    <!-- Label -->
+    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Instructor</text>
+    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Creates</text>
+    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Assignment File</text>
+    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
+    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 2</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <g transform="translate(442, 118)">
+    <path d="M0 12 L50 12" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3"/>
+    <path d="M44 6 L56 12 L44 18" fill="#cbd5e1"/>
+  </g>
+
+  <!-- ── STEP 3: Student downloads + loads .agr ── -->
+  <g transform="translate(504, 50)">
+    <rect width="160" height="160" rx="12" fill="#1a2744"/>
+    <!-- Icon: student with file -->
+    <circle cx="80" cy="52" r="14" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2"/>
+    <path d="M55 94 C55 78 105 78 105 94" stroke="white" stroke-width="2" fill="none"/>
+    <!-- file arrow in -->
+    <path d="M80 76 L80 88" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M75 83 L80 89 L85 83" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Label -->
+    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Student</text>
+    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Downloads App</text>
+    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">&amp; Loads .agr</text>
+    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
+    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 3</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <g transform="translate(674, 118)">
+    <path d="M0 12 L50 12" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3"/>
+    <path d="M44 6 L56 12 L44 18" fill="#cbd5e1"/>
+  </g>
+
+  <!-- ── STEP 4: Student exports PDF, submits ── -->
+  <g transform="translate(736, 50)">
+    <rect width="160" height="160" rx="12" fill="#1a2744"/>
+    <!-- Icon: PDF / upload -->
+    <rect x="52" y="38" width="56" height="56" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <rect x="56" y="70" width="48" height="18" rx="4" fill="#ef4444"/>
+    <text x="80" y="83" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="white">PDF</text>
+    <!-- Upload arrow -->
+    <path d="M80 58 L80 46 M74 52 L80 46 L86 52" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Label -->
+    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Student</text>
+    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Exports PDF</text>
+    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">&amp; Submits to LMS</text>
+    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
+    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 4</text>
+  </g>
+
+  <!-- Bottom label -->
+  <text x="450" y="258" text-anchor="middle" font-family="Sora, sans-serif" font-size="11" fill="#94a3b8">
+    Both instructor and student executables are available for Windows, macOS, and Linux
+  </text>
+
+</svg>
