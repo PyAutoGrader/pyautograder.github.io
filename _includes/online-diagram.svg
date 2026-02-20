@@ -1,0 +1,131 @@
+<!-- Online Autograder Workflow Diagram
+     Generated SVG — replace this include with an <img> tag if you have your own image.
+     To swap in your own image:
+     1. Add your image to assets/images/ (e.g. online-workflow.png)
+     2. In _layouts/online.html, find the line:
+           {% include online-diagram.svg %}
+        and replace it with:
+           <img src="{{ '/assets/images/online-workflow.png' | relative_url }}" alt="Online Autograder Workflow" style="max-width:100%; border-radius:12px;" />
+     3. Delete this file if you no longer need it.
+-->
+<svg viewBox="0 0 960 320" fill="none" xmlns="http://www.w3.org/2000/svg"
+     style="width:100%; max-width:960px; margin:32px auto; display:block;">
+
+  <!-- Background -->
+  <rect width="960" height="320" rx="16" fill="#f8fafc"/>
+
+  <!-- ── CENTER: Server ── -->
+  <g transform="translate(380, 80)">
+    <!-- Server box -->
+    <rect width="200" height="160" rx="12" fill="#1a2744"/>
+    <!-- Server icon stack -->
+    <rect x="60" y="28" width="80" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <circle cx="128" cy="37" r="4" fill="#4ade80"/>
+    <rect x="60" y="52" width="80" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <circle cx="128" cy="61" r="4" fill="#4ade80"/>
+    <rect x="60" y="76" width="80" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <circle cx="128" cy="85" r="4" fill="rgba(255,255,255,0.2)"/>
+    <!-- Labels -->
+    <text x="100" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="white">Grading Server</text>
+    <text x="100" y="134" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Assignments &amp; Classes</text>
+    <text x="100" y="148" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Submissions &amp; Results</text>
+    <!-- Step badge -->
+    <rect x="62" y="-10" width="76" height="20" rx="10" fill="#4ade80"/>
+    <text x="100" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">HOSTED</text>
+  </g>
+
+  <!-- ── LEFT: Instructor Client ── -->
+  <g transform="translate(60, 80)">
+    <rect width="180" height="160" rx="12" fill="#1a2744"/>
+    <!-- Monitor icon -->
+    <rect x="40" y="28" width="100" height="64" rx="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+    <rect x="55" y="38" width="70" height="34" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <!-- Screen lines -->
+    <rect x="60" y="43" width="40" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+    <rect x="60" y="50" width="55" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+    <rect x="60" y="57" width="48" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+    <!-- Stand -->
+    <rect x="82" y="92" width="16" height="8" rx="2" fill="rgba(255,255,255,0.2)"/>
+    <rect x="72" y="98" width="36" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+    <!-- Labels -->
+    <text x="90" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Instructor</text>
+    <text x="90" y="134" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Creates assignments</text>
+    <text x="90" y="148" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Manages class &amp; grades</text>
+    <rect x="46" y="-10" width="88" height="20" rx="10" fill="#4ade80"/>
+    <text x="90" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">INSTRUCTOR</text>
+  </g>
+
+  <!-- ── RIGHT: Student Client ── -->
+  <g transform="translate(720, 80)">
+    <rect width="180" height="160" rx="12" fill="#1a2744"/>
+    <!-- Laptop icon -->
+    <rect x="35" y="32" width="110" height="68" rx="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+    <rect x="48" y="42" width="84" height="44" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <!-- Screen: code lines -->
+    <rect x="54" y="48" width="36" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+    <rect x="54" y="55" width="55" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+    <rect x="54" y="62" width="44" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+    <!-- Green checkmark on screen -->
+    <polyline points="100,52 106,60 118,46" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Base -->
+    <rect x="25" y="100" width="130" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+    <!-- Labels -->
+    <text x="90" y="125" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Student</text>
+    <text x="90" y="141" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Downloads &amp; submits</text>
+    <text x="90" y="155" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Grading runs locally</text>
+    <rect x="46" y="-10" width="88" height="20" rx="10" fill="#4ade80"/>
+    <text x="90" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STUDENT</text>
+  </g>
+
+  <!-- ── ARROWS: Instructor ↔ Server ── -->
+  <!-- Instructor → Server (push assignments/config) -->
+  <g transform="translate(242, 130)">
+    <path d="M0 12 L130 12" stroke="#4ade80" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M124 6 L136 12 L124 18" fill="#4ade80"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#1a2744">Assignments</text>
+  </g>
+  <!-- Server → Instructor (pull results) -->
+  <g transform="translate(242, 158)">
+    <path d="M136 12 L6 12" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M12 6 L0 12 L12 18" fill="#94a3b8"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#64748b">Results</text>
+  </g>
+
+  <!-- ── ARROWS: Server ↔ Student ── -->
+  <!-- Server → Student (push assignments) -->
+  <g transform="translate(582, 130)">
+    <path d="M0 12 L130 12" stroke="#4ade80" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M124 6 L136 12 L124 18" fill="#4ade80"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#1a2744">Assignments</text>
+  </g>
+  <!-- Student → Server (push results) -->
+  <g transform="translate(582, 158)">
+    <path d="M136 12 L6 12" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M12 6 L0 12 L12 18" fill="#94a3b8"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#64748b">Results</text>
+  </g>
+
+  <!-- ── GRADING NOTE ── -->
+  <g transform="translate(720, 255)">
+    <rect width="180" height="36" rx="8" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.3)" stroke-width="1"/>
+    <text x="90" y="15" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="700" fill="#16a34a">⚡ Grading runs locally</text>
+    <text x="90" y="27" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" fill="#16a34a">on the student's machine</text>
+  </g>
+
+  <!-- ── JOIN CODE NOTE ── -->
+  <g transform="translate(60, 255)">
+    <rect width="180" height="36" rx="8" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.3)" stroke-width="1"/>
+    <text x="90" y="15" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="700" fill="#16a34a">🔑 Students join via</text>
+    <text x="90" y="27" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" fill="#16a34a">join code or direct invite</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <text x="480" y="308" text-anchor="middle" font-family="Sora, sans-serif" font-size="11" fill="#94a3b8">
+    Available for Windows, macOS, and Linux
+  </text>
+
+</svg>

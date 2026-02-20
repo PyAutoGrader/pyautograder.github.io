@@ -1,0 +1,155 @@
+---
+layout: default
+---
+<div class="page-wrapper">
+
+  <div class="page-hero">
+    <div class="container">
+      {% if page.badge %}<div class="product-hero-badge">{{ page.badge }}</div>{% endif %}
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+
+  <div class="container page-content">
+
+    {% if page.notice %}<div class="callout">{{ page.notice }}</div>{% endif %}
+
+    <!-- WORKFLOW SECTION -->
+    <section class="content-section">
+      <h2>{{ page.workflow.title }}</h2>
+      <p>{{ page.workflow.body }}</p>
+
+      <!-- DIAGRAM
+           To replace this SVG with your own image:
+           1. Add your image to assets/images/ (e.g. online-workflow.png)
+           2. Delete the line below that says: {% raw %}{% include online-diagram.svg %}{% endraw %}
+           3. Uncomment the <img> line and update the filename to match your image
+           4. Adjust max-width if needed
+      -->
+      <div class="workflow-diagram">
+        <!-- <img src="{{ '/assets/images/online-workflow.png' | relative_url }}" alt="Online Autograder Workflow" style="max-width:100%; border-radius:12px;" /> -->
+        {% include online-diagram.svg %}
+      </div>
+    </section>
+
+    <!-- INSTRUCTOR DOWNLOAD -->
+    <section class="content-section">
+      <h2>{{ page.instructor_download.title }}</h2>
+      <p>{{ page.instructor_download.body }}</p>
+
+      <div class="os-download-card">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="os-instructor-primary"></div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="os-instructor-others"></div>
+      </div>
+
+      {% if page.instructor_download.note %}
+      <p class="form-note">{{ page.instructor_download.note }}</p>
+      {% endif %}
+    </section>
+
+    <!-- INSTRUCTOR STEPS -->
+    <section class="content-section">
+      <h2>{{ page.steps.title }}</h2>
+      <div class="step-list">
+        {% for step in page.steps.items %}
+        <div class="step-item">
+          <div class="step-number">{{ forloop.index }}</div>
+          <div class="step-body">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.body }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- STUDENT SECTION -->
+    <section class="content-section">
+      <h2>{{ page.student.title }}</h2>
+      <p>{{ page.student.body }}</p>
+      {% if page.student.cta %}
+      <div class="section-actions">
+        {% for btn in page.student.cta %}
+        <a href="{{ btn.url | relative_url }}" class="btn {{ btn.style }}">{{ btn.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </section>
+
+    <!-- PRICING NUDGE -->
+    {% if page.pricing %}
+    <section class="content-section">
+      <h2>{{ page.pricing.title }}</h2>
+      <p>{{ page.pricing.body }}</p>
+      <div class="section-actions">
+        {% for btn in page.pricing.cta %}
+        <a href="{{ btn.url | relative_url }}" class="btn {{ btn.style }}">{{ btn.label }}</a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+  </div>
+</div>
+
+<script>
+const instructorDownloads = {
+  windows: {
+    label: "Windows",
+    icon: "🪟",
+    url: "{{ page.instructor_download.windows | default: '#' }}",
+    filename: "PyAutoGrader-Online-Instructor-Windows.exe"
+  },
+  mac: {
+    label: "macOS",
+    icon: "🍎",
+    url: "{{ page.instructor_download.mac | default: '#' }}",
+    filename: "PyAutoGrader-Online-Instructor-macOS.dmg"
+  },
+  linux: {
+    label: "Linux",
+    icon: "🐧",
+    url: "{{ page.instructor_download.linux | default: '#' }}",
+    filename: "PyAutoGrader-Online-Instructor-Linux.AppImage"
+  }
+};
+
+function detectOS() {
+  const p = navigator.platform.toLowerCase();
+  const u = navigator.userAgent.toLowerCase();
+  if (p.includes('win') || u.includes('windows')) return 'windows';
+  if (p.includes('mac') || u.includes('mac')) return 'mac';
+  return 'linux';
+}
+
+function renderDownloads(downloads, primaryId, othersId) {
+  const detected = detectOS();
+  const primary = document.getElementById(primaryId);
+  const others = document.getElementById(othersId);
+  const dl = downloads[detected];
+
+  primary.innerHTML = `
+    <a href="${dl.url}" class="btn btn-primary btn-download" ${dl.url === '#' ? 'aria-disabled="true"' : ''}>
+      <span>${dl.icon}</span>
+      <span>Download for ${dl.label}</span>
+      ${dl.url === '#' ? '<span class="coming-soon-inline">Coming Soon</span>' : ''}
+    </a>
+    ${dl.url !== '#' ? `<span class="download-filename">${dl.filename}</span>` : ''}
+  `;
+
+  const otherKeys = Object.keys(downloads).filter(k => k !== detected);
+  others.innerHTML = otherKeys.map(k => {
+    const o = downloads[k];
+    return `<a href="${o.url}" class="btn btn-outline btn-sm ${o.url === '#' ? 'btn-disabled' : ''}">
+      ${o.icon} ${o.label} ${o.url === '#' ? '<span class="coming-soon-inline">Soon</span>' : ''}
+    </a>`;
+  }).join('');
+}
+
+renderDownloads(instructorDownloads, 'os-instructor-primary', 'os-instructor-others');
+</script>
