@@ -63,146 +63,325 @@
 
   <div class="page-hero">
     <div class="container">
-      
+      <div class="product-hero-badge">Free Tier Available</div>
       <h1 class="page-title">Online Autograder</h1>
-      <p class="page-subtitle">A hosted grading platform for instructors and students.</p>
-      
-      <div class="hero-actions" style="margin-top:28px;">
-        
-        <a href="/contact/" class="btn btn-primary">Request Instructor Access</a>
-        
-        <a href="/student-downloads/" class="btn btn-secondary">Student Downloads</a>
-        
-      </div>
-      
+      <p class="page-subtitle">A hosted platform for managing and grading Python assignments.</p>
     </div>
   </div>
 
   <div class="container page-content">
 
-    
-    <div class="callout">Online Autograder accounts are available by request. <a href="/contact/">Contact us</a> to get instructor access.</div>
-    
+    <div class="callout">Instructor accounts are available by request. <a href="/contact/">Contact us</a> to get access.</div>
 
-    
+    <!-- WORKFLOW SECTION -->
     <section class="content-section">
       <h2>How It Works</h2>
-      <p>The Online Autograder is a hosted platform with separate clients for instructors and students. Instructors manage assignments and view results through the instructor client; students download the student client to submit their work.
+      <p>The Online Autograder has two clients — one for instructors and one for students — both communicating with a hosted server. The server stores all assignment data, class rosters, and submission results. Grading itself runs locally on the student's machine, keeping things fast and reducing server load.
 </p>
 
-      
+      <!-- DIAGRAM
+           To replace this SVG with your own image:
+           1. Add your image to assets/images/ (e.g. online-workflow.png)
+           2. Delete the line below that says: {% include online-diagram.svg %}
+           3. Uncomment the <img> line and update the filename to match your image
+           4. Adjust max-width if needed
+      -->
+      <div class="workflow-diagram">
+        <!-- <img src="/assets/images/online-workflow.png" alt="Online Autograder Workflow" style="max-width:100%; border-radius:12px;" /> -->
+        <!-- Online Autograder Workflow Diagram
+     Generated SVG — replace this include with an <img> tag if you have your own image.
+     To swap in your own image:
+     1. Add your image to assets/images/ (e.g. online-workflow.png)
+     2. In _layouts/online.html, find the line:
+        and replace it with:
+     3. Delete this file if you no longer need it.
+-->
+<svg viewBox="0 0 960 320" fill="none" xmlns="http://www.w3.org/2000/svg"
+     style="width:100%; max-width:960px; margin:32px auto; display:block;">
+
+  <!-- Background -->
+  <rect width="960" height="320" rx="16" fill="#f8fafc"/>
+
+  <!-- ── CENTER: Server ── -->
+  <g transform="translate(380, 80)">
+    <!-- Server box -->
+    <rect width="200" height="160" rx="12" fill="#1a2744"/>
+    <!-- Server icon stack -->
+    <rect x="60" y="28" width="80" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <circle cx="128" cy="37" r="4" fill="#4ade80"/>
+    <rect x="60" y="52" width="80" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <circle cx="128" cy="61" r="4" fill="#4ade80"/>
+    <rect x="60" y="76" width="80" height="18" rx="4" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <circle cx="128" cy="85" r="4" fill="rgba(255,255,255,0.2)"/>
+    <!-- Labels -->
+    <text x="100" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="13" font-weight="700" fill="white">Grading Server</text>
+    <text x="100" y="134" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Assignments &amp; Classes</text>
+    <text x="100" y="148" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Submissions &amp; Results</text>
+    <!-- Step badge -->
+    <rect x="62" y="-10" width="76" height="20" rx="10" fill="#4ade80"/>
+    <text x="100" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">HOSTED</text>
+  </g>
+
+  <!-- ── LEFT: Instructor Client ── -->
+  <g transform="translate(60, 80)">
+    <rect width="180" height="160" rx="12" fill="#1a2744"/>
+    <!-- Monitor icon -->
+    <rect x="40" y="28" width="100" height="64" rx="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+    <rect x="55" y="38" width="70" height="34" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <!-- Screen lines -->
+    <rect x="60" y="43" width="40" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+    <rect x="60" y="50" width="55" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+    <rect x="60" y="57" width="48" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+    <!-- Stand -->
+    <rect x="82" y="92" width="16" height="8" rx="2" fill="rgba(255,255,255,0.2)"/>
+    <rect x="72" y="98" width="36" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+    <!-- Labels -->
+    <text x="90" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Instructor</text>
+    <text x="90" y="134" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Creates assignments</text>
+    <text x="90" y="148" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Manages class &amp; grades</text>
+    <rect x="46" y="-10" width="88" height="20" rx="10" fill="#4ade80"/>
+    <text x="90" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">INSTRUCTOR</text>
+  </g>
+
+  <!-- ── RIGHT: Student Client ── -->
+  <g transform="translate(720, 80)">
+    <rect width="180" height="160" rx="12" fill="#1a2744"/>
+    <!-- Laptop icon -->
+    <rect x="35" y="32" width="110" height="68" rx="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+    <rect x="48" y="42" width="84" height="44" rx="3" fill="rgba(255,255,255,0.08)"/>
+    <!-- Screen: code lines -->
+    <rect x="54" y="48" width="36" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+    <rect x="54" y="55" width="55" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+    <rect x="54" y="62" width="44" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+    <!-- Green checkmark on screen -->
+    <polyline points="100,52 106,60 118,46" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Base -->
+    <rect x="25" y="100" width="130" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+    <!-- Labels -->
+    <text x="90" y="125" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Student</text>
+    <text x="90" y="141" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Downloads &amp; submits</text>
+    <text x="90" y="155" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.55)">Grading runs locally</text>
+    <rect x="46" y="-10" width="88" height="20" rx="10" fill="#4ade80"/>
+    <text x="90" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STUDENT</text>
+  </g>
+
+  <!-- ── ARROWS: Instructor ↔ Server ── -->
+  <!-- Instructor → Server (push assignments/config) -->
+  <g transform="translate(242, 130)">
+    <path d="M0 12 L130 12" stroke="#4ade80" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M124 6 L136 12 L124 18" fill="#4ade80"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#1a2744">Assignments</text>
+  </g>
+  <!-- Server → Instructor (pull results) -->
+  <g transform="translate(242, 158)">
+    <path d="M136 12 L6 12" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M12 6 L0 12 L12 18" fill="#94a3b8"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#64748b">Results</text>
+  </g>
+
+  <!-- ── ARROWS: Server ↔ Student ── -->
+  <!-- Server → Student (push assignments) -->
+  <g transform="translate(582, 130)">
+    <path d="M0 12 L130 12" stroke="#4ade80" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M124 6 L136 12 L124 18" fill="#4ade80"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#1a2744">Assignments</text>
+  </g>
+  <!-- Student → Server (push results) -->
+  <g transform="translate(582, 158)">
+    <path d="M136 12 L6 12" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,3"/>
+    <path d="M12 6 L0 12 L12 18" fill="#94a3b8"/>
+    <rect x="28" y="0" width="76" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="66" y="13" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="600" fill="#64748b">Results</text>
+  </g>
+
+  <!-- ── GRADING NOTE ── -->
+  <g transform="translate(720, 255)">
+    <rect width="180" height="36" rx="8" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.3)" stroke-width="1"/>
+    <text x="90" y="15" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="700" fill="#16a34a">⚡ Grading runs locally</text>
+    <text x="90" y="27" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" fill="#16a34a">on the student's machine</text>
+  </g>
+
+  <!-- ── JOIN CODE NOTE ── -->
+  <g transform="translate(60, 255)">
+    <rect width="180" height="36" rx="8" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.3)" stroke-width="1"/>
+    <text x="90" y="15" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" font-weight="700" fill="#16a34a">🔑 Students join via</text>
+    <text x="90" y="27" text-anchor="middle" font-family="Sora, sans-serif" font-size="9" fill="#16a34a">join code or direct invite</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <text x="480" y="308" text-anchor="middle" font-family="Sora, sans-serif" font-size="11" fill="#94a3b8">
+    Available for Windows, macOS, and Linux
+  </text>
+
+</svg>
+
+      </div>
+    </section>
+
+    <!-- INSTRUCTOR DOWNLOAD -->
+    <section class="content-section">
+      <h2>Instructor Download</h2>
+      <p>Download the instructor client to create assignments, manage your class roster, configure grading criteria, and view student results. You will need an instructor account before logging in — request one using the button below.
+</p>
+
+      <div class="os-download-card">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="os-instructor-primary"></div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="os-instructor-others"></div>
+      </div>
 
       
-
+      <p class="form-note">Downloads are not yet available. Request an account now and you will be notified when they are ready.</p>
       
     </section>
-    
+
+    <!-- INSTRUCTOR STEPS -->
     <section class="content-section">
-      <h2>Instructor Client</h2>
-      <p>The instructor client is your command center for managing assignments, test cases, and viewing student results. Request an account to get started.
+      <h2>Instructor Workflow</h2>
+      <div class="step-list">
+        
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-body">
+            <h3>Request an Account</h3>
+            <p>Fill out the request form and you will receive instructor login credentials by email.
 </p>
-
-      
-      <ul class="feature-list">
+          </div>
+        </div>
         
-        <li>Create and manage grading assignments</li>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-body">
+            <h3>Download the Instructor Client</h3>
+            <p>Download the instructor client for your operating system from this page.</p>
+          </div>
+        </div>
         
-        <li>Upload test cases and configure grading criteria</li>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-body">
+            <h3>Set Up Your Class</h3>
+            <p>Log in and create your class. Add students directly or share a join code — the server will email login credentials to each student automatically.
+</p>
+          </div>
+        </div>
         
-        <li>View student submission results in real time</li>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-body">
+            <h3>Create Assignments</h3>
+            <p>Build assignments in the client, configure your grading criteria, and publish them to your class. Students will see new assignments in their client immediately.
+</p>
+          </div>
+        </div>
         
-        <li>Manage your class roster</li>
-        
-      </ul>
-      
-
-      
-      
-      <div class="subsection">
-        <h3>Download</h3>
-        <p>Instructor accounts are available by request only.</p>
-        <div style="margin:12px 0;"><span class="badge-coming-soon">⏳ Download Coming Soon</span></div>
-        
-        
-        <div class="section-actions">
-          
-          <a href="/contact/" class="btn btn-primary">Request Access</a>
-          
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <div class="step-body">
+            <h3>View Results</h3>
+            <p>As students submit, results appear in your instructor client in real time. Export grades when you are ready.
+</p>
+          </div>
         </div>
         
       </div>
-      
-      
-
-      
     </section>
-    
+
+    <!-- STUDENT SECTION -->
     <section class="content-section">
-      <h2>Student Client</h2>
-      <p>Students download the student client and use it to submit their Python assignments directly to the grading server. Results are returned immediately.
+      <h2>Are You a Student?</h2>
+      <p>If your instructor uses the Online Autograder, download the student client from the Student Downloads page. Your instructor will provide a join code or add you directly — you will receive your login credentials by email.
 </p>
-
-      
-      <ul class="feature-list">
-        
-        <li>Submit assignments directly from the client</li>
-        
-        <li>Receive grading feedback instantly</li>
-        
-        <li>No account setup required for students — login provided by instructor</li>
-        
-      </ul>
-      
-
-      
-
       
       <div class="section-actions">
         
-        <a href="/student-downloads/" class="btn btn-primary">Student Downloads</a>
+        <a href="/student/online/" class="btn btn-primary">Student Downloads</a>
         
       </div>
       
     </section>
+
+    <!-- PRICING NUDGE -->
     
     <section class="content-section">
       <h2>Pricing</h2>
-      <p>The Online Autograder has a free tier for instructors. A paid tier with expanded features is planned for the future.
+      <p>The Online Autograder is free for instructors to get started. A Pro tier with expanded class sizes and additional features is planned for the future.
 </p>
-
-      
-
-      
-
-      
       <div class="section-actions">
         
         <a href="/pricing/" class="btn btn-outline">View Pricing</a>
         
-      </div>
-      
-    </section>
-    
-    <section class="content-section">
-      <h2>Documentation</h2>
-      
-
-      
-
-      
-
-      
-      <div class="section-actions">
-        
-        <a href="/docs/online/overview/" class="btn btn-outline">Online Autograder Docs</a>
+        <a href="/contact/" class="btn btn-primary">Request Access</a>
         
       </div>
-      
     </section>
     
 
   </div>
 </div>
+
+<script>
+const instructorDownloads = {
+  windows: {
+    label: "Windows",
+    icon: "🪟",
+    url: "#",
+    filename: "PyAutoGrader-Online-Instructor-Windows.exe"
+  },
+  mac: {
+    label: "macOS",
+    icon: "🍎",
+    url: "#",
+    filename: "PyAutoGrader-Online-Instructor-macOS.dmg"
+  },
+  linux: {
+    label: "Linux",
+    icon: "🐧",
+    url: "#",
+    filename: "PyAutoGrader-Online-Instructor-Linux.AppImage"
+  }
+};
+
+function detectOS() {
+  const p = navigator.platform.toLowerCase();
+  const u = navigator.userAgent.toLowerCase();
+  if (p.includes('win') || u.includes('windows')) return 'windows';
+  if (p.includes('mac') || u.includes('mac')) return 'mac';
+  return 'linux';
+}
+
+function renderDownloads(downloads, primaryId, othersId) {
+  const detected = detectOS();
+  const primary = document.getElementById(primaryId);
+  const others = document.getElementById(othersId);
+  const dl = downloads[detected];
+
+  primary.innerHTML = `
+    <a href="${dl.url}" class="btn btn-primary btn-download" ${dl.url === '#' ? 'aria-disabled="true"' : ''}>
+      <span>${dl.icon}</span>
+      <span>Download for ${dl.label}</span>
+      ${dl.url === '#' ? '<span class="coming-soon-inline">Coming Soon</span>' : ''}
+    </a>
+    ${dl.url !== '#' ? `<span class="download-filename">${dl.filename}</span>` : ''}
+  `;
+
+  const otherKeys = Object.keys(downloads).filter(k => k !== detected);
+  others.innerHTML = otherKeys.map(k => {
+    const o = downloads[k];
+    return `<a href="${o.url}" class="btn btn-outline btn-sm ${o.url === '#' ? 'btn-disabled' : ''}">
+      ${o.icon} ${o.label} ${o.url === '#' ? '<span class="coming-soon-inline">Soon</span>' : ''}
+    </a>`;
+  }).join('');
+}
+
+renderDownloads(instructorDownloads, 'os-instructor-primary', 'os-instructor-others');
+</script>
 
   </main>
   <footer class="site-footer">

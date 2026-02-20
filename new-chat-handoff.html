@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyAutoGrader Website — New Chat Handoff | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PyAutoGrader Website — New Chat Handoff | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="PyAutoGrader Website — New Chat Handoff" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/new-chat-handoff.html" />
+<meta property="og:url" content="https://pyautograder.github.io/new-chat-handoff.html" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PyAutoGrader Website — New Chat Handoff" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"PyAutoGrader Website — New Chat Handoff","url":"https://pyautograder.github.io/new-chat-handoff.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/offline" >Offline</a>
+      <a href="/online" >Online</a>
+      <a href="/docs/getting-started" >Docs</a>
+      <a href="/pricing" >Pricing</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" >About</a>
+      <a href="/contact" class="btn-nav-cta" >Request Access</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">PyAutoGrader Website — New Chat Handoff</h1>
+      
+    </div>
+  </div>
+  <div class="container page-content">
+    <h1 id="pyautograder-website--new-chat-handoff">PyAutoGrader Website — New Chat Handoff</h1>
+
+<h2 id="prompt-to-use">Prompt to Use</h2>
+
+<p>Paste this at the start of your new conversation:</p>
+
+<hr />
+
+<p>I’m continuing development of the <strong>PyAutoGrader website</strong> — a Jekyll site hosted on GitHub Pages at <code class="language-plaintext highlighter-rouge">pyautograder.github.io</code> under the PyAutoGrader GitHub organization. I’m uploading the key files from the project so you have full context.</p>
+
+<p>Here is a summary of the project and decisions already made:</p>
+
+<h3 id="what-pyautograder-is">What PyAutoGrader Is</h3>
+<p>A Python autograding tool for educators with three products:</p>
+
+<ul>
+  <li><strong>Offline Autograder</strong> — instructors and students each download executables from the website. The instructor creates an assignment file (<code class="language-plaintext highlighter-rouge">.agr</code>) which the student loads into their app. The student exports a results PDF and submits to their LMS. Always free.</li>
+  <li><strong>Online Autograder</strong> — a hosted platform with separate instructor and student clients. Instructor accounts are by request only. Free tier available, paid tier coming later.</li>
+  <li><strong>PyAutoGrader Classic</strong> — a separate open-source project (its own GitHub repo, URL TBD) where instructors build and distribute their own executable. Different style, not deprecated. Low-key advertised at the bottom of the Offline page only.</li>
+</ul>
+
+<h3 id="site-architecture">Site Architecture</h3>
+<ul>
+  <li><strong>Jekyll</strong> site with GitHub Actions workflows for deployment</li>
+  <li><code class="language-plaintext highlighter-rouge">main</code> branch → deploys to <code class="language-plaintext highlighter-rouge">pyautograder.github.io</code> (production)</li>
+  <li><code class="language-plaintext highlighter-rouge">dev</code> branch → deploys to <code class="language-plaintext highlighter-rouge">pyautograder.github.io/dev</code> (preview)</li>
+  <li>Both deploy to a <code class="language-plaintext highlighter-rouge">gh-pages</code> branch; GitHub Pages is set to deploy from that branch</li>
+  <li>All page content files live in <code class="language-plaintext highlighter-rouge">_pages/</code> (except <code class="language-plaintext highlighter-rouge">index.html</code> which stays in root)</li>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code> has <code class="language-plaintext highlighter-rouge">include: [_pages]</code> so Jekyll picks them up</li>
+  <li>Documentation lives in <code class="language-plaintext highlighter-rouge">_docs/</code> as pure markdown</li>
+</ul>
+
+<h3 id="page-structure">Page Structure</h3>
+<p>| URL | File | Notes |
+|—–|——|——-|
+| <code class="language-plaintext highlighter-rouge">/</code> | <code class="language-plaintext highlighter-rouge">index.html</code> | Home/landing page |
+| <code class="language-plaintext highlighter-rouge">/offline/</code> | <code class="language-plaintext highlighter-rouge">_pages/offline.md</code> | Instructor-focused, OS download detection |
+| <code class="language-plaintext highlighter-rouge">/online/</code> | <code class="language-plaintext highlighter-rouge">_pages/online.md</code> | Online product page |
+| <code class="language-plaintext highlighter-rouge">/classic/</code> | <code class="language-plaintext highlighter-rouge">_pages/classic.md</code> | PyAutoGrader Classic info, GitHub link placeholder |
+| <code class="language-plaintext highlighter-rouge">/student-downloads/</code> | <code class="language-plaintext highlighter-rouge">_pages/student-downloads.md</code> | Hub with two cards (Offline / Online) |
+| <code class="language-plaintext highlighter-rouge">/student/offline/</code> | <code class="language-plaintext highlighter-rouge">_pages/student/offline.md</code> | Student offline landing page |
+| <code class="language-plaintext highlighter-rouge">/student/online/</code> | <code class="language-plaintext highlighter-rouge">_pages/student/online.md</code> | Student online landing page |
+| <code class="language-plaintext highlighter-rouge">/pricing/</code> | <code class="language-plaintext highlighter-rouge">_pages/pricing.md</code> | Three-tier pricing table |
+| <code class="language-plaintext highlighter-rouge">/contact/</code> | <code class="language-plaintext highlighter-rouge">_pages/contact.md</code> | Formspree contact form (ID: xpqjlrqa) |
+| <code class="language-plaintext highlighter-rouge">/about/</code> | <code class="language-plaintext highlighter-rouge">_pages/about.md</code> | About page |
+| <code class="language-plaintext highlighter-rouge">/faq/</code> | <code class="language-plaintext highlighter-rouge">_pages/faq.md</code> | FAQ accordion |
+| <code class="language-plaintext highlighter-rouge">/changelog/</code> | <code class="language-plaintext highlighter-rouge">_pages/changelog.md</code> | Placeholder, no releases yet |
+| <code class="language-plaintext highlighter-rouge">/docs/getting-started/</code> | <code class="language-plaintext highlighter-rouge">_docs/getting-started.md</code> | Docs landing |
+| <code class="language-plaintext highlighter-rouge">/docs/offline/*</code> | <code class="language-plaintext highlighter-rouge">_docs/offline/</code> | Offline docs (placeholders) |
+| <code class="language-plaintext highlighter-rouge">/docs/online/*</code> | <code class="language-plaintext highlighter-rouge">_docs/online/</code> | Online docs (placeholders) |</p>
+
+<h3 id="layout-system">Layout System</h3>
+<p>Each page uses a dedicated layout — <strong>no HTML in content files</strong>. Pages are either pure front matter (YAML key-value pairs) or pure markdown prose (docs). Layouts live in <code class="language-plaintext highlighter-rouge">_layouts/</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layout</th>
+      <th>Used By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">default.html</code></td>
+      <td>Base HTML shell</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">product.html</code></td>
+      <td>Generic product pages (online, classic, about)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">offline.html</code></td>
+      <td>Offline page — includes OS detection JS + diagram</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">student-product.html</code></td>
+      <td>Student landing pages — includes OS detection JS</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">downloads.html</code></td>
+      <td>Student Downloads hub</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pricing.html</code></td>
+      <td>Pricing page</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">faq.html</code></td>
+      <td>FAQ page</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">contact.html</code></td>
+      <td>Contact form</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">about.html</code></td>
+      <td>About page</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">changelog.html</code></td>
+      <td>Changelog</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">doc.html</code></td>
+      <td>Documentation pages with sidebar</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="design-system">Design System</h3>
+<ul>
+  <li><strong>Colors:</strong> Navy (<code class="language-plaintext highlighter-rouge">#1a2744</code>) primary, Green (<code class="language-plaintext highlighter-rouge">#4ade80</code> / <code class="language-plaintext highlighter-rouge">#22c55e</code>) accent</li>
+  <li><strong>Font:</strong> Sora (Google Fonts) — 700/800 weights for headings</li>
+  <li><strong>Mono font:</strong> JetBrains Mono — used in code blocks and filenames</li>
+  <li><strong>All styles</strong> in <code class="language-plaintext highlighter-rouge">assets/css/main.css</code></li>
+  <li><strong>Logo:</strong> Currently an inline SVG in <code class="language-plaintext highlighter-rouge">_includes/nav.html</code> and <code class="language-plaintext highlighter-rouge">_includes/footer.html</code>. A PNG logo can be dropped into <code class="language-plaintext highlighter-rouge">assets/images/logo.png</code> and referenced with an <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag to replace it. Favicon goes at <code class="language-plaintext highlighter-rouge">assets/images/favicon.png</code>.</li>
+</ul>
+
+<h3 id="key-conventions">Key Conventions</h3>
+<ul>
+  <li>To add a new page: create a <code class="language-plaintext highlighter-rouge">.md</code> file in <code class="language-plaintext highlighter-rouge">_pages/</code>, set <code class="language-plaintext highlighter-rouge">layout</code>, <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">permalink</code>, and content fields in front matter. Add to <code class="language-plaintext highlighter-rouge">_config.yml</code> include if in a subfolder.</li>
+  <li>To add a doc page: create a <code class="language-plaintext highlighter-rouge">.md</code> file in <code class="language-plaintext highlighter-rouge">_docs/</code>, add to sidebar in <code class="language-plaintext highlighter-rouge">_layouts/doc.html</code></li>
+  <li>Download URLs in <code class="language-plaintext highlighter-rouge">_pages/offline.md</code>, <code class="language-plaintext highlighter-rouge">_pages/student/offline.md</code>, <code class="language-plaintext highlighter-rouge">_pages/student/online.md</code> are placeholders (<code class="language-plaintext highlighter-rouge">"#"</code>) — replace with real GitHub Release URLs when available</li>
+  <li>PyAutoGrader Classic GitHub URL is a placeholder (<code class="language-plaintext highlighter-rouge">"#"</code>) in <code class="language-plaintext highlighter-rouge">_pages/classic.md</code> and <code class="language-plaintext highlighter-rouge">_pages/offline.md</code></li>
+  <li>Formspree form ID is already set: <code class="language-plaintext highlighter-rouge">xpqjlrqa</code></li>
+</ul>
+
+<h3 id="outstanding--not-done-yet">Outstanding / Not Done Yet</h3>
+<ul>
+  <li>Real download links (Windows/macOS/Linux executables not yet released)</li>
+  <li>PyAutoGrader Classic GitHub repo URL</li>
+  <li>Real favicon and logo PNG files</li>
+  <li>Online Autograder page needs updating when online product is further along</li>
+  <li>Docs pages are mostly placeholders pending product release</li>
+  <li>Paid tier pricing TBD</li>
+</ul>
+
+<hr />
+
+<h2 id="files-to-upload">Files to Upload</h2>
+
+<p>Upload these files when starting the new chat. They give Claude full context
+on the current state of every part of the site.</p>
+
+<h3 id="essential-upload-these-first">Essential (upload these first)</h3>
+<p>| File | Why |
+|——|—–|
+| <code class="language-plaintext highlighter-rouge">assets/css/main.css</code> | Full design system — colors, layout, components |
+| <code class="language-plaintext highlighter-rouge">_layouts/default.html</code> | Base HTML shell |
+| <code class="language-plaintext highlighter-rouge">_layouts/offline.html</code> | Most complex layout, includes OS detection |
+| <code class="language-plaintext highlighter-rouge">_layouts/product.html</code> | Used by most content pages |
+| <code class="language-plaintext highlighter-rouge">_includes/nav.html</code> | Navigation |
+| <code class="language-plaintext highlighter-rouge">_includes/footer.html</code> | Footer |
+| <code class="language-plaintext highlighter-rouge">_config.yml</code> | Jekyll config, includes, plugins |
+| <code class="language-plaintext highlighter-rouge">index.html</code> | Home page |
+| <code class="language-plaintext highlighter-rouge">_pages/offline.md</code> | Most developed content page |</p>
+
+<h3 id="upload-if-working-on-specific-areas">Upload if working on specific areas</h3>
+<p>| File | When to upload |
+|——|—————-|
+| <code class="language-plaintext highlighter-rouge">_layouts/student-product.html</code> | Working on student pages |
+| <code class="language-plaintext highlighter-rouge">_layouts/pricing.html</code> | Working on pricing |
+| <code class="language-plaintext highlighter-rouge">_layouts/contact.html</code> | Working on contact form |
+| <code class="language-plaintext highlighter-rouge">_layouts/doc.html</code> | Working on documentation |
+| <code class="language-plaintext highlighter-rouge">_pages/pricing.md</code> | Working on pricing content |
+| <code class="language-plaintext highlighter-rouge">_pages/contact.md</code> | Working on contact content |
+| <code class="language-plaintext highlighter-rouge">_pages/classic.md</code> | Working on Classic page |
+| <code class="language-plaintext highlighter-rouge">_pages/student/offline.md</code> | Working on student offline page |
+| <code class="language-plaintext highlighter-rouge">_pages/student/online.md</code> | Working on student online page |
+| <code class="language-plaintext highlighter-rouge">_pages/student-downloads.md</code> | Working on student downloads hub |
+| <code class="language-plaintext highlighter-rouge">_includes/offline-diagram.svg</code> | Working on offline workflow diagram |
+| <code class="language-plaintext highlighter-rouge">.github/workflows/deploy-dev.yml</code> | Working on CI/CD |
+| <code class="language-plaintext highlighter-rouge">.github/workflows/deploy-production.yml</code> | Working on CI/CD |</p>
+
+<h3 id="not-necessary-to-upload">Not necessary to upload</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_docs/</code> files — placeholders, Claude can recreate the pattern from one example</li>
+  <li><code class="language-plaintext highlighter-rouge">about.md</code>, <code class="language-plaintext highlighter-rouge">faq.md</code>, <code class="language-plaintext highlighter-rouge">changelog.md</code> — simple front matter, easy to recreate</li>
+  <li><code class="language-plaintext highlighter-rouge">Gemfile</code>, <code class="language-plaintext highlighter-rouge">_config.dev.yml</code> — unlikely to need changes</li>
+</ul>
+
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Products</span>
+          <a href="/offline">Offline Autograder</a>
+          <a href="/online">Online Autograder</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/student-downloads">Student Downloads</a>
+          <a href="/changelog">Changelog</a>
+          <a href="/faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
