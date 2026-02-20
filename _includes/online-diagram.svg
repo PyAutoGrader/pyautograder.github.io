@@ -3,9 +3,7 @@
      To swap in your own image:
      1. Add your image to assets/images/ (e.g. online-workflow.png)
      2. In _layouts/online.html, find the line:
-           {% include online-diagram.svg %}
         and replace it with:
-           <img src="{{ '/assets/images/online-workflow.png' | relative_url }}" alt="Online Autograder Workflow" style="max-width:100%; border-radius:12px;" />
      3. Delete this file if you no longer need it.
 -->
 <svg viewBox="0 0 960 320" fill="none" xmlns="http://www.w3.org/2000/svg"
