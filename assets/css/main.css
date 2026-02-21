@@ -1309,9 +1309,8 @@ a:hover { color: var(--navy); }
    LEGACY SECTION
    ============================================= */
 .legacy-section {
-  border-top: 1px solid var(--gray-200);
-  padding-top: 24px;
-  margin-top: 8px;
+  padding-top: 8px;
+  margin-top: 0;
 }
 
 .legacy-text {
