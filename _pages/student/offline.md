@@ -16,11 +16,11 @@ download:
   body: Select your operating system to download the Offline Autograder student executable.
   # Replace these with real download URLs when available
   # e.g. https://github.com/PyAutoGrader/releases/download/v1.0.0/PyAutoGrader-Student-Windows.exe
-  windows: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student-Windows.exe"
+  windows: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.exe"
   windows_filename: PyAutoGrader-Student-Windows.exe
-  mac: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student-macOS.zip"
+  mac: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.zip"
   mac_filename: PyAutoGrader-Student-macOS.dmg
-  linux: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student-Linux"
+  linux: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student"
   linux_filename: PyAutoGrader-Student-Linux.AppImage
   note: Always links to the latest release.
 
