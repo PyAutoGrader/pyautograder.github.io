@@ -18,11 +18,11 @@ download:
   # Replace these with real download URLs when available
   # e.g. https://github.com/PyAutoGrader/releases/download/v1.0.0/PyAutoGrader-Online-Student-Windows.exe
   windows: "#"
-  windows_filename: PyAutoGrader-Online-Student-Windows.exe
+  windows_filename: PyAutoGrader-Online-Student.exe
   mac: "#"
-  mac_filename: PyAutoGrader-Online-Student-macOS.dmg
+  mac_filename: PyAutoGrader-Online-Student.zip
   linux: "#"
-  linux_filename: PyAutoGrader-Online-Student-Linux.AppImage
+  linux_filename: PyAutoGrader-Online-Student
   note: Downloads are not yet available. Check back soon or ask your instructor for updates.
 
 steps:

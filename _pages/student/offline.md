@@ -17,11 +17,11 @@ download:
   # Replace these with real download URLs when available
   # e.g. https://github.com/PyAutoGrader/releases/download/v1.0.0/PyAutoGrader-Student-Windows.exe
   windows: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.exe"
-  windows_filename: PyAutoGrader-Student-Windows.exe
+  windows_filename: PyAutoGrader-Offline-Student.exe
   mac: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.zip"
-  mac_filename: PyAutoGrader-Student-macOS.dmg
+  mac_filename: PyAutoGrader-Offline-Student.zip
   linux: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student"
-  linux_filename: PyAutoGrader-Student-Linux.AppImage
+  linux_filename: PyAutoGrader-Offline-Student
   note: Always links to the latest release.
 
 steps:
