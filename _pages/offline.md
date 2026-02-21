@@ -22,11 +22,12 @@ download:
     Your students will download their own executable separately from the Student Downloads page.
   # Replace these URLs with your actual release download links
   # e.g. https://github.com/PyAutoGrader/releases/download/v1.0.0/PyAutoGrader-Instructor-Windows.exe
-  windows: "#"
-  mac: "#"
-  linux: "#"
+  windows: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor-Windows.exe"
+  mac: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor-macOS.zip"
+  linux: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor-Linux"
   note: >
-    Downloads are not yet available. Check back when the first release is published.
+    Always links to the latest release. Older versions are available in the
+    <a href="https://github.com/PyAutoGrader/pyautograder-offline-releases/releases">releases archive</a>.
 
 steps:
   title: Instructor Workflow
