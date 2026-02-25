@@ -1,11 +1,11 @@
 ---
 layout: product
-title: PyAutoGrader Classic
+title: PyAutoGrader Offline Classic
 subtitle: The build-it-yourself approach to Python autograding.
 permalink: /classic/
-badge: Open Source
+badge: Offline Classic
 
-notice: PyAutoGrader Classic is a separate project from the main Offline Autograder. It is best suited for instructors who are comfortable with Python and want full control over their grading setup.
+notice: PyAutoGrader Offline Classic is a separate project from the main Offline Autograder. It is best suited for instructors who are comfortable with Python and want full control over their grading setup.
 
 sections:
   - title: What Is PyAutoGrader Classic?
