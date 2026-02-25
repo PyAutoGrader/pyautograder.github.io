@@ -10,9 +10,9 @@ notice: PyAutoGrader Classic is a separate project from the main Offline Autogra
 sections:
   - title: What Is PyAutoGrader Classic?
     body: >
-      PyAutoGrader Classic is a standalone open-source project that takes a different approach
+      PyAutoGrader Classic is a standalone project that takes a different approach
       to offline autograding. Instead of downloading a pre-built app and loading an assignment file,
-      you write your test cases directly in Python, configure the grader yourself, and compile
+      you write configure the test cases, configure the grader yourself, and compile
       your own executable to distribute to students. It gives you complete control over every
       aspect of the grading process — but requires more setup than the standard Offline Autograder.
 
@@ -24,8 +24,7 @@ sections:
       is the better choice for most people.
     items:
       - Instructors comfortable with Python development
-      - Those who need custom grading logic or test structures
-      - Users who prefer a code-first configuration approach
+      - Users who prefer to distribute the packages and Python students will need
       - Anyone who wants to self-host and fully own their setup
 
   - title: How It Works
@@ -33,22 +32,22 @@ sections:
       The Classic workflow is entirely managed by the instructor on their own machine.
       There is no app to download from this site.
     items:
-      - Install PyAutoGrader Classic from the GitHub repository
-      - Write your test cases in Python using the provided framework
-      - Configure grader settings in a config file
+      - Download PyAutoGrader Classic from the GitHub repository
+      - Launch the Assignment Editor GUI
+      - Setup all the assignments, tests, and other settings
       - Build a self-contained executable using the build command
       - Distribute the executable directly to your students
       - Students run the executable against their code and receive results
 
   - title: Get Started
     body: >
-      PyAutoGrader Classic is hosted on GitHub. Full setup instructions and documentation
+      PyAutoGrader Offline Classic is hosted on GitHub. Full setup instructions and documentation
       are available in the repository README.
     cta:
       # Replace url below with the GitHub repo URL when ready
       # e.g. https://github.com/PyAutoGrader/pyautograder-classic
       - label: View on GitHub →
-        url: "#"
+        url: "https://github.com/PyAutoGrader/PyAutoGrader-Offline-v1"
         style: btn-primary
       - label: Back to Offline Autograder
         url: /offline/
