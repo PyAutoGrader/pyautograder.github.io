@@ -22,7 +22,7 @@ download:
   mac_filename: PyAutoGrader-Offline-Student.zip
   linux: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student"
   linux_filename: PyAutoGrader-Offline-Student
-  note: Always links to the latest release.
+  note: The application is unsigned. For MAC, you will need to attempt to open the file, then navigate to Settings, Privacy and Security, and Open Anyways.
 
 steps:
   title: Getting Started
