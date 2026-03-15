@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /api/config.json
+---
+{
+  "server_url": "{{ site.data.config.server_url }}"
+}

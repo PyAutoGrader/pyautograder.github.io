@@ -5,7 +5,7 @@ subtitle: A hosted platform for managing and grading Python assignments.
 permalink: /online/
 badge: Free Tier Available
 
-notice: Instructor accounts are available by request. <a href="/contact/">Contact us</a> to get access.
+notice: Instructor accounts are available by request. <a href="/contact/">Contact us</a> to get access. See the <a href="/online/server-info/">server information page</a> for the current server address.
 
 workflow:
   title: How It Works

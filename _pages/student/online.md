@@ -5,7 +5,7 @@ subtitle: Download the student client and connect to your class.
 permalink: /student/online/
 badge: Free
 
-notice: You will receive <strong>login credentials by email</strong> once your instructor adds you to their class or you use their join code.
+notice: You will receive <strong>login credentials by email</strong> once your instructor adds you to their class or you use their join code. See the <a href="/online/server-info/">server information page</a> for the current server address.
 
 intro: >
   Download the Online Autograder student client below. Your instructor will either
