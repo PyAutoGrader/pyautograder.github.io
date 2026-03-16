@@ -2,7 +2,7 @@
 layout: page
 title: Server Information
 subtitle: Current PyAutoGrader Online server address.
-permalink: /server-info/
+permalink: /online/server-info/
 ---
 
 The current PyAutoGrader Online server is located at:
