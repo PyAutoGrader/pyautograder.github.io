@@ -11,17 +11,17 @@
 <meta property="og:title" content="Managing Assignments" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This page is a placeholder. Full content coming soon." />
-<meta property="og:description" content="This page is a placeholder. Full content coming soon." />
+<meta name="description" content="This guide covers creating assignments, configuring settings, managing files, and running the test runner to verify your tests before publishing." />
+<meta property="og:description" content="This guide covers creating assignments, configuring settings, managing files, and running the test runner to verify your tests before publishing." />
 <link rel="canonical" href="https://pyautograder.github.io/docs/online/managing-assignments/" />
 <meta property="og:url" content="https://pyautograder.github.io/docs/online/managing-assignments/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-16T00:05:39+00:00" />
+<meta property="article:published_time" content="2026-03-22T16:55:30+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Managing Assignments" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-03-16T00:05:39+00:00","datePublished":"2026-03-16T00:05:39+00:00","description":"This page is a placeholder. Full content coming soon.","headline":"Managing Assignments","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/online/managing-assignments/"},"url":"https://pyautograder.github.io/docs/online/managing-assignments/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-03-22T16:55:30+00:00","datePublished":"2026-03-22T16:55:30+00:00","description":"This guide covers creating assignments, configuring settings, managing files, and running the test runner to verify your tests before publishing.","headline":"Managing Assignments","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/online/managing-assignments/"},"url":"https://pyautograder.github.io/docs/online/managing-assignments/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -99,22 +99,135 @@
       / <span>Managing Assignments</span>
     </div>
     <h1>Managing Assignments</h1>
-    <p><em>This page is a placeholder. Full content coming soon.</em></p>
+    <p>This guide covers creating assignments, configuring settings, managing files, and running the test runner to verify your tests before publishing.</p>
 
-<p>Topics that will be covered here:</p>
+<h2 id="creating-an-assignment">Creating an Assignment</h2>
+
+<ol>
+  <li>Navigate into a class and click the <strong>Assignments</strong> tab in the sidebar</li>
+  <li>Click <strong>New Assignment</strong></li>
+  <li>Enter a name for the assignment</li>
+  <li>Click <strong>Create</strong></li>
+</ol>
+
+<p>The assignment starts in <strong>draft</strong> status. Students cannot see draft assignments.</p>
+
+<h2 id="the-assignment-editor">The Assignment Editor</h2>
+
+<p>Click <strong>Edit</strong> on any assignment to open the assignment editor. The editor has five tabs:</p>
+
+<h3 id="settings-tab">Settings Tab</h3>
+
+<p>Configure the basic details of your assignment:</p>
 
 <ul>
-  <li>Creating a new assignment in the instructor client</li>
-  <li>Uploading and editing test cases</li>
-  <li>Setting deadlines and assignment details</li>
-  <li>Viewing student submission results</li>
-  <li>Exporting grades</li>
+  <li><strong>Name</strong> — The assignment title visible to students</li>
+  <li><strong>Description</strong> — Instructions or context for the assignment (shown to students)</li>
+  <li><strong>Due Date</strong> — When the assignment is due (displayed in the class timezone)</li>
+  <li><strong>Close Date</strong> — When submissions stop being accepted. Students can still submit after the due date but before the close date; these are marked as late</li>
+  <li><strong>Max Attempts</strong> — The maximum number of times a student can submit. Leave blank for unlimited attempts</li>
+  <li><strong>Scoring Method</strong> — How the final score is calculated (e.g., best score across all attempts)</li>
 </ul>
+
+<p>Changes auto-save when you switch tabs, or you can click <strong>Save</strong> manually.</p>
+
+<h3 id="files-tab">Files Tab</h3>
+
+<p>Manage the files associated with your assignment. There are four categories:</p>
+
+<p><strong>Starter Code</strong> — Template files that students download to begin their work. These might include function stubs, class skeletons, or partially completed code.</p>
+
+<p><strong>Data Files</strong> — Supporting files needed during grading. These are made available to the grading engine when tests run (e.g., CSV data files, text input files).</p>
+
+<p><strong>Instructions</strong> — Additional documentation files for the assignment.</p>
+
+<p><strong>Solutions</strong> — Your reference solution files. These are used by the grading engine for solution-comparison checks (e.g., comparing a student’s function output against your solution’s output). Solutions are never visible to students.</p>
+
+<p>For each file you can:</p>
+<ul>
+  <li><strong>Upload</strong> a new file from your computer</li>
+  <li><strong>Download</strong> a copy to your local machine</li>
+  <li><strong>Preview</strong> the file contents in the editor</li>
+  <li><strong>Delete</strong> the file</li>
+</ul>
+
+<h3 id="tests-tab">Tests Tab</h3>
+
+<p>This is where you define the automated checks that grade student code. See the <a href="/docs/online/test-configuration/">Test Configuration</a> guide for detailed information on check types and setup.</p>
+
+<p>The Tests tab shows a summary of all checks with their point values. You can:</p>
+
+<ul>
+  <li><strong>Add</strong> a new check</li>
+  <li><strong>Edit</strong> an existing check</li>
+  <li><strong>Delete</strong> a check</li>
+  <li><strong>Reorder</strong> checks via drag-and-drop or move buttons</li>
+</ul>
+
+<p>Every change to your test configuration creates a new <strong>version</strong>. This means you can safely edit tests after students have submitted — their submissions are tied to the version they were graded against.</p>
+
+<h3 id="test-runner-tab">Test Runner Tab</h3>
+
+<p>The test runner lets you verify your test configuration before publishing the assignment. It runs the grading engine locally on your machine, exactly the way it will run on students’ machines.</p>
+
+<ol>
+  <li>Add test files — either browse for local Python files or use files already uploaded to the server</li>
+  <li>Select a <strong>Python interpreter</strong> from the dropdown (the runner will detect interpreters installed on your machine)</li>
+  <li>Click <strong>Run</strong></li>
+</ol>
+
+<p>The runner executes each test file and shows per-check results with scores, pass/fail status, and any error messages. Use this to verify that your checks, solutions, and configuration are all working correctly before students see the assignment.</p>
+
+<h3 id="submissions-tab">Submissions Tab</h3>
+
+<p>Once students begin submitting, this tab shows their results. See <a href="/docs/online/grading-and-submissions/">Grading and Submissions</a> for details.</p>
+
+<h2 id="publishing-an-assignment">Publishing an Assignment</h2>
+
+<p>When your assignment is configured and tested:</p>
+
+<ol>
+  <li>Click the <strong>Publish</strong> button in the editor header (or use the context menu from the assignments list)</li>
+  <li>The assignment becomes visible to enrolled students immediately</li>
+</ol>
+
+<p>You can <strong>unpublish</strong> an assignment at any time to hide it from students. Existing submissions are preserved.</p>
+
+<h2 id="other-assignment-actions">Other Assignment Actions</h2>
+
+<p>From the assignments list, right-click or use the menu on any assignment to:</p>
+
+<ul>
+  <li><strong>Duplicate</strong> — Create a copy with a new name (includes all test configuration and files)</li>
+  <li><strong>Delete</strong> — Soft-delete the assignment (can be restored if needed)</li>
+  <li><strong>Reorder</strong> — Drag assignments to change their display order</li>
+</ul>
+
+<h2 id="exporting-and-importing">Exporting and Importing</h2>
+
+<h3 id="export">Export</h3>
+
+<p>Click <strong>Export</strong> to download all assignments in the current class as a JSON file. This includes assignment settings, test configurations, and version history. Use this to back up your work or transfer assignments between classes.</p>
+
+<h3 id="import">Import</h3>
+
+<p>Click <strong>Import</strong> to load assignments from a JSON file. The importer supports two formats:</p>
+
+<ul>
+  <li><strong>Online export format</strong> — JSON exported from another online autograder class</li>
+  <li><strong>Offline autograder format</strong> — JSON exported from the offline PyAutoGrader. If the imported config references solution files, you will be prompted to upload them</li>
+</ul>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Learn how to configure individual test checks in <a href="/docs/online/test-configuration/">Test Configuration</a>.</p>
 
     <div class="doc-footer">
       
-      <a href="/docs/online/student-setup" class="doc-nav-btn prev">← Student Setup</a>
+      <a href="/docs/online/instructor-setup" class="doc-nav-btn prev">← Instructor Setup</a>
       
+      
+      <a href="/docs/online/test-configuration" class="doc-nav-btn next">Test Configuration →</a>
       
     </div>
   </article>

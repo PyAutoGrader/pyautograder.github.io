@@ -11,17 +11,17 @@
 <meta property="og:title" content="Student Setup" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This page is a placeholder. Full content coming soon." />
-<meta property="og:description" content="This page is a placeholder. Full content coming soon." />
+<meta name="description" content="This guide walks students through downloading the client, logging in, and submitting assignments." />
+<meta property="og:description" content="This guide walks students through downloading the client, logging in, and submitting assignments." />
 <link rel="canonical" href="https://pyautograder.github.io/docs/online/student-setup/" />
 <meta property="og:url" content="https://pyautograder.github.io/docs/online/student-setup/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-16T00:05:39+00:00" />
+<meta property="article:published_time" content="2026-03-22T16:55:30+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Student Setup" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-03-16T00:05:39+00:00","datePublished":"2026-03-16T00:05:39+00:00","description":"This page is a placeholder. Full content coming soon.","headline":"Student Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/online/student-setup/"},"url":"https://pyautograder.github.io/docs/online/student-setup/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-03-22T16:55:30+00:00","datePublished":"2026-03-22T16:55:30+00:00","description":"This guide walks students through downloading the client, logging in, and submitting assignments.","headline":"Student Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/online/student-setup/"},"url":"https://pyautograder.github.io/docs/online/student-setup/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -99,34 +99,180 @@
       / <span>Student Setup</span>
     </div>
     <h1>Student Setup</h1>
-    <p><em>This page is a placeholder. Full content coming soon.</em></p>
+    <p>This guide walks students through downloading the client, logging in, and submitting assignments.</p>
 
-<h2 id="what-you-need">What You Need</h2>
+<h2 id="getting-started">Getting Started</h2>
 
-<ul>
-  <li>Login credentials from your instructor</li>
-  <li>The student client installed (see <a href="/student-downloads/">Student Downloads</a>)</li>
-</ul>
-
-<h2 id="overview-of-steps">Overview of Steps</h2>
+<p>You need two things to get started:</p>
 
 <ol>
-  <li>Download the student client</li>
-  <li>Install it on your machine</li>
-  <li>Open the client and log in with credentials from your instructor</li>
-  <li>Select your assignment</li>
-  <li>Point the client at your Python file</li>
-  <li>Submit and view your results</li>
+  <li><strong>Login credentials</strong> — Your instructor will provide your email and temporary password, either directly or via an automated email</li>
+  <li><strong>The student client</strong> — Download it from the <a href="/downloads/">downloads page</a> or from a link provided by your instructor</li>
 </ol>
 
-<p>Full step-by-step instructions will be added here.</p>
+<h2 id="running-the-application">Running the Application</h2>
+
+<p>The student client is a standalone desktop application. There is no installation — just download and run the executable.</p>
+
+<h3 id="windows">Windows</h3>
+
+<p>When you first run the application, Windows may show a <strong>“Windows protected your PC”</strong> SmartScreen warning. This is normal — the application is not signed with a commercial code-signing certificate.</p>
+
+<ol>
+  <li>Click <strong>“More info”</strong></li>
+  <li>Click <strong>“Run anyway”</strong></li>
+</ol>
+
+<p>You only need to do this once.</p>
+
+<h3 id="macos">macOS</h3>
+
+<p>macOS will block the application because it is from an unidentified developer.</p>
+
+<ol>
+  <li>Right-click (or Control-click) the application and select <strong>Open</strong></li>
+  <li>In the dialog that appears, click <strong>Open</strong></li>
+</ol>
+
+<p>Alternatively, go to <strong>System Settings &gt; Privacy &amp; Security</strong> and click <strong>“Open Anyway”</strong> next to the blocked application message.</p>
+
+<h2 id="logging-in">Logging In</h2>
+
+<ol>
+  <li>Launch the student client</li>
+  <li>The server URL should be pre-filled. If not, enter the server address provided by your instructor</li>
+  <li>Enter your <strong>email</strong> and <strong>password</strong></li>
+  <li>Click <strong>Log In</strong></li>
+</ol>
+
+<p>If this is your first time logging in with a temporary password, you will be prompted to set a new password before continuing.</p>
+
+<h3 id="creating-an-account">Creating an Account</h3>
+
+<p>If your instructor gave you a join code instead of credentials, click <strong>Register</strong> on the login screen:</p>
+
+<ol>
+  <li>Enter your email, first name, last name, and choose a password</li>
+  <li>Click <strong>Register</strong></li>
+  <li>After logging in, enter the join code when prompted to join your class</li>
+</ol>
+
+<h3 id="forgot-password">Forgot Password</h3>
+
+<p>Click <strong>Forgot Password</strong> on the login screen, enter your email, and a reset link will be sent to you.</p>
+
+<h2 id="the-dashboard">The Dashboard</h2>
+
+<p>After logging in, you will see the <strong>Dashboard</strong> showing:</p>
+
+<ul>
+  <li><strong>Upcoming assignments</strong> — Assignments due in the next 7 days, with warning badges for anything due within 48 hours</li>
+  <li><strong>Recent grades</strong> — Your latest graded assignments with scores</li>
+</ul>
+
+<p>Click any item to jump directly to that assignment.</p>
+
+<h2 id="joining-a-class">Joining a Class</h2>
+
+<p>If your instructor gave you a <strong>join code</strong>:</p>
+
+<ol>
+  <li>Go to the <strong>Classes</strong> view</li>
+  <li>Click <strong>Join Class</strong></li>
+  <li>Enter the join code</li>
+  <li>Click <strong>Join</strong></li>
+</ol>
+
+<p>The class and its assignments will appear immediately.</p>
+
+<h2 id="viewing-assignments">Viewing Assignments</h2>
+
+<p>Click on a class to see its assignments. Each assignment card shows:</p>
+
+<ul>
+  <li>Assignment name</li>
+  <li>Status (open, closed, submitted, graded)</li>
+  <li>Due date and close date</li>
+  <li>Your current score (if you have submitted)</li>
+</ul>
+
+<p>Click an assignment to open its detail page.</p>
+
+<h2 id="submitting-an-assignment">Submitting an Assignment</h2>
+
+<h3 id="step-1-review-the-assignment">Step 1: Review the Assignment</h3>
+
+<p>The assignment detail page shows:</p>
+
+<ul>
+  <li><strong>Description</strong> and instructions from your instructor</li>
+  <li><strong>Due date</strong> and <strong>close date</strong></li>
+  <li><strong>Attempts remaining</strong> (if your instructor set a limit)</li>
+  <li><strong>Scoring method</strong> (best score or latest score)</li>
+  <li><strong>Starter files</strong> — Download these to get started. Click any file to preview its contents, or click <strong>Download All</strong> to save them to your computer</li>
+</ul>
+
+<h3 id="step-2-select-your-code-files">Step 2: Select Your Code Files</h3>
+
+<ol>
+  <li>Click <strong>Choose Python Files…</strong></li>
+  <li>Browse to your Python file(s) and select them</li>
+  <li>Your selected files appear as tags below the button — click the X on any tag to remove it</li>
+</ol>
+
+<h3 id="step-3-run-and-submit">Step 3: Run and Submit</h3>
+
+<ol>
+  <li>Click <strong>Run &amp; Submit</strong></li>
+  <li>The grading engine runs on your computer — a progress bar shows the status</li>
+  <li>When grading completes, your results are automatically submitted to the server</li>
+</ol>
+
+<h3 id="step-4-view-your-results">Step 4: View Your Results</h3>
+
+<p>A results dialog appears showing:</p>
+
+<ul>
+  <li>Your <strong>score</strong> (points earned out of points possible)</li>
+  <li><strong>Per-check results</strong> — Each test with pass/fail status and feedback</li>
+  <li>You can filter results to show All, Passed only, or Failed only</li>
+</ul>
+
+<p>Close the dialog to return to the assignment. Your score is now updated.</p>
+
+<h2 id="important-notes">Important Notes</h2>
+
+<ul>
+  <li><strong>Grading runs locally</strong> — Your code executes on your own computer, not on the server. Only the results (scores and check outcomes) are uploaded.</li>
+  <li><strong>Late submissions</strong> — You can submit after the due date but before the close date. These submissions are marked as late.</li>
+  <li><strong>Multiple attempts</strong> — If your instructor allows multiple attempts, you can resubmit to try for a better score. Your best score (or latest, depending on the assignment setting) is the one that counts.</li>
+  <li><strong>Python interpreter</strong> — The grading engine uses a Python interpreter installed on your machine. If you have multiple versions of Python installed, you can choose which one to use by clicking the interpreter selector below the submit button.</li>
+</ul>
+
+<h2 id="viewing-past-submissions">Viewing Past Submissions</h2>
+
+<p>On the assignment detail page, go to the <strong>Submissions</strong> tab to see all of your previous attempts:</p>
+
+<ul>
+  <li>Each submission shows its attempt number, timestamp, score, and whether it was late</li>
+  <li>Click any submission to see the full check results and your submitted code</li>
+  <li>Your best attempt is highlighted with a badge</li>
+</ul>
+
+<h2 id="checking-your-grades">Checking Your Grades</h2>
+
+<p>Go to the <strong>Grades</strong> view to see an overview of all your scores across a class:</p>
+
+<ul>
+  <li>A progress ring shows your overall percentage</li>
+  <li>A table lists each assignment with its score and status (Not Submitted, Submitted, or Graded)</li>
+  <li>Click any row to go to that assignment’s detail page</li>
+</ul>
 
     <div class="doc-footer">
       
-      <a href="/docs/online/instructor-setup" class="doc-nav-btn prev">← Instructor Setup</a>
+      <a href="/docs/online/grading-and-submissions" class="doc-nav-btn prev">← Grading and Submissions</a>
       
-      
-      <a href="/docs/online/managing-assignments" class="doc-nav-btn next">Managing Assignments →</a>
       
     </div>
   </article>
