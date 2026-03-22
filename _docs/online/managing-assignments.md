@@ -2,6 +2,7 @@
 layout: doc
 title: Managing Assignments
 section: Online Autograder
+nav_order: 3
 permalink: /docs/online/managing-assignments/
 prev_doc: /docs/online/instructor-setup
 prev_title: Instructor Setup

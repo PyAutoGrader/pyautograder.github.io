@@ -2,6 +2,7 @@
 layout: doc
 title: Grading and Submissions
 section: Online Autograder
+nav_order: 5
 permalink: /docs/online/grading-and-submissions/
 prev_doc: /docs/online/test-configuration
 prev_title: Test Configuration

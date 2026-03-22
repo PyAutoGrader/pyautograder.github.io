@@ -2,6 +2,7 @@
 layout: doc
 title: Instructor Setup
 section: Offline Autograder
+nav_order: 2
 permalink: /docs/offline/instructor-setup/
 prev_doc: /docs/offline/overview
 prev_title: Overview

@@ -2,6 +2,7 @@
 layout: doc
 title: Online Autograder Overview
 section: Online Autograder
+nav_order: 1
 permalink: /docs/online/overview/
 next_doc: /docs/online/instructor-setup
 next_title: Instructor Setup

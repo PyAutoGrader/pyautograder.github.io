@@ -2,6 +2,7 @@
 layout: doc
 title: Building an Executable
 section: Offline Autograder
+nav_order: 3
 permalink: /docs/offline/building-executable/
 prev_doc: /docs/offline/instructor-setup
 prev_title: Instructor Setup

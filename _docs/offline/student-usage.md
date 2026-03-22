@@ -2,6 +2,7 @@
 layout: doc
 title: Student Usage
 section: Offline Autograder
+nav_order: 4
 permalink: /docs/offline/student-usage/
 prev_doc: /docs/offline/building-executable
 prev_title: Building an Executable

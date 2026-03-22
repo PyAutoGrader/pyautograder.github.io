@@ -2,6 +2,7 @@
 layout: doc
 title: Student Setup
 section: Online Autograder
+nav_order: 6
 permalink: /docs/online/student-setup/
 prev_doc: /docs/online/grading-and-submissions
 prev_title: Grading and Submissions

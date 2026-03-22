@@ -2,6 +2,7 @@
 layout: doc
 title: Introduction
 section: Getting Started
+nav_order: 1
 permalink: /docs/getting-started/
 next_doc: /docs/offline/overview
 next_title: Offline Autograder Overview

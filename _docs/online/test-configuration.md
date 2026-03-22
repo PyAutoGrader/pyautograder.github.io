@@ -2,6 +2,7 @@
 layout: doc
 title: Test Configuration
 section: Online Autograder
+nav_order: 4
 permalink: /docs/online/test-configuration/
 prev_doc: /docs/online/managing-assignments
 prev_title: Managing Assignments
