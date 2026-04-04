@@ -2,10 +2,10 @@
 layout: doc
 title: Troubleshooting
 section: Offline Autograder
-nav_order: 11
+nav_order: 12
 permalink: /docs/offline/troubleshooting/
-prev_doc: /docs/offline/server-setup
-prev_title: Server Setup
+prev_doc: /docs/offline/api-reference
+prev_title: Server API Reference
 ---
 
 Common issues and solutions for students and instructors.

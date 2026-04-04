@@ -6,8 +6,8 @@ nav_order: 10
 permalink: /docs/offline/server-setup/
 prev_doc: /docs/offline/reporting-setup
 prev_title: Reporting Setup
-next_doc: /docs/offline/troubleshooting
-next_title: Troubleshooting
+next_doc: /docs/offline/api-reference
+next_title: Server API Reference
 ---
 
 The PyAutoGrader submission server is an optional self-hosted Flask server that provides a web dashboard for managing student submissions, analytics, plagiarism detection, code search, and grade export. See the [Server](/server/) page for a feature overview.

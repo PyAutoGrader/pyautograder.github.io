@@ -1,107 +1,258 @@
 ---
-layout: page
-title: Self-Hosted Submission Server
-subtitle: A full-featured Flask server you run on your own infrastructure.
+layout: default
+title: Self-Hosted Submission Server - PyAutoGrader
 permalink: /server/
 ---
 
-<div class="page-intro">
-  The PyAutoGrader submission server gives you a complete dashboard for managing student
-  submissions, analyzing grades, detecting plagiarism, and exporting to your LMS. Run it on
-  your own machine or campus server - your data stays on your infrastructure.
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container" style="position:relative;">
+    <h1 class="page-title">Self-Hosted Submission Server</h1>
+    <p class="page-subtitle">A full-featured Flask server you run on your own infrastructure.</p>
+  </div>
 </div>
 
-## Quick Start
+<!-- INTRO -->
+<section class="landing-section">
+  <div class="container">
+    <div class="sv-intro">
+      <p>
+        The PyAutoGrader submission server gives you a complete dashboard for managing student
+        submissions, analyzing grades, detecting plagiarism, and exporting to your LMS. Run it on
+        your own machine or campus server - your data stays on your infrastructure.
+      </p>
+    </div>
 
-The server runs with Python and a few dependencies. Start it with a single command:
+    <!-- Quick Start -->
+    <div class="sv-quickstart">
+      <div class="sv-quickstart-header">
+        <h3>Quick Start</h3>
+        <span class="sv-badge">3 steps</span>
+      </div>
+      <div class="sv-steps">
+        <div class="sv-step">
+          <div class="sv-step-num">1</div>
+          <div>
+            <h4>Download</h4>
+            <p>Get the server executable for Windows, macOS, or Linux from the <a href="/offline/">Downloads</a> page.</p>
+          </div>
+        </div>
+        <div class="sv-step">
+          <div class="sv-step-num">2</div>
+          <div>
+            <h4>Configure</h4>
+            <p>Edit <code>server_config.json</code> to set your password and API key. Or pass them as CLI flags.</p>
+          </div>
+        </div>
+        <div class="sv-step">
+          <div class="sv-step-num">3</div>
+          <div>
+            <h4>Run</h4>
+            <p>Launch the executable. Open <code>http://localhost:5000</code> and log in. SQLite database created automatically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-```
-pip install -r requirements.txt
-python submission_server.py --username admin --password YOUR_PASSWORD
-```
+<!-- FEATURES -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Features</div>
+      <h2 class="section-title">Everything You Need to Manage Submissions</h2>
+    </div>
 
-That gives you a dashboard at `http://localhost:5000/` with a SQLite database that requires zero configuration.
+    <div class="sv-features-grid">
+      <div class="sv-feature-card sv-feature-card--wide">
+        <div class="sv-feature-icon">📊</div>
+        <h3>Analytics Dashboard</h3>
+        <p>
+          Score distribution charts, submission trends over time, assignment difficulty analysis,
+          student progress tracking, and at-risk student identification. Filter by course, section,
+          or semester. Every chart updates in real time as submissions come in.
+        </p>
+      </div>
 
----
+      <div class="sv-feature-card sv-feature-card--wide">
+        <div class="sv-feature-icon">🔍</div>
+        <h3>Plagiarism Detection</h3>
+        <p>
+          Pairwise code similarity analysis across all submissions for an assignment. Four metrics:
+          code similarity (comments stripped), comment similarity, combined weighted score, and
+          comment-to-code ratio. Color-coded severity (red 80%+, orange 50-79%, green below 50%)
+          with a side-by-side diff view and syntax highlighting.
+        </p>
+      </div>
 
-## Features
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">🔎</div>
+        <h3>Code Search</h3>
+        <p>
+          Search across all submitted code for specific patterns. Detect AI-generated code,
+          verify required constructs, or investigate academic integrity.
+        </p>
+      </div>
 
-### Dashboard
-Browse all submissions filtered by course, assignment, or student. Click into any submission
-to see full test results and the student's code.
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">📋</div>
+        <h3>Submission Browser</h3>
+        <p>
+          Browse all submissions filtered by course, assignment, or student. Click into any
+          submission to see full test results and the student's code. View modes: all, latest
+          per student, or highest per student.
+        </p>
+      </div>
 
-### Analytics
-- Score distribution charts
-- Submission trends over time
-- Assignment difficulty analysis
-- Student progress tracking
-- At-risk student identification
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">👥</div>
+        <h3>Roster Management</h3>
+        <p>
+          Upload CSV rosters, add students manually, sync unmatched submissions. Duplicate
+          detection and late adds. Expose a REST API for the student app to fetch rosters live.
+        </p>
+      </div>
 
-### Plagiarism Detection
-Pairwise code similarity analysis across all submissions for an assignment.
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">📅</div>
+        <h3>Assignment Deadlines</h3>
+        <p>
+          Set per-assignment cutoff dates with per-student overrides for accommodations.
+          Late submissions flagged with badges. Exports include an option to exclude late work.
+        </p>
+      </div>
 
-- **Code similarity** - Compares functional code with comments stripped
-- **Comment similarity** - Compares only comment text
-- **Combined score** - Weighted metric (70% code, 30% comments)
-- **Side-by-side diff view** with syntax highlighting
-- Color-coded severity: red (80%+), orange (50-79%), green (below 50%)
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">📤</div>
+        <h3>Canvas Export</h3>
+        <p>
+          Canvas-compatible CSV with one row per student, one column per assignment. Import
+          grades directly into Canvas Gradebook. Standard CSV export also available.
+        </p>
+      </div>
 
-### Code Search
-Search across all submitted code for specific patterns. Useful for detecting AI-generated
-code patterns or verifying students used required constructs.
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">🏫</div>
+        <h3>Class Organization</h3>
+        <p>
+          Organize by course, section, and semester. Drill into any class for scoped analytics,
+          submissions, roster, assignments, and code search.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-### Roster Management
-Upload a CSV roster, add students manually, or let the student app fetch the roster
-from your server's API. Supports duplicate detection and late adds.
+<!-- REQUIRE SUBMISSION -->
+<section class="landing-section">
+  <div class="container">
+    <div class="sv-callout">
+      <div class="sv-callout-icon">🔗</div>
+      <div>
+        <h3>Require Student Submission</h3>
+        <p>
+          Instructors can configure assignments so grading is restricted unless the student is
+          connected to the server. This ensures all results flow through the server for tracking,
+          analytics, and plagiarism detection. Students who are offline cannot complete grading
+          until they connect.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-### Assignment Deadlines
-Set per-assignment cutoff dates with per-student overrides for accommodations or extensions.
+<!-- HOSTING & DATABASE -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Infrastructure</div>
+      <h2 class="section-title">Hosting and Database</h2>
+    </div>
 
-### Export
-- **Canvas-compatible CSV** - Import grades directly into Canvas LMS
-- **Standard CSV** - Full gradebook with all test results
+    <div class="sv-infra-grid">
+      <div class="sv-infra-section">
+        <h3>Hosting Options</h3>
+        <div class="sv-infra-cards">
+          <div class="sv-infra-card">
+            <h4>On-Campus (HTTP)</h4>
+            <p>For private or campus-only networks, run over plain HTTP. No certificate setup needed. Ideal for lab environments and closed university networks.</p>
+          </div>
+          <div class="sv-infra-card sv-infra-card--rec">
+            <div class="sv-rec-badge">Recommended for public access</div>
+            <h4>Caddy Reverse Proxy (HTTPS)</h4>
+            <p>Caddy automatically obtains and renews Let's Encrypt TLS certificates. Zero manual certificate management. Just point your domain and run.</p>
+          </div>
+          <div class="sv-infra-card">
+            <h4>Built-in TLS (HTTPS)</h4>
+            <p>Pass your own certificate and key files directly to the server via CLI flags or config. For environments where you manage your own certs.</p>
+          </div>
+        </div>
+      </div>
 
----
+      <div class="sv-infra-section">
+        <h3>Database Options</h3>
+        <div class="sv-infra-cards">
+          <div class="sv-infra-card sv-infra-card--rec">
+            <div class="sv-rec-badge">Default - best for most</div>
+            <h4>SQLite</h4>
+            <p>Zero setup, single file. Creates <code>submissions.db</code> automatically. Handles thousands of submissions. Back up by copying one file.</p>
+          </div>
+          <div class="sv-infra-card">
+            <h4>PostgreSQL</h4>
+            <p>For multi-server load balancing, high concurrency during exam spikes, or centralized backups with pg_dump and WAL archiving.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-## Require Student Submission
+<!-- ADDITIONAL FEATURES -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Under the Hood</h2>
+    </div>
+    <div class="sv-extras">
+      <div class="sv-extra">
+        <strong>Rate Limiting</strong>
+        <span>10 submissions per 60 seconds per IP. Protects against flooding.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>Webhook Notifications</strong>
+        <span>POST on each submission for external integrations and custom workflows.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>Duplicate Detection</strong>
+        <span>SHA-256 hashing catches identical resubmissions automatically.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>REST API</strong>
+        <span>Full API for submission, health checks, and roster management.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>File Storage</strong>
+        <span>Student code organized by course and assignment in a clean folder structure.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>3-Layer Config</strong>
+        <span>CLI arguments override config file, which overrides defaults. Flexible deployment.</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-Instructors can configure assignments so grading is restricted unless the student is connected
-to the server. This ensures all results flow through the server for tracking, analytics, and
-plagiarism detection.
-
----
-
-## Hosting Options
-
-### On-Campus (HTTP)
-For private or campus-only networks, run the server over plain HTTP. No certificate setup needed.
-
-### Off-Campus (HTTPS)
-For public access, enable HTTPS. Two options:
-
-- **Caddy reverse proxy (recommended)** - Automatic Let's Encrypt certificates with zero manual management
-- **Built-in TLS** - Pass `--cert` and `--key` flags for your own certificate files
-
----
-
-## Database Options
-
-- **SQLite (default)** - Zero setup, single file. Best for most deployments.
-- **PostgreSQL** - For multi-server load balancing or very high concurrency.
-
----
-
-## Additional Features
-
-- **Rate limiting** - 10 submissions per 60 seconds per IP
-- **Webhook notifications** - POST on each submission for external integrations
-- **Duplicate detection** - SHA-256 hashing catches identical resubmissions
-- **REST API** - Full API for submission, health checks, and roster management
-
----
-
-## Get the Server
-
-Download the submission server from the [Downloads](/offline/) page. See the
-[Server Setup](/docs/offline/server-setup/) documentation for full installation, configuration,
-and feature details.
+<!-- CTA -->
+<section class="landing-section--free">
+  <div class="container" style="text-align:center; position:relative;">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--white); margin-bottom:12px;">Get the Server</h2>
+    <p style="color:var(--text-on-dark-muted); margin-bottom:28px; font-size:1.05rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      Download the executable, set a password, and run. Full setup instructions in the documentation.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="/offline/" class="btn btn-primary">Download</a>
+      <a href="/docs/offline/server-setup/" class="btn btn-outline" style="border-color:var(--emerald); color:var(--emerald);">Setup Documentation</a>
+    </div>
+  </div>
+</section>

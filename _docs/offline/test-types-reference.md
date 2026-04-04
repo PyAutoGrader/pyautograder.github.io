@@ -10,7 +10,7 @@ next_doc: /docs/offline/student-usage
 next_title: Student Usage
 ---
 
-PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the [common fields](/docs/offline/instructor-setup/#common-test-fields) shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).
+PyAutoGrader supports 60+ test types organized by category. Each test has type-specific configuration fields plus the [common fields](/docs/offline/instructor-setup/#common-test-fields) shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).
 
 ## Variable Tests
 
@@ -71,6 +71,11 @@ Check a mathematical relationship between two variables.
 - **relationship** - relationship operator (e.g., `>`, `<`, `==`, `2*`)
 - **tolerance** - numeric tolerance
 
+### dataframe_columns
+Check that a pandas DataFrame has the expected columns.
+- **variable_name** (required) - name of the DataFrame variable
+- **expected_columns** - comma-separated list of expected column names
+
 ---
 
 ## Function Tests
@@ -95,6 +100,19 @@ Test a student function against the instructor's solution function with specific
 - **solution_file_id** - ID of the solution file containing the reference function
 - **test_inputs** - list of input argument sets to test
 - **tolerance** - numeric tolerance for comparing outputs
+
+### function_signature
+Check a function's parameter signature.
+- **function_name** (required) - name of the function
+- **expected_params** - comma-separated list of expected parameter names
+- **expected_param_count** - expected number of parameters
+- **check_defaults** - whether to check default values
+
+### return_type
+Check that a function returns the expected type.
+- **function_name** (required) - name of the function
+- **expected_type** - expected return type name (e.g., `list`, `int`, `dict`)
+- **test_inputs** - inputs to pass to the function for testing
 
 ---
 
@@ -159,6 +177,10 @@ Check that a specific operator appears in the code.
 Check that printed output contains expected text.
 - **expected_text** (required) - text to look for in stdout
 - **case_sensitive** - whether the search is case-sensitive
+
+### import_used
+Check that a specific module is imported.
+- **module_name** (required) - name of the module (e.g., `numpy`, `matplotlib.pyplot`)
 
 ---
 
@@ -297,6 +319,9 @@ Check that the code does not use wildcard imports (`from x import *`). No type-s
 ### imports_at_top
 Check that all import statements appear at the top of the file.
 - **allow_conditional** - whether imports inside if/try blocks are acceptable (default: false)
+
+### no_global_variables
+Check that student code does not use global variable assignments outside functions and classes. Constant-style assignments (all uppercase names) and `if __name__` guards are exempted.
 
 ---
 

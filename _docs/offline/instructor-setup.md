@@ -39,7 +39,7 @@ Click **Add Test** to create a new test for the selected assignment. Choose a te
 | **Performance** | Execution time limits and solution comparison | `performance`, `performance_compare_function` |
 | **File** | Submitted filename format and conventions | `file_name`, `file_naming_convention` |
 
-See the [Test Types Reference](/docs/offline/test-types-reference/) for the full catalog of 55+ test types with configuration details.
+See the [Test Types Reference](/docs/offline/test-types-reference/) for the full catalog of 60+ test types with configuration details.
 
 ### Common Test Fields
 

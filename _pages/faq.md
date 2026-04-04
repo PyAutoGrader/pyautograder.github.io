@@ -36,7 +36,7 @@ groups:
       - q: How do I create assignments?
         a: >
           Download the instructor application and create a new .agrx working file. Add your test
-          cases (55+ types available), attach solution files, and configure reporting channels.
+          cases (60+ types available), attach solution files, and configure reporting channels.
           When ready, export an encrypted .agr file to distribute to students. See the
           <a href="/docs/offline/instructor-setup/">Instructor Setup</a> guide for a full walkthrough.
 
@@ -50,7 +50,7 @@ groups:
 
       - q: What types of tests can I create?
         a: >
-          PyAutoGrader supports 55+ test types including variable checks, function testing, class
+          PyAutoGrader supports 60+ test types including variable checks, function testing, class
           validation, control flow detection, matplotlib plot testing, code quality analysis
           (naming conventions, complexity, docstrings), performance benchmarks, and more. See the
           <a href="/docs/offline/test-types-reference/">Test Types Reference</a> for the full catalog.

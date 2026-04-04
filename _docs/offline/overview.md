@@ -8,7 +8,7 @@ next_doc: /docs/offline/download-and-install
 next_title: Download and Install
 ---
 
-PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted `.agr` files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.
+PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted `.agr` files. Students run the grader on their own machines, getting instant pass/fail feedback on 60+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.
 
 All three applications - the instructor editor, the student grader, and the submission server - are available as pre-built executables for Windows, macOS, and Linux.
 
