@@ -59,290 +59,244 @@
 </header>
 
   <main>
-    <div class="page-wrapper">
-
-  <div class="page-hero">
-    <div class="container">
-      <div class="product-hero-badge">Always Free</div>
-      <h1 class="page-title">Download PyAutoGrader</h1>
-      <p class="page-subtitle">Free automated Python grading for educators.</p>
-    </div>
-  </div>
-
-  <div class="container page-content">
-
-    <div class="callout">PyAutoGrader is completely <strong>free</strong> and always will be. No subscriptions, no per-student fees.</div>
-
-    <!-- WORKFLOW SECTION -->
-    <section class="content-section">
-      <h2>How It Works</h2>
-      <p>PyAutoGrader has two applications - one for instructors and one for students. The instructor creates an assignment file (.agr) with tests, solutions, and configuration. Students load the .agr file into their app, run the grader on their code, and get instant feedback. Results can be collected via PDF export, email, Google Sheets, or a self-hosted server.
-</p>
-
-      <!-- DIAGRAM
-           To replace this SVG with your own image:
-           1. Add your image to assets/images/ (e.g. offline-workflow.png)
-           2. Delete the {% include offline-diagram.svg %} line below
-           3. Uncomment the <img> line and update the filename to match your image
-           4. Adjust the max-width if needed
-      -->
-      <div class="workflow-diagram">
-        <!-- <img src="/dev/assets/images/offline-workflow.png" alt="Offline Autograder Workflow" style="max-width:100%; border-radius: 12px;" /> -->
-        <!-- Offline Autograder Workflow Diagram
-     Generated SVG — replace this include with an <img> tag if you have your own image.
-     See comments in _layouts/offline.html for instructions.
--->
-<svg viewBox="0 0 900 280" fill="none" xmlns="http://www.w3.org/2000/svg"
-     style="width:100%; max-width:900px; margin: 32px auto; display:block;">
-
-  <!-- Background -->
-  <rect width="900" height="280" rx="16" fill="#f8fafc"/>
-
-  <!-- ── STEP 1: Instructor downloads executable ── -->
-  <g transform="translate(40, 50)">
-    <!-- Box -->
-    <rect width="160" height="160" rx="12" fill="#1a2744"/>
-    <!-- Icon: download arrow -->
-    <circle cx="80" cy="64" r="28" fill="rgba(255,255,255,0.1)"/>
-    <path d="M80 46 L80 70 M70 62 L80 74 L90 62" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="60" y="76" width="40" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
-    <!-- Label -->
-    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Instructor</text>
-    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Downloads</text>
-    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Executable</text>
-    <!-- Step badge -->
-    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
-    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 1</text>
-  </g>
-
-  <!-- Arrow 1→2 -->
-  <g transform="translate(210, 118)">
-    <path d="M0 12 L50 12" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3"/>
-    <path d="M44 6 L56 12 L44 18" fill="#cbd5e1"/>
-  </g>
-
-  <!-- ── STEP 2: Instructor creates .agr file ── -->
-  <g transform="translate(272, 50)">
-    <rect width="160" height="160" rx="12" fill="#1a2744"/>
-    <!-- Icon: file -->
-    <rect x="52" y="38" width="56" height="56" rx="6" fill="rgba(255,255,255,0.1)"/>
-    <path d="M68 38 L68 52 L80 52" stroke="white" stroke-width="2" fill="none"/>
-    <rect x="63" y="60" width="34" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
-    <rect x="63" y="67" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
-    <rect x="63" y="74" width="34" height="3" rx="1.5" fill="rgba(255,255,255,0.5)"/>
-    <!-- .agr badge -->
-    <rect x="56" y="84" width="48" height="18" rx="4" fill="#4ade80"/>
-    <text x="80" y="97" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">.agr file</text>
-    <!-- Label -->
-    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Instructor</text>
-    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Creates</text>
-    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Assignment File</text>
-    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
-    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 2</text>
-  </g>
-
-  <!-- Arrow 2→3 -->
-  <g transform="translate(442, 118)">
-    <path d="M0 12 L50 12" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3"/>
-    <path d="M44 6 L56 12 L44 18" fill="#cbd5e1"/>
-  </g>
-
-  <!-- ── STEP 3: Student downloads + loads .agr ── -->
-  <g transform="translate(504, 50)">
-    <rect width="160" height="160" rx="12" fill="#1a2744"/>
-    <!-- Icon: student with file -->
-    <circle cx="80" cy="52" r="14" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2"/>
-    <path d="M55 94 C55 78 105 78 105 94" stroke="white" stroke-width="2" fill="none"/>
-    <!-- file arrow in -->
-    <path d="M80 76 L80 88" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M75 83 L80 89 L85 83" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Label -->
-    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Student</text>
-    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Downloads App</text>
-    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">&amp; Loads .agr</text>
-    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
-    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 3</text>
-  </g>
-
-  <!-- Arrow 3→4 -->
-  <g transform="translate(674, 118)">
-    <path d="M0 12 L50 12" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3"/>
-    <path d="M44 6 L56 12 L44 18" fill="#cbd5e1"/>
-  </g>
-
-  <!-- ── STEP 4: Student exports PDF, submits ── -->
-  <g transform="translate(736, 50)">
-    <rect width="160" height="160" rx="12" fill="#1a2744"/>
-    <!-- Icon: PDF / upload -->
-    <rect x="52" y="38" width="56" height="56" rx="6" fill="rgba(255,255,255,0.1)"/>
-    <rect x="56" y="70" width="48" height="18" rx="4" fill="#ef4444"/>
-    <text x="80" y="83" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="white">PDF</text>
-    <!-- Upload arrow -->
-    <path d="M80 58 L80 46 M74 52 L80 46 L86 52" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Label -->
-    <text x="80" y="118" text-anchor="middle" font-family="Sora, sans-serif" font-size="12" font-weight="700" fill="white">Student</text>
-    <text x="80" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">Exports PDF</text>
-    <text x="80" y="150" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" fill="rgba(255,255,255,0.65)">&amp; Submits to LMS</text>
-    <rect x="56" y="0" width="48" height="20" rx="10" fill="#4ade80" transform="translate(0,-10)"/>
-    <text x="80" y="5" text-anchor="middle" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#1a2744">STEP 4</text>
-  </g>
-
-  <!-- Bottom label -->
-  <text x="450" y="258" text-anchor="middle" font-family="Sora, sans-serif" font-size="11" fill="#94a3b8">
-    Both instructor and student executables are available for Windows, macOS, and Linux
-  </text>
-
-</svg>
-
-      </div>
-    </section>
-
-    <!-- INSTRUCTOR DOWNLOAD SECTION -->
-    <section class="content-section">
-      <h2>Instructor Download</h2>
-      <p>Download the instructor executable to create and manage assignment files (.agr). Your students will download their own executable separately from the Student Downloads page.
-</p>
-
-      <div class="os-download-card">
-        <div class="os-recommended">
-          <div class="os-recommended-label">Recommended for your system</div>
-          <div id="os-primary-download" class="os-primary">
-            <!-- Filled by JS -->
-          </div>
-        </div>
-        <div class="os-other-label">Other platforms</div>
-        <div class="os-other-platforms" id="os-other-downloads">
-          <!-- Filled by JS -->
-        </div>
-      </div>
-
-      
-      <p class="form-note">Always links to the latest release. Older versions are available in the <a href="https://github.com/PyAutoGrader/pyautograder-offline-releases/releases">releases archive</a>.
-</p>
-      
-    </section>
-
-    <!-- HOW IT WORKS STEPS -->
-    <section class="content-section">
-      <h2>Instructor Workflow</h2>
-      <div class="step-list">
-        
-        <div class="step-item">
-          <div class="step-number">1</div>
-          <div class="step-body">
-            <h3>Download the Instructor Executable</h3>
-            <p>Download the instructor executable for your operating system from this page.</p>
-          </div>
-        </div>
-        
-        <div class="step-item">
-          <div class="step-number">2</div>
-          <div class="step-body">
-            <h3>Create an Assignment File</h3>
-            <p>Open the instructor app and create a new assignment. Add your test cases and configure grading criteria. Save the assignment as a .agr file.
-</p>
-          </div>
-        </div>
-        
-        <div class="step-item">
-          <div class="step-number">3</div>
-          <div class="step-body">
-            <h3>Share the Assignment File</h3>
-            <p>Distribute the .agr file to your students via your LMS, email, or any file sharing method. Students download the student executable separately from the Student Downloads page.
-</p>
-          </div>
-        </div>
-        
-        <div class="step-item">
-          <div class="step-number">4</div>
-          <div class="step-body">
-            <h3>Collect Results</h3>
-            <p>Students export a PDF of their grading results and submit it to your LMS or send it to you directly.
-</p>
-          </div>
-        </div>
-        
-      </div>
-    </section>
-
-    <!-- STUDENT SECTION -->
-    <section class="content-section">
-      <h2>Are You a Student?</h2>
-      <p>If your instructor uses PyAutoGrader, head to the Student Downloads page to download your app and get setup instructions.
-</p>
-      
-      <div class="section-actions">
-        
-        <a href="/dev/student/offline/" class="btn btn-primary">Student Downloads</a>
-        
-      </div>
-      
-    </section>
-
-    <!-- LEGACY SECTION (optional) -->
-    
-
+    <!-- HERO -->
+<div class="page-hero">
+  <div class="container" style="position:relative;">
+    <div class="product-hero-badge">Always Free</div>
+    <h1 class="page-title">Download PyAutoGrader</h1>
+    <p class="page-subtitle">Free automated Python grading for educators.</p>
   </div>
 </div>
 
-<script>
-// OS Detection - recommends the right download based on the visitor's platform
-// Downloads are defined in the page front matter and passed via data attributes
-const downloads = {
-  windows: {
-    label: "Windows",
-    icon: "🪟",
-    url: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.exe",
-    filename: "PyAutoGrader-Offline-Instructor.exe"
-  },
-  mac: {
-    label: "macOS",
-    icon: "🍎",
-    url: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.zip",
-    filename: "PyAutoGrader-Offline-Instructor.zip"
-  },
-  linux: {
-    label: "Linux",
-    icon: "🐧",
-    url: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor",
-    filename: "PyAutoGrader-Offline-Instructor"
-  }
-};
+<!-- NOTICE -->
+<section class="landing-section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="dl-notice">
+      PyAutoGrader is completely <strong>free</strong> and always will be. No subscriptions, no per-student fees.
+    </div>
+  </div>
+</section>
 
+<!-- HOW IT WORKS -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">
+        PyAutoGrader has three applications: an instructor editor, a student grader, and an optional
+        submission server. The instructor creates an encrypted assignment file (.agr) with tests and
+        configuration. Students load the .agr file, run the grader, and get instant feedback.
+        Results can be collected via PDF, email, Google Sheets, or the self-hosted server.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR DOWNLOAD -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Instructor</div>
+      <h2 class="section-title">Instructor Application</h2>
+      <p class="section-subtitle">Create assignments, add tests, configure reporting, and batch grade submissions.</p>
+    </div>
+    <div class="dl-card">
+      <div class="os-download-card" style="max-width:none; margin:0;">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="instructor-primary-download" class="os-primary"></div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="instructor-other-downloads"></div>
+      </div>
+      <p class="form-note" style="margin-top:16px; font-size:0.82rem; color:var(--text-muted);">
+        Always links to the latest release. Older versions available in the
+        <a href="https://github.com/PyAutoGrader/pyautograder-offline-releases/releases" style="color:var(--emerald-dark);">releases archive</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVER DOWNLOAD -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Server</div>
+      <h2 class="section-title">Submission Server</h2>
+      <p class="section-subtitle">Optional. Self-hosted dashboard with analytics, plagiarism detection, and Canvas export.</p>
+    </div>
+    <div class="dl-card">
+      <div class="os-download-card" style="max-width:none; margin:0;">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="server-primary-download" class="os-primary"></div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="server-other-downloads"></div>
+      </div>
+      <p class="form-note" style="margin-top:16px; font-size:0.82rem; color:var(--text-muted);">
+        See <a href="/docs/offline/server-setup/" style="color:var(--emerald-dark);">Server Setup</a> for installation and configuration instructions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE FILES & RESOURCES -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Resources</div>
+      <h2 class="section-title">Example Files and Resources</h2>
+      <p class="section-subtitle">Example assignments, templates, and documentation to help you get started.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-card-icon">📝</div>
+        <h4>Example .agrx Files</h4>
+        <p>Pre-built assignment files you can open in the instructor editor to see how tests are configured.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">📄</div>
+        <h4>Getting Started Guide (PDF)</h4>
+        <p>Step-by-step PDF guide for creating your first assignment and distributing it to students.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">🐍</div>
+        <h4>Example Solution File</h4>
+        <p>A sample .py solution file showing how to structure code for solution-comparison tests.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">📊</div>
+        <h4>Example Data File</h4>
+        <p>A sample CSV data file demonstrating how bundled data files work with student assignments.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">⚙️</div>
+        <h4>Server Config Template</h4>
+        <p>A starter <code>server_config.json</code> with documented fields for configuring the submission server.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">📚</div>
+        <h4>Documentation</h4>
+        <p>Full documentation covering instructor setup, test types, reporting, roster management, and more.</p>
+        <a href="/docs/getting-started/" class="btn btn-outline btn-sm">View Docs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT REDIRECT -->
+<section class="landing-section">
+  <div class="container">
+    <div class="dl-student-callout">
+      <div class="dl-student-callout-icon">🎓</div>
+      <div>
+        <h3>Are You a Student?</h3>
+        <p>If your instructor uses PyAutoGrader, head to the Student Downloads page to get the student app and setup instructions.</p>
+        <a href="/student/offline/" class="btn btn-primary btn-sm">Student Downloads</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="landing-section--free">
+  <div class="container" style="text-align:center; position:relative;">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--white); margin-bottom:12px;">Need Help Getting Started?</h2>
+    <p style="color:var(--text-on-dark-muted); margin-bottom:28px; font-size:1.05rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      The documentation covers everything from creating your first assignment to configuring the submission server.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="/docs/offline/instructor-setup/" class="btn btn-primary">Instructor Setup Guide</a>
+      <a href="/docs/getting-started/" class="btn btn-outline" style="border-color:var(--emerald); color:var(--emerald);">Full Documentation</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// OS Detection
 function detectOS() {
-  const p = navigator.platform.toLowerCase();
-  const u = navigator.userAgent.toLowerCase();
-  if (p.includes('win') || u.includes('windows')) return 'windows';
-  if (p.includes('mac') || u.includes('mac')) return 'mac';
+  var p = (navigator.platform || '').toLowerCase();
+  var u = (navigator.userAgent || '').toLowerCase();
+  if (p.indexOf('win') !== -1 || u.indexOf('windows') !== -1) return 'windows';
+  if (p.indexOf('mac') !== -1 || u.indexOf('mac') !== -1) return 'mac';
   return 'linux';
 }
 
-function renderDownloads() {
-  const detected = detectOS();
-  const primary = document.getElementById('os-primary-download');
-  const others = document.getElementById('os-other-downloads');
-  const dl = downloads[detected];
+function renderOSDownload(config, primaryId, othersId) {
+  var detected = detectOS();
+  var primary = document.getElementById(primaryId);
+  var others = document.getElementById(othersId);
+  var dl = config[detected];
 
-  primary.innerHTML = `
-    <a href="${dl.url}" class="btn btn-primary btn-download" ${dl.url === '#' ? 'aria-disabled="true"' : ''}>
-      <span>${dl.icon}</span>
-      <span>Download for ${dl.label}</span>
-      ${dl.url === '#' ? '<span class="coming-soon-inline">Coming Soon</span>' : ''}
-    </a>
-    ${dl.url !== '#' ? `<span class="download-filename">${dl.filename}</span>` : ''}
-  `;
+  primary.innerHTML =
+    '<a href="' + dl.url + '" class="btn btn-primary btn-download"' +
+    (dl.url === '#' ? ' aria-disabled="true" style="pointer-events:none;opacity:0.5;"' : '') + '>' +
+    '<span>' + dl.icon + '</span>' +
+    '<span>Download for ' + dl.label + '</span>' +
+    (dl.url === '#' ? '<span class="coming-soon-inline">Coming Soon</span>' : '') +
+    '</a>' +
+    (dl.url !== '#' ? '<span class="download-filename">' + dl.filename + '</span>' : '');
 
-  const otherKeys = Object.keys(downloads).filter(k => k !== detected);
-  others.innerHTML = otherKeys.map(k => {
-    const o = downloads[k];
-    return `<a href="${o.url}" class="btn btn-outline btn-sm ${o.url === '#' ? 'btn-disabled' : ''}">
-      ${o.icon} ${o.label} ${o.url === '#' ? '<span class="coming-soon-inline">Soon</span>' : ''}
-    </a>`;
+  var otherKeys = Object.keys(config).filter(function(k) { return k !== detected; });
+  others.innerHTML = otherKeys.map(function(k) {
+    var o = config[k];
+    return '<a href="' + o.url + '" class="btn btn-outline btn-sm' +
+      (o.url === '#' ? ' btn-disabled' : '') + '">' +
+      o.icon + ' ' + o.label +
+      (o.url === '#' ? ' <span class="coming-soon-inline">Soon</span>' : '') +
+      '</a>';
   }).join('');
 }
 
-renderDownloads();
+// Instructor Application downloads
+var instructorDownloads = {
+  windows: {
+    label: 'Windows', icon: '\uD83E\uDE9F',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.exe',
+    filename: 'PyAutoGrader-Offline-Instructor.exe'
+  },
+  mac: {
+    label: 'macOS', icon: '\uD83C\uDF4E',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.zip',
+    filename: 'PyAutoGrader-Offline-Instructor.zip'
+  },
+  linux: {
+    label: 'Linux', icon: '\uD83D\uDC27',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor',
+    filename: 'PyAutoGrader-Offline-Instructor'
+  }
+};
+
+// Submission Server downloads
+var serverDownloads = {
+  windows: {
+    label: 'Windows', icon: '\uD83E\uDE9F',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.exe',
+    filename: 'PyAutoGrader-Offline-SubmissionServer.exe'
+  },
+  mac: {
+    label: 'macOS', icon: '\uD83C\uDF4E',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.zip',
+    filename: 'PyAutoGrader-Offline-SubmissionServer.zip'
+  },
+  linux: {
+    label: 'Linux', icon: '\uD83D\uDC27',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer',
+    filename: 'PyAutoGrader-Offline-SubmissionServer'
+  }
+};
+
+renderOSDownload(instructorDownloads, 'instructor-primary-download', 'instructor-other-downloads');
+renderOSDownload(serverDownloads, 'server-primary-download', 'server-other-downloads');
 </script>
+
+
   </main>
   <footer class="site-footer">
   <div class="container">

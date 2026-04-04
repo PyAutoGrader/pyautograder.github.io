@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server API Reference | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Server API Reference | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Server API Reference" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="REST API reference for the PyAutoGrader submission server. All endpoints require Bearer token authentication." />
+<meta property="og:description" content="REST API reference for the PyAutoGrader submission server. All endpoints require Bearer token authentication." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/api-reference/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/api-reference/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T21:37:23+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Server API Reference" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T21:37:23+00:00","datePublished":"2026-04-04T21:37:23+00:00","description":"REST API reference for the PyAutoGrader submission server. All endpoints require Bearer token authentication.","headline":"Server API Reference","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/api-reference/"},"url":"https://pyautograder.github.io/dev/docs/offline/api-reference/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/features" >Features</a>
+      <a href="/dev/server" >Server</a>
+      <a href="/dev/docs/getting-started" class="active">Docs</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Overview</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/test-types-reference/" >Test Types Reference</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/api-reference/" class="active">Server API Reference</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/troubleshooting/" >Troubleshooting</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/dev/docs/getting-started">Docs</a>
+       / <span>Offline Autograder</span>
+      / <span>Server API Reference</span>
+    </div>
+    <h1>Server API Reference</h1>
+    <p>REST API reference for the PyAutoGrader submission server. All endpoints require Bearer token authentication.</p>
+
+<p>Base URL: <code class="language-plaintext highlighter-rouge">http://localhost:5000</code> (or your configured host/port)</p>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>All API endpoints require a Bearer token in the <code class="language-plaintext highlighter-rouge">Authorization</code> header:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Authorization: Bearer your-api-key-here
+</code></pre></div></div>
+
+<p>The API key is set via <code class="language-plaintext highlighter-rouge">--api-key</code> on the command line or <code class="language-plaintext highlighter-rouge">api_key</code> in <code class="language-plaintext highlighter-rouge">server_config.json</code>. If not explicitly set, the dashboard password is used as the API key.</p>
+
+<hr />
+
+<h2 id="endpoints">Endpoints</h2>
+
+<h3 id="post-apisubmit">POST /api/submit</h3>
+
+<p>Receive a student submission. This is the endpoint the student app calls after grading.</p>
+
+<p><strong>Request body (JSON):</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">studentName</code></td>
+      <td>Yes</td>
+      <td>Student’s name or display name</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">assignmentName</code></td>
+      <td>Yes</td>
+      <td>Assignment identifier</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">courseName</code></td>
+      <td>No</td>
+      <td>Course name (e.g., “ENGR 101”)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">section</code></td>
+      <td>No</td>
+      <td>Section number</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">semester</code></td>
+      <td>No</td>
+      <td>Semester string (e.g., “Fall 2026”)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">instructor</code></td>
+      <td>No</td>
+      <td>Instructor name</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">studentFile</code></td>
+      <td>No</td>
+      <td>Original filename of the student’s .py file</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">studentCode</code></td>
+      <td>No</td>
+      <td>Full source code of the student’s file</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">earnedPts</code></td>
+      <td>No</td>
+      <td>Points earned</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">totalPts</code></td>
+      <td>No</td>
+      <td>Total possible points</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pct</code></td>
+      <td>No</td>
+      <td>Score percentage</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">passedCount</code></td>
+      <td>No</td>
+      <td>Number of tests passed</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">totalCount</code></td>
+      <td>No</td>
+      <td>Total number of tests</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tests</code></td>
+      <td>No</td>
+      <td>Array of per-test results (see below)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">timestamp</code></td>
+      <td>No</td>
+      <td>Submission timestamp</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">computerName</code></td>
+      <td>No</td>
+      <td>Student’s computer hostname</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">username</code></td>
+      <td>No</td>
+      <td>Instructor-configured username</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">studentUsername</code></td>
+      <td>No</td>
+      <td>Student’s system username</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">additionalCode</code></td>
+      <td>No</td>
+      <td>Object mapping filenames to code (multi-file submissions)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Per-test object format:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Test name/description</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">passed</code></td>
+      <td>Boolean pass/fail</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">points</code></td>
+      <td>Points earned for this test</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">totalPts</code></td>
+      <td>Points possible for this test</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">feedback</code></td>
+      <td>Feedback message</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Success response (200):</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Duplicate warning (200):</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"warning"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duplicate submission detected (identical code submitted recently)."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Error responses:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Cause</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>400</td>
+      <td>Request body is not valid JSON or missing required fields</td>
+    </tr>
+    <tr>
+      <td>401</td>
+      <td>No Bearer token provided</td>
+    </tr>
+    <tr>
+      <td>403</td>
+      <td>API key does not match</td>
+    </tr>
+    <tr>
+      <td>429</td>
+      <td>Rate limit exceeded (see below)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="get-apihealth">GET /api/health</h3>
+
+<p>Health check endpoint. Used by the student app for pre-flight server verification.</p>
+
+<p><strong>Response (200):</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"ok"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"healthy"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="get-apiroster">GET /api/roster</h3>
+
+<p>Fetch the student roster for a given course/section/semester. Used by the student app to populate a name dropdown when <a href="/docs/offline/roster-setup/">roster validation</a> is configured.</p>
+
+<p><strong>Query parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">course</code></td>
+      <td>Course name (e.g., “ENGR 101”)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">section</code></td>
+      <td>Section number (e.g., “001”)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">semester</code></td>
+      <td>Semester string (e.g., “Fall 2026”)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response (200):</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"roster"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jsmith"</span><span class="p">,</span><span class="w"> </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe"</span><span class="p">,</span><span class="w"> </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="rate-limiting">Rate Limiting</h2>
+
+<p>The server enforces a rate limit of <strong>10 submissions per 60 seconds per IP address</strong>. When exceeded, the server returns HTTP 429. The counter resets after 60 seconds of inactivity from that IP.</p>
+
+<p>Rate limiting applies only to <code class="language-plaintext highlighter-rouge">/api/submit</code>. Health checks and roster queries are not rate-limited.</p>
+
+<p>If students share a network (lab computers behind NAT), the limit applies to the shared public IP.</p>
+
+<hr />
+
+<h2 id="webhook-notifications">Webhook Notifications</h2>
+
+<p>When <code class="language-plaintext highlighter-rouge">webhook_url</code> is configured in <code class="language-plaintext highlighter-rouge">server_config.json</code>, the server sends a POST request to that URL after each submission is stored.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>Add <code class="language-plaintext highlighter-rouge">webhook_url</code> to your <code class="language-plaintext highlighter-rouge">server_config.json</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-password"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"webhook_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your-service.com/hook"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="payload">Payload</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submission"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"studentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"assignmentName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HW1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"courseName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGR 101"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"earnedPts"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalPts"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">80.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-15 14:30:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The webhook payload does not include student code or detailed test results to keep it small. Use the dashboard or database for full submission details.</p>
+
+<h3 id="behavior">Behavior</h3>
+
+<ul>
+  <li>Webhooks are fire-and-forget. Failures are silently ignored.</li>
+  <li>No retry logic. If the target is down, the notification is lost.</li>
+  <li>The POST is sent after the submission is stored in the database.</li>
+</ul>
+
+<h3 id="use-cases">Use Cases</h3>
+
+<ul>
+  <li>Slack/Discord notifications when students submit</li>
+  <li>Custom dashboards or monitoring systems</li>
+  <li>Triggering downstream workflows (CI, LMS sync, etc.)</li>
+</ul>
+
+<hr />
+
+<h2 id="assignment-auto-discovery">Assignment Auto-Discovery</h2>
+
+<p>When a submission includes <code class="language-plaintext highlighter-rouge">courseName</code> and <code class="language-plaintext highlighter-rouge">assignmentName</code>, the server automatically registers that assignment in the database if it has not been seen before. This populates the Assignments tab in the class detail view, where instructors can set cutoff dates.</p>
+
+<p>No action is required from the API client. Auto-discovery is transparent.</p>
+
+<hr />
+
+<h2 id="late-flagging">Late Flagging</h2>
+
+<p>If an assignment has a cutoff date set (via the dashboard), new submissions are automatically evaluated as late or on-time based on their <code class="language-plaintext highlighter-rouge">timestamp</code> field. The <code class="language-plaintext highlighter-rouge">is_late</code> status is stored on the submission record and shown in the dashboard and exports.</p>
+
+<p>Per-student deadline overrides (set via the dashboard) take precedence over the assignment-level cutoff.</p>
+
+<hr />
+
+<h2 id="duplicate-detection">Duplicate Detection</h2>
+
+<p>When a submission is received, the server hashes the student code (SHA-256) and checks it against submissions from the same student and assignment within the last 5 minutes. If a match is found, the submission is still stored but the response includes a <code class="language-plaintext highlighter-rouge">warning</code> field.</p>
+
+<p>Duplicates are never rejected. The warning is informational only, allowing the student app to notify the user.</p>
+
+    <div class="doc-footer">
+      
+      <a href="/dev/docs/offline/server-setup" class="doc-nav-btn prev">&#x2190; Server Setup</a>
+      
+      
+      <a href="/dev/docs/offline/troubleshooting" class="doc-nav-btn next">Troubleshooting &#x2192;</a>
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>

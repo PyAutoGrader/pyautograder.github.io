@@ -11,17 +11,17 @@
 <meta property="og:title" content="Test Types Reference" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected)." />
-<meta property="og:description" content="PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected)." />
+<meta name="description" content="PyAutoGrader supports 60+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected)." />
+<meta property="og:description" content="PyAutoGrader supports 60+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected)." />
 <link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/test-types-reference/" />
 <meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/test-types-reference/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-04T17:53:13+00:00" />
+<meta property="article:published_time" content="2026-04-04T21:37:23+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Test Types Reference" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:53:13+00:00","datePublished":"2026-04-04T17:53:13+00:00","description":"PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).","headline":"Test Types Reference","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/test-types-reference/"},"url":"https://pyautograder.github.io/dev/docs/offline/test-types-reference/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T21:37:23+00:00","datePublished":"2026-04-04T21:37:23+00:00","description":"PyAutoGrader supports 60+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).","headline":"Test Types Reference","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/test-types-reference/"},"url":"https://pyautograder.github.io/dev/docs/offline/test-types-reference/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -99,6 +99,8 @@
           
             
           
+            
+          
         </ul>
       </div>
       
@@ -149,6 +151,10 @@
             
           
             
+          <li><a href="/dev/docs/offline/api-reference/" >Server API Reference</a></li>
+            
+          
+            
           <li><a href="/dev/docs/offline/troubleshooting/" >Troubleshooting</a></li>
             
           
@@ -164,7 +170,7 @@
       / <span>Test Types Reference</span>
     </div>
     <h1>Test Types Reference</h1>
-    <p>PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the <a href="/docs/offline/instructor-setup/#common-test-fields">common fields</a> shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).</p>
+    <p>PyAutoGrader supports 60+ test types organized by category. Each test has type-specific configuration fields plus the <a href="/docs/offline/instructor-setup/#common-test-fields">common fields</a> shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).</p>
 
 <h2 id="variable-tests">Variable Tests</h2>
 
@@ -243,6 +249,13 @@
   <li><strong>tolerance</strong> - numeric tolerance</li>
 </ul>
 
+<h3 id="dataframe_columns">dataframe_columns</h3>
+<p>Check that a pandas DataFrame has the expected columns.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the DataFrame variable</li>
+  <li><strong>expected_columns</strong> - comma-separated list of expected column names</li>
+</ul>
+
 <hr />
 
 <h2 id="function-tests">Function Tests</h2>
@@ -274,6 +287,23 @@
   <li><strong>solution_file_id</strong> - ID of the solution file containing the reference function</li>
   <li><strong>test_inputs</strong> - list of input argument sets to test</li>
   <li><strong>tolerance</strong> - numeric tolerance for comparing outputs</li>
+</ul>
+
+<h3 id="function_signature">function_signature</h3>
+<p>Check a function’s parameter signature.</p>
+<ul>
+  <li><strong>function_name</strong> (required) - name of the function</li>
+  <li><strong>expected_params</strong> - comma-separated list of expected parameter names</li>
+  <li><strong>expected_param_count</strong> - expected number of parameters</li>
+  <li><strong>check_defaults</strong> - whether to check default values</li>
+</ul>
+
+<h3 id="return_type">return_type</h3>
+<p>Check that a function returns the expected type.</p>
+<ul>
+  <li><strong>function_name</strong> (required) - name of the function</li>
+  <li><strong>expected_type</strong> - expected return type name (e.g., <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">dict</code>)</li>
+  <li><strong>test_inputs</strong> - inputs to pass to the function for testing</li>
 </ul>
 
 <hr />
@@ -356,6 +386,12 @@
 <ul>
   <li><strong>expected_text</strong> (required) - text to look for in stdout</li>
   <li><strong>case_sensitive</strong> - whether the search is case-sensitive</li>
+</ul>
+
+<h3 id="import_used">import_used</h3>
+<p>Check that a specific module is imported.</p>
+<ul>
+  <li><strong>module_name</strong> (required) - name of the module (e.g., <code class="language-plaintext highlighter-rouge">numpy</code>, <code class="language-plaintext highlighter-rouge">matplotlib.pyplot</code>)</li>
 </ul>
 
 <hr />
@@ -537,6 +573,9 @@
 <ul>
   <li><strong>allow_conditional</strong> - whether imports inside if/try blocks are acceptable (default: false)</li>
 </ul>
+
+<h3 id="no_global_variables">no_global_variables</h3>
+<p>Check that student code does not use global variable assignments outside functions and classes. Constant-style assignments (all uppercase names) and <code class="language-plaintext highlighter-rouge">if __name__</code> guards are exempted.</p>
 
 <hr />
 
