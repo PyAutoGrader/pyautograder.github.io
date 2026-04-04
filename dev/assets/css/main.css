@@ -2062,7 +2062,6 @@ a:hover { color: var(--emerald-deeper); }
   font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: 32px;
-  max-width: 620px;
   line-height: 1.7;
 }
 
