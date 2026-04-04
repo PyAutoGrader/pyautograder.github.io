@@ -1,59 +1,242 @@
 ---
-layout: offline
+layout: default
 title: Download PyAutoGrader
-subtitle: Free automated Python grading for educators.
 permalink: /offline/
-badge: Always Free
-
-notice: PyAutoGrader is completely <strong>free</strong> and always will be. No subscriptions, no per-student fees.
-
-workflow:
-  title: How It Works
-  body: >
-    PyAutoGrader has two applications - one for instructors and one for students.
-    The instructor creates an assignment file (.agr) with tests, solutions, and configuration.
-    Students load the .agr file into their app, run the grader on their code, and get instant
-    feedback. Results can be collected via PDF export, email, Google Sheets, or a self-hosted server.
-
-download:
-  title: Instructor Download
-  body: >
-    Download the instructor executable to create and manage assignment files (.agr).
-    Your students will download their own executable separately from the Student Downloads page.
-  # Replace these URLs with your actual release download links
-  # e.g. https://github.com/PyAutoGrader/releases/download/v1.0.0/PyAutoGrader-Instructor-Windows.exe
-  windows: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.exe"
-  mac: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.zip"
-  linux: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor"
-  note: >
-    Always links to the latest release. Older versions are available in the
-    <a href="https://github.com/PyAutoGrader/pyautograder-offline-releases/releases">releases archive</a>.
-
-steps:
-  title: Instructor Workflow
-  items:
-    - title: Download the Instructor Executable
-      body: Download the instructor executable for your operating system from this page.
-    - title: Create an Assignment File
-      body: >
-        Open the instructor app and create a new assignment. Add your test cases and configure
-        grading criteria. Save the assignment as a .agr file.
-    - title: Share the Assignment File
-      body: >
-        Distribute the .agr file to your students via your LMS, email, or any file sharing method.
-        Students download the student executable separately from the Student Downloads page.
-    - title: Collect Results
-      body: >
-        Students export a PDF of their grading results and submit it to your LMS or send it to you directly.
-
-student:
-  title: Are You a Student?
-  body: >
-    If your instructor uses PyAutoGrader, head to the Student Downloads page
-    to download your app and get setup instructions.
-  cta:
-    - label: Student Downloads
-      url: /student/offline/
-      style: btn-primary
-
 ---
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container" style="position:relative;">
+    <div class="product-hero-badge">Always Free</div>
+    <h1 class="page-title">Download PyAutoGrader</h1>
+    <p class="page-subtitle">Free automated Python grading for educators.</p>
+  </div>
+</div>
+
+<!-- NOTICE -->
+<section class="landing-section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="dl-notice">
+      PyAutoGrader is completely <strong>free</strong> and always will be. No subscriptions, no per-student fees.
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">
+        PyAutoGrader has three applications: an instructor editor, a student grader, and an optional
+        submission server. The instructor creates an encrypted assignment file (.agr) with tests and
+        configuration. Students load the .agr file, run the grader, and get instant feedback.
+        Results can be collected via PDF, email, Google Sheets, or the self-hosted server.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR DOWNLOAD -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Instructor</div>
+      <h2 class="section-title">Instructor Application</h2>
+      <p class="section-subtitle">Create assignments, add tests, configure reporting, and batch grade submissions.</p>
+    </div>
+    <div class="dl-card">
+      <div class="os-download-card" style="max-width:none; margin:0;">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="instructor-primary-download" class="os-primary"></div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="instructor-other-downloads"></div>
+      </div>
+      <p class="form-note" style="margin-top:16px; font-size:0.82rem; color:var(--text-muted);">
+        Always links to the latest release. Older versions available in the
+        <a href="https://github.com/PyAutoGrader/pyautograder-offline-releases/releases" style="color:var(--emerald-dark);">releases archive</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVER DOWNLOAD -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Server</div>
+      <h2 class="section-title">Submission Server</h2>
+      <p class="section-subtitle">Optional. Self-hosted dashboard with analytics, plagiarism detection, and Canvas export.</p>
+    </div>
+    <div class="dl-card">
+      <div class="os-download-card" style="max-width:none; margin:0;">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="server-primary-download" class="os-primary"></div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="server-other-downloads"></div>
+      </div>
+      <p class="form-note" style="margin-top:16px; font-size:0.82rem; color:var(--text-muted);">
+        See <a href="/docs/offline/server-setup/" style="color:var(--emerald-dark);">Server Setup</a> for installation and configuration instructions.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE FILES & RESOURCES -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Resources</div>
+      <h2 class="section-title">Example Files and Resources</h2>
+      <p class="section-subtitle">Example assignments, templates, and documentation to help you get started.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <div class="resource-card-icon">📝</div>
+        <h4>Example .agrx Files</h4>
+        <p>Pre-built assignment files you can open in the instructor editor to see how tests are configured.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">📄</div>
+        <h4>Getting Started Guide (PDF)</h4>
+        <p>Step-by-step PDF guide for creating your first assignment and distributing it to students.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">🐍</div>
+        <h4>Example Solution File</h4>
+        <p>A sample .py solution file showing how to structure code for solution-comparison tests.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">📊</div>
+        <h4>Example Data File</h4>
+        <p>A sample CSV data file demonstrating how bundled data files work with student assignments.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">⚙️</div>
+        <h4>Server Config Template</h4>
+        <p>A starter <code>server_config.json</code> with documented fields for configuring the submission server.</p>
+        <span class="btn btn-sm btn-disabled">Coming Soon</span>
+      </div>
+      <div class="resource-card">
+        <div class="resource-card-icon">📚</div>
+        <h4>Documentation</h4>
+        <p>Full documentation covering instructor setup, test types, reporting, roster management, and more.</p>
+        <a href="/docs/getting-started/" class="btn btn-outline btn-sm">View Docs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT REDIRECT -->
+<section class="landing-section">
+  <div class="container">
+    <div class="dl-student-callout">
+      <div class="dl-student-callout-icon">🎓</div>
+      <div>
+        <h3>Are You a Student?</h3>
+        <p>If your instructor uses PyAutoGrader, head to the Student Downloads page to get the student app and setup instructions.</p>
+        <a href="/student/offline/" class="btn btn-primary btn-sm">Student Downloads</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="landing-section--free">
+  <div class="container" style="text-align:center; position:relative;">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--white); margin-bottom:12px;">Need Help Getting Started?</h2>
+    <p style="color:var(--text-on-dark-muted); margin-bottom:28px; font-size:1.05rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      The documentation covers everything from creating your first assignment to configuring the submission server.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="/docs/offline/instructor-setup/" class="btn btn-primary">Instructor Setup Guide</a>
+      <a href="/docs/getting-started/" class="btn btn-outline" style="border-color:var(--emerald); color:var(--emerald);">Full Documentation</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// OS Detection
+function detectOS() {
+  var p = (navigator.platform || '').toLowerCase();
+  var u = (navigator.userAgent || '').toLowerCase();
+  if (p.indexOf('win') !== -1 || u.indexOf('windows') !== -1) return 'windows';
+  if (p.indexOf('mac') !== -1 || u.indexOf('mac') !== -1) return 'mac';
+  return 'linux';
+}
+
+function renderOSDownload(config, primaryId, othersId) {
+  var detected = detectOS();
+  var primary = document.getElementById(primaryId);
+  var others = document.getElementById(othersId);
+  var dl = config[detected];
+
+  primary.innerHTML =
+    '<a href="' + dl.url + '" class="btn btn-primary btn-download"' +
+    (dl.url === '#' ? ' aria-disabled="true" style="pointer-events:none;opacity:0.5;"' : '') + '>' +
+    '<span>' + dl.icon + '</span>' +
+    '<span>Download for ' + dl.label + '</span>' +
+    (dl.url === '#' ? '<span class="coming-soon-inline">Coming Soon</span>' : '') +
+    '</a>' +
+    (dl.url !== '#' ? '<span class="download-filename">' + dl.filename + '</span>' : '');
+
+  var otherKeys = Object.keys(config).filter(function(k) { return k !== detected; });
+  others.innerHTML = otherKeys.map(function(k) {
+    var o = config[k];
+    return '<a href="' + o.url + '" class="btn btn-outline btn-sm' +
+      (o.url === '#' ? ' btn-disabled' : '') + '">' +
+      o.icon + ' ' + o.label +
+      (o.url === '#' ? ' <span class="coming-soon-inline">Soon</span>' : '') +
+      '</a>';
+  }).join('');
+}
+
+// Instructor Application downloads
+var instructorDownloads = {
+  windows: {
+    label: 'Windows', icon: '\uD83E\uDE9F',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.exe',
+    filename: 'PyAutoGrader-Offline-Instructor.exe'
+  },
+  mac: {
+    label: 'macOS', icon: '\uD83C\uDF4E',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor.zip',
+    filename: 'PyAutoGrader-Offline-Instructor.zip'
+  },
+  linux: {
+    label: 'Linux', icon: '\uD83D\uDC27',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Instructor',
+    filename: 'PyAutoGrader-Offline-Instructor'
+  }
+};
+
+// Submission Server downloads
+var serverDownloads = {
+  windows: {
+    label: 'Windows', icon: '\uD83E\uDE9F',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.exe',
+    filename: 'PyAutoGrader-Offline-SubmissionServer.exe'
+  },
+  mac: {
+    label: 'macOS', icon: '\uD83C\uDF4E',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.zip',
+    filename: 'PyAutoGrader-Offline-SubmissionServer.zip'
+  },
+  linux: {
+    label: 'Linux', icon: '\uD83D\uDC27',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer',
+    filename: 'PyAutoGrader-Offline-SubmissionServer'
+  }
+};
+
+renderOSDownload(instructorDownloads, 'instructor-primary-download', 'instructor-other-downloads');
+renderOSDownload(serverDownloads, 'server-primary-download', 'server-other-downloads');
+</script>

@@ -49,6 +49,5 @@ fields:
     required: true
 
 form_note: >
-  This form uses Formspree for email delivery. Want a test type we do not support?
-  Describe what you need and we will see if we can add it.
+  Want a test type we do not support? Describe what you need and we will see if we can add it.
 ---

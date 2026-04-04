@@ -1,47 +1,159 @@
 ---
-layout: student-product
-title: Offline Autograder - Student Download
-subtitle: Download the student executable and get started.
+layout: default
+title: Student Download - PyAutoGrader
 permalink: /student/offline/
-badge: Free
-
-notice: Your instructor should provide you with a <strong>.agr assignment file</strong>. You will need it after installing the app.
-
-intro: >
-  Download the student executable below. Once installed, open it and load the .agr file
-  your instructor gave you to begin your assignment.
-
-download:
-  title: Download Student App
-  body: Select your operating system to download the Offline Autograder student executable.
-  # Replace these with real download URLs when available
-  # e.g. https://github.com/PyAutoGrader/releases/download/v1.0.0/PyAutoGrader-Student-Windows.exe
-  windows: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.exe"
-  windows_filename: PyAutoGrader-Offline-Student.exe
-  mac: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.zip"
-  mac_filename: PyAutoGrader-Offline-Student.zip
-  linux: "https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student"
-  linux_filename: PyAutoGrader-Offline-Student
-  note: The application is unsigned. For MAC, you will need to attempt to open the file, then navigate to Settings, Privacy and Security, and Open Anyways.
-
-steps:
-  title: Getting Started
-  items:
-    - title: Download the App
-      body: Download the student executable for your operating system using the button above.
-    - title: Open the App
-      body: Run the downloaded file. On macOS you may need to right-click and select Open the first time.
-    - title: Load Your Assignment
-      body: Click "Load Assignment" and select the .agr file your instructor provided.
-    - title: Complete and Export
-      body: >
-        Work through your assignment in the app. When finished, export your results as a PDF
-        and submit it to your LMS or send it to your instructor as directed.
-
-docs:
-  body: Need more help? Check the documentation for detailed setup instructions.
-  cta:
-    - label: Student Setup Docs
-      url: /docs/offline/student-usage/
-      style: btn-outline
 ---
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container" style="position:relative;">
+    <div class="product-hero-badge">Free</div>
+    <h1 class="page-title">Student Download</h1>
+    <p class="page-subtitle">Download the student executable and get started.</p>
+  </div>
+</div>
+
+<!-- NOTICE -->
+<section class="landing-section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="dl-notice">
+      Your instructor should provide you with a <strong>.agr assignment file</strong>. You will need it after installing the app.
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Download Student App</h2>
+      <p class="section-subtitle">Select your operating system to download the PyAutoGrader student executable.</p>
+    </div>
+    <div class="dl-card">
+      <div class="os-download-card" style="max-width:none; margin:0;">
+        <div class="os-recommended">
+          <div class="os-recommended-label">Recommended for your system</div>
+          <div id="student-primary-download" class="os-primary"></div>
+        </div>
+        <div class="os-other-label">Other platforms</div>
+        <div class="os-other-platforms" id="student-other-downloads"></div>
+      </div>
+      <p class="form-note" style="margin-top:16px; font-size:0.82rem; color:var(--text-muted);">
+        The application is unsigned. On macOS, you may need to right-click and select <strong>Open</strong>,
+        then go to <strong>Settings > Privacy & Security > Open Anyway</strong>.
+        On Windows, click <strong>More info > Run anyway</strong> if SmartScreen appears.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GETTING STARTED -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Setup</div>
+      <h2 class="section-title">Getting Started</h2>
+    </div>
+    <div class="workflow-grid" style="max-width:960px; margin:0 auto;">
+      <div class="workflow-step">
+        <div class="workflow-number">1</div>
+        <h3>Download</h3>
+        <p>Download the student executable for your operating system using the button above.</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-number">2</div>
+        <h3>Open the App</h3>
+        <p>Run the downloaded file. On macOS, right-click and select Open the first time. On Windows, click "More info" then "Run anyway."</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-number">3</div>
+        <h3>Load Assignment</h3>
+        <p>Click "Load Assignment" and select the .agr file your instructor provided. Enter your name when prompted.</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-number">4</div>
+        <h3>Run and Export</h3>
+        <p>Select your .py file, click Run, and review your results. Export as PDF if your instructor requires it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Tips</h2>
+    </div>
+    <div class="student-tips">
+      <ul>
+        <li>Make sure any data files your script reads (CSV, TXT, JSON) are in the <strong>same folder</strong> as your .py file.</li>
+        <li>Remove or guard any <code>input()</code> calls in your code. The grader cannot provide interactive input.</li>
+        <li>Do not call <code>plt.show()</code> in matplotlib assignments. The grader handles display.</li>
+        <li>If your script takes too long, it will time out (typically 30 seconds). Check for infinite loops.</li>
+        <li>Fix one failing test at a time and re-run. The grader re-executes your script fresh each time.</li>
+        <li>You need Python installed on your machine. The grader uses your Python environment to execute your code.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="landing-section--free">
+  <div class="container" style="text-align:center; position:relative;">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--white); margin-bottom:12px;">Need More Help?</h2>
+    <p style="color:var(--text-on-dark-muted); margin-bottom:28px; font-size:1.05rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      Check the documentation for detailed usage instructions and troubleshooting.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="/docs/offline/student-usage/" class="btn btn-primary">Student Usage Guide</a>
+      <a href="/docs/offline/troubleshooting/" class="btn btn-outline" style="border-color:var(--emerald); color:var(--emerald);">Troubleshooting</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function detectOS() {
+  var p = (navigator.platform || '').toLowerCase();
+  var u = (navigator.userAgent || '').toLowerCase();
+  if (p.indexOf('win') !== -1 || u.indexOf('windows') !== -1) return 'windows';
+  if (p.indexOf('mac') !== -1 || u.indexOf('mac') !== -1) return 'mac';
+  return 'linux';
+}
+
+var studentDownloads = {
+  windows: {
+    label: 'Windows', icon: '\uD83E\uDE9F',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.exe',
+    filename: 'PyAutoGrader-Offline-Student.exe'
+  },
+  mac: {
+    label: 'macOS', icon: '\uD83C\uDF4E',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student.zip',
+    filename: 'PyAutoGrader-Offline-Student.zip'
+  },
+  linux: {
+    label: 'Linux', icon: '\uD83D\uDC27',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-Student',
+    filename: 'PyAutoGrader-Offline-Student'
+  }
+};
+
+var detected = detectOS();
+var primary = document.getElementById('student-primary-download');
+var others = document.getElementById('student-other-downloads');
+var dl = studentDownloads[detected];
+
+primary.innerHTML =
+  '<a href="' + dl.url + '" class="btn btn-primary btn-download">' +
+  '<span>' + dl.icon + '</span>' +
+  '<span>Download for ' + dl.label + '</span>' +
+  '</a>' +
+  '<span class="download-filename">' + dl.filename + '</span>';
+
+var otherKeys = Object.keys(studentDownloads).filter(function(k) { return k !== detected; });
+others.innerHTML = otherKeys.map(function(k) {
+  var o = studentDownloads[k];
+  return '<a href="' + o.url + '" class="btn btn-outline btn-sm">' + o.icon + ' ' + o.label + '</a>';
+}).join('');
+</script>
