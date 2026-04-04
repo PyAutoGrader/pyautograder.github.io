@@ -11,17 +11,17 @@
 <meta property="og:title" content="Instructor Setup" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This page is a placeholder. Full content coming soon." />
-<meta property="og:description" content="This page is a placeholder. Full content coming soon." />
+<meta name="description" content="The instructor application is where you create assignments, add tests, attach solution files, and configure how results are collected. This guide covers the core workflow from creating an assignment to exporting it for students." />
+<meta property="og:description" content="The instructor application is where you create assignments, add tests, attach solution files, and configure how results are collected. This guide covers the core workflow from creating an assignment to exporting it for students." />
 <link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/instructor-setup/" />
 <meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/instructor-setup/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-04T16:49:39+00:00" />
+<meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Instructor Setup" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T16:49:39+00:00","datePublished":"2026-04-04T16:49:39+00:00","description":"This page is a placeholder. Full content coming soon.","headline":"Instructor Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/instructor-setup/"},"url":"https://pyautograder.github.io/dev/docs/offline/instructor-setup/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"The instructor application is where you create assignments, add tests, attach solution files, and configure how results are collected. This guide covers the core workflow from creating an assignment to exporting it for students.","headline":"Instructor Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/instructor-setup/"},"url":"https://pyautograder.github.io/dev/docs/offline/instructor-setup/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -85,6 +85,20 @@
           
             
           
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
         </ul>
       </div>
       
@@ -99,15 +113,43 @@
             
           
             
+          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
           <li><a href="/dev/docs/offline/instructor-setup/" class="active">Instructor Setup</a></li>
             
           
             
-          <li><a href="/dev/docs/offline/building-executable/" >Building an Executable</a></li>
+          <li><a href="/dev/docs/offline/test-types-reference/" >Test Types Reference</a></li>
             
           
             
           <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/troubleshooting/" >Troubleshooting</a></li>
             
           
         </ul>
@@ -122,35 +164,253 @@
       / <span>Instructor Setup</span>
     </div>
     <h1>Instructor Setup</h1>
-    <p><em>This page is a placeholder. Full content coming soon.</em></p>
+    <p>The instructor application is where you create assignments, add tests, attach solution files, and configure how results are collected. This guide covers the core workflow from creating an assignment to exporting it for students.</p>
 
-<h2 id="what-youll-need">What You’ll Need</h2>
-
-<ul>
-  <li>Python 3.x installed on your machine</li>
-  <li>PyAutoGrader installed (<code class="language-plaintext highlighter-rouge">pip install pyautograder</code> - coming soon)</li>
-  <li>Your assignment’s test cases ready to write</li>
-</ul>
-
-<h2 id="overview-of-steps">Overview of Steps</h2>
+<h2 id="creating-a-new-assignment-file">Creating a New Assignment File</h2>
 
 <ol>
-  <li>Install PyAutoGrader on your machine</li>
-  <li>Create a grader project directory</li>
-  <li>Write your test cases</li>
-  <li>Configure grader settings</li>
-  <li>Build the executable</li>
-  <li>Distribute to students</li>
+  <li>Launch the instructor editor.</li>
+  <li>Go to <strong>File &gt; New</strong> to create a new <code class="language-plaintext highlighter-rouge">.agrx</code> file.</li>
+  <li>Fill in the course metadata: course name, section, semester, and instructor name.</li>
+  <li>Save the file - this is your working file (<code class="language-plaintext highlighter-rouge">.agrx</code> format, encrypted with the instructor key).</li>
 </ol>
 
-<p>Full step-by-step instructions will be added here when the first release is available.</p>
+<p>The <code class="language-plaintext highlighter-rouge">.agrx</code> file is your editable working file. Students never see this file. When you are ready to distribute, you export an encrypted <code class="language-plaintext highlighter-rouge">.agr</code> file for students (see <a href="/docs/offline/saving-and-exporting/">Saving and Exporting</a>).</p>
+
+<p>The editor auto-saves window position and re-opens your last file on launch.</p>
+
+<h2 id="adding-tests">Adding Tests</h2>
+
+<p>Click <strong>Add Test</strong> to create a new test for the selected assignment. Choose a test type from the category dropdown:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>What It Tests</th>
+      <th>Example Types</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Variable</strong></td>
+      <td>Variable values, types, lists, arrays, dicts</td>
+      <td><code class="language-plaintext highlighter-rouge">variable_value</code>, <code class="language-plaintext highlighter-rouge">list_equals</code>, <code class="language-plaintext highlighter-rouge">compare_solution</code></td>
+    </tr>
+    <tr>
+      <td><strong>Function</strong></td>
+      <td>Function existence, calls, output comparison</td>
+      <td><code class="language-plaintext highlighter-rouge">function_exists</code>, <code class="language-plaintext highlighter-rouge">test_function_solution</code></td>
+    </tr>
+    <tr>
+      <td><strong>Class</strong></td>
+      <td>Class definitions, methods, attributes</td>
+      <td><code class="language-plaintext highlighter-rouge">class_exists</code>, <code class="language-plaintext highlighter-rouge">class_has_method</code></td>
+    </tr>
+    <tr>
+      <td><strong>Control Flow</strong></td>
+      <td>Loops, conditionals, iteration counts, exceptions</td>
+      <td><code class="language-plaintext highlighter-rouge">for_loop_used</code>, <code class="language-plaintext highlighter-rouge">loop_iterations</code></td>
+    </tr>
+    <tr>
+      <td><strong>Code Patterns</strong></td>
+      <td>Source code content, operators, printed output</td>
+      <td><code class="language-plaintext highlighter-rouge">code_contains</code>, <code class="language-plaintext highlighter-rouge">stdout_contains</code></td>
+    </tr>
+    <tr>
+      <td><strong>Plot</strong></td>
+      <td>Matplotlib plot labels, styles, data, comparison</td>
+      <td><code class="language-plaintext highlighter-rouge">plot_properties</code>, <code class="language-plaintext highlighter-rouge">compare_plot_solution</code></td>
+    </tr>
+    <tr>
+      <td><strong>Code Quality</strong></td>
+      <td>Naming, documentation, complexity, style</td>
+      <td><code class="language-plaintext highlighter-rouge">naming_convention</code>, <code class="language-plaintext highlighter-rouge">cyclomatic_complexity</code></td>
+    </tr>
+    <tr>
+      <td><strong>Performance</strong></td>
+      <td>Execution time limits and solution comparison</td>
+      <td><code class="language-plaintext highlighter-rouge">performance</code>, <code class="language-plaintext highlighter-rouge">performance_compare_function</code></td>
+    </tr>
+    <tr>
+      <td><strong>File</strong></td>
+      <td>Submitted filename format and conventions</td>
+      <td><code class="language-plaintext highlighter-rouge">file_name</code>, <code class="language-plaintext highlighter-rouge">file_naming_convention</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See the <a href="/docs/offline/test-types-reference/">Test Types Reference</a> for the full catalog of 55+ test types with configuration details.</p>
+
+<h3 id="common-test-fields">Common Test Fields</h3>
+
+<p>All test types share these optional fields:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Description</strong></td>
+      <td>Displayed to the student before running</td>
+    </tr>
+    <tr>
+      <td><strong>Pass Feedback</strong></td>
+      <td>Custom message shown when the test passes</td>
+    </tr>
+    <tr>
+      <td><strong>Fail Feedback</strong></td>
+      <td>Custom message shown when the test fails</td>
+    </tr>
+    <tr>
+      <td><strong>Hint</strong></td>
+      <td>Optional tip shown on failure to guide the student</td>
+    </tr>
+    <tr>
+      <td><strong>Points</strong></td>
+      <td>Point value for the test (default: 10)</td>
+    </tr>
+    <tr>
+      <td><strong>Target File</strong></td>
+      <td>Which file to test (for multi-file assignments)</td>
+    </tr>
+    <tr>
+      <td><strong>Split Points</strong></td>
+      <td>Award partial credit proportionally across sub-checks</td>
+    </tr>
+    <tr>
+      <td><strong>Show Expected</strong></td>
+      <td>Show expected values in failure messages</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="solution-files">Solution Files</h2>
+
+<p>Some test types compare student output against an instructor solution. To use these:</p>
+
+<ol>
+  <li>Click <strong>Add File</strong> in the assignment’s file list.</li>
+  <li>Upload your solution <code class="language-plaintext highlighter-rouge">.py</code> file.</li>
+  <li>When configuring a solution-based test (like <code class="language-plaintext highlighter-rouge">compare_solution</code>, <code class="language-plaintext highlighter-rouge">test_function_solution</code>, or <code class="language-plaintext highlighter-rouge">compare_plot_solution</code>), select the uploaded solution file from the dropdown.</li>
+</ol>
+
+<p>Solution files are encrypted inside the <code class="language-plaintext highlighter-rouge">.agr</code> export. Students cannot view them.</p>
+
+<h2 id="bundled-data-files">Bundled Data Files</h2>
+
+<p>If your assignment requires data files (CSV, TXT, JSON, etc.) that students’ code reads at runtime:</p>
+
+<ol>
+  <li>Click <strong>Add File</strong> and upload the data file.</li>
+  <li>Mark it as a <strong>data file</strong> (not a solution file).</li>
+  <li>The data file will be bundled in the <code class="language-plaintext highlighter-rouge">.agr</code> export and extracted alongside the student’s code at grading time.</li>
+</ol>
+
+<p>This way students do not need to separately download data files.</p>
+
+<h2 id="multi-file-assignments">Multi-File Assignments</h2>
+
+<p>You can target individual tests to specific files within an assignment. Set the <strong>Target File</strong> field on each test to specify which file that test should grade. The student app auto-detects related files in the same folder when the student selects one of them.</p>
+
+<h2 id="configuring-student-identity">Configuring Student Identity</h2>
+
+<p>Under <strong>Student Identity</strong> in the sidebar, configure how students identify themselves:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong> (default)</td>
+      <td>Freeform text entry. No roster needed.</td>
+    </tr>
+    <tr>
+      <td><strong>Username</strong> (strict)</td>
+      <td>Must match a roster entry. Grading blocked if not found.</td>
+    </tr>
+    <tr>
+      <td><strong>Username or Name</strong></td>
+      <td>Resolved from roster if matched, otherwise allowed as freeform.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For roster-based modes, you can import a CSV roster, connect a Google Sheet, or use the submission server’s API. See <a href="/docs/offline/roster-setup/">Roster Setup</a> for detailed configuration.</p>
+
+<h2 id="configuring-result-collection">Configuring Result Collection</h2>
+
+<p>Under <strong>Reporting Channels</strong> in the sidebar, configure how student results are collected. You can enable any combination:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel</th>
+      <th>What It Does</th>
+      <th>Can Be Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PDF Export</strong></td>
+      <td>Students export results as PDF to upload to your LMS</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Email</strong></td>
+      <td>Results emailed to you silently on each submission</td>
+      <td>No (notification only)</td>
+    </tr>
+    <tr>
+      <td><strong>Google Sheets</strong></td>
+      <td>Grades posted to a Google Sheet via webhook</td>
+      <td>No (notification only)</td>
+    </tr>
+    <tr>
+      <td><strong>Submission Server</strong></td>
+      <td>Full results and code sent to your server</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Webhook</strong></td>
+      <td>POST notification to a custom URL</td>
+      <td>No (notification only)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>See <a href="/docs/offline/reporting-setup/">Reporting Setup</a> for channel-specific configuration steps.</p>
+
+<h2 id="partial-credit-and-custom-feedback">Partial Credit and Custom Feedback</h2>
+
+<ul>
+  <li><strong>Split Points</strong> - Enable on any test to award partial credit proportionally. If a test has 10 points and 5 sub-checks, each sub-check is worth 2 points.</li>
+  <li><strong>Pass/Fail Feedback</strong> - Write custom messages for each test. Students see the pass feedback on success and the fail feedback (plus optional hint) on failure.</li>
+  <li><strong>Show Expected</strong> - Toggle whether students see the expected value in failure messages. Useful for variable and function tests where seeing the target helps learning.</li>
+</ul>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+  <li><a href="/docs/offline/test-types-reference/">Test Types Reference</a> - Full details on every test type</li>
+  <li><a href="/docs/offline/saving-and-exporting/">Saving and Exporting</a> - Export <code class="language-plaintext highlighter-rouge">.agr</code> files, JSON import/export</li>
+  <li><a href="/docs/offline/reporting-setup/">Reporting Setup</a> - Configure email, Google Sheets, and server channels</li>
+</ul>
 
     <div class="doc-footer">
       
-      <a href="/dev/docs/offline/overview" class="doc-nav-btn prev">&#x2190; Overview</a>
+      <a href="/dev/docs/offline/download-and-install" class="doc-nav-btn prev">&#x2190; Download and Install</a>
       
       
-      <a href="/dev/docs/offline/building-executable" class="doc-nav-btn next">Building an Executable &#x2192;</a>
+      <a href="/dev/docs/offline/test-types-reference" class="doc-nav-btn next">Test Types Reference &#x2192;</a>
       
     </div>
   </article>

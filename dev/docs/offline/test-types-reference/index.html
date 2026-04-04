@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Types Reference | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Test Types Reference | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Test Types Reference" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected)." />
+<meta property="og:description" content="PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected)." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/test-types-reference/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/test-types-reference/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Test Types Reference" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the common fields shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).","headline":"Test Types Reference","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/test-types-reference/"},"url":"https://pyautograder.github.io/dev/docs/offline/test-types-reference/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/features" >Features</a>
+      <a href="/dev/server" >Server</a>
+      <a href="/dev/docs/getting-started" class="active">Docs</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Overview</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/test-types-reference/" class="active">Test Types Reference</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/troubleshooting/" >Troubleshooting</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/dev/docs/getting-started">Docs</a>
+       / <span>Offline Autograder</span>
+      / <span>Test Types Reference</span>
+    </div>
+    <h1>Test Types Reference</h1>
+    <p>PyAutoGrader supports 55+ test types organized by category. Each test has type-specific configuration fields plus the <a href="/docs/offline/instructor-setup/#common-test-fields">common fields</a> shared by all tests (description, pass/fail feedback, hint, points, target file, split points, show expected).</p>
+
+<h2 id="variable-tests">Variable Tests</h2>
+
+<h3 id="variable_value">variable_value</h3>
+<p>Check that a variable has a specific value after execution.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the variable</li>
+  <li><strong>expected_value</strong> - the value to compare against</li>
+  <li><strong>tolerance</strong> - numeric tolerance for float comparisons</li>
+</ul>
+
+<h3 id="variable_type">variable_type</h3>
+<p>Check the type of a variable.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the variable</li>
+  <li><strong>expected_value</strong> - expected type name (e.g., <code class="language-plaintext highlighter-rouge">list</code>, <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>)</li>
+</ul>
+
+<h3 id="list_equals">list_equals</h3>
+<p>Check that a list variable matches expected contents.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the list variable</li>
+  <li><strong>expected_list</strong> - the expected list value</li>
+  <li><strong>order_matters</strong> - whether element order is checked (default: true)</li>
+  <li><strong>tolerance</strong> - numeric tolerance for float elements</li>
+</ul>
+
+<h3 id="array_equals">array_equals</h3>
+<p>Check that a NumPy array matches expected values.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the array variable</li>
+  <li><strong>expected_array</strong> - the expected array value</li>
+  <li><strong>tolerance</strong> - numeric tolerance</li>
+</ul>
+
+<h3 id="array_size">array_size</h3>
+<p>Check the size of a NumPy array.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the array variable</li>
+  <li><strong>min_size</strong> - minimum acceptable size</li>
+  <li><strong>max_size</strong> - maximum acceptable size</li>
+  <li><strong>exact_size</strong> - exact required size</li>
+</ul>
+
+<h3 id="array_values_in_range">array_values_in_range</h3>
+<p>Check that all array values fall within a range.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the array variable</li>
+  <li><strong>min_value</strong> - minimum allowed value</li>
+  <li><strong>max_value</strong> - maximum allowed value</li>
+</ul>
+
+<h3 id="dict_equals">dict_equals</h3>
+<p>Check that a dictionary matches expected contents.</p>
+<ul>
+  <li><strong>variable_name</strong> (required) - name of the dict variable</li>
+  <li><strong>expected_dict</strong> - the expected dictionary</li>
+  <li><strong>tolerance</strong> - numeric tolerance for float values</li>
+</ul>
+
+<h3 id="compare_solution">compare_solution</h3>
+<p>Compare student variables against an instructor solution file.</p>
+<ul>
+  <li><strong>solution_file_id</strong> (required) - ID of the uploaded solution file</li>
+  <li><strong>variables_to_compare</strong> - comma-separated list of variable names</li>
+  <li><strong>tolerance</strong> - numeric tolerance</li>
+  <li><strong>require_same_type</strong> - require matching types (not just values)</li>
+</ul>
+
+<h3 id="check_relationship">check_relationship</h3>
+<p>Check a mathematical relationship between two variables.</p>
+<ul>
+  <li><strong>var1_name</strong> (required) - first variable name</li>
+  <li><strong>var2_name</strong> - second variable name</li>
+  <li><strong>relationship</strong> - relationship operator (e.g., <code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">==</code>, <code class="language-plaintext highlighter-rouge">2*</code>)</li>
+  <li><strong>tolerance</strong> - numeric tolerance</li>
+</ul>
+
+<hr />
+
+<h2 id="function-tests">Function Tests</h2>
+
+<h3 id="function_exists">function_exists</h3>
+<p>Verify a function is defined in student code.</p>
+<ul>
+  <li><strong>function_name</strong> (required) - name of the function</li>
+</ul>
+
+<h3 id="function_called">function_called</h3>
+<p>Verify a function is called during execution.</p>
+<ul>
+  <li><strong>function_name</strong> (required) - name of the function</li>
+  <li><strong>match_any_prefix</strong> - match any function starting with this prefix</li>
+</ul>
+
+<h3 id="function_not_called">function_not_called</h3>
+<p>Verify a function is NOT called during execution. Useful for detecting unauthorized library calls or AI-generated helper functions.</p>
+<ul>
+  <li><strong>function_name</strong> (required) - name of the function</li>
+  <li><strong>match_any_prefix</strong> - match any function starting with this prefix</li>
+</ul>
+
+<h3 id="test_function_solution">test_function_solution</h3>
+<p>Test a student function against the instructor’s solution function with specific inputs.</p>
+<ul>
+  <li><strong>function_name</strong> (required) - name of the function to test</li>
+  <li><strong>solution_file_id</strong> - ID of the solution file containing the reference function</li>
+  <li><strong>test_inputs</strong> - list of input argument sets to test</li>
+  <li><strong>tolerance</strong> - numeric tolerance for comparing outputs</li>
+</ul>
+
+<hr />
+
+<h2 id="class-tests">Class Tests</h2>
+
+<h3 id="class_exists">class_exists</h3>
+<p>Verify a class is defined.</p>
+<ul>
+  <li><strong>class_name</strong> (required) - name of the class</li>
+</ul>
+
+<h3 id="class_has_method">class_has_method</h3>
+<p>Verify a class has a specific method.</p>
+<ul>
+  <li><strong>class_name</strong> (required) - name of the class</li>
+  <li><strong>method_name</strong> - name of the method</li>
+</ul>
+
+<h3 id="class_has_attribute">class_has_attribute</h3>
+<p>Verify a class has a specific attribute.</p>
+<ul>
+  <li><strong>class_name</strong> (required) - name of the class</li>
+  <li><strong>attribute_name</strong> - name of the attribute</li>
+</ul>
+
+<hr />
+
+<h2 id="control-flow-tests">Control Flow Tests</h2>
+
+<h3 id="for_loop_used">for_loop_used</h3>
+<p>Check that a <code class="language-plaintext highlighter-rouge">for</code> loop is present in the code. No type-specific fields.</p>
+
+<h3 id="while_loop_used">while_loop_used</h3>
+<p>Check that a <code class="language-plaintext highlighter-rouge">while</code> loop is present. No type-specific fields.</p>
+
+<h3 id="if_statement_used">if_statement_used</h3>
+<p>Check that an <code class="language-plaintext highlighter-rouge">if</code> statement is present. No type-specific fields.</p>
+
+<h3 id="loop_iterations">loop_iterations</h3>
+<p>Check the number of times a loop iterates.</p>
+<ul>
+  <li><strong>loop_variable</strong> (required) - the loop variable to track</li>
+  <li><strong>expected_count</strong> - expected iteration count</li>
+</ul>
+
+<h3 id="exception_raised">exception_raised</h3>
+<p>Check that specific code raises an exception.</p>
+<ul>
+  <li><strong>code_snippet</strong> (required) - Python code to execute</li>
+  <li><strong>exception_type</strong> - expected exception class name (e.g., <code class="language-plaintext highlighter-rouge">ValueError</code>)</li>
+</ul>
+
+<hr />
+
+<h2 id="code-pattern-tests">Code Pattern Tests</h2>
+
+<h3 id="code_contains">code_contains</h3>
+<p>Check that the source code contains a specific phrase.</p>
+<ul>
+  <li><strong>phrase</strong> (required) - text to search for</li>
+  <li><strong>case_sensitive</strong> - whether the search is case-sensitive</li>
+</ul>
+
+<h3 id="code_not_contains">code_not_contains</h3>
+<p>Check that the source code does NOT contain a phrase.</p>
+<ul>
+  <li><strong>phrase</strong> (required) - text that must be absent</li>
+  <li><strong>case_sensitive</strong> - whether the search is case-sensitive</li>
+</ul>
+
+<h3 id="operator_used">operator_used</h3>
+<p>Check that a specific operator appears in the code.</p>
+<ul>
+  <li><strong>operator</strong> (required) - the operator string (e.g., <code class="language-plaintext highlighter-rouge">+=</code>, <code class="language-plaintext highlighter-rouge">**</code>, <code class="language-plaintext highlighter-rouge">//</code>)</li>
+</ul>
+
+<h3 id="stdout_contains">stdout_contains</h3>
+<p>Check that printed output contains expected text.</p>
+<ul>
+  <li><strong>expected_text</strong> (required) - text to look for in stdout</li>
+  <li><strong>case_sensitive</strong> - whether the search is case-sensitive</li>
+</ul>
+
+<hr />
+
+<h2 id="plot-tests">Plot Tests</h2>
+
+<h3 id="plot_created">plot_created</h3>
+<p>Check that a matplotlib plot was created. No type-specific fields.</p>
+
+<h3 id="plot_properties">plot_properties</h3>
+<p>Check multiple plot properties at once.</p>
+<ul>
+  <li><strong>title</strong> - expected plot title</li>
+  <li><strong>xlabel</strong> - expected x-axis label</li>
+  <li><strong>ylabel</strong> - expected y-axis label</li>
+  <li><strong>has_legend</strong> - whether a legend is required</li>
+  <li><strong>has_grid</strong> - whether a grid is required</li>
+</ul>
+
+<h3 id="plot_has_xlabel--plot_has_ylabel--plot_has_title">plot_has_xlabel / plot_has_ylabel / plot_has_title</h3>
+<p>Check that the plot has an x-label, y-label, or title set. No type-specific fields.</p>
+
+<h3 id="plot_data_length">plot_data_length</h3>
+<p>Check the number of data points in a plot line.</p>
+<ul>
+  <li><strong>min_length</strong> - minimum number of points</li>
+  <li><strong>max_length</strong> - maximum number of points</li>
+  <li><strong>exact_length</strong> - exact required count</li>
+  <li><strong>line_index</strong> - which line to check (0-based)</li>
+</ul>
+
+<h3 id="plot_line_style">plot_line_style</h3>
+<p>Check the line style of a specific plot line by index.</p>
+<ul>
+  <li><strong>expected_style</strong> (required) - matplotlib style string (e.g., <code class="language-plaintext highlighter-rouge">--</code>, <code class="language-plaintext highlighter-rouge">-.</code>, <code class="language-plaintext highlighter-rouge">:</code>)</li>
+  <li><strong>line_index</strong> - which line to check (0-based)</li>
+</ul>
+
+<h3 id="plot_has_line_style">plot_has_line_style</h3>
+<p>Check that any line in the plot uses a given style.</p>
+<ul>
+  <li><strong>expected_style</strong> (required) - matplotlib style string</li>
+</ul>
+
+<h3 id="plot_line_width">plot_line_width</h3>
+<p>Check a line’s width.</p>
+<ul>
+  <li><strong>expected_width</strong> (required) - expected line width value</li>
+  <li><strong>line_index</strong> - which line to check (0-based)</li>
+  <li><strong>tolerance</strong> - numeric tolerance</li>
+</ul>
+
+<h3 id="plot_marker_size">plot_marker_size</h3>
+<p>Check a marker’s size.</p>
+<ul>
+  <li><strong>expected_size</strong> (required) - expected marker size value</li>
+  <li><strong>line_index</strong> - which line to check (0-based)</li>
+  <li><strong>tolerance</strong> - numeric tolerance</li>
+</ul>
+
+<h3 id="compare_plot_solution">compare_plot_solution</h3>
+<p>Compare a student’s plot against the instructor’s solution plot.</p>
+<ul>
+  <li><strong>solution_file_id</strong> (required) - ID of the solution file</li>
+  <li><strong>line_index</strong> - which line to compare</li>
+  <li><strong>check_color</strong> - compare line colors</li>
+  <li><strong>check_linestyle</strong> - compare line styles</li>
+  <li><strong>check_linewidth</strong> - compare line widths</li>
+  <li><strong>check_marker</strong> - compare markers</li>
+  <li><strong>check_markersize</strong> - compare marker sizes</li>
+  <li><strong>linewidth_tolerance</strong> - tolerance for width comparison</li>
+  <li><strong>markersize_tolerance</strong> - tolerance for marker size comparison</li>
+</ul>
+
+<h3 id="check_multiple_lines">check_multiple_lines</h3>
+<p>Check that a plot has at least a minimum number of lines.</p>
+<ul>
+  <li><strong>min_lines</strong> (required) - minimum number of lines expected</li>
+</ul>
+
+<h3 id="check_exact_lines">check_exact_lines</h3>
+<p>Check that a plot has an exact number of lines.</p>
+<ul>
+  <li><strong>exact_lines</strong> (required) - exact number of lines expected</li>
+</ul>
+
+<h3 id="check_function_any_line">check_function_any_line</h3>
+<p>Check that a mathematical function matches any line in the plot.</p>
+<ul>
+  <li><strong>function</strong> (required) - Python expression to evaluate (e.g., <code class="language-plaintext highlighter-rouge">2*x + 1</code>)</li>
+  <li><strong>min_length</strong> - minimum data points to check</li>
+  <li><strong>tolerance</strong> - numeric tolerance</li>
+</ul>
+
+<hr />
+
+<h2 id="code-quality-tests">Code Quality Tests</h2>
+
+<p>These tests analyze code structure and style using static analysis. They do not execute student code, making them fast and safe.</p>
+
+<h3 id="naming_convention">naming_convention</h3>
+<p>Check that variable, function, and class names follow naming conventions.</p>
+<ul>
+  <li><strong>conventions</strong> (required) - comma-separated list: <code class="language-plaintext highlighter-rouge">snake_case</code>, <code class="language-plaintext highlighter-rouge">camelCase</code>, <code class="language-plaintext highlighter-rouge">PascalCase</code>, <code class="language-plaintext highlighter-rouge">SCREAMING_SNAKE_CASE</code>, <code class="language-plaintext highlighter-rouge">custom</code></li>
+  <li><strong>custom_pattern</strong> - regex pattern (only used when <code class="language-plaintext highlighter-rouge">custom</code> is selected)</li>
+  <li><strong>check_variables</strong> - check variable names (default: true)</li>
+  <li><strong>check_functions</strong> - check function names (default: true)</li>
+  <li><strong>check_classes</strong> - check class names (default: true)</li>
+  <li><strong>exceptions</strong> - comma-separated names to skip (default: <code class="language-plaintext highlighter-rouge">i,j,k,x,y,n,_</code>)</li>
+</ul>
+
+<h3 id="no_single_letter_vars">no_single_letter_vars</h3>
+<p>Check that no variables use single-character names.</p>
+<ul>
+  <li><strong>exceptions</strong> - comma-separated single-letter names to allow (default: <code class="language-plaintext highlighter-rouge">i,j,k,x,y,n,_</code>)</li>
+</ul>
+
+<h3 id="line_length">line_length</h3>
+<p>Check that no line exceeds a maximum character length.</p>
+<ul>
+  <li><strong>max_length</strong> - maximum characters per line (default: 100)</li>
+  <li><strong>tolerance_lines</strong> - number of lines allowed to exceed before failing (default: 0)</li>
+</ul>
+
+<h3 id="code_spacing">code_spacing</h3>
+<p>Check whitespace conventions within lines. Enable one or more rules:</p>
+<ul>
+  <li><strong>space_around_operators</strong> - require spaces around <code class="language-plaintext highlighter-rouge">=</code>, <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">==</code>, etc. (default: false)</li>
+  <li><strong>space_after_commas</strong> - require a space after every comma (default: false)</li>
+  <li><strong>space_after_colons</strong> - require a space after colons in dicts (default: false)</li>
+  <li><strong>no_trailing_whitespace</strong> - no trailing spaces at end of lines (default: false)</li>
+  <li><strong>tolerance_lines</strong> - number of violations allowed before failing (default: 0)</li>
+</ul>
+
+<h3 id="has_docstrings">has_docstrings</h3>
+<p>Check that functions and/or classes have docstrings.</p>
+<ul>
+  <li><strong>scope</strong> (required) - which to check: <code class="language-plaintext highlighter-rouge">all_functions</code>, <code class="language-plaintext highlighter-rouge">public_only</code>, <code class="language-plaintext highlighter-rouge">specific</code></li>
+  <li><strong>function_names</strong> - comma-separated names (only with scope <code class="language-plaintext highlighter-rouge">specific</code>)</li>
+  <li><strong>min_length</strong> - minimum word count for docstrings (default: 1)</li>
+</ul>
+
+<h3 id="has_module_docstring">has_module_docstring</h3>
+<p>Check that the file starts with a module-level docstring.</p>
+<ul>
+  <li><strong>min_length</strong> - minimum word count (default: 1)</li>
+</ul>
+
+<h3 id="min_comment_density">min_comment_density</h3>
+<p>Check that code has a minimum percentage of commented lines.</p>
+<ul>
+  <li><strong>min_percentage</strong> (required) - minimum percentage of non-blank lines with comments (0-100)</li>
+</ul>
+
+<h3 id="max_function_length">max_function_length</h3>
+<p>Check that no function exceeds a maximum line count.</p>
+<ul>
+  <li><strong>max_lines</strong> - maximum lines per function (default: 30)</li>
+  <li><strong>include_docstring</strong> - whether docstring lines count toward the limit (default: false)</li>
+</ul>
+
+<h3 id="max_nesting_depth">max_nesting_depth</h3>
+<p>Check that code does not nest beyond a maximum depth.</p>
+<ul>
+  <li><strong>max_depth</strong> - maximum nesting depth for if/for/while/with/try blocks (default: 4)</li>
+</ul>
+
+<h3 id="cyclomatic_complexity">cyclomatic_complexity</h3>
+<p>Check that functions do not exceed a cyclomatic complexity threshold.</p>
+<ul>
+  <li><strong>max_complexity</strong> - maximum McCabe complexity score per function (default: 10)</li>
+</ul>
+
+<h3 id="no_wildcard_imports">no_wildcard_imports</h3>
+<p>Check that the code does not use wildcard imports (<code class="language-plaintext highlighter-rouge">from x import *</code>). No type-specific fields.</p>
+
+<h3 id="imports_at_top">imports_at_top</h3>
+<p>Check that all import statements appear at the top of the file.</p>
+<ul>
+  <li><strong>allow_conditional</strong> - whether imports inside if/try blocks are acceptable (default: false)</li>
+</ul>
+
+<hr />
+
+<h2 id="performance-tests">Performance Tests</h2>
+
+<h3 id="performance">performance</h3>
+<p>Check that a function completes within a time limit.</p>
+<ul>
+  <li><strong>function_name</strong> (required) - function to time</li>
+  <li><strong>max_seconds</strong> (required) - maximum execution time in seconds</li>
+  <li><strong>test_inputs</strong> - inputs to pass to the function</li>
+</ul>
+
+<h3 id="performance_script">performance_script</h3>
+<p>Check that the full script completes within a time limit.</p>
+<ul>
+  <li><strong>max_seconds</strong> (required) - maximum execution time in seconds</li>
+</ul>
+
+<h3 id="performance_compare_function">performance_compare_function</h3>
+<p>Compare a function’s execution time against the instructor solution.</p>
+<ul>
+  <li><strong>solution_file_id</strong> (required) - the solution file to compare against</li>
+  <li><strong>function_name</strong> (required) - the function to time in both student and solution code</li>
+  <li><strong>max_additional_seconds</strong> (required) - how many seconds slower the student code is allowed to be</li>
+  <li><strong>test_inputs</strong> - inputs to pass to the function</li>
+  <li><strong>num_runs</strong> - number of runs to average (default: 3)</li>
+</ul>
+
+<h3 id="performance_compare_script">performance_compare_script</h3>
+<p>Compare the full script execution time against the instructor solution.</p>
+<ul>
+  <li><strong>solution_file_id</strong> (required) - the solution file to compare against</li>
+  <li><strong>max_additional_seconds</strong> (required) - how many seconds slower the student code is allowed to be</li>
+  <li><strong>num_runs</strong> - number of runs to average (default: 3)</li>
+</ul>
+
+<hr />
+
+<h2 id="file-tests">File Tests</h2>
+
+<h3 id="file_name">file_name</h3>
+<p>Check the submitted filename format.</p>
+<ul>
+  <li><strong>expected_name</strong> (required) - the name or pattern to match</li>
+  <li><strong>match_mode</strong> - one of: <code class="language-plaintext highlighter-rouge">exact</code>, <code class="language-plaintext highlighter-rouge">prefix</code>, <code class="language-plaintext highlighter-rouge">suffix</code>, <code class="language-plaintext highlighter-rouge">contains</code></li>
+  <li><strong>case_sensitive</strong> - whether matching is case-sensitive</li>
+</ul>
+
+<h3 id="file_naming_convention">file_naming_convention</h3>
+<p>Check that the submitted filename follows a naming convention.</p>
+<ul>
+  <li><strong>conventions</strong> (required) - comma-separated list: <code class="language-plaintext highlighter-rouge">snake_case</code>, <code class="language-plaintext highlighter-rouge">camelCase</code>, <code class="language-plaintext highlighter-rouge">PascalCase</code>, <code class="language-plaintext highlighter-rouge">SCREAMING_SNAKE_CASE</code>, <code class="language-plaintext highlighter-rouge">Train-Case</code>, <code class="language-plaintext highlighter-rouge">kebab-case</code>, <code class="language-plaintext highlighter-rouge">custom</code></li>
+  <li><strong>custom_pattern</strong> - regex pattern (only used when <code class="language-plaintext highlighter-rouge">custom</code> is selected)</li>
+  <li><strong>check_extension</strong> - whether to include the file extension in the check (default: false)</li>
+</ul>
+
+<hr />
+
+<h2 id="missing-a-test-type">Missing a Test Type?</h2>
+
+<p>If you need a test type that is not listed here, use the <a href="/contact/">Contact</a> page to request it.</p>
+
+    <div class="doc-footer">
+      
+      <a href="/dev/docs/offline/instructor-setup" class="doc-nav-btn prev">&#x2190; Instructor Setup</a>
+      
+      
+      <a href="/dev/docs/offline/student-usage" class="doc-nav-btn next">Student Usage &#x2192;</a>
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>

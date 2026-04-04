@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Troubleshooting | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Troubleshooting | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Troubleshooting" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Common issues and solutions for students and instructors." />
+<meta property="og:description" content="Common issues and solutions for students and instructors." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/troubleshooting/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/troubleshooting/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Troubleshooting" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"Common issues and solutions for students and instructors.","headline":"Troubleshooting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/troubleshooting/"},"url":"https://pyautograder.github.io/dev/docs/offline/troubleshooting/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/features" >Features</a>
+      <a href="/dev/server" >Server</a>
+      <a href="/dev/docs/getting-started" class="active">Docs</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Overview</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/test-types-reference/" >Test Types Reference</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/troubleshooting/" class="active">Troubleshooting</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/dev/docs/getting-started">Docs</a>
+       / <span>Offline Autograder</span>
+      / <span>Troubleshooting</span>
+    </div>
+    <h1>Troubleshooting</h1>
+    <p>Common issues and solutions for students and instructors.</p>
+
+<h2 id="student-issues">Student Issues</h2>
+
+<h3 id="file-not-found-errors">“File not found” Errors</h3>
+
+<p><strong>Symptom</strong>: Your script runs fine in your IDE but fails in the grader with <code class="language-plaintext highlighter-rouge">FileNotFoundError</code>.</p>
+
+<p><strong>Cause</strong>: The grader runs your script from its file location. If your code reads a data file (e.g., <code class="language-plaintext highlighter-rouge">data.csv</code>), that file must be in the same directory as your <code class="language-plaintext highlighter-rouge">.py</code> file.</p>
+
+<p><strong>Fix</strong>: Move all data files (CSV, TXT, JSON, etc.) to the same folder as your Python script. Use relative paths - <code class="language-plaintext highlighter-rouge">open("data.csv")</code> not <code class="language-plaintext highlighter-rouge">open("C:/Users/me/Desktop/data.csv")</code>.</p>
+
+<h3 id="timeout-errors">Timeout Errors</h3>
+
+<p><strong>Symptom</strong>: The grader stops and reports a timeout.</p>
+
+<p><strong>Cause</strong>: Your script took longer than the allowed time limit (set by your instructor, typically 30 seconds). Common reasons:</p>
+
+<ul>
+  <li>Infinite loops (<code class="language-plaintext highlighter-rouge">while True</code> without a break condition)</li>
+  <li>Waiting for user input (<code class="language-plaintext highlighter-rouge">input()</code> calls) - the grader cannot type responses</li>
+  <li>Very large computations</li>
+</ul>
+
+<p><strong>Fix</strong>: Remove or guard any <code class="language-plaintext highlighter-rouge">input()</code> calls. Check for infinite loops by adding print statements to track loop iterations. If your computation is legitimately slow, ask your instructor to increase the timeout.</p>
+
+<h3 id="import-errors">Import Errors</h3>
+
+<p><strong>Symptom</strong>: <code class="language-plaintext highlighter-rouge">ModuleNotFoundError: No module named 'some_package'</code></p>
+
+<p><strong>Cause</strong>: Your script uses a package that is not available in the grader’s Python environment.</p>
+
+<p><strong>Fix</strong>: Make sure you have selected the correct Python environment in the app’s environment dropdown. Common scientific packages (NumPy, Matplotlib) are available when using most Python distributions. Check for typos in your import statement.</p>
+
+<h3 id="plot-tests-failing-unexpectedly">Plot Tests Failing Unexpectedly</h3>
+
+<p><strong>Symptom</strong>: Your plot looks correct visually but plot tests fail.</p>
+
+<p><strong>Cause</strong>: The grader inspects matplotlib plot objects programmatically, not visually. Common issues:</p>
+
+<ul>
+  <li>Labels or titles have extra whitespace or different capitalization than expected</li>
+  <li>Plot is created in a different figure than expected</li>
+  <li><code class="language-plaintext highlighter-rouge">plt.show()</code> is called before the grader can inspect the plot</li>
+</ul>
+
+<p><strong>Fix</strong>: Match the exact label text specified in the assignment (case and whitespace matter). Do not call <code class="language-plaintext highlighter-rouge">plt.show()</code> - the grader handles display.</p>
+
+<hr />
+
+<h2 id="instructor-issues">Instructor Issues</h2>
+
+<h3 id="email-delivery-problems">Email Delivery Problems</h3>
+
+<p><strong>Symptom</strong>: Student submissions are not arriving by email.</p>
+
+<p><strong>Possible causes</strong>:</p>
+
+<ol>
+  <li><strong>Wrong SMTP settings</strong> - Verify server address, port (typically 587 for TLS), and credentials in the assignment settings.</li>
+  <li><strong>App-specific password required</strong> - Gmail and other providers require app-specific passwords, not your regular login password. See <a href="/docs/offline/reporting-setup/">Reporting Setup</a> for Gmail setup.</li>
+  <li><strong>Firewall blocking port 587</strong> - Check that outbound SMTP traffic is allowed on your network.</li>
+  <li><strong>Emails going to spam</strong> - Check your spam folder. Add the sender address to your contacts.</li>
+</ol>
+
+<h3 id="google-sheets-webhook-errors">Google Sheets Webhook Errors</h3>
+
+<p><strong>Symptom</strong>: Submissions are not appearing in your Google Sheet.</p>
+
+<p><strong>Possible causes</strong>:</p>
+
+<ol>
+  <li><strong>Wrong URL</strong> - The URL must be the deployment URL (contains <code class="language-plaintext highlighter-rouge">/exec</code>), not the script editor URL.</li>
+  <li><strong>Access not set</strong> - The deployment must be set to “Anyone” access.</li>
+  <li><strong>Script error</strong> - Check the Apps Script execution log: <code class="language-plaintext highlighter-rouge">Extensions &gt; Apps Script &gt; Executions</code>.</li>
+  <li><strong>Stale deployment</strong> - If you updated the script, you must create a new deployment (not just save).</li>
+</ol>
+
+<h3 id="server-connection-problems">Server Connection Problems</h3>
+
+<p><strong>Symptom</strong>: Student app shows “Connection failed” or “Server unreachable” when submitting.</p>
+
+<p><strong>Possible causes</strong>:</p>
+
+<ol>
+  <li><strong>Server not running</strong> - Verify the submission server process is active.</li>
+  <li><strong>Wrong API URL</strong> - The URL in the <code class="language-plaintext highlighter-rouge">.agr</code> file must match the server’s address and port exactly, including the <code class="language-plaintext highlighter-rouge">/api/submit</code> path.</li>
+  <li><strong>API key mismatch</strong> - The API key in the <code class="language-plaintext highlighter-rouge">.agr</code> file must match the server’s <code class="language-plaintext highlighter-rouge">--api-key</code> or password.</li>
+  <li><strong>Firewall/network</strong> - Ensure the server port is open and accessible from the student’s network.</li>
+  <li><strong>HTTPS required</strong> - If using a reverse proxy with TLS, make sure the API URL uses <code class="language-plaintext highlighter-rouge">https://</code>.</li>
+</ol>
+
+<h3 id="rate-limit-exceeded-429">Rate Limit Exceeded (429)</h3>
+
+<p><strong>Symptom</strong>: Server returns “Rate limit exceeded. Try again later.”</p>
+
+<p><strong>Cause</strong>: More than 10 submissions from the same IP address within 60 seconds. This protects against accidental or intentional flooding.</p>
+
+<p><strong>Fix</strong>: Wait 60 seconds and try again. If students share a network (lab computers behind NAT), the limit applies to the shared IP.</p>
+
+<h3 id="database-locked-errors">Database Locked Errors</h3>
+
+<p><strong>Symptom</strong>: Server logs show SQLite “database is locked” errors under heavy load.</p>
+
+<p><strong>Cause</strong>: SQLite handles moderate concurrency but has a single-writer limit.</p>
+
+<p><strong>Fix</strong>: For classes larger than about 100 concurrent submitters, consider running separate server instances with separate databases per section, or switch to PostgreSQL. See <a href="/docs/offline/server-setup/">Server Setup</a> for database options.</p>
+
+<hr />
+
+<h2 id="getting-help">Getting Help</h2>
+
+<p>If your issue is not listed here, use the <a href="/contact/">Contact</a> page to reach out.</p>
+
+    <div class="doc-footer">
+      
+      <a href="/dev/docs/offline/server-setup" class="doc-nav-btn prev">&#x2190; Server Setup</a>
+      
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>

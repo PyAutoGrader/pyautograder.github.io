@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reporting Setup | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Reporting Setup | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Reporting Setup" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PyAutoGrader supports multiple reporting channels for collecting student submission results. Configure any combination in the instructor editor under Reporting Channels." />
+<meta property="og:description" content="PyAutoGrader supports multiple reporting channels for collecting student submission results. Configure any combination in the instructor editor under Reporting Channels." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/reporting-setup/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/reporting-setup/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Reporting Setup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"PyAutoGrader supports multiple reporting channels for collecting student submission results. Configure any combination in the instructor editor under Reporting Channels.","headline":"Reporting Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/reporting-setup/"},"url":"https://pyautograder.github.io/dev/docs/offline/reporting-setup/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/features" >Features</a>
+      <a href="/dev/server" >Server</a>
+      <a href="/dev/docs/getting-started" class="active">Docs</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Overview</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/test-types-reference/" >Test Types Reference</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/reporting-setup/" class="active">Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/troubleshooting/" >Troubleshooting</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/dev/docs/getting-started">Docs</a>
+       / <span>Offline Autograder</span>
+      / <span>Reporting Setup</span>
+    </div>
+    <h1>Reporting Setup</h1>
+    <p>PyAutoGrader supports multiple reporting channels for collecting student submission results. Configure any combination in the instructor editor under <strong>Reporting Channels</strong>.</p>
+
+<h2 id="channel-overview">Channel Overview</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel</th>
+      <th>What It Collects</th>
+      <th>Can Be Required?</th>
+      <th>Needs Internet?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PDF Export</strong></td>
+      <td>Results summary as PDF</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><strong>Email</strong></td>
+      <td>Scores + code to your inbox</td>
+      <td>No (silent notification)</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Google Sheets</strong></td>
+      <td>Scores to a spreadsheet</td>
+      <td>No (silent notification)</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Submission Server</strong></td>
+      <td>Full results + code to dashboard</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>Webhook</strong></td>
+      <td>JSON payload to a custom URL</td>
+      <td>No (silent notification)</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>PDF export and the submission server <strong>can be required</strong> by instructors - students must export or submit before grading completes. Email and Google Sheets are <strong>silent background notifications</strong> - they happen automatically and cannot be required.</p>
+
+<p>Each channel operates independently. If one fails (no internet), submissions are queued locally and retried automatically on the next app launch or every 5 minutes.</p>
+
+<hr />
+
+<h2 id="email">Email</h2>
+
+<p>Student results are emailed to you automatically on each submission. Each email includes the student’s name, scores, per-test results, and the full student code as both inline text and an attachment.</p>
+
+<h3 id="gmail-setup">Gmail Setup</h3>
+
+<ol>
+  <li><strong>Enable 2-Step Verification</strong> on your Google account at <a href="https://myaccount.google.com/security">myaccount.google.com/security</a>.</li>
+  <li><strong>Create an App Password</strong> at <a href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</a>:
+    <ul>
+      <li>Select app: <strong>Mail</strong></li>
+      <li>Select device: <strong>Other</strong> (type “PyAutoGrader”)</li>
+      <li>Click <strong>Generate</strong> and copy the 16-character password</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Configure</strong> in the instructor editor under <strong>Email Settings</strong>:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SMTP Server</td>
+          <td><code class="language-plaintext highlighter-rouge">smtp.gmail.com</code></td>
+        </tr>
+        <tr>
+          <td>SMTP Port</td>
+          <td><code class="language-plaintext highlighter-rouge">587</code></td>
+        </tr>
+        <tr>
+          <td>From Email</td>
+          <td>Your Gmail address</td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td>The 16-character App Password</td>
+        </tr>
+        <tr>
+          <td>To Email</td>
+          <td>Where you want submissions sent</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<h3 id="outlook--office-365">Outlook / Office 365</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SMTP Server</td>
+      <td><code class="language-plaintext highlighter-rouge">smtp.office365.com</code></td>
+    </tr>
+    <tr>
+      <td>SMTP Port</td>
+      <td><code class="language-plaintext highlighter-rouge">587</code></td>
+    </tr>
+    <tr>
+      <td>From Email</td>
+      <td>Your Outlook address</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>Your Outlook password (or App Password if MFA is enabled)</td>
+    </tr>
+    <tr>
+      <td>To Email</td>
+      <td>Where you want submissions sent</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Some institutions block SMTP access. Check with your IT department if emails are not being delivered.</p>
+
+<h3 id="institutional--custom-smtp">Institutional / Custom SMTP</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SMTP Server</td>
+      <td>Your institution’s SMTP host (e.g., <code class="language-plaintext highlighter-rouge">smtp.university.edu</code>)</td>
+    </tr>
+    <tr>
+      <td>SMTP Port</td>
+      <td><code class="language-plaintext highlighter-rouge">587</code> (TLS) or <code class="language-plaintext highlighter-rouge">465</code> (SSL) - check with IT</td>
+    </tr>
+    <tr>
+      <td>From Email</td>
+      <td>Your institutional email address</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>Your email password or app-specific password</td>
+    </tr>
+    <tr>
+      <td>To Email</td>
+      <td>Where you want submissions sent</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="email-tips">Email Tips</h3>
+
+<ul>
+  <li>Create an inbox rule to move PyAutoGrader emails to a folder. The subject line format (<code class="language-plaintext highlighter-rouge">Course, Assignment, Student, Timestamp</code>) makes filtering easy.</li>
+  <li>The “From” and “To” can be the same address - you can send submissions to yourself.</li>
+  <li>SMTP credentials are stored inside the encrypted <code class="language-plaintext highlighter-rouge">.agr</code> file. Students cannot read them.</li>
+  <li>If the student is offline, emails are queued locally and sent on the next app launch with internet.</li>
+</ul>
+
+<hr />
+
+<h2 id="google-sheets">Google Sheets</h2>
+
+<p>Student scores are posted to a Google Sheet via an Apps Script web app. This gives you a live spreadsheet gradebook that updates as students submit.</p>
+
+<h3 id="setup">Setup</h3>
+
+<ol>
+  <li><strong>Create a Google Sheet</strong> at <a href="https://sheets.google.com">sheets.google.com</a>.</li>
+  <li><strong>Open Apps Script</strong>: Go to <code class="language-plaintext highlighter-rouge">Extensions &gt; Apps Script</code>.</li>
+  <li><strong>Paste the script</strong>: Delete any existing code and paste the contents of the <code class="language-plaintext highlighter-rouge">google_sheets_apps_script.js</code> file (included in the PyAutoGrader download).</li>
+  <li><strong>Save</strong> the script (<code class="language-plaintext highlighter-rouge">Ctrl+S</code>).</li>
+  <li><strong>Deploy</strong>: Click <code class="language-plaintext highlighter-rouge">Deploy &gt; New deployment</code>:
+    <ul>
+      <li>Type: <strong>Web app</strong></li>
+      <li>Execute as: <strong>Me</strong> (your Google account)</li>
+      <li>Who has access: <strong>Anyone</strong></li>
+    </ul>
+  </li>
+  <li><strong>Authorize</strong> the script when prompted.</li>
+  <li><strong>Copy the URL</strong> (looks like <code class="language-plaintext highlighter-rouge">https://script.google.com/macros/s/.../exec</code>).</li>
+  <li><strong>Configure</strong> in the instructor editor: paste the URL into <code class="language-plaintext highlighter-rouge">Reporting Channels &gt; Google Sheets Webhook URL</code>.</li>
+  <li><strong>Export</strong> the <code class="language-plaintext highlighter-rouge">.agr</code> file for students.</li>
+</ol>
+
+<h3 id="what-you-get">What You Get</h3>
+
+<p>Each submission adds a row with: student name, computer name, username, course, section, semester, instructor, assignment name, filename, points earned/total, percentage, and per-test PASS/FAIL columns.</p>
+
+<h3 id="updating-the-script">Updating the Script</h3>
+
+<p>If you update the Apps Script code, you must create a <strong>new deployment</strong> (not just save). Go to <code class="language-plaintext highlighter-rouge">Deploy &gt; Manage deployments</code> and edit the existing one, or create a new deployment and update the URL in the instructor editor.</p>
+
+<hr />
+
+<h2 id="submission-server">Submission Server</h2>
+
+<p>The self-hosted submission server collects full results including student code, provides a web dashboard, analytics, plagiarism detection, and CSV export. This is the most feature-rich option.</p>
+
+<h3 id="setup-1">Setup</h3>
+
+<ol>
+  <li>Download and start the submission server (see <a href="/docs/offline/server-setup/">Server Setup</a>).</li>
+  <li>In the instructor editor, configure under <strong>Reporting Channels</strong>:
+    <ul>
+      <li><strong>REST API URL</strong>: <code class="language-plaintext highlighter-rouge">http://YOUR_SERVER:5000/api/submit</code></li>
+      <li><strong>API Key</strong>: The server’s API key (defaults to the server password if not set separately)</li>
+    </ul>
+  </li>
+  <li>Export the <code class="language-plaintext highlighter-rouge">.agr</code> file for students.</li>
+</ol>
+
+<h3 id="what-you-get-1">What You Get</h3>
+
+<ul>
+  <li>Full test results with scores</li>
+  <li>Student code files (stored on your server)</li>
+  <li>Dashboard with analytics, plagiarism detection, and code search</li>
+  <li>Canvas-compatible CSV export</li>
+  <li>Assignment deadlines and roster management</li>
+</ul>
+
+<p>See <a href="/docs/offline/server-setup/">Server Setup</a> for full installation and feature documentation.</p>
+
+<hr />
+
+<h2 id="webhook">Webhook</h2>
+
+<p>For custom integrations, set a webhook URL to receive a POST request with a JSON payload on each student submission.</p>
+
+<p>Configure in the instructor editor under <strong>Reporting Channels &gt; Webhook URL</strong>. The payload includes all submission data (student info, scores, test results).</p>
+
+<hr />
+
+<h2 id="combining-channels">Combining Channels</h2>
+
+<p>Common combinations:</p>
+
+<ul>
+  <li><strong>PDF + Email</strong> - Simple setup. Students export PDF for your LMS, email gives you a backup.</li>
+  <li><strong>Server only</strong> - Full-featured single solution with dashboard, analytics, and plagiarism detection.</li>
+  <li><strong>Server + Google Sheets</strong> - Server for detailed analysis, Sheets for a quick glance at grades.</li>
+  <li><strong>All channels</strong> - Maximum redundancy. Each operates independently.</li>
+</ul>
+
+<hr />
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p><strong>Google Sheets not receiving data</strong> - Verify the URL is the deployment URL (contains <code class="language-plaintext highlighter-rouge">/exec</code>), not the script editor URL. Make sure the deployment access is set to “Anyone”. Check the Apps Script execution log under <code class="language-plaintext highlighter-rouge">Extensions &gt; Apps Script &gt; Executions</code>.</p>
+
+<p><strong>Server not receiving data</strong> - Verify the student app can reach the server (check firewall, port). The API key in the <code class="language-plaintext highlighter-rouge">.agr</code> must match the server’s key. The submit URL must end with <code class="language-plaintext highlighter-rouge">/api/submit</code>.</p>
+
+<p><strong>Submissions not being sent</strong> - The queue flushes on app startup and every 5 minutes. Check the queue file:</p>
+<ul>
+  <li>Windows: <code class="language-plaintext highlighter-rouge">%APPDATA%\PyAutoGrader\Offline\submission_queue.jsonl</code></li>
+  <li>macOS: <code class="language-plaintext highlighter-rouge">~/Library/Application Support/PyAutoGrader/Offline/submission_queue.jsonl</code></li>
+  <li>Linux: <code class="language-plaintext highlighter-rouge">~/.config/PyAutoGrader/Offline/submission_queue.jsonl</code></li>
+</ul>
+
+<p>If the file has entries, submissions are queued but have not been delivered yet (likely a network issue).</p>
+
+    <div class="doc-footer">
+      
+      <a href="/dev/docs/offline/roster-setup" class="doc-nav-btn prev">&#x2190; Roster Setup</a>
+      
+      
+      <a href="/dev/docs/offline/server-setup" class="doc-nav-btn next">Server Setup &#x2192;</a>
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>

@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview | PyAutoGrader</title>
+  <title>Download and Install | PyAutoGrader</title>
   <meta name="description" content="Automated Python grading for educators" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Overview | PyAutoGrader</title>
+<title>Download and Install | PyAutoGrader</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Overview" />
+<meta property="og:title" content="Download and Install" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted .agr files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server." />
-<meta property="og:description" content="PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted .agr files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server." />
-<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/overview/" />
-<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/overview/" />
+<meta name="description" content="PyAutoGrader is distributed as pre-built executables for Windows, macOS, and Linux. No Python installation, no pip, no build step required to run the applications." />
+<meta property="og:description" content="PyAutoGrader is distributed as pre-built executables for Windows, macOS, and Linux. No Python installation, no pip, no build step required to run the applications." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/download-and-install/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/download-and-install/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Overview" />
+<meta property="twitter:title" content="Download and Install" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted .agr files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.","headline":"Overview","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/overview/"},"url":"https://pyautograder.github.io/dev/docs/offline/overview/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"PyAutoGrader is distributed as pre-built executables for Windows, macOS, and Linux. No Python installation, no pip, no build step required to run the applications.","headline":"Download and Install","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/download-and-install/"},"url":"https://pyautograder.github.io/dev/docs/offline/download-and-install/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -109,11 +109,11 @@
             
           
             
-          <li><a href="/dev/docs/offline/overview/" class="active">Overview</a></li>
+          <li><a href="/dev/docs/offline/overview/" >Overview</a></li>
             
           
             
-          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+          <li><a href="/dev/docs/offline/download-and-install/" class="active">Download and Install</a></li>
             
           
             
@@ -161,40 +161,115 @@
     <div class="doc-breadcrumb">
       <a href="/dev/docs/getting-started">Docs</a>
        / <span>Offline Autograder</span>
-      / <span>Overview</span>
+      / <span>Download and Install</span>
     </div>
-    <h1>Overview</h1>
-    <p>PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted <code class="language-plaintext highlighter-rouge">.agr</code> files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.</p>
+    <h1>Download and Install</h1>
+    <p>PyAutoGrader is distributed as pre-built executables for Windows, macOS, and Linux. No Python installation, no pip, no build step required to run the applications.</p>
 
-<p>All three applications - the instructor editor, the student grader, and the submission server - are available as pre-built executables for Windows, macOS, and Linux.</p>
+<h2 id="applications">Applications</h2>
 
-<h2 id="key-concepts">Key Concepts</h2>
+<p>PyAutoGrader includes three standalone applications:</p>
 
-<p><strong>Instructor Application</strong> - A desktop app where you create assignments, configure tests, manage solution files, and set up reporting channels. Exports encrypted <code class="language-plaintext highlighter-rouge">.agr</code> files for distribution.</p>
+<h3 id="instructor-application-assignment-editor">Instructor Application (Assignment Editor)</h3>
 
-<p><strong>Student Application</strong> - A desktop app that loads <code class="language-plaintext highlighter-rouge">.agr</code> files and runs the grader against student code. Shows real-time results with pass/fail feedback and scores.</p>
+<p>The desktop editor where you create assignments, add tests, attach solution files, configure reporting channels, and manage student identity settings. Also includes batch grading for folders of student submissions.</p>
 
-<p><strong>.agr Files</strong> - Encrypted assignment files containing tests, solutions, and configuration. Students cannot see solutions or expected values. Distributed via your LMS or email.</p>
+<p>Download the instructor application from the <a href="/offline/">Downloads</a> page.</p>
 
-<p><strong>Result Collection</strong> - Four channels (use any combination): PDF export, email notifications, Google Sheets webhooks, or a self-hosted Flask submission server with analytics and plagiarism detection.</p>
+<h3 id="student-application-autograder">Student Application (AutoGrader)</h3>
 
-<h2 id="who-is-this-for">Who Is This For?</h2>
+<p>The student-facing app that loads encrypted <code class="language-plaintext highlighter-rouge">.agr</code> assignment files and runs the grader against student code. Shows real-time pass/fail feedback with scores.</p>
+
+<p>Students download from the <a href="/student/offline/">Student Downloads</a> page, or from whatever link you provide in your LMS.</p>
+
+<h3 id="submission-server-optional">Submission Server (Optional)</h3>
+
+<p>A self-hosted Flask server that provides a web dashboard for browsing submissions, analytics, plagiarism detection, code search, roster management, and CSV/Canvas export. Only needed if you want centralized result collection beyond email or Google Sheets.</p>
+
+<p>Download the server from the <a href="/offline/">Downloads</a> page. See <a href="/docs/offline/server-setup/">Server Setup</a> for installation and configuration.</p>
+
+<h2 id="system-requirements">System Requirements</h2>
+
+<p>All three applications are standalone executables that include their own runtime.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>Instructor App</th>
+      <th>Student App</th>
+      <th>Server</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Windows</strong></td>
+      <td>Windows 10+</td>
+      <td>Windows 10+</td>
+      <td>Windows 10+</td>
+    </tr>
+    <tr>
+      <td><strong>macOS</strong></td>
+      <td>macOS 11+</td>
+      <td>macOS 11+</td>
+      <td>macOS 11+</td>
+    </tr>
+    <tr>
+      <td><strong>Linux</strong></td>
+      <td>Ubuntu 20.04+ or equivalent</td>
+      <td>Ubuntu 20.04+ or equivalent</td>
+      <td>Ubuntu 20.04+ or equivalent</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Students need Python installed on their machine to write and run their own code, but <strong>not</strong> to run the PyAutoGrader application itself.</p>
+
+<h2 id="first-launch">First Launch</h2>
+
+<h3 id="windows">Windows</h3>
+
+<p>Windows may show a SmartScreen warning (“Windows protected your PC”) when you first run the application. Click <strong>More info</strong>, then <strong>Run anyway</strong>. This happens because the application is not signed with a commercial code signing certificate.</p>
+
+<h3 id="macos">macOS</h3>
+
+<p>macOS Gatekeeper may block the application on first launch. Right-click (or Control-click) the app and select <strong>Open</strong>, then click <strong>Open</strong> in the confirmation dialog. You only need to do this once per application.</p>
+
+<p>Alternatively, go to <strong>System Preferences &gt; Privacy &amp; Security</strong> and click <strong>Open Anyway</strong> after the blocked launch attempt.</p>
+
+<h3 id="linux">Linux</h3>
+
+<p>Make sure the downloaded file is executable:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x PyAutoGrader-<span class="k">*</span>
+./PyAutoGrader-<span class="k">*</span>
+</code></pre></div></div>
+
+<p>On some distributions, you may need to install tkinter separately if it is not bundled with your Python installation.</p>
+
+<h2 id="verifying-installation">Verifying Installation</h2>
+
+<p>Launch each application and confirm it opens without errors:</p>
 
 <ul>
-  <li>Instructors teaching Python courses at any level</li>
-  <li>Departments looking for a free alternative to subscription-based autograders</li>
-  <li>Educators who want students to learn real Python environment skills</li>
-  <li>Institutions that need FERPA-friendly grading (data stays on your infrastructure)</li>
+  <li><strong>Instructor App</strong> - You should see the assignment editor with a menu bar and empty workspace.</li>
+  <li><strong>Student App</strong> - You should see the grading interface with fields for name, assignment selection, and file selection.</li>
+  <li><strong>Server</strong> - After starting, open <code class="language-plaintext highlighter-rouge">http://localhost:5000</code> in your browser and confirm the login page appears.</li>
 </ul>
 
 <h2 id="next-steps">Next Steps</h2>
 
-<p>Start with <a href="/docs/offline/download-and-install/">Download and Install</a> to get the applications, then continue to <a href="/docs/offline/instructor-setup/">Instructor Setup</a> to create your first assignment.</p>
+<ul>
+  <li><strong>Instructors</strong>: Continue to <a href="/docs/offline/instructor-setup/">Instructor Setup</a> to create your first assignment.</li>
+  <li><strong>Students</strong>: See <a href="/docs/offline/student-usage/">Student Usage</a> for a walkthrough of the grading process.</li>
+</ul>
 
     <div class="doc-footer">
       
+      <a href="/dev/docs/offline/overview" class="doc-nav-btn prev">&#x2190; Overview</a>
       
-      <a href="/dev/docs/offline/download-and-install" class="doc-nav-btn next">Download and Install &#x2192;</a>
+      
+      <a href="/dev/docs/offline/instructor-setup" class="doc-nav-btn next">Instructor Setup &#x2192;</a>
       
     </div>
   </article>

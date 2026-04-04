@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview | PyAutoGrader</title>
+  <title>Batch Grading | PyAutoGrader</title>
   <meta name="description" content="Automated Python grading for educators" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Overview | PyAutoGrader</title>
+<title>Batch Grading | PyAutoGrader</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Overview" />
+<meta property="og:title" content="Batch Grading" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted .agr files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server." />
-<meta property="og:description" content="PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted .agr files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server." />
-<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/overview/" />
-<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/overview/" />
+<meta name="description" content="Batch grading lets you grade a folder of student .py files at once and export the results as a CSV gradebook. This is useful for grading downloaded LMS submissions without having students run the grader themselves." />
+<meta property="og:description" content="Batch grading lets you grade a folder of student .py files at once and export the results as a CSV gradebook. This is useful for grading downloaded LMS submissions without having students run the grader themselves." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/batch-grading/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/batch-grading/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Overview" />
+<meta property="twitter:title" content="Batch Grading" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted .agr files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.","headline":"Overview","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/overview/"},"url":"https://pyautograder.github.io/dev/docs/offline/overview/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"Batch grading lets you grade a folder of student .py files at once and export the results as a CSV gradebook. This is useful for grading downloaded LMS submissions without having students run the grader themselves.","headline":"Batch Grading","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/batch-grading/"},"url":"https://pyautograder.github.io/dev/docs/offline/batch-grading/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -109,7 +109,7 @@
             
           
             
-          <li><a href="/dev/docs/offline/overview/" class="active">Overview</a></li>
+          <li><a href="/dev/docs/offline/overview/" >Overview</a></li>
             
           
             
@@ -133,7 +133,7 @@
             
           
             
-          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+          <li><a href="/dev/docs/offline/batch-grading/" class="active">Batch Grading</a></li>
             
           
             
@@ -161,40 +161,120 @@
     <div class="doc-breadcrumb">
       <a href="/dev/docs/getting-started">Docs</a>
        / <span>Offline Autograder</span>
-      / <span>Overview</span>
+      / <span>Batch Grading</span>
     </div>
-    <h1>Overview</h1>
-    <p>PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted <code class="language-plaintext highlighter-rouge">.agr</code> files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.</p>
+    <h1>Batch Grading</h1>
+    <p>Batch grading lets you grade a folder of student <code class="language-plaintext highlighter-rouge">.py</code> files at once and export the results as a CSV gradebook. This is useful for grading downloaded LMS submissions without having students run the grader themselves.</p>
 
-<p>All three applications - the instructor editor, the student grader, and the submission server - are available as pre-built executables for Windows, macOS, and Linux.</p>
+<h2 id="overview">Overview</h2>
 
-<h2 id="key-concepts">Key Concepts</h2>
+<ol>
+  <li>Download student <code class="language-plaintext highlighter-rouge">.py</code> files from your LMS.</li>
+  <li>Open the instructor application and load your <code class="language-plaintext highlighter-rouge">.agr</code> file.</li>
+  <li>Select the assignment and the folder of student files.</li>
+  <li>Run batch grading.</li>
+  <li>Export the results as CSV.</li>
+</ol>
 
-<p><strong>Instructor Application</strong> - A desktop app where you create assignments, configure tests, manage solution files, and set up reporting channels. Exports encrypted <code class="language-plaintext highlighter-rouge">.agr</code> files for distribution.</p>
+<p>Batch grading is accessed through the <strong>instructor application GUI</strong>.</p>
 
-<p><strong>Student Application</strong> - A desktop app that loads <code class="language-plaintext highlighter-rouge">.agr</code> files and runs the grader against student code. Shows real-time results with pass/fail feedback and scores.</p>
+<h2 id="running-batch-grading">Running Batch Grading</h2>
 
-<p><strong>.agr Files</strong> - Encrypted assignment files containing tests, solutions, and configuration. Students cannot see solutions or expected values. Distributed via your LMS or email.</p>
+<ol>
+  <li>Launch the instructor application.</li>
+  <li>Load the <code class="language-plaintext highlighter-rouge">.agr</code> file containing the assignment you want to grade.</li>
+  <li>Select the assignment from the dropdown.</li>
+  <li>Click <strong>Batch Grade</strong> and select the folder containing student <code class="language-plaintext highlighter-rouge">.py</code> files.</li>
+  <li>The grader runs each file against the assignment’s tests and displays progress.</li>
+</ol>
 
-<p><strong>Result Collection</strong> - Four channels (use any combination): PDF export, email notifications, Google Sheets webhooks, or a self-hosted Flask submission server with analytics and plagiarism detection.</p>
+<h2 id="csv-output-format">CSV Output Format</h2>
 
-<h2 id="who-is-this-for">Who Is This For?</h2>
+<p>The output CSV contains one row per student with the following columns:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Student Name</td>
+      <td>Extracted from file comments or filename</td>
+    </tr>
+    <tr>
+      <td>Filename</td>
+      <td>Original <code class="language-plaintext highlighter-rouge">.py</code> filename</td>
+    </tr>
+    <tr>
+      <td><em>(test names)</em></td>
+      <td>One column per test, containing points earned</td>
+    </tr>
+    <tr>
+      <td>Total Points</td>
+      <td>Sum of earned points</td>
+    </tr>
+    <tr>
+      <td>Max Points</td>
+      <td>Maximum possible points</td>
+    </tr>
+    <tr>
+      <td>Percentage</td>
+      <td>Earned / max as a percentage</td>
+    </tr>
+    <tr>
+      <td>Timestamp</td>
+      <td>When grading occurred</td>
+    </tr>
+    <tr>
+      <td>Error</td>
+      <td>Error message if the script failed to execute</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="student-name-extraction">Student Name Extraction</h2>
+
+<p>Names are extracted automatically using these strategies (in priority order):</p>
+
+<ol>
+  <li><strong>Comment header</strong> - <code class="language-plaintext highlighter-rouge"># Name: John Smith</code> or <code class="language-plaintext highlighter-rouge"># Student: Jane Doe</code> in the first 10 lines of the file.</li>
+  <li><strong>Filename pattern</strong> - <code class="language-plaintext highlighter-rouge">Smith_John_ForLoop1.py</code> becomes <code class="language-plaintext highlighter-rouge">Smith, John</code>.</li>
+  <li><strong>Fallback</strong> - The filename without extension.</li>
+</ol>
+
+<p><strong>Tip</strong>: Tell students to include a <code class="language-plaintext highlighter-rouge"># Name: First Last</code> comment at the top of their file for reliable name extraction.</p>
+
+<h2 id="canvas-compatible-export">Canvas-Compatible Export</h2>
+
+<p>If you are running the submission server, the dashboard provides a Canvas-compatible CSV export format. This format uses Canvas’s expected column headers for direct grade import:</p>
+
+<ol>
+  <li>Open the submission server dashboard.</li>
+  <li>Filter to the desired course, section, and assignment.</li>
+  <li>Click <strong>Export Canvas CSV</strong>.</li>
+  <li>Import the downloaded CSV into Canvas Gradebook.</li>
+</ol>
+
+<p>See <a href="/docs/offline/server-setup/">Server Setup</a> for details on the submission server.</p>
+
+<h2 id="tips">Tips</h2>
 
 <ul>
-  <li>Instructors teaching Python courses at any level</li>
-  <li>Departments looking for a free alternative to subscription-based autograders</li>
-  <li>Educators who want students to learn real Python environment skills</li>
-  <li>Institutions that need FERPA-friendly grading (data stays on your infrastructure)</li>
+  <li>Download student files with their original filenames from your LMS when possible. This helps with name extraction.</li>
+  <li>If students submit multiple files for multi-file assignments, keep all files for each student in the same folder.</li>
+  <li>The grader uses the same timeout settings from the <code class="language-plaintext highlighter-rouge">.agr</code> file that students experience.</li>
+  <li>Review the Error column for files that failed to execute - common causes are syntax errors, missing imports, or <code class="language-plaintext highlighter-rouge">input()</code> calls.</li>
 </ul>
-
-<h2 id="next-steps">Next Steps</h2>
-
-<p>Start with <a href="/docs/offline/download-and-install/">Download and Install</a> to get the applications, then continue to <a href="/docs/offline/instructor-setup/">Instructor Setup</a> to create your first assignment.</p>
 
     <div class="doc-footer">
       
+      <a href="/dev/docs/offline/saving-and-exporting" class="doc-nav-btn prev">&#x2190; Saving and Exporting</a>
       
-      <a href="/dev/docs/offline/download-and-install" class="doc-nav-btn next">Download and Install &#x2192;</a>
+      
+      <a href="/dev/docs/offline/roster-setup" class="doc-nav-btn next">Roster Setup &#x2192;</a>
       
     </div>
   </article>

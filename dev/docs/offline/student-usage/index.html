@@ -11,17 +11,17 @@
 <meta property="og:title" content="Student Usage" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This page is a placeholder. Full content coming soon." />
-<meta property="og:description" content="This page is a placeholder. Full content coming soon." />
+<meta name="description" content="This guide covers how students use the PyAutoGrader student application to grade their Python assignments." />
+<meta property="og:description" content="This guide covers how students use the PyAutoGrader student application to grade their Python assignments." />
 <link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/student-usage/" />
 <meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/student-usage/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-04T16:49:39+00:00" />
+<meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Student Usage" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T16:49:39+00:00","datePublished":"2026-04-04T16:49:39+00:00","description":"This page is a placeholder. Full content coming soon.","headline":"Student Usage","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/student-usage/"},"url":"https://pyautograder.github.io/dev/docs/offline/student-usage/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"This guide covers how students use the PyAutoGrader student application to grade their Python assignments.","headline":"Student Usage","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/student-usage/"},"url":"https://pyautograder.github.io/dev/docs/offline/student-usage/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -85,6 +85,20 @@
           
             
           
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
         </ul>
       </div>
       
@@ -99,15 +113,43 @@
             
           
             
+          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
           <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
             
           
             
-          <li><a href="/dev/docs/offline/building-executable/" >Building an Executable</a></li>
+          <li><a href="/dev/docs/offline/test-types-reference/" >Test Types Reference</a></li>
             
           
             
           <li><a href="/dev/docs/offline/student-usage/" class="active">Student Usage</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/troubleshooting/" >Troubleshooting</a></li>
             
           
         </ul>
@@ -122,27 +164,141 @@
       / <span>Student Usage</span>
     </div>
     <h1>Student Usage</h1>
-    <p><em>This page is a placeholder. Full content coming soon.</em></p>
+    <p>This guide covers how students use the PyAutoGrader student application to grade their Python assignments.</p>
 
-<h2 id="how-students-use-the-offline-grader">How Students Use the Offline Grader</h2>
+<h2 id="getting-the-app">Getting the App</h2>
+
+<p>Download the PyAutoGrader student application for your platform (Windows, macOS, or Linux) from the <a href="/student/offline/">Student Downloads</a> page, or from whatever link your instructor provides. The app is a standalone executable - no Python installation is needed to run it.</p>
+
+<p>You will still need Python installed on your machine to write and run your own code.</p>
+
+<h2 id="getting-the-assignment-file">Getting the Assignment File</h2>
+
+<p>Your instructor will distribute an <code class="language-plaintext highlighter-rouge">.agr</code> assignment file through your LMS (Canvas, Blackboard, etc.), email, or a shared drive. Download this file and save it somewhere convenient.</p>
+
+<h2 id="launching-the-app">Launching the App</h2>
+
+<p>Run the PyAutoGrader executable. On first launch, your OS may show a security warning:</p>
+
+<ul>
+  <li><strong>Windows</strong>: Click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+  <li><strong>macOS</strong>: Right-click the app, select <strong>Open</strong>, then click <strong>Open</strong> in the dialog.</li>
+</ul>
+
+<p>See <a href="/docs/offline/download-and-install/">Download and Install</a> for more details on first-launch behavior.</p>
+
+<h2 id="loading-an-assignment">Loading an Assignment</h2>
 
 <ol>
-  <li>Receive the executable from your instructor</li>
-  <li>Place it in the same directory as your Python assignment file</li>
-  <li>Run the executable from the terminal or by double-clicking (OS dependent)</li>
-  <li>Review your test results</li>
+  <li>Click <strong>Load Assignment</strong> (or use the file menu).</li>
+  <li>Browse to and select your <code class="language-plaintext highlighter-rouge">.agr</code> file.</li>
 </ol>
+
+<p>The app remembers recently opened files. Use the <strong>Recent Files</strong> dropdown to quickly reload a previous assignment without browsing.</p>
+
+<h2 id="entering-your-identity">Entering Your Identity</h2>
+
+<p>Before running the grader, enter your name or username. Depending on your instructor’s configuration:</p>
+
+<ul>
+  <li><strong>Name mode</strong> - Type your name in the text field.</li>
+  <li><strong>Username mode</strong> - Type your student ID, email, or other identifier. It must match your instructor’s roster.</li>
+  <li><strong>Username or Name mode</strong> - Type your identifier. If it matches the roster, your display name is resolved automatically. If not, it is accepted as-is.</li>
+</ul>
+
+<h2 id="selecting-a-python-environment">Selecting a Python Environment</h2>
+
+<p>The app auto-detects Python environments on your system (conda, venv, pyenv, system Python). Select the environment you used to develop your code from the dropdown.</p>
+
+<h2 id="selecting-your-assignment-and-file">Selecting Your Assignment and File</h2>
+
+<ol>
+  <li>Select the assignment from the <strong>Assignment</strong> dropdown.</li>
+  <li>Click <strong>Browse</strong> to select your <code class="language-plaintext highlighter-rouge">.py</code> file, or <strong>drag and drop</strong> it onto the app window.</li>
+</ol>
+
+<h3 id="multi-file-assignments">Multi-File Assignments</h3>
+
+<p>Some assignments require multiple files (e.g., <code class="language-plaintext highlighter-rouge">main.py</code> and <code class="language-plaintext highlighter-rouge">helpers.py</code>). When you select one file, the app auto-detects other expected files in the same folder.</p>
+
+<h2 id="running-the-grader">Running the Grader</h2>
+
+<p>Click the <strong>Run</strong> button or press <strong>Ctrl+R</strong> to grade your code.</p>
+
+<p>The grader executes your Python script in a sandboxed environment and runs each test defined by your instructor. Results appear in real time.</p>
 
 <h2 id="understanding-your-results">Understanding Your Results</h2>
 
-<p>The grader will print which tests passed and which failed, along with a final score. You do not need to install anything - the executable is self-contained.</p>
+<p>Each test shows one of three outcomes:</p>
 
-<p>Full instructions with screenshots will be added here when the first release is available.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Result</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Pass</strong> (green check)</td>
+      <td>Your code met the test requirements. Full points awarded.</td>
+    </tr>
+    <tr>
+      <td><strong>Fail</strong> (red X)</td>
+      <td>Your code did not meet the requirements. See the feedback message.</td>
+    </tr>
+    <tr>
+      <td><strong>Partial Credit</strong></td>
+      <td>Some sub-checks passed. Points awarded proportionally (if enabled).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="feedback-messages">Feedback Messages</h3>
+
+<ul>
+  <li><strong>Pass feedback</strong> - A confirmation message (if your instructor configured one).</li>
+  <li><strong>Fail feedback</strong> - Explains what went wrong. Read this carefully.</li>
+  <li><strong>Hint</strong> - An optional tip shown on failure to guide you toward the fix.</li>
+</ul>
+
+<p>Your total score is shown as points earned out of points possible, with a percentage.</p>
+
+<h2 id="exporting-results-as-pdf">Exporting Results as PDF</h2>
+
+<p>Click the <strong>Export PDF</strong> button to save your results as a PDF file. This is useful for submitting proof of your grade to your LMS or keeping a personal record.</p>
+
+<h2 id="submission-behavior">Submission Behavior</h2>
+
+<p>Depending on your instructor’s configuration, results may be submitted automatically:</p>
+
+<ul>
+  <li><strong>Email</strong> - Results are emailed to your instructor when you run the grader.</li>
+  <li><strong>Server</strong> - Results are sent to a submission server for centralized collection.</li>
+  <li><strong>Google Sheets</strong> - Grades are posted to your instructor’s spreadsheet.</li>
+</ul>
+
+<p>You do not need to do anything extra - submission happens automatically when you run the grader.</p>
+
+<h2 id="tips">Tips</h2>
+
+<ul>
+  <li>Make sure any data files your script reads (CSV, TXT, JSON, etc.) are in the <strong>same folder</strong> as your <code class="language-plaintext highlighter-rouge">.py</code> file.</li>
+  <li>Remove or guard any <code class="language-plaintext highlighter-rouge">input()</code> calls - the grader cannot provide interactive input.</li>
+  <li>If your script takes too long, the grader will stop it after the timeout period (set by your instructor, typically 30 seconds).</li>
+  <li>Do not call <code class="language-plaintext highlighter-rouge">plt.show()</code> in matplotlib assignments - the grader handles display.</li>
+  <li>Fix one failing test at a time and re-run. The grader re-executes your script fresh each time.</li>
+  <li>Check the feedback messages for error details if your script fails to run.</li>
+</ul>
+
+<p>For more help with common issues, see <a href="/docs/offline/troubleshooting/">Troubleshooting</a>.</p>
 
     <div class="doc-footer">
       
-      <a href="/dev/docs/offline/building-executable" class="doc-nav-btn prev">&#x2190; Building an Executable</a>
+      <a href="/dev/docs/offline/test-types-reference" class="doc-nav-btn prev">&#x2190; Test Types Reference</a>
       
+      
+      <a href="/dev/docs/offline/saving-and-exporting" class="doc-nav-btn next">Saving and Exporting &#x2192;</a>
       
     </div>
   </article>

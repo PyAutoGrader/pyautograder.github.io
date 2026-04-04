@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saving and Exporting | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Saving and Exporting | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Saving and Exporting" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PyAutoGrader uses several file formats for different purposes. This guide covers saving your work, exporting assignments for students, and using JSON for portability." />
+<meta property="og:description" content="PyAutoGrader uses several file formats for different purposes. This guide covers saving your work, exporting assignments for students, and using JSON for portability." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/saving-and-exporting/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/saving-and-exporting/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T17:34:30+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Saving and Exporting" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T17:34:30+00:00","datePublished":"2026-04-04T17:34:30+00:00","description":"PyAutoGrader uses several file formats for different purposes. This guide covers saving your work, exporting assignments for students, and using JSON for portability.","headline":"Saving and Exporting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/saving-and-exporting/"},"url":"https://pyautograder.github.io/dev/docs/offline/saving-and-exporting/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/features" >Features</a>
+      <a href="/dev/server" >Server</a>
+      <a href="/dev/docs/getting-started" class="active">Docs</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Overview</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/test-types-reference/" >Test Types Reference</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/saving-and-exporting/" class="active">Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/offline/troubleshooting/" >Troubleshooting</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/dev/docs/getting-started">Docs</a>
+       / <span>Offline Autograder</span>
+      / <span>Saving and Exporting</span>
+    </div>
+    <h1>Saving and Exporting</h1>
+    <p>PyAutoGrader uses several file formats for different purposes. This guide covers saving your work, exporting assignments for students, and using JSON for portability.</p>
+
+<h2 id="file-formats">File Formats</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Format</th>
+      <th>Purpose</th>
+      <th>Who Uses It</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.agrx</code></td>
+      <td>Instructor working file (encrypted)</td>
+      <td>Instructors only</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.agr</code></td>
+      <td>Student assignment file (encrypted)</td>
+      <td>Students</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.json</code></td>
+      <td>Portable assignment or class settings (plain text)</td>
+      <td>Instructors, server</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="saving-as-agrx">Saving as .agrx</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">.agrx</code> file is your primary working file. It contains all assignments, tests, solution files, data files, and configuration for a course.</p>
+
+<ul>
+  <li><strong>Save</strong>: <code class="language-plaintext highlighter-rouge">File &gt; Save</code> or <code class="language-plaintext highlighter-rouge">Ctrl+S</code></li>
+  <li><strong>Save As</strong>: <code class="language-plaintext highlighter-rouge">File &gt; Save As</code> to create a copy with a new name</li>
+  <li>The editor auto-saves window position and re-opens your last file on launch</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">.agrx</code> file is encrypted with an instructor key. Students cannot open or read it.</p>
+
+<h2 id="exporting-agr-for-students">Exporting .agr for Students</h2>
+
+<p>When you are ready to distribute assignments to students:</p>
+
+<ol>
+  <li>Go to <strong>File &gt; Export for Students</strong>.</li>
+  <li>Choose a save location and filename (e.g., <code class="language-plaintext highlighter-rouge">engr101_fall2026.agr</code>).</li>
+</ol>
+
+<p>The exported <code class="language-plaintext highlighter-rouge">.agr</code> file contains:</p>
+
+<ul>
+  <li>All assignments and their tests</li>
+  <li>Bundled solution files (encrypted - students cannot view them)</li>
+  <li>Bundled data files</li>
+  <li>Reporting channel configuration (email, server, etc.)</li>
+  <li>Roster data (if bundled CSV is configured)</li>
+</ul>
+
+<p>Students load this file in the student application to run the grader.</p>
+
+<h3 id="distributing-agr-files">Distributing .agr Files</h3>
+
+<p>Distribute the <code class="language-plaintext highlighter-rouge">.agr</code> file through your LMS (Canvas, Blackboard, etc.), email, or a shared drive. Students download the file and place it in the same folder as the student application or in an <code class="language-plaintext highlighter-rouge">Assignments/</code> subfolder.</p>
+
+<p>When you update tests or add new assignments, re-export the <code class="language-plaintext highlighter-rouge">.agr</code> file and redistribute it. Students load the new file to get the updates.</p>
+
+<h2 id="exporting-assignments-as-json">Exporting Assignments as JSON</h2>
+
+<p>You can export individual assignments as plain-text JSON files for portability:</p>
+
+<ul>
+  <li><strong>Export</strong>: Select an assignment and export it as JSON from the file menu.</li>
+  <li><strong>Import</strong>: Import a JSON assignment file into any <code class="language-plaintext highlighter-rouge">.agrx</code> working file.</li>
+</ul>
+
+<p>This is useful for:</p>
+
+<ul>
+  <li>Sharing assignments between instructors</li>
+  <li>Moving assignments between courses</li>
+  <li>Keeping a plain-text backup of assignment definitions</li>
+</ul>
+
+<p>JSON files are not encrypted - they contain test definitions and configuration in readable format. Do not distribute them to students if they contain expected values or solution references.</p>
+
+<h2 id="exporting-class-settings-as-json">Exporting Class Settings as JSON</h2>
+
+<p>You can export your entire class-level settings (course name, section, semester, reporting configuration) as a JSON file from the <strong>Settings</strong> panel:</p>
+
+<ul>
+  <li><strong>Export</strong>: Save class settings to a JSON file.</li>
+  <li><strong>Import</strong>: Load class settings from a JSON file into another <code class="language-plaintext highlighter-rouge">.agrx</code> working file.</li>
+</ul>
+
+<h3 id="pre-configuring-the-server">Pre-Configuring the Server</h3>
+
+<p>The class settings JSON can also be imported into the submission server to pre-configure assignments and course metadata before students start submitting. This saves you from manually setting up assignments on the server dashboard.</p>
+
+<h2 id="when-to-re-export">When to Re-Export</h2>
+
+<p>You need to re-export and redistribute the <code class="language-plaintext highlighter-rouge">.agr</code> file when you:</p>
+
+<ul>
+  <li>Add or remove assignments</li>
+  <li>Change test definitions or point values</li>
+  <li>Update solution files or data files</li>
+  <li>Change reporting channel settings</li>
+  <li>Update the bundled roster CSV</li>
+</ul>
+
+<p>You do <strong>not</strong> need to re-export when:</p>
+
+<ul>
+  <li>Adding students to a Google Sheet or server roster (these are fetched live)</li>
+  <li>Changing server-side settings (deadlines, analytics, etc.)</li>
+</ul>
+
+    <div class="doc-footer">
+      
+      <a href="/dev/docs/offline/student-usage" class="doc-nav-btn prev">&#x2190; Student Usage</a>
+      
+      
+      <a href="/dev/docs/offline/batch-grading" class="doc-nav-btn next">Batch Grading &#x2192;</a>
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>
