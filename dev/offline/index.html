@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Offline Autograder | PyAutoGrader</title>
+  <title>Download PyAutoGrader | PyAutoGrader</title>
   <meta name="description" content="Automated Python grading for educators" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Offline Autograder | PyAutoGrader</title>
+<title>Download PyAutoGrader | PyAutoGrader</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Offline Autograder" />
+<meta property="og:title" content="Download PyAutoGrader" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Automated Python grading for educators" />
@@ -18,9 +18,9 @@
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Offline Autograder" />
+<meta property="twitter:title" content="Download PyAutoGrader" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Offline Autograder","url":"https://pyautograder.github.io/dev/offline/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Download PyAutoGrader","url":"https://pyautograder.github.io/dev/offline/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -44,13 +44,13 @@
       <span class="logo-text">PyAutoGrader</span>
     </a>
     <nav class="site-nav">
-      <a href="/dev/offline" class="active">Offline</a>
-      <a href="/dev/online" >Online</a>
+      <a href="/dev/features" >Features</a>
+      <a href="/dev/server" >Server</a>
       <a href="/dev/docs/getting-started" >Docs</a>
-      <a href="/dev/pricing" >Pricing</a>
       <a href="/dev/faq" >FAQ</a>
       <a href="/dev/about" >About</a>
-      <a href="/dev/contact" class="btn-nav-cta" >Request Access</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -64,19 +64,19 @@
   <div class="page-hero">
     <div class="container">
       <div class="product-hero-badge">Always Free</div>
-      <h1 class="page-title">Offline Autograder</h1>
-      <p class="page-subtitle">Automated Python grading with no server required.</p>
+      <h1 class="page-title">Download PyAutoGrader</h1>
+      <p class="page-subtitle">Free automated Python grading for educators.</p>
     </div>
   </div>
 
   <div class="container page-content">
 
-    <div class="callout">The Offline Autograder is completely <strong>free</strong> and always will be.</div>
+    <div class="callout">PyAutoGrader is completely <strong>free</strong> and always will be. No subscriptions, no per-student fees.</div>
 
     <!-- WORKFLOW SECTION -->
     <section class="content-section">
       <h2>How It Works</h2>
-      <p>The Offline Autograder consists of two executables — one for instructors and one for students. Both are downloaded directly from this site. The instructor creates an assignment file (.agr) which the student loads into their executable. After completing the assignment, the student exports a results PDF and submits it to the LMS or sends it to their instructor.
+      <p>PyAutoGrader has two applications - one for instructors and one for students. The instructor creates an assignment file (.agr) with tests, solutions, and configuration. Students load the .agr file into their app, run the grader on their code, and get instant feedback. Results can be collected via PDF export, email, Google Sheets, or a self-hosted server.
 </p>
 
       <!-- DIAGRAM
@@ -268,7 +268,7 @@
     <!-- STUDENT SECTION -->
     <section class="content-section">
       <h2>Are You a Student?</h2>
-      <p>If your instructor uses the Offline Autograder, head to the Student Downloads page to download your executable and get setup instructions.
+      <p>If your instructor uses PyAutoGrader, head to the Student Downloads page to download your app and get setup instructions.
 </p>
       
       <div class="section-actions">
@@ -281,19 +281,12 @@
 
     <!-- LEGACY SECTION (optional) -->
     
-    <section class="content-section legacy-section">
-      <p class="legacy-text">
-        Prefer to build your own? PyAutoGrader Classic is a separate project that lets you write test cases and compile your own grading executable from scratch.
-        <a href="/dev/classic/">Learn about PyAutoGrader Classic →</a>
-      </p>
-    </section>
-    
 
   </div>
 </div>
 
 <script>
-// OS Detection — recommends the right download based on the visitor's platform
+// OS Detection - recommends the right download based on the visitor's platform
 // Downloads are defined in the page front matter and passed via data attributes
 const downloads = {
   windows: {
@@ -371,23 +364,22 @@ renderDownloads();
 
       <div class="footer-links">
         <div class="footer-col">
-          <span class="footer-col-title">Products</span>
-          <a href="/dev/offline">Offline Autograder</a>
-          <a href="/dev/online">Online Autograder</a>
-          <a href="/dev/pricing">Pricing</a>
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
         </div>
         <div class="footer-col">
           <span class="footer-col-title">Resources</span>
           <a href="/dev/docs/getting-started">Documentation</a>
-          <a href="/dev/student-downloads">Student Downloads</a>
-          <a href="/dev/changelog">Changelog</a>
           <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
         </div>
         <div class="footer-col">
           <span class="footer-col-title">Project</span>
           <a href="/dev/about">About</a>
           <a href="/dev/contact">Contact</a>
-          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 

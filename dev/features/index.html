@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Features | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Features" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/dev/features/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/features/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Features" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Features","url":"https://pyautograder.github.io/dev/features/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/features" class="active">Features</a>
+      <a href="/dev/server" >Server</a>
+      <a href="/dev/docs/getting-started" >Docs</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Features</h1>
+      <p class="page-subtitle">Everything PyAutoGrader can do for your Python classroom.</p>
+    </div>
+  </div>
+  <div class="container page-content">
+    <div class="page-intro">
+  PyAutoGrader supports 42+ test types, multi-file assignments, encrypted distribution, and
+  flexible result collection. Here is a detailed look at what you can test and how assignments work.
+</div>
+
+<h2 id="assignment-creation">Assignment Creation</h2>
+
+<p>Build assignments in the instructor application. Each assignment contains test cases, optional solution
+files, and configuration for how students identify themselves and how results are collected.</p>
+
+<ul>
+  <li><strong>Encrypted .agr files</strong> - Assignments are exported as encrypted files that students cannot reverse-engineer. Solutions and expected values are never visible to students.</li>
+  <li><strong>Multi-file support</strong> - Target tests to specific files. The student app auto-detects related files in the same directory.</li>
+  <li><strong>Bundled data files</strong> - Include CSV files, text files, or other data your students’ code needs.</li>
+  <li><strong>Partial credit</strong> - Award proportional points when sub-checks partially pass.</li>
+  <li><strong>Custom feedback</strong> - Configure pass/fail messages and hints for each test to guide students toward the right solution.</li>
+</ul>
+
+<hr />
+
+<h2 id="test-types">Test Types</h2>
+
+<h3 id="variables-and-data">Variables and Data</h3>
+<ul>
+  <li><strong>variable_value</strong> - Check that a variable equals an expected value (with optional tolerance)</li>
+  <li><strong>variable_type</strong> - Verify variable types (int, float, str, list, dict, tuple, etc.)</li>
+  <li><strong>list_equals</strong> - Compare lists with optional order checking</li>
+  <li><strong>array_equals</strong> - NumPy array comparison with tolerance</li>
+  <li><strong>array_size</strong> - Check array dimensions (min, max, or exact)</li>
+  <li><strong>array_values_in_range</strong> - Verify all array values fall within bounds</li>
+  <li><strong>dict_equals</strong> - Dictionary comparison with tolerance</li>
+  <li><strong>compare_solution</strong> - Compare student variables against your solution file</li>
+  <li><strong>check_relationship</strong> - Verify mathematical relationships between variables</li>
+  <li><strong>dataframe_columns</strong> - Check pandas DataFrame has expected columns</li>
+</ul>
+
+<h3 id="functions-and-classes">Functions and Classes</h3>
+<ul>
+  <li><strong>function_exists</strong> - Verify a function is defined</li>
+  <li><strong>function_called</strong> - Check if a function was called during execution</li>
+  <li><strong>function_not_called</strong> - Verify a function was NOT called</li>
+  <li><strong>test_function_solution</strong> - Test student function against your solution with specific inputs</li>
+  <li><strong>function_signature</strong> - Check function parameters and defaults</li>
+  <li><strong>return_type</strong> - Verify function return type</li>
+  <li><strong>class_exists</strong> - Verify class definition</li>
+  <li><strong>class_has_method</strong> - Check method existence</li>
+  <li><strong>class_has_attribute</strong> - Check attribute existence</li>
+</ul>
+
+<h3 id="control-flow">Control Flow</h3>
+<ul>
+  <li><strong>for_loop_used</strong> - Detect presence of for loops</li>
+  <li><strong>while_loop_used</strong> - Detect presence of while loops</li>
+  <li><strong>if_statement_used</strong> - Detect presence of if statements</li>
+  <li><strong>loop_iterations</strong> - Verify exact loop iteration count</li>
+  <li><strong>exception_raised</strong> - Check that code raises specific exception types</li>
+</ul>
+
+<h3 id="code-patterns">Code Patterns</h3>
+<ul>
+  <li><strong>code_contains</strong> - Search for a phrase in source code</li>
+  <li><strong>code_not_contains</strong> - Verify a phrase is absent</li>
+  <li><strong>operator_used</strong> - Detect specific operators (+=, **, //, etc.)</li>
+  <li><strong>stdout_contains</strong> - Verify printed output contains text</li>
+  <li><strong>import_used</strong> - Verify a module was imported</li>
+</ul>
+
+<h3 id="matplotlib-plots">Matplotlib Plots</h3>
+<ul>
+  <li><strong>plot_created</strong> - Verify a matplotlib plot was generated</li>
+  <li><strong>plot_properties</strong> - Check title, xlabel, ylabel, legend, and grid all at once</li>
+  <li><strong>plot_has_xlabel / plot_has_ylabel / plot_has_title</strong> - Individual label checks</li>
+  <li><strong>plot_data_length</strong> - Verify number of data points per line</li>
+  <li><strong>plot_line_style</strong> - Check line style (solid, dashed, dotted, dashdot)</li>
+  <li><strong>plot_line_width</strong> - Check line width with tolerance</li>
+  <li><strong>plot_marker_size</strong> - Check marker size with tolerance</li>
+  <li><strong>compare_plot_solution</strong> - Compare against your solution plot (color, style, width, markers)</li>
+  <li><strong>check_multiple_lines / check_exact_lines</strong> - Verify line count</li>
+</ul>
+
+<h3 id="code-quality">Code Quality</h3>
+<ul>
+  <li><strong>naming_convention</strong> - Enforce snake_case, camelCase, PascalCase, or custom regex</li>
+  <li><strong>no_single_letter_vars</strong> - Block single-character names (with common exceptions like i, j, k)</li>
+  <li><strong>line_length</strong> - Maximum characters per line</li>
+  <li><strong>code_spacing</strong> - Whitespace around operators, after commas/colons, no trailing whitespace</li>
+  <li><strong>has_docstrings</strong> - Require docstrings on functions and classes</li>
+  <li><strong>has_module_docstring</strong> - Require file-level docstring</li>
+  <li><strong>min_comment_density</strong> - Minimum percentage of commented lines</li>
+  <li><strong>max_function_length</strong> - Maximum lines per function</li>
+  <li><strong>max_nesting_depth</strong> - Maximum nesting level for control structures</li>
+  <li><strong>cyclomatic_complexity</strong> - McCabe complexity threshold</li>
+  <li><strong>no_wildcard_imports</strong> - Block <code class="language-plaintext highlighter-rouge">from x import *</code></li>
+  <li><strong>imports_at_top</strong> - Require imports at file top</li>
+  <li><strong>no_global_variables</strong> - Disallow global scope variables</li>
+</ul>
+
+<h3 id="performance">Performance</h3>
+<ul>
+  <li><strong>performance</strong> - Function must complete within a time limit</li>
+  <li><strong>performance_script</strong> - Full script must complete within a time limit</li>
+  <li><strong>performance_compare_function</strong> - Compare function speed to your solution</li>
+  <li><strong>performance_compare_script</strong> - Compare script speed to your solution</li>
+</ul>
+
+<h3 id="file-naming">File Naming</h3>
+<ul>
+  <li><strong>file_name</strong> - Check submission filename (exact match, regex, prefix, suffix, contains)</li>
+  <li><strong>file_naming_convention</strong> - Enforce filename conventions (snake_case, kebab-case, etc.)</li>
+</ul>
+
+<hr />
+
+<h2 id="missing-a-test-type">Missing a Test Type?</h2>
+
+<p>If you need a test type that PyAutoGrader does not support yet,
+<a href="/contact/">let us know</a>. We actively add new test types based on instructor feedback.</p>
+
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>

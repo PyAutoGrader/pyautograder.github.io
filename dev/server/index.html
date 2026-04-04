@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Hosted Submission Server | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Self-Hosted Submission Server | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Self-Hosted Submission Server" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/dev/server/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/server/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Self-Hosted Submission Server" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Self-Hosted Submission Server","url":"https://pyautograder.github.io/dev/server/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/features" >Features</a>
+      <a href="/dev/server" class="active">Server</a>
+      <a href="/dev/docs/getting-started" >Docs</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" >Contact</a>
+      <a href="/dev/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Self-Hosted Submission Server</h1>
+      <p class="page-subtitle">A full-featured Flask server you run on your own infrastructure.</p>
+    </div>
+  </div>
+  <div class="container page-content">
+    <div class="page-intro">
+  The PyAutoGrader submission server gives you a complete dashboard for managing student
+  submissions, analyzing grades, detecting plagiarism, and exporting to your LMS. Run it on
+  your own machine or campus server - your data stays on your infrastructure.
+</div>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<p>The server runs with Python and a few dependencies. Start it with a single command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install -r requirements.txt
+python submission_server.py --username admin --password YOUR_PASSWORD
+</code></pre></div></div>
+
+<p>That gives you a dashboard at <code class="language-plaintext highlighter-rouge">http://localhost:5000/</code> with a SQLite database that requires zero configuration.</p>
+
+<hr />
+
+<h2 id="features">Features</h2>
+
+<h3 id="dashboard">Dashboard</h3>
+<p>Browse all submissions filtered by course, assignment, or student. Click into any submission
+to see full test results and the student’s code.</p>
+
+<h3 id="analytics">Analytics</h3>
+<ul>
+  <li>Score distribution charts</li>
+  <li>Submission trends over time</li>
+  <li>Assignment difficulty analysis</li>
+  <li>Student progress tracking</li>
+  <li>At-risk student identification</li>
+</ul>
+
+<h3 id="plagiarism-detection">Plagiarism Detection</h3>
+<p>Pairwise code similarity analysis across all submissions for an assignment.</p>
+
+<ul>
+  <li><strong>Code similarity</strong> - Compares functional code with comments stripped</li>
+  <li><strong>Comment similarity</strong> - Compares only comment text</li>
+  <li><strong>Combined score</strong> - Weighted metric (70% code, 30% comments)</li>
+  <li><strong>Side-by-side diff view</strong> with syntax highlighting</li>
+  <li>Color-coded severity: red (80%+), orange (50-79%), green (below 50%)</li>
+</ul>
+
+<h3 id="code-search">Code Search</h3>
+<p>Search across all submitted code for specific patterns. Useful for detecting AI-generated
+code patterns or verifying students used required constructs.</p>
+
+<h3 id="roster-management">Roster Management</h3>
+<p>Upload a CSV roster, add students manually, or let the student app fetch the roster
+from your server’s API. Supports duplicate detection and late adds.</p>
+
+<h3 id="assignment-deadlines">Assignment Deadlines</h3>
+<p>Set per-assignment cutoff dates with per-student overrides for accommodations or extensions.</p>
+
+<h3 id="export">Export</h3>
+<ul>
+  <li><strong>Canvas-compatible CSV</strong> - Import grades directly into Canvas LMS</li>
+  <li><strong>Standard CSV</strong> - Full gradebook with all test results</li>
+</ul>
+
+<hr />
+
+<h2 id="require-student-submission">Require Student Submission</h2>
+
+<p>Instructors can configure assignments so grading is restricted unless the student is connected
+to the server. This ensures all results flow through the server for tracking, analytics, and
+plagiarism detection.</p>
+
+<hr />
+
+<h2 id="hosting-options">Hosting Options</h2>
+
+<h3 id="on-campus-http">On-Campus (HTTP)</h3>
+<p>For private or campus-only networks, run the server over plain HTTP. No certificate setup needed.</p>
+
+<h3 id="off-campus-https">Off-Campus (HTTPS)</h3>
+<p>For public access, enable HTTPS. Two options:</p>
+
+<ul>
+  <li><strong>Caddy reverse proxy (recommended)</strong> - Automatic Let’s Encrypt certificates with zero manual management</li>
+  <li><strong>Built-in TLS</strong> - Pass <code class="language-plaintext highlighter-rouge">--cert</code> and <code class="language-plaintext highlighter-rouge">--key</code> flags for your own certificate files</li>
+</ul>
+
+<hr />
+
+<h2 id="database-options">Database Options</h2>
+
+<ul>
+  <li><strong>SQLite (default)</strong> - Zero setup, single file. Best for most deployments.</li>
+  <li><strong>PostgreSQL</strong> - For multi-server load balancing or very high concurrency.</li>
+</ul>
+
+<hr />
+
+<h2 id="additional-features">Additional Features</h2>
+
+<ul>
+  <li><strong>Rate limiting</strong> - 10 submissions per 60 seconds per IP</li>
+  <li><strong>Webhook notifications</strong> - POST on each submission for external integrations</li>
+  <li><strong>Duplicate detection</strong> - SHA-256 hashing catches identical resubmissions</li>
+  <li><strong>REST API</strong> - Full API for submission, health checks, and roster management</li>
+</ul>
+
+<hr />
+
+<h2 id="get-the-server">Get the Server</h2>
+
+<p>The submission server is included in the PyAutoGrader repository. See the
+<a href="/docs/getting-started/">documentation</a> for full setup instructions.</p>
+
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/dev/features">Features</a>
+          <a href="/dev/server">Self-Hosted Server</a>
+          <a href="/dev/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/faq">FAQ</a>
+          <a href="/dev/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>
