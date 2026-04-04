@@ -102,5 +102,6 @@ For public access, enable HTTPS. Two options:
 
 ## Get the Server
 
-The submission server is included in the PyAutoGrader repository. See the
-[documentation](/docs/getting-started/) for full setup instructions.
+Download the submission server from the [Downloads](/offline/) page. See the
+[Server Setup](/docs/offline/server-setup/) documentation for full installation, configuration,
+and feature details.

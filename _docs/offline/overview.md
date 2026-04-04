@@ -4,11 +4,13 @@ title: Overview
 section: Offline Autograder
 nav_order: 1
 permalink: /docs/offline/overview/
-next_doc: /docs/offline/instructor-setup
-next_title: Instructor Setup
+next_doc: /docs/offline/download-and-install
+next_title: Download and Install
 ---
 
-PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted `.agr` files. Students run the grader on their own machines, getting instant pass/fail feedback on 42+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.
+PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted `.agr` files. Students run the grader on their own machines, getting instant pass/fail feedback on 55+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.
+
+All three applications - the instructor editor, the student grader, and the submission server - are available as pre-built executables for Windows, macOS, and Linux.
 
 ## Key Concepts
 
@@ -29,4 +31,4 @@ PyAutoGrader lets instructors create automated Python assignments and distribute
 
 ## Next Steps
 
-Continue to [Instructor Setup](/docs/offline/instructor-setup/) to create your first assignment.
+Start with [Download and Install](/docs/offline/download-and-install/) to get the applications, then continue to [Instructor Setup](/docs/offline/instructor-setup/) to create your first assignment.

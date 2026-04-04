@@ -6,7 +6,7 @@ permalink: /features/
 ---
 
 <div class="page-intro">
-  PyAutoGrader supports 42+ test types, multi-file assignments, encrypted distribution, and
+  PyAutoGrader supports 55+ test types, multi-file assignments, encrypted distribution, and
   flexible result collection. Here is a detailed look at what you can test and how assignments work.
 </div>
 

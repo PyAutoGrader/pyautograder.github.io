@@ -20,8 +20,9 @@ groups:
 
       - q: What operating systems are supported?
         a: >
-          PyAutoGrader runs on Windows, macOS, and Linux. Both the instructor and student
-          applications are available for all three platforms.
+          PyAutoGrader runs on Windows, macOS, and Linux. The instructor application, student
+          application, and submission server are all available as pre-built executables for all
+          three platforms.
 
       - q: How does this compare to paid autograders?
         a: >
@@ -34,29 +35,41 @@ groups:
     items:
       - q: How do I create assignments?
         a: >
-          Download the instructor application, create a new assignment file, add your test cases
-          (42+ types available), and export an encrypted .agr file to distribute to students.
+          Download the instructor application and create a new .agrx working file. Add your test
+          cases (55+ types available), attach solution files, and configure reporting channels.
+          When ready, export an encrypted .agr file to distribute to students. See the
+          <a href="/docs/offline/instructor-setup/">Instructor Setup</a> guide for a full walkthrough.
+
+      - q: What is the difference between .agrx and .agr files?
+        a: >
+          The .agrx file is your instructor working file - it is editable and contains all
+          assignments, solutions, and configuration. The .agr file is the encrypted student file
+          exported from your .agrx - solutions are hidden and tests are locked. You work in
+          .agrx and export .agr for distribution. See
+          <a href="/docs/offline/saving-and-exporting/">Saving and Exporting</a> for details.
 
       - q: What types of tests can I create?
         a: >
-          PyAutoGrader supports 42+ test types including variable checks, function testing, class
+          PyAutoGrader supports 55+ test types including variable checks, function testing, class
           validation, control flow detection, matplotlib plot testing, code quality analysis
           (naming conventions, complexity, docstrings), performance benchmarks, and more. See the
-          Features page for the full list.
+          <a href="/docs/offline/test-types-reference/">Test Types Reference</a> for the full catalog.
 
       - q: How do I collect student results?
         a: >
-          Four ways - use any combination. PDF export (students upload to your LMS), email
-          (results sent to you automatically), Google Sheets (grades posted via webhook), or
-          a self-hosted Flask server (full dashboard with analytics and plagiarism detection).
-          Email and Google Sheets work as silent background notifications.
+          Five ways - use any combination. PDF export (students upload to your LMS), email
+          (results sent to you automatically), Google Sheets (grades posted via webhook),
+          a self-hosted Flask server (full dashboard with analytics and plagiarism detection),
+          or a custom webhook. Email and Google Sheets work as silent background notifications.
+          See <a href="/docs/offline/reporting-setup/">Reporting Setup</a> for configuration.
 
       - q: What is the self-hosted server?
         a: >
           A Flask-based submission server you run on your own infrastructure. It provides a
           dashboard for browsing submissions, analytics (score distributions, trends, at-risk
           students), plagiarism detection with side-by-side diff, Canvas-compatible CSV export,
-          roster management, and assignment deadlines. Supports HTTP and HTTPS.
+          roster management, and assignment deadlines. Supports HTTP and HTTPS. See
+          <a href="/docs/offline/server-setup/">Server Setup</a> for full documentation.
 
       - q: Can I require students to submit to my server?
         a: >
@@ -72,14 +85,33 @@ groups:
         a: >
           Yes. The instructor application includes batch grading. Download student .py files from
           your LMS, load them into the instructor app, and export a CSV with per-test scores.
+          See <a href="/docs/offline/batch-grading/">Batch Grading</a> for details.
+
+      - q: How does roster management work?
+        a: >
+          Roster management is optional - students can type their name freely by default. For
+          validated identity, you can bundle a CSV roster in the .agr file, connect a Google
+          Sheet for live updates, or use the submission server's API. These can be combined
+          with a fallback chain for offline support. See
+          <a href="/docs/offline/roster-setup/">Roster Setup</a> for configuration.
+
+      - q: Can I detect plagiarism?
+        a: >
+          Yes. The submission server includes pairwise code similarity analysis with four
+          metrics (code similarity, comment similarity, combined score, and comment-to-code
+          ratio), color-coded severity thresholds, and a side-by-side diff view with syntax
+          highlighting. See
+          <a href="/docs/offline/server-setup/#plagiarism-detection">Plagiarism Detection</a>
+          in the Server Setup docs.
 
   - name: For Students
     items:
       - q: I am a student - how do I use PyAutoGrader?
         a: >
-          Download the student application from the Student Downloads page. Your instructor will
-          give you a .agr assignment file. Open the app, load the file, select your Python
-          script, and run the grader. You will see instant pass/fail feedback.
+          Download the student application from the <a href="/student/offline/">Student Downloads</a>
+          page. Your instructor will give you a .agr assignment file. Open the app, load the file,
+          select your Python script, and run the grader. You will see instant pass/fail feedback.
+          See <a href="/docs/offline/student-usage/">Student Usage</a> for a full walkthrough.
 
       - q: Do I need to install Python?
         a: >
@@ -89,9 +121,22 @@ groups:
 
       - q: What if I do not have internet when grading?
         a: >
-          Grading works completely offline. If your instructor has email or server submission
-          configured, your results will be queued locally and sent automatically the next time
-          you have internet.
+          Grading works completely offline. Your results will be submitted when connectivity
+          is available.
+
+      - q: What if grading times out?
+        a: >
+          Your code may have an infinite loop or be taking too long. Check for while loops
+          without a break condition, remove any input() calls (the grader cannot provide
+          interactive input), and verify your code completes within the time limit set by
+          your instructor (typically 30 seconds). See
+          <a href="/docs/offline/troubleshooting/">Troubleshooting</a> for more help.
+
+      - q: Can I see the expected answers?
+        a: >
+          No. Solutions and expected values are encrypted in the .agr file and are never
+          visible to students. This is by design - it ensures grading integrity and prevents
+          students from reverse-engineering test answers.
 
   - name: Privacy and Compliance
     items:
