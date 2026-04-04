@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roster Setup | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Roster Setup | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Roster Setup" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Roster management is optional. By default, students type their name freely. If you want to validate student identity against a roster, configure one of the options below." />
+<meta property="og:description" content="Roster management is optional. By default, students type their name freely. If you want to validate student identity against a roster, configure one of the options below." />
+<link rel="canonical" href="https://pyautograder.github.io/docs/offline/roster-setup/" />
+<meta property="og:url" content="https://pyautograder.github.io/docs/offline/roster-setup/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T21:56:32+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Roster Setup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T21:56:32+00:00","datePublished":"2026-04-04T21:56:32+00:00","description":"Roster management is optional. By default, students type their name freely. If you want to validate student identity against a roster, configure one of the options below.","headline":"Roster Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/roster-setup/"},"url":"https://pyautograder.github.io/docs/offline/roster-setup/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/features" >Features</a>
+      <a href="/server" >Server</a>
+      <a href="/docs/getting-started" class="active">Docs</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" >About</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/docs/offline/overview/" >Overview</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/test-types-reference/" >Test Types Reference</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/roster-setup/" class="active">Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/server-setup/" >Server Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/api-reference/" >Server API Reference</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/troubleshooting/" >Troubleshooting</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/docs/getting-started">Docs</a>
+       / <span>Offline Autograder</span>
+      / <span>Roster Setup</span>
+    </div>
+    <h1>Roster Setup</h1>
+    <p>Roster management is optional. By default, students type their name freely. If you want to validate student identity against a roster, configure one of the options below.</p>
+
+<h2 id="name-entry-modes">Name Entry Modes</h2>
+
+<p>Configure the mode in the instructor editor under <strong>Student Identity</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Behavior</th>
+      <th>If Not Found</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Name</strong> (default)</td>
+      <td>Freeform text entry. No roster needed.</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><strong>Username</strong> (strict)</td>
+      <td>Student types a username/ID. Must match the roster.</td>
+      <td>Grading blocked</td>
+    </tr>
+    <tr>
+      <td><strong>Username or Name</strong></td>
+      <td>Student types a username/ID. If found, resolved to display name. If not, allowed as freeform.</td>
+      <td>Allowed as freeform</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The instructor also sets a <strong>Field Label</strong> (e.g., “Student ID”, “Email”, “Last Name”) that the student sees instead of “Your Name”.</p>
+
+<h2 id="roster-format">Roster Format</h2>
+
+<p>The roster is a simple two-column CSV mapping usernames to display names:</p>
+
+<pre><code class="language-csv">username,display_name
+jdoe,John Doe
+12345,Bob Wilson
+jane.smith,Jane Smith
+</code></pre>
+
+<ul>
+  <li>The first row is a header (automatically skipped)</li>
+  <li>Students type their <strong>username</strong> - the app resolves it to the <strong>display name</strong></li>
+  <li>Both values are recorded in submissions</li>
+</ul>
+
+<hr />
+
+<h2 id="option-1-bundled-csv">Option 1: Bundled CSV</h2>
+
+<p>Best for small classes, stable rosters, and offline-only environments.</p>
+
+<p>The roster CSV is embedded directly in the <code class="language-plaintext highlighter-rouge">.agr</code> file.</p>
+
+<h3 id="setup">Setup</h3>
+
+<ol>
+  <li>Create a CSV file with two columns: <code class="language-plaintext highlighter-rouge">username, display_name</code>.</li>
+  <li>In the instructor editor, expand <strong>Student Identity</strong>.</li>
+  <li>Set the mode to <strong>Username</strong> or <strong>Username or Name</strong>.</li>
+  <li>Click <strong>Import CSV</strong> and select your file.</li>
+  <li>The count updates (e.g., “25 students in bundled roster”).</li>
+  <li>Export the <code class="language-plaintext highlighter-rouge">.agr</code> file - the roster is encrypted inside.</li>
+</ol>
+
+<h3 id="updating-the-roster">Updating the Roster</h3>
+
+<p>To update (e.g., for late adds), re-import the CSV, re-export the <code class="language-plaintext highlighter-rouge">.agr</code> file, and redistribute to students.</p>
+
+<h3 id="limitations">Limitations</h3>
+
+<p>Roster updates require redistributing the <code class="language-plaintext highlighter-rouge">.agr</code> file. Best when the roster is stable before the semester starts.</p>
+
+<hr />
+
+<h2 id="option-2-google-sheets">Option 2: Google Sheets</h2>
+
+<p>Best for easy updates, late adds, and classes where students have internet access.</p>
+
+<p>The student app fetches the roster live from a published Google Sheet each time an assignment is selected.</p>
+
+<h3 id="setup-1">Setup</h3>
+
+<ol>
+  <li>Create a Google Sheet with two columns (A = username, B = display name).</li>
+  <li>Go to <strong>File &gt; Share &gt; Publish to web</strong>.</li>
+  <li>Select the specific sheet tab (not “Entire Document”).</li>
+  <li>Change the format to <strong>Comma-separated values (.csv)</strong>.</li>
+  <li>Click <strong>Publish</strong> and copy the URL (contains <code class="language-plaintext highlighter-rouge">output=csv</code>).</li>
+  <li>In the instructor editor, expand <strong>Student Identity</strong>.</li>
+  <li>Set the mode and paste the URL into <strong>Roster URL</strong>.</li>
+  <li>Export the <code class="language-plaintext highlighter-rouge">.agr</code> file and distribute.</li>
+</ol>
+
+<h3 id="late-adds">Late Adds</h3>
+
+<p>Add the student to the Google Sheet. The next time any student selects the assignment, they get the updated roster automatically. No <code class="language-plaintext highlighter-rouge">.agr</code> redistribution needed.</p>
+
+<h3 id="notes">Notes</h3>
+
+<ul>
+  <li>Data stays in memory only - never cached to the student’s disk.</li>
+  <li><strong>Requires internet</strong> - the fetch fails if the student is offline.</li>
+  <li>The published CSV updates within a few minutes of editing the sheet.</li>
+  <li>You can share the Google Sheet with TAs for editing.</li>
+</ul>
+
+<hr />
+
+<h2 id="option-3-rest-api-server">Option 3: REST API Server</h2>
+
+<p>Best for instructors already running the PyAutoGrader submission server.</p>
+
+<p>The student app fetches the roster from the server’s API endpoint.</p>
+
+<h3 id="setup-2">Setup</h3>
+
+<ol>
+  <li>Start the submission server (see <a href="/docs/offline/server-setup/">Server Setup</a>).</li>
+  <li>Open the dashboard and go to the <strong>Roster</strong> page.</li>
+  <li>Upload a CSV file or add students manually.</li>
+  <li>In the instructor editor, set <strong>Roster URL</strong> to <code class="language-plaintext highlighter-rouge">http://YOUR_SERVER:5000/api/roster</code>.</li>
+  <li>Make sure the <strong>REST API Key</strong> is set under Reporting Channels (same key is used for both submissions and roster).</li>
+  <li>Export the <code class="language-plaintext highlighter-rouge">.agr</code> file and distribute.</li>
+</ol>
+
+<h3 id="late-adds-1">Late Adds</h3>
+
+<p>Add the student via the server dashboard. No <code class="language-plaintext highlighter-rouge">.agr</code> redistribution needed.</p>
+
+<h3 id="server-roster-management">Server Roster Management</h3>
+
+<p>The server roster page provides:</p>
+<ul>
+  <li><strong>CSV upload</strong> - bulk import (replaces existing entries for that course/section/semester)</li>
+  <li><strong>Add single student</strong> - quick form for individual additions</li>
+  <li><strong>Remove</strong> - delete individual students</li>
+  <li><strong>Duplicate detection</strong> - warns about duplicate usernames</li>
+  <li><strong>Filter</strong> by course, section, and semester</li>
+</ul>
+
+<hr />
+
+<h2 id="combined-strategy-remote-url--bundled-csv">Combined Strategy: Remote URL + Bundled CSV</h2>
+
+<p>For maximum reliability, combine a remote roster source with a bundled CSV:</p>
+
+<ul>
+  <li><strong>Remote URL</strong> (Google Sheet or REST API) is the <strong>primary</strong> source - always fetched first</li>
+  <li><strong>Bundled CSV</strong> is the <strong>offline fallback</strong> - used when the remote fetch fails</li>
+</ul>
+
+<h3 id="setup-3">Setup</h3>
+
+<ol>
+  <li>Configure the <strong>Roster URL</strong> (Google Sheet or REST API) as described above.</li>
+  <li>Also <strong>Import CSV</strong> to bundle a baseline roster in the <code class="language-plaintext highlighter-rouge">.agr</code> file.</li>
+  <li>Export and distribute.</li>
+</ol>
+
+<h3 id="fallback-chain">Fallback Chain</h3>
+
+<ol>
+  <li>Fetch from remote URL - success? Use this roster.</li>
+  <li>Remote failed (offline)? Bundled CSV exists? Use bundled roster.</li>
+  <li>No roster available:
+    <ul>
+      <li><strong>Name</strong> mode: Fine, no roster needed.</li>
+      <li><strong>Username or Name</strong> mode: Falls back to freeform entry.</li>
+      <li><strong>Username</strong> (strict) mode: <strong>Grading blocked</strong>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>This is recommended when using strict mode and students may not always have internet (lab environments, field settings).</p>
+
+<hr />
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p><strong>“Username not found” but the student is on the roster</strong> - Usernames are matched case-insensitively. Check for leading/trailing spaces in the roster. If using a Google Sheet, make sure the published version is up to date.</p>
+
+<p><strong>“Cannot verify your username”</strong> - This appears when strict mode is configured, the student is offline, and no bundled roster exists. Either import a bundled CSV for offline support, or have the student connect to the internet.</p>
+
+<p><strong>Google Sheet URL not working</strong> - Make sure you published as CSV (not “Web page”). The URL should contain <code class="language-plaintext highlighter-rouge">output=csv</code>. Verify the correct sheet tab is selected.</p>
+
+<p><strong>REST API not returning data</strong> - Verify the API key matches the server’s key. Check that the course name, section, and semester match exactly what was entered in the roster dashboard. The URL should be <code class="language-plaintext highlighter-rouge">/api/roster</code> (not <code class="language-plaintext highlighter-rouge">/api/submit</code>).</p>
+
+<p><strong>Students see different rosters</strong> - Each <code class="language-plaintext highlighter-rouge">.agr</code> file has its own bundled roster. If you exported HW1.agr before adding a student and HW2.agr after, they will have different bundled rosters. Use a remote URL source so all <code class="language-plaintext highlighter-rouge">.agr</code> files fetch the same live roster.</p>
+
+    <div class="doc-footer">
+      
+      <a href="/docs/offline/batch-grading" class="doc-nav-btn prev">&#x2190; Batch Grading</a>
+      
+      
+      <a href="/docs/offline/reporting-setup" class="doc-nav-btn next">Reporting Setup &#x2192;</a>
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Overview | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Project Overview | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Project Overview" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/CLAUDE.html" />
+<meta property="og:url" content="https://pyautograder.github.io/CLAUDE.html" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Project Overview" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Project Overview","url":"https://pyautograder.github.io/CLAUDE.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/features" >Features</a>
+      <a href="/server" >Server</a>
+      <a href="/docs/getting-started" >Docs</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" >About</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Project Overview</h1>
+      
+    </div>
+  </div>
+  <div class="container page-content">
+    <h2 id="project-overview">Project Overview</h2>
+
+<p>PyAutoGrader is a free automated Python grading tool for educators. This repo is the marketing website (Jekyll, GitHub Pages) at pyautograder.github.io.</p>
+
+<h2 id="style-rules">Style Rules</h2>
+
+<ul>
+  <li><strong>Never use em dashes (-).</strong>  Always use a regular hyphen (-) or a short dash surrounded by spaces ( - ) instead. This applies to comments, docstrings, user-facing strings, HTML, and all other text.</li>
+</ul>
+
+<h2 id="product--branding">Product &amp; Branding</h2>
+
+<ul>
+  <li>The website brands the product as <strong>“PyAutoGrader”</strong> - no “Offline” qualifier in marketing copy. The “Offline” designation stays in repo names and technical contexts only.</li>
+  <li><strong>“Free. Always.”</strong> is the primary differentiator. It should appear prominently on the homepage (hero badge + bottom callout).</li>
+  <li><strong>“Built by an educator, for educators”</strong> is the identity/trust tagline.</li>
+  <li>The creator is Jesse Sestito, Engineering Professor at Valparaiso University. The project grew from a Mastery Based Learning approach after switching from MATLAB to Python.</li>
+  <li>Target audience is CS/Engineering instructors at universities. Speak technically - they understand Python, grading workflows, and infrastructure.</li>
+  <li>Do not name competitors (CodeGrade, Gradescope) directly on the site. Use “paid autograders” or “subscription-based tools” instead.</li>
+</ul>
+
+<h2 id="site-architecture">Site Architecture</h2>
+
+<ul>
+  <li><strong>Jekyll</strong> static site with navy (#1a2744) + green (#4ade80) color scheme, Sora + JetBrains Mono fonts.</li>
+  <li><strong>Nav:</strong> Features / Server / Docs / FAQ / About / Contact / [Download]</li>
+  <li><strong>Homepage:</strong> Long-form landing page with 10 scrolling sections.</li>
+  <li><strong>Download flow:</strong> Nav “Download” button goes to <code class="language-plaintext highlighter-rouge">/offline/</code> which has OS-detection buttons (auto-detects Windows/macOS/Linux). Student downloads linked from that page.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">/online/server-info/</code></strong> must always remain accessible - it’s a functional utility page used by the Online client.</li>
+</ul>
+
+<h2 id="online-content-toggle">Online Content Toggle</h2>
+
+<p>Online content is archived, not deleted. Controlled by <code class="language-plaintext highlighter-rouge">online_enabled: false</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code>.</p>
+
+<ul>
+  <li>Online pages have <code class="language-plaintext highlighter-rouge">published: false</code> in front matter</li>
+  <li>Online docs have <code class="language-plaintext highlighter-rouge">published: false</code> in front matter</li>
+  <li>Doc sidebar conditionally shows/hides Online section based on <code class="language-plaintext highlighter-rouge">site.online_enabled</code></li>
+  <li>To re-enable Online: set <code class="language-plaintext highlighter-rouge">online_enabled: true</code>, remove <code class="language-plaintext highlighter-rouge">published: false</code> from Online pages/docs, add pricing page back</li>
+</ul>
+
+<h2 id="key-files">Key Files</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code> - Site config including <code class="language-plaintext highlighter-rouge">online_enabled</code> toggle</li>
+  <li><code class="language-plaintext highlighter-rouge">index.html</code> - Homepage with 10 sections</li>
+  <li><code class="language-plaintext highlighter-rouge">_includes/nav.html</code> - Navigation</li>
+  <li><code class="language-plaintext highlighter-rouge">_includes/footer.html</code> - Footer links</li>
+  <li><code class="language-plaintext highlighter-rouge">_pages/offline.md</code> - Download page with OS detection (permalink: /offline/)</li>
+  <li><code class="language-plaintext highlighter-rouge">_pages/features.md</code> - Full test type reference</li>
+  <li><code class="language-plaintext highlighter-rouge">_pages/server.md</code> - Self-hosted server details</li>
+  <li><code class="language-plaintext highlighter-rouge">_pages/about.md</code> - Origin story</li>
+  <li><code class="language-plaintext highlighter-rouge">_pages/contact.md</code> - Contact form (Formspree)</li>
+  <li><code class="language-plaintext highlighter-rouge">_pages/faq.md</code> - FAQ with General, Instructors, Students, Privacy sections</li>
+  <li><code class="language-plaintext highlighter-rouge">_layouts/doc.html</code> - Docs layout with conditional Online sidebar</li>
+  <li><code class="language-plaintext highlighter-rouge">assets/css/main.css</code> - All styles including landing page sections</li>
+</ul>
+
+<h2 id="content-guidelines">Content Guidelines</h2>
+
+<ul>
+  <li>The self-hosted Flask server is a <strong>feature</strong> of the product, not a separate product.</li>
+  <li>Email and Google Sheets are <strong>instructor notification channels</strong> (silent, automatic). They cannot be “required.”</li>
+  <li>The self-hosted server and PDF export <strong>can</strong> be required by instructors.</li>
+  <li>Batch grading is accessed through the <strong>instructor application GUI</strong>, not a CLI or Python script.</li>
+  <li>Roster management is <strong>optional</strong> - students can free-form enter names, or instructors can use roster validation.</li>
+  <li>FERPA-friendly design is a selling point - grading runs locally, data stays on instructor infrastructure.</li>
+</ul>
+
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

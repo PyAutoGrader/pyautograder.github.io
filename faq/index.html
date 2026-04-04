@@ -28,7 +28,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header class="site-header">
@@ -44,13 +44,13 @@
       <span class="logo-text">PyAutoGrader</span>
     </a>
     <nav class="site-nav">
-      <a href="/offline" >Offline</a>
-      <a href="/online" >Online</a>
+      <a href="/features" >Features</a>
+      <a href="/server" >Server</a>
       <a href="/docs/getting-started" >Docs</a>
-      <a href="/pricing" >Pricing</a>
       <a href="/faq" class="active">FAQ</a>
       <a href="/about" >About</a>
-      <a href="/contact" class="btn-nav-cta" >Request Access</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -73,25 +73,25 @@
       
       <div class="faq-item">
         <button class="faq-question">What is PyAutoGrader?</button>
-        <div class="faq-answer">PyAutoGrader is a tool that helps instructors automatically grade Python programming assignments. It comes in two versions: an Offline Autograder (a distributable executable) and an Online Autograder (a hosted platform with instructor and student clients).
-</div>
-      </div>
-      
-      <div class="faq-item">
-        <button class="faq-question">What is the difference between the Offline and Online versions?</button>
-        <div class="faq-answer">The Offline Autograder is a standalone executable the instructor builds and distributes to students. Students run it on their own machines with no internet needed. The Online Autograder is a hosted platform — instructors manage assignments through an instructor client, and students submit work via a student client that connects to a central grading server.
+        <div class="faq-answer">PyAutoGrader is a free tool that helps instructors automatically grade Python programming assignments. Instructors create assignments with test cases, distribute a single encrypted file to students, and students run the grader on their own machines.
 </div>
       </div>
       
       <div class="faq-item">
         <button class="faq-question">Is PyAutoGrader free?</button>
-        <div class="faq-answer">The Offline Autograder is completely free, forever. The Online Autograder has a free tier for instructors (by request). A paid tier with additional features is planned for the future.
+        <div class="faq-answer">Yes. PyAutoGrader is completely free and always will be. No subscriptions, no per-student fees, no premium tiers.
 </div>
       </div>
       
       <div class="faq-item">
         <button class="faq-question">What operating systems are supported?</button>
-        <div class="faq-answer">The Offline Autograder produces executables that run on Windows, macOS, and Linux. The Online Autograder clients will also target all major platforms. Specific OS details will be listed on the download pages when available.
+        <div class="faq-answer">PyAutoGrader runs on Windows, macOS, and Linux. The instructor application, student application, and submission server are all available as pre-built executables for all three platforms.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">How does this compare to paid autograders?</button>
+        <div class="faq-answer">Unlike subscription-based autograding platforms, PyAutoGrader is free, runs grading on student machines (not a cloud server), and keeps all data on your institution's infrastructure. You do not need to negotiate contracts, sign data processing agreements, or worry about FERPA compliance with a third-party vendor.
 </div>
       </div>
       
@@ -99,20 +99,62 @@
       <div class="faq-group-label">For Instructors</div>
       
       <div class="faq-item">
-        <button class="faq-question">How do I get an Online Autograder account?</button>
-        <div class="faq-answer">Instructor accounts are available by request. Head to the Contact page and fill out the form. You will receive login details by email.
+        <button class="faq-question">How do I create assignments?</button>
+        <div class="faq-answer">Download the instructor application and create a new .agrx working file. Add your test cases (60+ types available), attach solution files, and configure reporting channels. When ready, export an encrypted .agr file to distribute to students. See the <a href="/docs/offline/instructor-setup/">Instructor Setup</a> guide for a full walkthrough.
 </div>
       </div>
       
       <div class="faq-item">
-        <button class="faq-question">Do students need to create accounts for the Online Autograder?</button>
-        <div class="faq-answer">No. Students do not sign up on their own. Their login credentials are provided by their instructor, keeping student account management simple and under the instructor's control.
+        <button class="faq-question">What is the difference between .agrx and .agr files?</button>
+        <div class="faq-answer">The .agrx file is your instructor working file - it is editable and contains all assignments, solutions, and configuration. The .agr file is the encrypted student file exported from your .agrx - solutions are hidden and tests are locked. You work in .agrx and export .agr for distribution. See <a href="/docs/offline/saving-and-exporting/">Saving and Exporting</a> for details.
 </div>
       </div>
       
       <div class="faq-item">
-        <button class="faq-question">Can I use both the Offline and Online versions?</button>
-        <div class="faq-answer">Yes. They are independent tools. You could use the Offline Autograder for one course and the Online Autograder for another, or transition between them over time.
+        <button class="faq-question">What types of tests can I create?</button>
+        <div class="faq-answer">PyAutoGrader supports 60+ test types including variable checks, function testing, class validation, control flow detection, matplotlib plot testing, code quality analysis (naming conventions, complexity, docstrings), performance benchmarks, and more. See the <a href="/docs/offline/test-types-reference/">Test Types Reference</a> for the full catalog.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">How do I collect student results?</button>
+        <div class="faq-answer">Five ways - use any combination. PDF export (students upload to your LMS), email (results sent to you automatically), Google Sheets (grades posted via webhook), a self-hosted Flask server (full dashboard with analytics and plagiarism detection), or a custom webhook. Email and Google Sheets work as silent background notifications. See <a href="/docs/offline/reporting-setup/">Reporting Setup</a> for configuration.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">What is the self-hosted server?</button>
+        <div class="faq-answer">A Flask-based submission server you run on your own infrastructure. It provides a dashboard for browsing submissions, analytics (score distributions, trends, at-risk students), plagiarism detection with side-by-side diff, Canvas-compatible CSV export, roster management, and assignment deadlines. Supports HTTP and HTTPS. See <a href="/docs/offline/server-setup/">Server Setup</a> for full documentation.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">Can I require students to submit to my server?</button>
+        <div class="faq-answer">Yes. Instructors can configure assignments so that grading is restricted unless the student is connected to and has submitted results to the server.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">Does it support multi-file assignments?</button>
+        <div class="faq-answer">Yes. You can target tests to specific files, and the student app auto-detects related files in the same directory.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">Can I grade assignments in batch?</button>
+        <div class="faq-answer">Yes. The instructor application includes batch grading. Download student .py files from your LMS, load them into the instructor app, and export a CSV with per-test scores. See <a href="/docs/offline/batch-grading/">Batch Grading</a> for details.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">How does roster management work?</button>
+        <div class="faq-answer">Roster management is optional - students can type their name freely by default. For validated identity, you can bundle a CSV roster in the .agr file, connect a Google Sheet for live updates, or use the submission server's API. These can be combined with a fallback chain for offline support. See <a href="/docs/offline/roster-setup/">Roster Setup</a> for configuration.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">Can I detect plagiarism?</button>
+        <div class="faq-answer">Yes. The submission server includes pairwise code similarity analysis with four metrics (code similarity, comment similarity, combined score, and comment-to-code ratio), color-coded severity thresholds, and a side-by-side diff view with syntax highlighting. See <a href="/docs/offline/server-setup/#plagiarism-detection">Plagiarism Detection</a> in the Server Setup docs.
 </div>
       </div>
       
@@ -120,20 +162,47 @@
       <div class="faq-group-label">For Students</div>
       
       <div class="faq-item">
-        <button class="faq-question">I am a student — how do I use PyAutoGrader?</button>
-        <div class="faq-answer">For the Online Autograder, download the student client from the Student Downloads page and use the login your instructor provides. For the Offline Autograder, your instructor will send you an executable directly — just run it on your machine.
+        <button class="faq-question">I am a student - how do I use PyAutoGrader?</button>
+        <div class="faq-answer">Download the student application from the <a href="/student/offline/">Student Downloads</a> page. Your instructor will give you a .agr assignment file. Open the app, load the file, select your Python script, and run the grader. You will see instant pass/fail feedback. See <a href="/docs/offline/student-usage/">Student Usage</a> for a full walkthrough.
 </div>
       </div>
       
       <div class="faq-item">
-        <button class="faq-question">Do I need to install Python to use the Offline Autograder?</button>
-        <div class="faq-answer">No. The offline grader is distributed as a self-contained executable. It bundles everything it needs — just run the file your instructor sends you.
+        <button class="faq-question">Do I need to install Python?</button>
+        <div class="faq-answer">You need Python installed on your machine to write and run your code, but the PyAutoGrader application itself is a standalone executable that does not require a separate Python installation.
 </div>
       </div>
       
       <div class="faq-item">
-        <button class="faq-question">Where can I get help if something is not working?</button>
-        <div class="faq-answer">First, check the Documentation — it covers setup and common issues for both products. If you are still stuck, use the Contact page to reach out.
+        <button class="faq-question">What if I do not have internet when grading?</button>
+        <div class="faq-answer">Grading works completely offline. Your results will be submitted when connectivity is available.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">What if grading times out?</button>
+        <div class="faq-answer">Your code may have an infinite loop or be taking too long. Check for while loops without a break condition, remove any input() calls (the grader cannot provide interactive input), and verify your code completes within the time limit set by your instructor (typically 30 seconds). See <a href="/docs/offline/troubleshooting/">Troubleshooting</a> for more help.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">Can I see the expected answers?</button>
+        <div class="faq-answer">No. Solutions and expected values are encrypted in the .agr file and are never visible to students. This is by design - it ensures grading integrity and prevents students from reverse-engineering test answers.
+</div>
+      </div>
+      
+      
+      <div class="faq-group-label">Privacy and Compliance</div>
+      
+      <div class="faq-item">
+        <button class="faq-question">Is PyAutoGrader FERPA-compliant?</button>
+        <div class="faq-answer">PyAutoGrader is FERPA-friendly by design. Grading runs on the student's own machine, not on a cloud server. The self-hosted server keeps data on your institution's infrastructure. There is no third-party data processing agreement needed.
+</div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-question">Where is student data stored?</button>
+        <div class="faq-answer">Grading results are generated locally on the student's machine. Depending on how you configure result collection, data may be sent via email (to your inbox), posted to your Google Sheet, or submitted to a server you host. At no point does student data pass through PyAutoGrader's infrastructure.
 </div>
       </div>
       
@@ -163,23 +232,22 @@
 
       <div class="footer-links">
         <div class="footer-col">
-          <span class="footer-col-title">Products</span>
-          <a href="/offline">Offline Autograder</a>
-          <a href="/online">Online Autograder</a>
-          <a href="/pricing">Pricing</a>
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
         </div>
         <div class="footer-col">
           <span class="footer-col-title">Resources</span>
           <a href="/docs/getting-started">Documentation</a>
-          <a href="/student-downloads">Student Downloads</a>
-          <a href="/changelog">Changelog</a>
           <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
         </div>
         <div class="footer-col">
           <span class="footer-col-title">Project</span>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
-          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placeholders | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Placeholders | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Placeholders" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/PLACEHOLDERS.html" />
+<meta property="og:url" content="https://pyautograder.github.io/PLACEHOLDERS.html" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Placeholders" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Placeholders","url":"https://pyautograder.github.io/PLACEHOLDERS.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/features" >Features</a>
+      <a href="/server" >Server</a>
+      <a href="/docs/getting-started" >Docs</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" >About</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">Placeholders</h1>
+      
+    </div>
+  </div>
+  <div class="container page-content">
+    <h1 id="placeholders">Placeholders</h1>
+
+<p>A list of all placeholder content on the website that needs to be replaced with real assets.</p>
+
+<hr />
+
+<h2 id="1-about-page---profile-photo">1. About Page - Profile Photo</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/about/</code>
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">_pages/about.md</code> (line ~50)</p>
+
+<p>Currently shows a dashed box with “Photo coming soon” text.</p>
+
+<p><strong>What to add:</strong> A headshot photo of Jesse Sestito.</p>
+
+<p><strong>How to add it:</strong></p>
+<ol>
+  <li>Save the image to <code class="language-plaintext highlighter-rouge">assets/images/</code> (e.g., <code class="language-plaintext highlighter-rouge">jesse-sestito.jpg</code>). Recommended size: 560x680px or similar portrait aspect ratio.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">_pages/about.md</code>, find the <code class="language-plaintext highlighter-rouge">about-photo</code> div and replace its contents:</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Replace this: --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"about-photo"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"about-photo-icon"</span><span class="nt">&gt;</span>👤<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;span&gt;</span>Photo coming soon<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- With this: --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"about-photo"</span> <span class="na">style=</span><span class="s">"border:none; background:none;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/images/jesse-sestito.jpg"</span> <span class="na">alt=</span><span class="s">"Jesse Sestito"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>The CSS already handles <code class="language-plaintext highlighter-rouge">img</code> inside <code class="language-plaintext highlighter-rouge">.about-photo</code> (full width, object-fit cover, border-radius).</p>
+
+<hr />
+
+<h2 id="2-homepage---server-analytics-screenshot">2. Homepage - Server Analytics Screenshot</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/</code> (homepage)
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">index.html</code> (line ~199)</p>
+
+<p>Currently shows a dashed box with “Screenshot: Server analytics dashboard” text inside the Server Spotlight section.</p>
+
+<p><strong>What to add:</strong> A screenshot of the submission server’s analytics dashboard showing score distributions, trends, or similar.</p>
+
+<p><strong>How to add it:</strong></p>
+<ol>
+  <li>Save the screenshot to <code class="language-plaintext highlighter-rouge">assets/images/</code> (e.g., <code class="language-plaintext highlighter-rouge">server-dashboard.png</code>). Recommended width: 800-1200px.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">index.html</code>, find the <code class="language-plaintext highlighter-rouge">screenshot-placeholder</code> div and replace it:</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Replace this: --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"screenshot-placeholder"</span><span class="nt">&gt;</span>
+  Screenshot: Server analytics dashboard
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- With this: --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/images/server-dashboard.png"</span> <span class="na">alt=</span><span class="s">"Server analytics dashboard"</span> <span class="na">style=</span><span class="s">"width:100%; border-radius:12px; border:1px solid var(--gray-200);"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3-homepage---batch-grading-screenshot">3. Homepage - Batch Grading Screenshot</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/</code> (homepage)
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">index.html</code> (line ~264)</p>
+
+<p>Currently shows a dashed box with “Screenshot: Batch grading interface in instructor app” text.</p>
+
+<p><strong>What to add:</strong> A screenshot of the instructor application’s batch grading interface.</p>
+
+<p><strong>How to add it:</strong></p>
+<ol>
+  <li>Save the screenshot to <code class="language-plaintext highlighter-rouge">assets/images/</code> (e.g., <code class="language-plaintext highlighter-rouge">batch-grading.png</code>). Recommended width: 640-960px.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">index.html</code>, find the second <code class="language-plaintext highlighter-rouge">screenshot-placeholder</code> div and replace it:</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Replace this: --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"screenshot-placeholder"</span> <span class="na">style=</span><span class="s">"max-width: 640px; margin: 32px auto 0;"</span><span class="nt">&gt;</span>
+  Screenshot: Batch grading interface in instructor app
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- With this: --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/images/batch-grading.png"</span> <span class="na">alt=</span><span class="s">"Batch grading interface"</span> <span class="na">style=</span><span class="s">"max-width:640px; width:100%; margin:32px auto 0; display:block; border-radius:12px; border:1px solid var(--gray-200);"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-download-page---example-agrx-files">4. Download Page - Example .agrx Files</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/offline/</code>
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">_pages/offline.md</code> (line ~102)</p>
+
+<p>Currently shows a “Coming Soon” disabled button.</p>
+
+<p><strong>What to add:</strong> Example .agrx files that instructors can open in the editor to see how tests are configured.</p>
+
+<p><strong>How to add it:</strong></p>
+<ol>
+  <li>Attach the files to a GitHub release, or host them in the repo under <code class="language-plaintext highlighter-rouge">assets/examples/</code>.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">_pages/offline.md</code>, replace the disabled span with a real link:</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Replace this: --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-disabled"</span><span class="nt">&gt;</span>Coming Soon<span class="nt">&lt;/span&gt;</span>
+
+<span class="c">&lt;!-- With this: --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"URL_TO_FILE"</span> <span class="na">class=</span><span class="s">"btn btn-outline btn-sm"</span><span class="nt">&gt;</span>Download<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5-download-page---getting-started-guide-pdf">5. Download Page - Getting Started Guide (PDF)</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/offline/</code>
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">_pages/offline.md</code> (line ~108)</p>
+
+<p>Currently shows a “Coming Soon” disabled button.</p>
+
+<p><strong>What to add:</strong> A step-by-step PDF guide for creating a first assignment and distributing it to students.</p>
+
+<p><strong>How to add it:</strong>
+Same as above. Save the PDF to <code class="language-plaintext highlighter-rouge">assets/examples/</code> or attach to a GitHub release, then replace the disabled span with a download link.</p>
+
+<hr />
+
+<h2 id="6-download-page---example-solution-file">6. Download Page - Example Solution File</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/offline/</code>
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">_pages/offline.md</code> (line ~114)</p>
+
+<p>Currently shows a “Coming Soon” disabled button.</p>
+
+<p><strong>What to add:</strong> A sample .py solution file showing how to structure code for solution-comparison tests.</p>
+
+<p><strong>How to add it:</strong>
+Same pattern as items 4-5.</p>
+
+<hr />
+
+<h2 id="7-download-page---example-data-file">7. Download Page - Example Data File</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/offline/</code>
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">_pages/offline.md</code> (line ~120)</p>
+
+<p>Currently shows a “Coming Soon” disabled button.</p>
+
+<p><strong>What to add:</strong> A sample CSV data file demonstrating how bundled data files work with student assignments.</p>
+
+<p><strong>How to add it:</strong>
+Same pattern as items 4-5.</p>
+
+<hr />
+
+<h2 id="8-download-page---server-config-template">8. Download Page - Server Config Template</h2>
+
+<p><strong>Page:</strong> <code class="language-plaintext highlighter-rouge">/offline/</code>
+<strong>File:</strong> <code class="language-plaintext highlighter-rouge">_pages/offline.md</code> (line ~126)</p>
+
+<p>Currently shows a “Coming Soon” disabled button.</p>
+
+<p><strong>What to add:</strong> A starter <code class="language-plaintext highlighter-rouge">server_config.json</code> with documented fields.</p>
+
+<p><strong>How to add it:</strong>
+Same pattern as items 4-5.</p>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Location</th>
+      <th>What’s Needed</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>About page</td>
+      <td>Profile photo</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Homepage</td>
+      <td>Server dashboard screenshot</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Homepage</td>
+      <td>Batch grading screenshot</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Download page</td>
+      <td>Example .agrx files</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Download page</td>
+      <td>Getting Started PDF</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Download page</td>
+      <td>Example solution .py</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Download page</td>
+      <td>Example data CSV</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Download page</td>
+      <td>server_config.json template</td>
+      <td>Low</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

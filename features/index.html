@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features - PyAutoGrader | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Features - PyAutoGrader | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Features - PyAutoGrader" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/features/" />
+<meta property="og:url" content="https://pyautograder.github.io/features/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Features - PyAutoGrader" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Features - PyAutoGrader","url":"https://pyautograder.github.io/features/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/features" class="active">Features</a>
+      <a href="/server" >Server</a>
+      <a href="/docs/getting-started" >Docs</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" >About</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <!-- HERO -->
+<div class="page-hero">
+  <div class="container" style="position:relative;">
+    <h1 class="page-title">Features</h1>
+    <p class="page-subtitle">Everything PyAutoGrader can do for your Python classroom.</p>
+  </div>
+</div>
+
+<!-- SECTION 1: ASSIGNMENT CREATION -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Build</div>
+      <h2 class="section-title">Assignment Creation</h2>
+      <p class="section-subtitle">Create, configure, and distribute assignments from a single desktop application</p>
+    </div>
+    <div class="diff-cards" style="max-width:960px;">
+      <div class="diff-card">
+        <div class="diff-icon">🔒</div>
+        <h3>Encrypted .agr Files</h3>
+        <p>Assignments export as encrypted files that students cannot reverse-engineer. Solutions, expected values, and SMTP credentials are never visible to students.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📁</div>
+        <h3>Multi-File Support</h3>
+        <p>Target tests to specific files within an assignment. The student app auto-detects related files in the same directory when a student selects one.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📎</div>
+        <h3>Bundled Data Files</h3>
+        <p>Include CSV, TXT, JSON, or other data files your students' code needs. Bundled files are extracted alongside student code at grading time.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🧪</div>
+        <h3>Solution Files</h3>
+        <p>Upload your solution .py files for solution-comparison tests. Compare student variables, function outputs, or plot properties against your reference implementation.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📊</div>
+        <h3>Partial Credit</h3>
+        <p>Award proportional points when sub-checks partially pass. A test with 10 points and 5 sub-checks awards 2 points per passing sub-check.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">💬</div>
+        <h3>Custom Feedback</h3>
+        <p>Configure pass/fail messages and hints for each test. Students see targeted guidance on failure, helping them learn from mistakes without seeing the answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: TEST TYPES -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Test</div>
+      <h2 class="section-title">60+ Built-In Test Types</h2>
+      <p class="section-subtitle">From basic variable checks to cyclomatic complexity analysis - test what matters</p>
+    </div>
+
+    <div class="ft-categories">
+
+      <!-- Variables & Data -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Variables &amp; Data</h3>
+          <span class="ft-count">10 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>variable_value</code><span>Check a variable equals an expected value with optional float tolerance</span></div>
+          <div class="ft-type"><code>variable_type</code><span>Verify variable type (int, float, str, list, dict, tuple, etc.)</span></div>
+          <div class="ft-type"><code>list_equals</code><span>Compare lists with optional order checking and float tolerance</span></div>
+          <div class="ft-type"><code>array_equals</code><span>NumPy array comparison with element-wise tolerance</span></div>
+          <div class="ft-type"><code>array_size</code><span>Check array dimensions (min, max, or exact size)</span></div>
+          <div class="ft-type"><code>array_values_in_range</code><span>Verify all array values fall within numeric bounds</span></div>
+          <div class="ft-type"><code>dict_equals</code><span>Dictionary comparison with float tolerance</span></div>
+          <div class="ft-type"><code>compare_solution</code><span>Compare student variables against your solution file</span></div>
+          <div class="ft-type"><code>check_relationship</code><span>Verify mathematical relationships between variables (e.g., y &gt; 2*x)</span></div>
+          <div class="ft-type"><code>dataframe_columns</code><span>Check a pandas DataFrame has expected columns</span></div>
+        </div>
+      </div>
+
+      <!-- Functions -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Functions</h3>
+          <span class="ft-count">6 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>function_exists</code><span>Verify a function is defined in student code</span></div>
+          <div class="ft-type"><code>function_called</code><span>Check a function was called during execution</span></div>
+          <div class="ft-type"><code>function_not_called</code><span>Verify a function was NOT called (detect unauthorized helpers)</span></div>
+          <div class="ft-type"><code>test_function_solution</code><span>Test student function against your solution with specific inputs</span></div>
+          <div class="ft-type"><code>function_signature</code><span>Check function parameters, parameter count, and defaults</span></div>
+          <div class="ft-type"><code>return_type</code><span>Verify a function returns the expected type</span></div>
+        </div>
+      </div>
+
+      <!-- Classes -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Classes</h3>
+          <span class="ft-count">3 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>class_exists</code><span>Verify a class is defined</span></div>
+          <div class="ft-type"><code>class_has_method</code><span>Check a class has a specific method</span></div>
+          <div class="ft-type"><code>class_has_attribute</code><span>Check a class has a specific attribute</span></div>
+        </div>
+      </div>
+
+      <!-- Control Flow -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Control Flow</h3>
+          <span class="ft-count">5 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>for_loop_used</code><span>Detect presence of for loops</span></div>
+          <div class="ft-type"><code>while_loop_used</code><span>Detect presence of while loops</span></div>
+          <div class="ft-type"><code>if_statement_used</code><span>Detect presence of if statements</span></div>
+          <div class="ft-type"><code>loop_iterations</code><span>Verify exact loop iteration count via a tracked variable</span></div>
+          <div class="ft-type"><code>exception_raised</code><span>Check that code raises a specific exception type</span></div>
+        </div>
+      </div>
+
+      <!-- Code Patterns -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Code Patterns</h3>
+          <span class="ft-count">5 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>code_contains</code><span>Search for a phrase in source code (case-sensitive option)</span></div>
+          <div class="ft-type"><code>code_not_contains</code><span>Verify a phrase is absent from source code</span></div>
+          <div class="ft-type"><code>operator_used</code><span>Detect specific operators (+=, **, //, etc.)</span></div>
+          <div class="ft-type"><code>stdout_contains</code><span>Verify printed output contains expected text</span></div>
+          <div class="ft-type"><code>import_used</code><span>Verify a specific module was imported</span></div>
+        </div>
+      </div>
+
+      <!-- Matplotlib Plots -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Matplotlib Plots</h3>
+          <span class="ft-count">13 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>plot_created</code><span>Verify a matplotlib plot was generated</span></div>
+          <div class="ft-type"><code>plot_properties</code><span>Check title, xlabel, ylabel, legend, and grid at once</span></div>
+          <div class="ft-type"><code>plot_has_xlabel</code> / <code>plot_has_ylabel</code> / <code>plot_has_title</code><span>Individual label and title checks</span></div>
+          <div class="ft-type"><code>plot_data_length</code><span>Verify number of data points per line (min, max, or exact)</span></div>
+          <div class="ft-type"><code>plot_line_style</code><span>Check line style by index (solid, dashed, dotted, dashdot)</span></div>
+          <div class="ft-type"><code>plot_has_line_style</code><span>Check if any line uses a given style</span></div>
+          <div class="ft-type"><code>plot_line_width</code><span>Check line width with tolerance</span></div>
+          <div class="ft-type"><code>plot_marker_size</code><span>Check marker size with tolerance</span></div>
+          <div class="ft-type"><code>compare_plot_solution</code><span>Compare against your solution plot (color, style, width, markers)</span></div>
+          <div class="ft-type"><code>check_multiple_lines</code><span>Verify a plot has at least N lines</span></div>
+          <div class="ft-type"><code>check_exact_lines</code><span>Verify a plot has exactly N lines</span></div>
+          <div class="ft-type"><code>check_function_any_line</code><span>Check if any line matches a mathematical function</span></div>
+        </div>
+      </div>
+
+      <!-- Code Quality -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Code Quality</h3>
+          <span class="ft-count">15 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>naming_convention</code><span>Enforce snake_case, camelCase, PascalCase, or custom regex</span></div>
+          <div class="ft-type"><code>no_single_letter_vars</code><span>Block single-character names (with exceptions like i, j, k)</span></div>
+          <div class="ft-type"><code>line_length</code><span>Maximum characters per line with optional tolerance</span></div>
+          <div class="ft-type"><code>code_spacing</code><span>Whitespace around operators, after commas/colons, no trailing spaces</span></div>
+          <div class="ft-type"><code>has_docstrings</code><span>Require docstrings on all functions, public-only, or specific functions</span></div>
+          <div class="ft-type"><code>has_module_docstring</code><span>Require a file-level docstring</span></div>
+          <div class="ft-type"><code>min_comment_density</code><span>Minimum percentage of commented lines</span></div>
+          <div class="ft-type"><code>max_function_length</code><span>Maximum lines per function (optionally including docstrings)</span></div>
+          <div class="ft-type"><code>max_nesting_depth</code><span>Maximum nesting level for control structures</span></div>
+          <div class="ft-type"><code>cyclomatic_complexity</code><span>McCabe complexity threshold per function</span></div>
+          <div class="ft-type"><code>no_wildcard_imports</code><span>Block <code>from x import *</code></span></div>
+          <div class="ft-type"><code>imports_at_top</code><span>Require all imports at the top of the file</span></div>
+          <div class="ft-type"><code>no_global_variables</code><span>Disallow global-scope variable assignments (constants exempted)</span></div>
+        </div>
+      </div>
+
+      <!-- Performance -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>Performance</h3>
+          <span class="ft-count">4 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>performance</code><span>Function must complete within a time limit</span></div>
+          <div class="ft-type"><code>performance_script</code><span>Full script must complete within a time limit</span></div>
+          <div class="ft-type"><code>performance_compare_function</code><span>Compare function speed to your solution (averaged over multiple runs)</span></div>
+          <div class="ft-type"><code>performance_compare_script</code><span>Compare full script speed to your solution</span></div>
+        </div>
+      </div>
+
+      <!-- File Naming -->
+      <div class="ft-category">
+        <div class="ft-category-header">
+          <h3>File Naming</h3>
+          <span class="ft-count">2 types</span>
+        </div>
+        <div class="ft-type-list">
+          <div class="ft-type"><code>file_name</code><span>Check submission filename (exact match, prefix, suffix, contains)</span></div>
+          <div class="ft-type"><code>file_naming_convention</code><span>Enforce filename conventions (snake_case, kebab-case, etc.)</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="test-footer" style="margin-top:32px;">
+      Full configuration details for every test type in the <a href="/docs/offline/test-types-reference/">Test Types Reference</a>.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: RESULT COLLECTION -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Collect</div>
+      <h2 class="section-title">Collect Results Your Way</h2>
+      <p class="section-subtitle">Five channels, any combination. Use what fits your workflow.</p>
+    </div>
+    <div class="results-grid" style="max-width:960px; margin:0 auto;">
+      <div class="result-card">
+        <h3>📄 PDF Export</h3>
+        <p>Students export a formatted PDF with scores, per-test results, and their code. They upload it to your LMS like any other assignment.</p>
+        <span class="result-note">Can be required by instructor</span>
+      </div>
+      <div class="result-card">
+        <h3>📬 Submission Server</h3>
+        <p>Full results and student code sent to your self-hosted server. Dashboard with analytics, plagiarism detection, code search, and Canvas export.</p>
+        <span class="result-note">Can be required by instructor</span>
+      </div>
+      <div class="result-card result-card--notification">
+        <h3>📧 Email</h3>
+        <p>Results emailed to you automatically on each submission. Includes student info, scores, per-test results, and the .py file as an attachment.</p>
+        <span class="result-note">Silent notification - cannot be required</span>
+      </div>
+      <div class="result-card result-card--notification">
+        <h3>📊 Google Sheets</h3>
+        <p>Scores posted to your Google Sheet via an Apps Script webhook. Each submission adds a row with student info, scores, and per-test pass/fail.</p>
+        <span class="result-note">Silent notification - cannot be required</span>
+      </div>
+      <div class="result-card result-card--notification">
+        <h3>🔗 Webhook</h3>
+        <p>POST a JSON payload to any URL on each submission. Build custom integrations with your existing infrastructure.</p>
+        <span class="result-note">Silent notification - cannot be required</span>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:24px; font-size:0.9rem; color:var(--text-muted);">
+      All channels operate independently. If one fails (no internet), submissions are queued locally and retried automatically.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 4: BATCH GRADING -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Grade</div>
+      <h2 class="section-title">Batch Grading</h2>
+      <p class="section-subtitle">Grade a folder of student submissions and export a CSV gradebook</p>
+    </div>
+    <div class="batch-steps">
+      <div class="batch-step">
+        <div class="batch-step-icon">📥</div>
+        <h3>1. Download</h3>
+        <p>Collect .py files from your LMS</p>
+      </div>
+      <div class="batch-step">
+        <div class="batch-step-icon">⚡</div>
+        <h3>2. Grade</h3>
+        <p>Load the folder in the instructor app and run batch grading</p>
+      </div>
+      <div class="batch-step">
+        <div class="batch-step-icon">📋</div>
+        <h3>3. Export</h3>
+        <p>Get a CSV with per-test scores, totals, and percentages</p>
+      </div>
+    </div>
+    <div style="max-width:720px; margin:32px auto 0; text-align:center;">
+      <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.7;">
+        Student names are extracted automatically from file comments (<code># Name: John Smith</code>),
+        filename patterns (<code>Smith_John_hw1.py</code>), or the filename itself. Export as standard
+        CSV or Canvas-compatible format for direct LMS import.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: ROSTER MANAGEMENT -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Identity</div>
+      <h2 class="section-title">Roster Management</h2>
+      <p class="section-subtitle">Optional student identity validation with three roster sources</p>
+    </div>
+    <div class="roster-grid" style="max-width:960px; margin:0 auto;">
+      <div class="roster-card">
+        <div class="roster-icon">📋</div>
+        <h3>Bundled CSV</h3>
+        <p>Embed a roster directly in the .agr file. Best for small classes and offline-only environments. Students select their name from a validated list.</p>
+      </div>
+      <div class="roster-card">
+        <div class="roster-icon">☁️</div>
+        <h3>Google Sheets</h3>
+        <p>Fetch the roster live from a published Google Sheet. Late adds take effect immediately - no .agr redistribution needed.</p>
+      </div>
+      <div class="roster-card">
+        <div class="roster-icon">🖥️</div>
+        <h3>Server API</h3>
+        <p>Fetch from your submission server's REST endpoint. Manage rosters through the dashboard with CSV upload, manual add, and duplicate detection.</p>
+      </div>
+    </div>
+    <div style="max-width:720px; margin:32px auto 0; text-align:center;">
+      <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.7;">
+        Combine a remote source with a bundled CSV for offline fallback. Three name modes:
+        freeform entry (default), strict username validation, or flexible username-or-name.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: SUBMISSION SERVER -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Manage</div>
+      <h2 class="section-title">Self-Hosted Submission Server</h2>
+      <p class="section-subtitle">A full-featured Flask server you run on your own infrastructure</p>
+    </div>
+    <div class="diff-cards" style="max-width:960px;">
+      <div class="diff-card">
+        <div class="diff-icon">📊</div>
+        <h3>Analytics Dashboard</h3>
+        <p>Score distributions, submission trends, assignment difficulty analysis, student progress tracking, and at-risk student identification. Filter by course, section, or semester.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🔍</div>
+        <h3>Plagiarism Detection</h3>
+        <p>Pairwise code similarity analysis with four metrics: code similarity, comment similarity, combined score, and comment-to-code ratio. Side-by-side diff view with syntax highlighting.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🔎</div>
+        <h3>Code Search</h3>
+        <p>Search across all submitted code for specific patterns or keywords. Detect AI-generated code patterns, verify required constructs, or investigate academic integrity concerns.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📅</div>
+        <h3>Assignment Deadlines</h3>
+        <p>Set per-assignment cutoff dates with per-student overrides for accommodations. Late submissions flagged with badges. Exports include an option to exclude late work.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📤</div>
+        <h3>Canvas Export</h3>
+        <p>Export grades as Canvas-compatible CSV for direct LMS import. One row per student, one column per assignment. Respects view mode and filter settings.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">⚙️</div>
+        <h3>Zero-Config Setup</h3>
+        <p>SQLite database requires no setup. Download the executable, set a password, and run. Optional PostgreSQL for high-concurrency deployments. HTTPS via Caddy reverse proxy.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/server/" class="btn btn-outline btn-sm">Learn more about the server</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: SECURITY & PRIVACY -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Trust</div>
+      <h2 class="section-title">FERPA-Friendly by Design</h2>
+      <p class="section-subtitle">Your data stays on your infrastructure. Always.</p>
+    </div>
+    <div class="ft-privacy-grid">
+      <div class="ft-privacy-item">
+        <div class="ft-privacy-icon">🖥️</div>
+        <div>
+          <h4>Local Grading</h4>
+          <p>Student code executes on the student's own machine. No cloud servers process student work.</p>
+        </div>
+      </div>
+      <div class="ft-privacy-item">
+        <div class="ft-privacy-icon">🔒</div>
+        <div>
+          <h4>Encrypted Distribution</h4>
+          <p>Solutions, expected values, and SMTP credentials are encrypted inside .agr files. Students cannot extract them.</p>
+        </div>
+      </div>
+      <div class="ft-privacy-item">
+        <div class="ft-privacy-icon">🏛️</div>
+        <div>
+          <h4>Self-Hosted Infrastructure</h4>
+          <p>The submission server runs on your machines. Student data never passes through PyAutoGrader's infrastructure.</p>
+        </div>
+      </div>
+      <div class="ft-privacy-item">
+        <div class="ft-privacy-icon">📝</div>
+        <div>
+          <h4>No Third-Party Agreements</h4>
+          <p>No data processing agreements, no vendor contracts, no per-student fees. You control the entire pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: CTA -->
+<section class="landing-section--free">
+  <div class="container" style="text-align:center; position:relative;">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--white); margin-bottom:12px;">Missing a test type?</h2>
+    <p style="color:var(--text-on-dark-muted); margin-bottom:28px; font-size:1.05rem;">
+      We actively add new test types based on instructor feedback.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="/contact/" class="btn btn-outline" style="border-color:var(--emerald); color:var(--emerald);">Request a Test Type</a>
+      <a href="/offline/" class="btn btn-primary">Download PyAutoGrader</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

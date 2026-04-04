@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server Setup | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Server Setup | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Server Setup" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The PyAutoGrader submission server is an optional self-hosted Flask server that provides a web dashboard for managing student submissions, analytics, plagiarism detection, code search, and grade export. See the Server page for a feature overview." />
+<meta property="og:description" content="The PyAutoGrader submission server is an optional self-hosted Flask server that provides a web dashboard for managing student submissions, analytics, plagiarism detection, code search, and grade export. See the Server page for a feature overview." />
+<link rel="canonical" href="https://pyautograder.github.io/docs/offline/server-setup/" />
+<meta property="og:url" content="https://pyautograder.github.io/docs/offline/server-setup/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T21:56:32+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Server Setup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T21:56:32+00:00","datePublished":"2026-04-04T21:56:32+00:00","description":"The PyAutoGrader submission server is an optional self-hosted Flask server that provides a web dashboard for managing student submissions, analytics, plagiarism detection, code search, and grade export. See the Server page for a feature overview.","headline":"Server Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/server-setup/"},"url":"https://pyautograder.github.io/docs/offline/server-setup/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/features" >Features</a>
+      <a href="/server" class="active">Server</a>
+      <a href="/docs/getting-started" class="active">Docs</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" >About</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/docs/offline/overview/" >Overview</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/download-and-install/" >Download and Install</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/test-types-reference/" >Test Types Reference</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/saving-and-exporting/" >Saving and Exporting</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/batch-grading/" >Batch Grading</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/roster-setup/" >Roster Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/reporting-setup/" >Reporting Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/server-setup/" class="active">Server Setup</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/api-reference/" >Server API Reference</a></li>
+            
+          
+            
+          <li><a href="/docs/offline/troubleshooting/" >Troubleshooting</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/docs/getting-started">Docs</a>
+       / <span>Offline Autograder</span>
+      / <span>Server Setup</span>
+    </div>
+    <h1>Server Setup</h1>
+    <p>The PyAutoGrader submission server is an optional self-hosted Flask server that provides a web dashboard for managing student submissions, analytics, plagiarism detection, code search, and grade export. See the <a href="/server/">Server</a> page for a feature overview.</p>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<ol>
+  <li>Download the server executable for your platform (Windows, macOS, or Linux) from the <a href="/offline/">Downloads</a> page.</li>
+  <li>Edit the included <code class="language-plaintext highlighter-rouge">server_config.json</code> to set your password and API key.</li>
+  <li>Run the executable (or double-click it on Windows/macOS).</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">http://localhost:5000</code> in your browser.</li>
+  <li>Log in with the default credentials: <strong>admin</strong> / <strong>changeme</strong>.</li>
+</ol>
+
+<p>Change the default password before use in any shared environment.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The server loads settings from three sources (highest priority first):</p>
+
+<ol>
+  <li><strong>CLI arguments</strong></li>
+  <li><strong>server_config.json</strong> (next to the executable)</li>
+  <li><strong>Default values</strong></li>
+</ol>
+
+<h3 id="cli-arguments">CLI Arguments</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flag</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--username</code></td>
+      <td><code class="language-plaintext highlighter-rouge">admin</code></td>
+      <td>Dashboard login username</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--password</code></td>
+      <td><code class="language-plaintext highlighter-rouge">changeme</code></td>
+      <td>Dashboard login password</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--api-key</code></td>
+      <td>(same as password)</td>
+      <td>API key for student app submissions</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--port</code></td>
+      <td><code class="language-plaintext highlighter-rouge">5000</code></td>
+      <td>Server port</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--db</code></td>
+      <td><code class="language-plaintext highlighter-rouge">submissions.db</code></td>
+      <td>SQLite database path</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--submissions-dir</code></td>
+      <td><code class="language-plaintext highlighter-rouge">submissions/</code></td>
+      <td>Code file storage directory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--cert</code></td>
+      <td>(none)</td>
+      <td>TLS certificate file for HTTPS</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--key</code></td>
+      <td>(none)</td>
+      <td>TLS private key file for HTTPS</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="config-file">Config File</h3>
+
+<p>Create a <code class="language-plaintext highlighter-rouge">server_config.json</code> file next to the executable:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a-strong-password"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-api-key-here"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"db"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submissions.db"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"submissions_dir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submissions"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>All fields are optional. Missing fields use defaults. If <code class="language-plaintext highlighter-rouge">api_key</code> is not set, it defaults to the password value.</p>
+
+<hr />
+
+<h2 id="https-setup">HTTPS Setup</h2>
+
+<p>Running the server on a public IP without HTTPS exposes API keys, passwords, and student data in plaintext. Always use HTTPS when accessible outside your local network.</p>
+
+<h3 id="caddy-reverse-proxy-recommended">Caddy Reverse Proxy (Recommended)</h3>
+
+<p>Caddy automatically obtains and renews TLS certificates from Let’s Encrypt with zero manual management.</p>
+
+<ol>
+  <li>Install Caddy from <a href="https://caddyserver.com/docs/install">caddyserver.com</a>.</li>
+  <li>
+    <p>Create a <code class="language-plaintext highlighter-rouge">Caddyfile</code>:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grader.yourdomain.com {
+    reverse_proxy localhost:5000
+}
+</code></pre></div>    </div>
+  </li>
+  <li>Run <code class="language-plaintext highlighter-rouge">caddy run</code>.</li>
+  <li>Start the submission server on localhost (no TLS flags needed).</li>
+</ol>
+
+<p>Students and instructors connect to <code class="language-plaintext highlighter-rouge">https://grader.yourdomain.com</code> and Caddy forwards requests to the server.</p>
+
+<h3 id="built-in-tls-advanced">Built-in TLS (Advanced)</h3>
+
+<p>If you already have TLS certificate files (<code class="language-plaintext highlighter-rouge">.pem</code> format):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./PyAutoGrader-Offline-SubmissionServer <span class="nt">--cert</span> /path/to/cert.pem <span class="nt">--key</span> /path/to/key.pem <span class="nt">--password</span> mysecret
+</code></pre></div></div>
+
+<h3 id="http-only-campus-networks">HTTP Only (Campus Networks)</h3>
+
+<p>For private or campus-only networks where traffic does not leave the local network, plain HTTP is acceptable. No certificate setup needed.</p>
+
+<hr />
+
+<h2 id="database-options">Database Options</h2>
+
+<h3 id="sqlite-default">SQLite (Default)</h3>
+
+<p>Zero setup. Creates a <code class="language-plaintext highlighter-rouge">submissions.db</code> file in the current directory. Works well for most deployments and handles thousands of submissions without issues.</p>
+
+<ul>
+  <li><strong>Backup</strong>: Copy the <code class="language-plaintext highlighter-rouge">submissions.db</code> file.</li>
+  <li><strong>Reset</strong>: Delete the file - a new one is created on next start.</li>
+</ul>
+
+<h3 id="postgresql">PostgreSQL</h3>
+
+<p>For multi-server deployments or very high concurrency. Set <code class="language-plaintext highlighter-rouge">database_url</code> in <code class="language-plaintext highlighter-rouge">server_config.json</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dashboard-password"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-api-key"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"database_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"postgresql://grader:db-password@localhost:5432/autograder"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The server creates all tables automatically on first launch. Most instructors should stick with SQLite unless you need multiple server instances sharing the same database or your institution already runs PostgreSQL.</p>
+
+<hr />
+
+<h2 id="dashboard">Dashboard</h2>
+
+<p>Access the dashboard at <code class="language-plaintext highlighter-rouge">http://localhost:5000/</code> (or your domain). Log in with the configured username and password.</p>
+
+<h3 id="pages">Pages</h3>
+
+<ul>
+  <li><strong>Dashboard</strong> - Analytics overview with charts for score distribution, submission trends, assignment difficulty, and at-risk students.</li>
+  <li><strong>Submissions</strong> - Filterable table with pagination. View modes: all submissions, latest per student, or highest per student. Click any row to see full test results and student code.</li>
+  <li><strong>Classes</strong> - Organize courses by course/section/semester. Drill into a class for per-class analytics, submissions, roster, and assignments.</li>
+  <li><strong>Search</strong> - Search across all submitted code for specific patterns or keywords. Useful for detecting AI-generated code patterns or verifying required constructs.</li>
+  <li><strong>Plagiarism</strong> - Pairwise code similarity analysis (see below).</li>
+</ul>
+
+<hr />
+
+<h2 id="analytics">Analytics</h2>
+
+<p>The dashboard provides analytics scoped to the entire server or to a specific class:</p>
+
+<ul>
+  <li><strong>Score distributions</strong> - Histogram of student scores per assignment</li>
+  <li><strong>Submission trends</strong> - Submissions over time (useful for tracking procrastination patterns)</li>
+  <li><strong>Assignment difficulty</strong> - Average scores and failure rates per assignment</li>
+  <li><strong>Student progress</strong> - Individual student performance across assignments</li>
+  <li><strong>At-risk identification</strong> - Students with low or declining scores</li>
+</ul>
+
+<hr />
+
+<h2 id="plagiarism-detection">Plagiarism Detection</h2>
+
+<p>The built-in plagiarism tool performs pairwise code similarity analysis across student submissions for a given assignment.</p>
+
+<h3 id="running-an-analysis">Running an Analysis</h3>
+
+<ol>
+  <li>Go to the <strong>Plagiarism</strong> page.</li>
+  <li>Select the course and assignment.</li>
+  <li>Set the <strong>minimum similarity threshold</strong> (default: 50%).</li>
+  <li>Click <strong>Analyze</strong>.</li>
+</ol>
+
+<p>The server compares the latest submission per student for the selected assignment.</p>
+
+<h3 id="similarity-metrics">Similarity Metrics</h3>
+
+<p>Each student pair is evaluated with four metrics:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>What It Compares</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Code Similarity</strong></td>
+      <td>Functional code with comments stripped (primary indicator)</td>
+    </tr>
+    <tr>
+      <td><strong>Comment Similarity</strong></td>
+      <td>Only comment text from both files</td>
+    </tr>
+    <tr>
+      <td><strong>Combined Score</strong></td>
+      <td>Weighted: 70% code + 30% comments</td>
+    </tr>
+    <tr>
+      <td><strong>Comment-to-Code Ratio</strong></td>
+      <td>Percentage of lines with comments per student</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="color-coding">Color Coding</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Range</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Red</td>
+      <td>80%+</td>
+      <td>Very likely copied</td>
+    </tr>
+    <tr>
+      <td>Orange</td>
+      <td>50-79%</td>
+      <td>Warrants investigation</td>
+    </tr>
+    <tr>
+      <td>Green</td>
+      <td>Below 50%</td>
+      <td>Likely independent work</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Short assignments naturally produce higher similarity scores. Use your judgment alongside the diff view.</p>
+
+<h3 id="side-by-side-diff-view">Side-by-Side Diff View</h3>
+
+<p>Click <strong>View</strong> on any pair to see both students’ code side-by-side with syntax highlighting and highlighted differences. This is the most reliable way to confirm or dismiss suspected plagiarism.</p>
+
+<h3 id="tips">Tips</h3>
+
+<ul>
+  <li>Run analysis after a submission deadline when all students have submitted.</li>
+  <li>Lower the threshold to 30-40% for longer assignments where coincidental similarity is less likely.</li>
+  <li>Raise the threshold to 70-80% for short assignments where similarity is expected.</li>
+  <li>Check the diff view before drawing conclusions.</li>
+</ul>
+
+<hr />
+
+<h2 id="assignment-deadlines">Assignment Deadlines</h2>
+
+<p>Assignments are auto-discovered as students submit. On the <strong>Assignments</strong> tab within a class:</p>
+
+<ul>
+  <li>Set a <strong>cutoff date/time</strong> for each assignment.</li>
+  <li>Set <strong>per-student overrides</strong> for accommodations or extensions.</li>
+  <li>Late submissions are flagged with a “Late” badge in the UI.</li>
+  <li>Exports include an “Is Late” column and an option to exclude late submissions.</li>
+</ul>
+
+<hr />
+
+<h2 id="roster-management">Roster Management</h2>
+
+<p>The server provides a roster management interface under each class:</p>
+
+<ul>
+  <li><strong>CSV upload</strong> - Bulk import (replaces existing entries for that course/section/semester).</li>
+  <li><strong>Add single student</strong> - Quick form for individual additions.</li>
+  <li><strong>Remove</strong> - Delete individual students.</li>
+  <li><strong>Sync unmatched</strong> - Link submissions from students not yet in the roster.</li>
+  <li><strong>Duplicate detection</strong> - Warns about duplicate usernames.</li>
+</ul>
+
+<p>The server also exposes a REST API endpoint (<code class="language-plaintext highlighter-rouge">/api/roster</code>) that the student app can use to fetch the roster at grading time. See <a href="/docs/offline/roster-setup/">Roster Setup</a> for configuration.</p>
+
+<hr />
+
+<h2 id="requiring-server-submission">Requiring Server Submission</h2>
+
+<p>Instructors can configure assignments so that grading is restricted unless the student is connected to the server. This ensures all results flow through the server for tracking, analytics, and plagiarism detection.</p>
+
+<p>Configure this in the instructor editor under <strong>Reporting Channels</strong> when setting up the REST API submission.</p>
+
+<hr />
+
+<h2 id="export">Export</h2>
+
+<ul>
+  <li><strong>CSV Gradebook</strong> - Full submission data with all fields.</li>
+  <li><strong>Canvas CSV</strong> - Canvas LMS-compatible format with one row per student, one column per assignment. Import directly into Canvas Gradebook.</li>
+  <li>Both exports respect the current view mode (all/latest/highest) and filter settings.</li>
+  <li>“Exclude late submissions” checkbox available for both export types.</li>
+</ul>
+
+<hr />
+
+<h2 id="file-storage">File Storage</h2>
+
+<p>Student code files are saved in an organized folder structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>submissions/
+  ENGR101_Spring2026/
+    HW1_ForLoops/
+      Doe_John_20260329143000.py
+      Smith_Jane_20260329151200.py
+</code></pre></div></div>
+
+<p>You can browse these files directly or use system tools to search across them.</p>
+
+<hr />
+
+<h2 id="running-on-a-remote-server-linux">Running on a Remote Server (Linux)</h2>
+
+<p>The server binds to <code class="language-plaintext highlighter-rouge">0.0.0.0</code> by default, so it is accessible remotely. Make sure the port is open in your firewall:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ubuntu/Debian</span>
+<span class="nb">sudo </span>ufw allow 5000
+
+<span class="c"># CentOS/RHEL</span>
+<span class="nb">sudo </span>firewall-cmd <span class="nt">--add-port</span><span class="o">=</span>5000/tcp <span class="nt">--permanent</span>
+<span class="nb">sudo </span>firewall-cmd <span class="nt">--reload</span>
+</code></pre></div></div>
+
+<p>To keep the server running after you disconnect:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Simple approach</span>
+<span class="nb">nohup</span> ./PyAutoGrader-Offline-SubmissionServer <span class="nt">--password</span> YOUR_PASSWORD &amp;
+</code></pre></div></div>
+
+<p>For production use, consider setting up a systemd service for automatic restart on failure or reboot.</p>
+
+    <div class="doc-footer">
+      
+      <a href="/docs/offline/reporting-setup" class="doc-nav-btn prev">&#x2190; Reporting Setup</a>
+      
+      
+      <a href="/docs/offline/api-reference" class="doc-nav-btn next">Server API Reference &#x2192;</a>
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyAutoGrader — Automated Python Grading for Educators | PyAutoGrader</title>
+  <title>PyAutoGrader - Free Python Autograding for Educators | PyAutoGrader</title>
   <meta name="description" content="Automated Python grading for educators" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>PyAutoGrader — Automated Python Grading for Educators | PyAutoGrader</title>
+<title>PyAutoGrader - Free Python Autograding for Educators | PyAutoGrader</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="PyAutoGrader — Automated Python Grading for Educators" />
+<meta property="og:title" content="PyAutoGrader - Free Python Autograding for Educators" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Automated Python grading for educators" />
@@ -18,9 +18,9 @@
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PyAutoGrader — Automated Python Grading for Educators" />
+<meta property="twitter:title" content="PyAutoGrader - Free Python Autograding for Educators" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"PyAutoGrader — Automated Python Grading for Educators","name":"PyAutoGrader","url":"https://pyautograder.github.io/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"PyAutoGrader - Free Python Autograding for Educators","name":"PyAutoGrader","url":"https://pyautograder.github.io/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -28,7 +28,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header class="site-header">
@@ -44,13 +44,13 @@
       <span class="logo-text">PyAutoGrader</span>
     </a>
     <nav class="site-nav">
-      <a href="/offline" >Offline</a>
-      <a href="/online" >Online</a>
+      <a href="/features" >Features</a>
+      <a href="/server" >Server</a>
       <a href="/docs/getting-started" >Docs</a>
-      <a href="/pricing" >Pricing</a>
       <a href="/faq" >FAQ</a>
       <a href="/about" >About</a>
-      <a href="/contact" class="btn-nav-cta" >Request Access</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -59,22 +59,23 @@
 </header>
 
   <main>
-    <!-- HERO -->
+    <!-- SECTION 1: HERO -->
 <section class="hero">
-  <div class="container hero-inner">
+  <div class="container hero-inner hero-inner--landing">
     <div class="hero-text">
-      <div class="hero-eyebrow">🐍 Python Autograder</div>
+      <div class="hero-eyebrow">Free. Always. No subscriptions.</div>
+      <p class="hero-tagline">Built by an educator, for educators</p>
       <h1 class="hero-title">
         Grade Python assignments<br/>
         <span class="accent">automatically.</span>
       </h1>
       <p class="hero-subtitle">
-        PyAutoGrader helps instructors automate the grading of Python assignments — 
-        offline with a distributable executable, or online through a hosted platform.
+        Create assignments with 60+ test types. Distribute a single file.
+        Students grade on their own machines. Collect results your way.
       </p>
       <div class="hero-actions">
-        <a href="/offline" class="btn btn-primary">Explore Offline Grader</a>
-        <a href="/online" class="btn btn-secondary">Explore Online Grader</a>
+        <a href="/offline" class="btn btn-primary">Download for Free</a>
+        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -89,9 +90,9 @@
     result = a * x**2 + b * x + c
     return result
 
-<span class="gr">✓</span> Verify Function Name   <span class="gr">PASS</span>
-<span class="gr">✓</span> Test Function #1       <span class="gr">PASS</span>
-<span class="gr">✓</span> Test Function #2       <span class="gr">PASS</span>
+<span class="gr">&#x2713;</span> Verify Function Name   <span class="gr">PASS</span>
+<span class="gr">&#x2713;</span> Test Function #1       <span class="gr">PASS</span>
+<span class="gr">&#x2713;</span> Test Function #2       <span class="gr">PASS</span>
 
 <span class="gr">Score: 100/100</span>  3 tests passed</pre>
       </div>
@@ -99,66 +100,250 @@
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products-section">
+<!-- SECTION 2: HOW IT WORKS -->
+<section class="landing-section landing-section--alt" id="how-it-works">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Two ways to grade</div>
-      <h2 class="section-title">Pick what works for your class</h2>
-      <p class="section-subtitle">
-        Whether you need a simple offline tool or a full hosted platform, PyAutoGrader has you covered.
-      </p>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">From assignment creation to grade collection in four steps</p>
     </div>
-    <div class="product-cards">
-      <!-- Offline -->
-      <div class="product-card">
-        <div class="product-badge">Always Free</div>
-        <h2>Offline Autograder</h2>
-        <p>
-          Build a grading executable and distribute it directly to your students. 
-          No server, no accounts — just run and grade.
-        </p>
-        <ul class="product-features">
-          <li>Instructor builds a self-contained executable</li>
-          <li>Students run it on their own machine</li>
-          <li>Students submit their Autograder files</li>
-          <li>Instant pass/fail feedback for students</li>
-          <li>Completely free, forever</li>
-        </ul>
-        <a href="/offline" class="btn btn-outline">Learn More</a>
+    <div class="workflow-grid">
+      <div class="workflow-step">
+        <div class="workflow-number">1</div>
+        <h3>Create</h3>
+        <p>Build assignments with tests, solutions, and rubrics in the instructor application</p>
       </div>
-      <!-- Online -->
-      <div class="product-card">
-        <div class="product-badge">Free Tier Available</div>
-        <h2>Online Autograder</h2>
-        <p>
-          A hosted platform with instructor and student clients. Manage assignments, 
-          collect submissions, and view results — all in one place.
-        </p>
-        <ul class="product-features">
-          <li>Instructor dashboard to manage assignments</li>
-          <li>Student client for submitting work</li>
-          <li>Centralized results and grade tracking</li>
-          <li>Free tier available</li>
-        </ul>
-        <a href="/online" class="btn btn-outline">Learn More</a>
+      <div class="workflow-step">
+        <div class="workflow-number">2</div>
+        <h3>Distribute</h3>
+        <p>Export an encrypted .agr file and share it through your LMS or email</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-number">3</div>
+        <h3>Students Grade</h3>
+        <p>Students run the grader on their machine - instant feedback, unlimited attempts</p>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-number">4</div>
+        <h3>Collect Results</h3>
+        <p>Receive grades via PDF export, email notifications, Google Sheets, or your self-hosted server</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section style="padding: 80px 0; background: var(--navy); text-align: center;">
+<!-- SECTION 3: WHY PYAUTOGRADER -->
+<section class="landing-section">
   <div class="container">
-    <h2 style="font-size: 2rem; font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 12px;">
-      Ready to simplify grading?
-    </h2>
-    <p style="color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 1.05rem;">
-      Get started with the offline grader for free, or request access to the online platform.
+    <div class="section-header">
+      <h2 class="section-title">Why PyAutoGrader?</h2>
+    </div>
+    <div class="diff-cards">
+      <div class="diff-card">
+        <div class="diff-icon">&#x1f4bb;</div>
+        <h3>Runs on Student Machines</h3>
+        <p>Students learn real skills - setting up Python, installing packages, running code locally. No cloud dependency.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">&#x1f512;</div>
+        <h3>Your Data, Your Control</h3>
+        <p>FERPA-friendly by design. Grading runs locally. The self-hosted server keeps data on your infrastructure - not ours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: COLLECT RESULTS -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Collect Results Your Way</h2>
+      <p class="section-subtitle">Mix and match channels. Offline submissions are queued and sent automatically when internet returns.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <h3>&#x1f4c4; PDF Export</h3>
+        <p>Students export a formatted PDF with scores and code, then upload to your LMS. Works completely offline - no internet needed.</p>
+      </div>
+      <div class="result-card">
+        <h3>&#x1f5a5;&#xfe0f; Self-Hosted Server</h3>
+        <p>Students submit results to your Flask server. Full dashboard with analytics, plagiarism detection, code search, Canvas export, and roster management.</p>
+        <span class="result-note">Instructors can restrict grading if not connected and submitted to server.</span>
+      </div>
+    </div>
+    <div class="results-notification-header">Instructor Notifications (Silent, Automatic)</div>
+    <div class="results-grid">
+      <div class="result-card result-card--notification">
+        <h3>&#x2709;&#xfe0f; Email</h3>
+        <p>Results emailed to you automatically in the background. HTML-formatted with syntax-highlighted code and styled pass/fail results. Queued if offline.</p>
+      </div>
+      <div class="result-card result-card--notification">
+        <h3>&#x1f4ca; Google Sheets</h3>
+        <p>Grades silently posted to your spreadsheet via webhook. Instant gradebook - no student action needed. Queued if offline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: TEST TYPES -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">60+ Built-In Test Types</h2>
+      <p class="section-subtitle">From basic variable checks to cyclomatic complexity analysis - test what matters</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-category">
+        <h4>Variables &amp; Data</h4>
+        <p>Values, types, lists, arrays, dicts, DataFrames, solution comparison</p>
+      </div>
+      <div class="test-category">
+        <h4>Functions &amp; Classes</h4>
+        <p>Existence, signatures, call detection, solution testing, methods, attributes</p>
+      </div>
+      <div class="test-category">
+        <h4>Control Flow</h4>
+        <p>Loop detection, iteration counts, if statements, exception handling</p>
+      </div>
+      <div class="test-category">
+        <h4>Matplotlib Plots</h4>
+        <p>13 plot tests - labels, data points, line styles, widths, markers, solution comparison</p>
+      </div>
+      <div class="test-category">
+        <h4>Code Quality</h4>
+        <p>Naming conventions, docstrings, complexity, nesting depth, line length, imports</p>
+      </div>
+      <div class="test-category">
+        <h4>Performance</h4>
+        <p>Timed execution, solution speed comparison, script and function benchmarks</p>
+      </div>
+    </div>
+    <p class="test-footer">
+      Plus: stdout checking, code pattern matching, operator detection, file naming, and more.
+      Missing a test type? <a href="/contact">Request one.</a>
     </p>
-    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-      <a href="/offline" class="btn btn-primary">Get Offline Grader</a>
-      <a href="/contact" class="btn btn-secondary">Request Online Access</a>
+  </div>
+</section>
+
+<!-- SECTION 6: SERVER SPOTLIGHT -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Self-Hosted Submission Server</h2>
+      <p class="section-subtitle">A full-featured Flask server you run on your own infrastructure - HTTP or HTTPS</p>
+    </div>
+    <div class="server-showcase">
+      <div class="server-features">
+        <div class="server-feature-card">
+          <h4>&#x1f4ca; Analytics</h4>
+          <p>Score distributions, submission trends, assignment difficulty, student progress, and at-risk identification</p>
+        </div>
+        <div class="server-feature-card">
+          <h4>&#x1f50d; Plagiarism Detection</h4>
+          <p>Pairwise code similarity with side-by-side diff view. Color-coded severity scores.</p>
+        </div>
+        <div class="server-feature-card">
+          <h4>&#x1f4cb; Roster &amp; Deadlines</h4>
+          <p>Manage rosters, set assignment deadlines, and configure per-student overrides</p>
+        </div>
+        <div class="server-feature-card">
+          <h4>&#x1f4e4; Export</h4>
+          <p>Canvas-compatible CSV export, code search across all submissions, submission browser</p>
+        </div>
+      </div>
+      <div class="server-screenshot">
+        <div class="screenshot-placeholder">
+          Screenshot: Server analytics dashboard
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="/server" class="btn btn-outline">Learn More About the Server</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: ROSTER -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Flexible Student Identity</h2>
+      <p class="section-subtitle">Use a roster for verified names, or let students enter their own - your choice per assignment</p>
+    </div>
+    <div class="roster-grid">
+      <div class="roster-card">
+        <div class="roster-icon">&#x270d;&#xfe0f;</div>
+        <h3>Free-Form Names</h3>
+        <p>Students type their name. No roster needed. Simple and fast for small classes or informal use.</p>
+      </div>
+      <div class="roster-card">
+        <div class="roster-icon">&#x1f4cb;</div>
+        <h3>Roster Validation</h3>
+        <p>Embed a CSV roster in the assignment file, pull from Google Sheets, or fetch from your server. Students must match a valid entry.</p>
+      </div>
+      <div class="roster-card">
+        <div class="roster-icon">&#x1f504;</div>
+        <h3>Username with Fallback</h3>
+        <p>Try roster lookup first, fall back to free-form if not found. Flexible for late adds or cross-listed sections.</p>
+      </div>
+    </div>
+    <p class="test-footer">
+      Roster sources: embedded CSV in .agr file, published Google Sheet, or your self-hosted server's API
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 8: BATCH GRADING -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Batch Grade from Your LMS</h2>
+      <p class="section-subtitle">Download student Python files from your LMS, then grade them all at once through the instructor application</p>
+    </div>
+    <div class="batch-steps">
+      <div class="batch-step">
+        <div class="batch-step-icon">&#x1f4e5;</div>
+        <h3>1. Download</h3>
+        <p>Collect .py files from your LMS</p>
+      </div>
+      <div class="batch-step">
+        <div class="batch-step-icon">&#x2699;&#xfe0f;</div>
+        <h3>2. Grade</h3>
+        <p>Run batch grading in the instructor app</p>
+      </div>
+      <div class="batch-step">
+        <div class="batch-step-icon">&#x1f4ca;</div>
+        <h3>3. Export</h3>
+        <p>Get a CSV with per-test scores and percentages</p>
+      </div>
+    </div>
+    <div class="screenshot-placeholder" style="max-width: 640px; margin: 32px auto 0;">
+      Screenshot: Batch grading interface in instructor app
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 9: FREE ALWAYS CALLOUT -->
+<section class="landing-section landing-section--free">
+  <div class="container text-center">
+    <h2 class="free-headline">Free. Always.</h2>
+    <p class="free-subtext">No subscriptions. No per-student fees. No premium tiers.</p>
+    <p class="free-why">Built by an educator who was tired of expensive tools.</p>
+  </div>
+</section>
+
+<!-- SECTION 10: BOTTOM CTA + ROADMAP -->
+<section class="landing-section landing-section--cta">
+  <div class="container text-center">
+    <h2 class="cta-title">Ready to Get Started?</h2>
+    <p class="cta-subtitle">Download PyAutoGrader for free. Windows, macOS, and Linux.</p>
+    <div class="cta-actions">
+      <a href="/offline" class="btn btn-primary">Download Now</a>
+      <a href="/contact" class="btn btn-secondary">Contact Us</a>
+    </div>
+    <div class="roadmap-teaser">
+      <span class="roadmap-label">On the Roadmap</span>
+      <p>Managed cloud hosting - all the server features without running your own.</p>
     </div>
   </div>
 </section>
@@ -184,23 +369,22 @@
 
       <div class="footer-links">
         <div class="footer-col">
-          <span class="footer-col-title">Products</span>
-          <a href="/offline">Offline Autograder</a>
-          <a href="/online">Online Autograder</a>
-          <a href="/pricing">Pricing</a>
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
         </div>
         <div class="footer-col">
           <span class="footer-col-title">Resources</span>
           <a href="/docs/getting-started">Documentation</a>
-          <a href="/student-downloads">Student Downloads</a>
-          <a href="/changelog">Changelog</a>
           <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
         </div>
         <div class="footer-col">
           <span class="footer-col-title">Project</span>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
-          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 

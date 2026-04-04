@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Hosted Submission Server - PyAutoGrader | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Self-Hosted Submission Server - PyAutoGrader | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Self-Hosted Submission Server - PyAutoGrader" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/server/" />
+<meta property="og:url" content="https://pyautograder.github.io/server/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Self-Hosted Submission Server - PyAutoGrader" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"Self-Hosted Submission Server - PyAutoGrader","url":"https://pyautograder.github.io/server/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/features" >Features</a>
+      <a href="/server" class="active">Server</a>
+      <a href="/docs/getting-started" >Docs</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" >About</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <!-- HERO -->
+<div class="page-hero">
+  <div class="container" style="position:relative;">
+    <h1 class="page-title">Self-Hosted Submission Server</h1>
+    <p class="page-subtitle">A full-featured Flask server you run on your own infrastructure.</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="landing-section">
+  <div class="container">
+    <div class="sv-intro">
+      <p>
+        The PyAutoGrader submission server gives you a complete dashboard for managing student
+        submissions, analyzing grades, detecting plagiarism, and exporting to your LMS. Run it on
+        your own machine or campus server - your data stays on your infrastructure.
+      </p>
+    </div>
+
+    <!-- Quick Start -->
+    <div class="sv-quickstart">
+      <div class="sv-quickstart-header">
+        <h3>Quick Start</h3>
+        <span class="sv-badge">3 steps</span>
+      </div>
+      <div class="sv-steps">
+        <div class="sv-step">
+          <div class="sv-step-num">1</div>
+          <div>
+            <h4>Download</h4>
+            <p>Get the server executable for Windows, macOS, or Linux from the <a href="/offline/">Downloads</a> page.</p>
+          </div>
+        </div>
+        <div class="sv-step">
+          <div class="sv-step-num">2</div>
+          <div>
+            <h4>Configure</h4>
+            <p>Edit <code>server_config.json</code> to set your password and API key. Or pass them as CLI flags.</p>
+          </div>
+        </div>
+        <div class="sv-step">
+          <div class="sv-step-num">3</div>
+          <div>
+            <h4>Run</h4>
+            <p>Launch the executable. Open <code>http://localhost:5000</code> and log in. SQLite database created automatically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Features</div>
+      <h2 class="section-title">Everything You Need to Manage Submissions</h2>
+    </div>
+
+    <div class="sv-features-grid">
+      <div class="sv-feature-card sv-feature-card--wide">
+        <div class="sv-feature-icon">📊</div>
+        <h3>Analytics Dashboard</h3>
+        <p>
+          Score distribution charts, submission trends over time, assignment difficulty analysis,
+          student progress tracking, and at-risk student identification. Filter by course, section,
+          or semester. Every chart updates in real time as submissions come in.
+        </p>
+      </div>
+
+      <div class="sv-feature-card sv-feature-card--wide">
+        <div class="sv-feature-icon">🔍</div>
+        <h3>Plagiarism Detection</h3>
+        <p>
+          Pairwise code similarity analysis across all submissions for an assignment. Four metrics:
+          code similarity (comments stripped), comment similarity, combined weighted score, and
+          comment-to-code ratio. Color-coded severity (red 80%+, orange 50-79%, green below 50%)
+          with a side-by-side diff view and syntax highlighting.
+        </p>
+      </div>
+
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">🔎</div>
+        <h3>Code Search</h3>
+        <p>
+          Search across all submitted code for specific patterns. Detect AI-generated code,
+          verify required constructs, or investigate academic integrity.
+        </p>
+      </div>
+
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">📋</div>
+        <h3>Submission Browser</h3>
+        <p>
+          Browse all submissions filtered by course, assignment, or student. Click into any
+          submission to see full test results and the student's code. View modes: all, latest
+          per student, or highest per student.
+        </p>
+      </div>
+
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">👥</div>
+        <h3>Roster Management</h3>
+        <p>
+          Upload CSV rosters, add students manually, sync unmatched submissions. Duplicate
+          detection and late adds. Expose a REST API for the student app to fetch rosters live.
+        </p>
+      </div>
+
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">📅</div>
+        <h3>Assignment Deadlines</h3>
+        <p>
+          Set per-assignment cutoff dates with per-student overrides for accommodations.
+          Late submissions flagged with badges. Exports include an option to exclude late work.
+        </p>
+      </div>
+
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">📤</div>
+        <h3>Canvas Export</h3>
+        <p>
+          Canvas-compatible CSV with one row per student, one column per assignment. Import
+          grades directly into Canvas Gradebook. Standard CSV export also available.
+        </p>
+      </div>
+
+      <div class="sv-feature-card">
+        <div class="sv-feature-icon">🏫</div>
+        <h3>Class Organization</h3>
+        <p>
+          Organize by course, section, and semester. Drill into any class for scoped analytics,
+          submissions, roster, assignments, and code search.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIRE SUBMISSION -->
+<section class="landing-section">
+  <div class="container">
+    <div class="sv-callout">
+      <div class="sv-callout-icon">🔗</div>
+      <div>
+        <h3>Require Student Submission</h3>
+        <p>
+          Instructors can configure assignments so grading is restricted unless the student is
+          connected to the server. This ensures all results flow through the server for tracking,
+          analytics, and plagiarism detection. Students who are offline cannot complete grading
+          until they connect.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTING & DATABASE -->
+<section class="landing-section landing-section--alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Infrastructure</div>
+      <h2 class="section-title">Hosting and Database</h2>
+    </div>
+
+    <div class="sv-infra-grid">
+      <div class="sv-infra-section">
+        <h3>Hosting Options</h3>
+        <div class="sv-infra-cards">
+          <div class="sv-infra-card">
+            <h4>On-Campus (HTTP)</h4>
+            <p>For private or campus-only networks, run over plain HTTP. No certificate setup needed. Ideal for lab environments and closed university networks.</p>
+          </div>
+          <div class="sv-infra-card sv-infra-card--rec">
+            <div class="sv-rec-badge">Recommended for public access</div>
+            <h4>Caddy Reverse Proxy (HTTPS)</h4>
+            <p>Caddy automatically obtains and renews Let's Encrypt TLS certificates. Zero manual certificate management. Just point your domain and run.</p>
+          </div>
+          <div class="sv-infra-card">
+            <h4>Built-in TLS (HTTPS)</h4>
+            <p>Pass your own certificate and key files directly to the server via CLI flags or config. For environments where you manage your own certs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sv-infra-section">
+        <h3>Database Options</h3>
+        <div class="sv-infra-cards">
+          <div class="sv-infra-card sv-infra-card--rec">
+            <div class="sv-rec-badge">Default - best for most</div>
+            <h4>SQLite</h4>
+            <p>Zero setup, single file. Creates <code>submissions.db</code> automatically. Handles thousands of submissions. Back up by copying one file.</p>
+          </div>
+          <div class="sv-infra-card">
+            <h4>PostgreSQL</h4>
+            <p>For multi-server load balancing, high concurrency during exam spikes, or centralized backups with pg_dump and WAL archiving.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL FEATURES -->
+<section class="landing-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Under the Hood</h2>
+    </div>
+    <div class="sv-extras">
+      <div class="sv-extra">
+        <strong>Rate Limiting</strong>
+        <span>10 submissions per 60 seconds per IP. Protects against flooding.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>Webhook Notifications</strong>
+        <span>POST on each submission for external integrations and custom workflows.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>Duplicate Detection</strong>
+        <span>SHA-256 hashing catches identical resubmissions automatically.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>REST API</strong>
+        <span>Full API for submission, health checks, and roster management.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>File Storage</strong>
+        <span>Student code organized by course and assignment in a clean folder structure.</span>
+      </div>
+      <div class="sv-extra">
+        <strong>3-Layer Config</strong>
+        <span>CLI arguments override config file, which overrides defaults. Flexible deployment.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="landing-section--free">
+  <div class="container" style="text-align:center; position:relative;">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--white); margin-bottom:12px;">Get the Server</h2>
+    <p style="color:var(--text-on-dark-muted); margin-bottom:28px; font-size:1.05rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      Download the executable, set a password, and run. Full setup instructions in the documentation.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="/offline/" class="btn btn-primary">Download</a>
+      <a href="/docs/offline/server-setup/" class="btn btn-outline" style="border-color:var(--emerald); color:var(--emerald);">Setup Documentation</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
