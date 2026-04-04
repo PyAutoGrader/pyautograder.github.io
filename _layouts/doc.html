@@ -7,7 +7,11 @@ layout: default
       <span>Documentation</span>
     </div>
     <nav class="sidebar-nav">
-      {% assign sections = "Getting Started,Offline Autograder,Online Autograder" | split: "," %}
+      {% if site.online_enabled %}
+        {% assign sections = "Getting Started,Offline Autograder,Online Autograder" | split: "," %}
+      {% else %}
+        {% assign sections = "Getting Started,Offline Autograder" | split: "," %}
+      {% endif %}
       {% assign sorted_docs = site.docs | sort: "nav_order" %}
       {% for section in sections %}
       <div class="sidebar-section">
@@ -33,10 +37,10 @@ layout: default
     {{ content }}
     <div class="doc-footer">
       {% if page.prev_doc %}
-      <a href="{{ page.prev_doc | relative_url }}" class="doc-nav-btn prev">← {{ page.prev_title }}</a>
+      <a href="{{ page.prev_doc | relative_url }}" class="doc-nav-btn prev">&#x2190; {{ page.prev_title }}</a>
       {% endif %}
       {% if page.next_doc %}
-      <a href="{{ page.next_doc | relative_url }}" class="doc-nav-btn next">{{ page.next_title }} →</a>
+      <a href="{{ page.next_doc | relative_url }}" class="doc-nav-btn next">{{ page.next_title }} &#x2192;</a>
       {% endif %}
     </div>
   </article>

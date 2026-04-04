@@ -11,13 +11,13 @@
       <span class="logo-text">PyAutoGrader</span>
     </a>
     <nav class="site-nav">
-      <a href="{{ '/offline' | relative_url }}" {% if page.url contains 'offline' %}class="active"{% endif %}>Offline</a>
-      <a href="{{ '/online' | relative_url }}" {% if page.url contains 'online' %}class="active"{% endif %}>Online</a>
+      <a href="{{ '/features' | relative_url }}" {% if page.url contains 'features' %}class="active"{% endif %}>Features</a>
+      <a href="{{ '/server' | relative_url }}" {% if page.url contains 'server' and page.url != '/online/server-info/' %}class="active"{% endif %}>Server</a>
       <a href="{{ '/docs/getting-started' | relative_url }}" {% if page.url contains 'docs' %}class="active"{% endif %}>Docs</a>
-      <a href="{{ '/pricing' | relative_url }}" {% if page.url contains 'pricing' %}class="active"{% endif %}>Pricing</a>
       <a href="{{ '/faq' | relative_url }}" {% if page.url contains 'faq' %}class="active"{% endif %}>FAQ</a>
       <a href="{{ '/about' | relative_url }}" {% if page.url contains 'about' %}class="active"{% endif %}>About</a>
-      <a href="{{ '/contact' | relative_url }}" class="btn-nav-cta" {% if page.url contains 'contact' %}class="active"{% endif %}>Request Access</a>
+      <a href="{{ '/contact' | relative_url }}" {% if page.url contains 'contact' %}class="active"{% endif %}>Contact</a>
+      <a href="{{ '/offline' | relative_url }}" class="btn-nav-cta">Download</a>
     </nav>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>

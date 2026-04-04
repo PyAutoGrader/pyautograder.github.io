@@ -1,6 +1,6 @@
 ---
 layout: student-product
-title: Offline Autograder — Student Download
+title: Offline Autograder - Student Download
 subtitle: Download the student executable and get started.
 permalink: /student/offline/
 badge: Free
@@ -43,8 +43,5 @@ docs:
   cta:
     - label: Student Setup Docs
       url: /docs/offline/student-usage/
-      style: btn-outline
-    - label: Back to All Downloads
-      url: /student-downloads/
       style: btn-outline
 ---

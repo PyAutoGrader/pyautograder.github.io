@@ -1,14 +1,14 @@
 ---
 layout: contact
-title: Contact & Request Access
-subtitle: Get in touch or request an Online Autograder instructor account.
+title: Contact
+subtitle: Questions, feedback, or custom test type requests.
 permalink: /contact/
 
-notice: To request an <strong>Online Autograder instructor account</strong>, fill out the form below with your institution and contact details. You will receive login credentials by email.
+notice: Have a question about PyAutoGrader, want to report a bug, or need a test type we do not support yet? Fill out the form below and we will get back to you.
 
-form_title: Request Instructor Access
+form_title: Get in Touch
 form_action: "https://formspree.io/f/xpqjlrqa"
-submit_label: Send Request
+submit_label: Send Message
 
 fields:
   - id: name
@@ -33,20 +33,22 @@ fields:
     label: Request Type
     type: select
     options:
-      - value: instructor-account
-        label: "Online Autograder — Instructor Account"
       - value: general
         label: General Question
+      - value: custom-test
+        label: Custom Test Type Request
       - value: feedback
         label: Feedback / Bug Report
       - value: other
         label: Other
 
   - id: message
-    label: Message (optional)
+    label: Message
     type: textarea
-    placeholder: "Anything else you'd like us to know..."
+    placeholder: "Tell us what you need..."
+    required: true
 
 form_note: >
-  This form uses Formspree for email delivery.
+  This form uses Formspree for email delivery. Want a test type we do not support?
+  Describe what you need and we will see if we can add it.
 ---

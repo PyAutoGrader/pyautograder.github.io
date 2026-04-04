@@ -1,33 +1,43 @@
 ---
 layout: about
 title: About
-subtitle: What PyAutoGrader is and why it exists.
+subtitle: Built by an educator, for educators.
 permalink: /about/
 
 sections:
-  - title: The Project
+  - title: The Story
     body: >
-      PyAutoGrader is a Python autograding tool built to make grading programming assignments
-      less tedious for instructors and more informative for students. It started as a practical
-      solution to a real problem: running test suites against student code by hand takes too long,
-      and existing tools either require too much setup or do not fit neatly into a classroom workflow.
+      PyAutoGrader was born in the classroom. When our engineering department at Valparaiso
+      University switched from MATLAB to Python, we needed an autograding solution. The
+      existing tools were either expensive subscription services or required too much
+      infrastructure to justify for a single course. We switched from MATLAB to Python and
+      needed a free alternative to expensive subscription-based tools. So I built one.
 
-  - title: Two Products, One Goal
+  - title: The Philosophy
     body: >
-      The Offline Autograder is for instructors who want something simple and self-contained.
-      Build an executable, hand it to your students, done. No accounts, no servers, no dependencies
-      on outside services. The Online Autograder is for instructors who want more — centralized
-      submission tracking, real-time results, and a proper client experience for students.
-      It runs on a hosted server managed by the project author.
+      PyAutoGrader is built around a few core beliefs. Grading tools should be free - educators
+      already have enough budget constraints. Students should learn real skills - setting up a
+      Python environment, installing packages, and running code on their own machines are
+      valuable experiences that a cloud-hosted autograder would skip over. And your data should
+      stay yours - grading results and student code should remain on your institution's
+      infrastructure, not on someone else's servers.
 
-  - title: Development
+  - title: Mastery Based Learning
     body: >
-      PyAutoGrader is actively developed and maintained. The programs are developed in separate
-      repositories under the PyAutoGrader GitHub organization at github.com/PyAutoGrader.
-      This site lives at pyautograder.github.io.
+      This project grew from a Mastery Based Learning approach to teaching programming. Students
+      get instant feedback on their code, can resubmit unlimited times, and learn from clear
+      pass/fail signals on each test. The autograder is not just a grading tool - it is a
+      learning tool that helps students iterate toward mastery.
 
-  - title: Contact
-    body: For instructor account requests, questions, or feedback, head to the Contact page.
+  - title: The Developer
+    body: >
+      PyAutoGrader is developed and maintained by Jesse Sestito, an Engineering Professor at
+      Valparaiso University. The project is open source and hosted on GitHub.
+
+  - title: Get in Touch
+    body: >
+      Have questions, feedback, or want to request a custom test type?
+      Head to the Contact page.
     cta:
       label: Contact Us
       url: /contact/

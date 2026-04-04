@@ -15,7 +15,7 @@ next_title: Building an Executable
 ## What You'll Need
 
 - Python 3.x installed on your machine
-- PyAutoGrader installed (`pip install pyautograder` — coming soon)
+- PyAutoGrader installed (`pip install pyautograder` - coming soon)
 - Your assignment's test cases ready to write
 
 ## Overview of Steps

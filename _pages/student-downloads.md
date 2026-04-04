@@ -1,28 +1,19 @@
 ---
 layout: downloads
 title: Student Downloads
-subtitle: Find the right download for your class.
-permalink: /student-downloads/
+subtitle: Download the PyAutoGrader student application.
+permalink: /student/
 
 intro: >
-  Not sure which version you need? Ask your instructor — they will tell you whether
-  your class uses the Offline or Online Autograder.
+  Your instructor will provide you with a .agr assignment file. Download the student
+  application below to get started.
 
 clients:
-  - icon: 📦
-    title: Offline Autograder
+  - icon: "\U0001F4E6"
+    title: PyAutoGrader Student App
     description: >
-      Your instructor gave you a .agr assignment file. Download the student
-      executable, load the file, complete your work, and export a PDF to submit.
+      Download the student executable, load the .agr file your instructor provided,
+      run your Python code against the test suite, and see instant feedback.
     docs_url: /student/offline/
-    docs_label: Download & Setup →
-
-  - icon: 🌐
-    title: Online Autograder
-    description: >
-      Your instructor uses the hosted platform. Download the student client
-      and log in with the credentials your instructor provides.
-    badge: "⏳ Coming Soon"
-    docs_url: /student/online/
-    docs_label: Download & Setup →
+    docs_label: Download & Setup
 ---

@@ -19,6 +19,6 @@ prev_title: Building an Executable
 
 ## Understanding Your Results
 
-The grader will print which tests passed and which failed, along with a final score. You do not need to install anything — the executable is self-contained.
+The grader will print which tests passed and which failed, along with a final score. You do not need to install anything - the executable is self-contained.
 
 Full instructions with screenshots will be added here when the first release is available.

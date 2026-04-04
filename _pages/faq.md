@@ -9,60 +9,102 @@ groups:
     items:
       - q: What is PyAutoGrader?
         a: >
-          PyAutoGrader is a tool that helps instructors automatically grade Python programming assignments.
-          It comes in two versions: an Offline Autograder (a distributable executable) and an Online
-          Autograder (a hosted platform with instructor and student clients).
-
-      - q: What is the difference between the Offline and Online versions?
-        a: >
-          The Offline Autograder is a standalone executable the instructor builds and distributes to students.
-          Students run it on their own machines with no internet needed. The Online Autograder is a hosted
-          platform — instructors manage assignments through an instructor client, and students submit work
-          via a student client that connects to a central grading server.
+          PyAutoGrader is a free tool that helps instructors automatically grade Python programming
+          assignments. Instructors create assignments with test cases, distribute a single encrypted
+          file to students, and students run the grader on their own machines.
 
       - q: Is PyAutoGrader free?
         a: >
-          The Offline Autograder is completely free, forever. The Online Autograder has a free tier
-          for instructors (by request). A paid tier with additional features is planned for the future.
+          Yes. PyAutoGrader is completely free and always will be. No subscriptions, no per-student
+          fees, no premium tiers.
 
       - q: What operating systems are supported?
         a: >
-          The Offline Autograder produces executables that run on Windows, macOS, and Linux.
-          The Online Autograder clients will also target all major platforms. Specific OS details
-          will be listed on the download pages when available.
+          PyAutoGrader runs on Windows, macOS, and Linux. Both the instructor and student
+          applications are available for all three platforms.
+
+      - q: How does this compare to paid autograders?
+        a: >
+          Unlike subscription-based autograding platforms, PyAutoGrader is free, runs grading on
+          student machines (not a cloud server), and keeps all data on your institution's
+          infrastructure. You do not need to negotiate contracts, sign data processing agreements,
+          or worry about FERPA compliance with a third-party vendor.
 
   - name: For Instructors
     items:
-      - q: How do I get an Online Autograder account?
+      - q: How do I create assignments?
         a: >
-          Instructor accounts are available by request. Head to the Contact page and fill out the form.
-          You will receive login details by email.
+          Download the instructor application, create a new assignment file, add your test cases
+          (42+ types available), and export an encrypted .agr file to distribute to students.
 
-      - q: Do students need to create accounts for the Online Autograder?
+      - q: What types of tests can I create?
         a: >
-          No. Students do not sign up on their own. Their login credentials are provided by their instructor,
-          keeping student account management simple and under the instructor's control.
+          PyAutoGrader supports 42+ test types including variable checks, function testing, class
+          validation, control flow detection, matplotlib plot testing, code quality analysis
+          (naming conventions, complexity, docstrings), performance benchmarks, and more. See the
+          Features page for the full list.
 
-      - q: Can I use both the Offline and Online versions?
+      - q: How do I collect student results?
         a: >
-          Yes. They are independent tools. You could use the Offline Autograder for one course and
-          the Online Autograder for another, or transition between them over time.
+          Four ways - use any combination. PDF export (students upload to your LMS), email
+          (results sent to you automatically), Google Sheets (grades posted via webhook), or
+          a self-hosted Flask server (full dashboard with analytics and plagiarism detection).
+          Email and Google Sheets work as silent background notifications.
+
+      - q: What is the self-hosted server?
+        a: >
+          A Flask-based submission server you run on your own infrastructure. It provides a
+          dashboard for browsing submissions, analytics (score distributions, trends, at-risk
+          students), plagiarism detection with side-by-side diff, Canvas-compatible CSV export,
+          roster management, and assignment deadlines. Supports HTTP and HTTPS.
+
+      - q: Can I require students to submit to my server?
+        a: >
+          Yes. Instructors can configure assignments so that grading is restricted unless the
+          student is connected to and has submitted results to the server.
+
+      - q: Does it support multi-file assignments?
+        a: >
+          Yes. You can target tests to specific files, and the student app auto-detects related
+          files in the same directory.
+
+      - q: Can I grade assignments in batch?
+        a: >
+          Yes. The instructor application includes batch grading. Download student .py files from
+          your LMS, load them into the instructor app, and export a CSV with per-test scores.
 
   - name: For Students
     items:
-      - q: I am a student — how do I use PyAutoGrader?
+      - q: I am a student - how do I use PyAutoGrader?
         a: >
-          For the Online Autograder, download the student client from the Student Downloads page
-          and use the login your instructor provides. For the Offline Autograder, your instructor
-          will send you an executable directly — just run it on your machine.
+          Download the student application from the Student Downloads page. Your instructor will
+          give you a .agr assignment file. Open the app, load the file, select your Python
+          script, and run the grader. You will see instant pass/fail feedback.
 
-      - q: Do I need to install Python to use the Offline Autograder?
+      - q: Do I need to install Python?
         a: >
-          No. The offline grader is distributed as a self-contained executable. It bundles everything it
-          needs — just run the file your instructor sends you.
+          You need Python installed on your machine to write and run your code, but the
+          PyAutoGrader application itself is a standalone executable that does not require
+          a separate Python installation.
 
-      - q: Where can I get help if something is not working?
+      - q: What if I do not have internet when grading?
         a: >
-          First, check the Documentation — it covers setup and common issues for both products.
-          If you are still stuck, use the Contact page to reach out.
+          Grading works completely offline. If your instructor has email or server submission
+          configured, your results will be queued locally and sent automatically the next time
+          you have internet.
+
+  - name: Privacy and Compliance
+    items:
+      - q: Is PyAutoGrader FERPA-compliant?
+        a: >
+          PyAutoGrader is FERPA-friendly by design. Grading runs on the student's own machine,
+          not on a cloud server. The self-hosted server keeps data on your institution's
+          infrastructure. There is no third-party data processing agreement needed.
+
+      - q: Where is student data stored?
+        a: >
+          Grading results are generated locally on the student's machine. Depending on how you
+          configure result collection, data may be sent via email (to your inbox), posted to
+          your Google Sheet, or submitted to a server you host. At no point does student data
+          pass through PyAutoGrader's infrastructure.
 ---

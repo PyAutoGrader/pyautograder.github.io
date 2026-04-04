@@ -1,4 +1,5 @@
 ---
+published: false
 layout: doc
 title: Instructor Setup
 section: Online Autograder

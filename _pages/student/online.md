@@ -1,6 +1,7 @@
 ---
+published: false
 layout: student-product
-title: Online Autograder — Student Download
+title: Online Autograder - Student Download
 subtitle: Download the student client and connect to your class.
 permalink: /student/online/
 badge: Free

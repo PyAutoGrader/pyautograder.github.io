@@ -1,19 +1,19 @@
 ---
 layout: offline
-title: Offline Autograder
-subtitle: Automated Python grading with no server required.
+title: Download PyAutoGrader
+subtitle: Free automated Python grading for educators.
 permalink: /offline/
 badge: Always Free
 
-notice: The Offline Autograder is completely <strong>free</strong> and always will be.
+notice: PyAutoGrader is completely <strong>free</strong> and always will be. No subscriptions, no per-student fees.
 
 workflow:
   title: How It Works
   body: >
-    The Offline Autograder consists of two executables — one for instructors and one for students.
-    Both are downloaded directly from this site. The instructor creates an assignment file (.agr)
-    which the student loads into their executable. After completing the assignment, the student
-    exports a results PDF and submits it to the LMS or sends it to their instructor.
+    PyAutoGrader has two applications - one for instructors and one for students.
+    The instructor creates an assignment file (.agr) with tests, solutions, and configuration.
+    Students load the .agr file into their app, run the grader on their code, and get instant
+    feedback. Results can be collected via PDF export, email, Google Sheets, or a self-hosted server.
 
 download:
   title: Instructor Download
@@ -49,18 +49,11 @@ steps:
 student:
   title: Are You a Student?
   body: >
-    If your instructor uses the Offline Autograder, head to the Student Downloads page
-    to download your executable and get setup instructions.
+    If your instructor uses PyAutoGrader, head to the Student Downloads page
+    to download your app and get setup instructions.
   cta:
     - label: Student Downloads
       url: /student/offline/
       style: btn-primary
 
-classic:
-  # Replace url below with the GitHub repo URL when ready
-  # e.g. https://github.com/PyAutoGrader/pyautograder-classic
-  url: "/classic/"
-  text: >-
-    Prefer to build your own? PyAutoGrader Classic is a separate project that lets you
-    write test cases and compile your own grading executable from scratch.
 ---

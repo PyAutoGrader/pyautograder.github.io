@@ -1,5 +1,8 @@
 title: PyAutoGrader
 description: Automated Python grading for educators
+
+# Feature toggles
+online_enabled: false
 url: "https://pyautograder.github.io"
 baseurl: ""
 

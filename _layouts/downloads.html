@@ -38,7 +38,7 @@ layout: default
     {% if page.setup_steps %}
     <h2 style="margin-top:56px;">{{ page.setup_title }}</h2>
     {% for step in page.setup_steps %}
-    <h3>Step {{ forloop.index }} — {{ step.title }}</h3>
+    <h3>Step {{ forloop.index }} - {{ step.title }}</h3>
     <p>{{ step.body }}</p>
     {% endfor %}
     {% if page.setup_cta %}

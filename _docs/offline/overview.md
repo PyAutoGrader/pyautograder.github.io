@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Offline Autograder Overview
+title: Overview
 section: Offline Autograder
 nav_order: 1
 permalink: /docs/offline/overview/
@@ -8,23 +8,25 @@ next_doc: /docs/offline/instructor-setup
 next_title: Instructor Setup
 ---
 
-The Offline Autograder lets instructors build a self-contained grading executable and distribute it to students. Students run it on their local machine — no internet connection or accounts required.
+PyAutoGrader lets instructors create automated Python assignments and distribute them as encrypted `.agr` files. Students run the grader on their own machines, getting instant pass/fail feedback on 42+ test types. Results can be collected via PDF export, email, Google Sheets, or a self-hosted submission server.
 
 ## Key Concepts
 
-**Test Cases** — You write test cases in Python that validate student submissions. These get bundled into the executable.
+**Instructor Application** - A desktop app where you create assignments, configure tests, manage solution files, and set up reporting channels. Exports encrypted `.agr` files for distribution.
 
-**Executable** — A single file the instructor builds and hands to students. Contains all grading logic.
+**Student Application** - A desktop app that loads `.agr` files and runs the grader against student code. Shows real-time results with pass/fail feedback and scores.
 
-**Results** — When a student runs the executable against their code, they see which tests passed and which failed, along with a final score.
+**.agr Files** - Encrypted assignment files containing tests, solutions, and configuration. Students cannot see solutions or expected values. Distributed via your LMS or email.
 
-## When to Use the Offline Autograder
+**Result Collection** - Four channels (use any combination): PDF export, email notifications, Google Sheets webhooks, or a self-hosted Flask submission server with analytics and plagiarism detection.
 
-- You don't want to manage server infrastructure
-- Students should be able to run the grader without internet
-- You want a quick, low-friction setup
-- Your class is small or you prefer manual grade collection
+## Who Is This For?
+
+- Instructors teaching Python courses at any level
+- Departments looking for a free alternative to subscription-based autograders
+- Educators who want students to learn real Python environment skills
+- Institutions that need FERPA-friendly grading (data stays on your infrastructure)
 
 ## Next Steps
 
-Continue to [Instructor Setup](/docs/offline/instructor-setup/) to get started.
+Continue to [Instructor Setup](/docs/offline/instructor-setup/) to create your first assignment.
