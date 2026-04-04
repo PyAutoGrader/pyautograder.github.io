@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Configuration | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Test Configuration | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Test Configuration" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This guide covers how to configure the automated checks that grade student code. Each check tests a specific aspect of the student’s submission and awards points." />
+<meta property="og:description" content="This guide covers how to configure the automated checks that grade student code. Each check tests a specific aspect of the student’s submission and awards points." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/online/test-configuration/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/online/test-configuration/" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-04-04T15:52:01+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Test Configuration" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T15:52:01+00:00","datePublished":"2026-04-04T15:52:01+00:00","description":"This guide covers how to configure the automated checks that grade student code. Each check tests a specific aspect of the student’s submission and awards points.","headline":"Test Configuration","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/online/test-configuration/"},"url":"https://pyautograder.github.io/dev/docs/online/test-configuration/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/dev/assets/css/main.css" />
+  <link rel="icon" href="/dev/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/dev/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/dev/offline" >Offline</a>
+      <a href="/dev/online" class="active">Online</a>
+      <a href="/dev/docs/getting-started" class="active">Docs</a>
+      <a href="/dev/pricing" >Pricing</a>
+      <a href="/dev/faq" >FAQ</a>
+      <a href="/dev/about" >About</a>
+      <a href="/dev/contact" class="btn-nav-cta" >Request Access</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="doc-wrapper">
+  <aside class="doc-sidebar">
+    <div class="sidebar-header">
+      <span>Documentation</span>
+    </div>
+    <nav class="sidebar-nav">
+      
+      
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Getting Started</span>
+        <ul>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Offline Autograder</span>
+        <ul>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Offline Autograder Overview</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/building-executable/" >Building an Executable</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div>
+      
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">Online Autograder</span>
+        <ul>
+          
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/overview/" >Online Autograder Overview</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/managing-assignments/" >Managing Assignments</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/test-configuration/" class="active">Test Configuration</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/online/grading-and-submissions/" >Grading and Submissions</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/online/student-setup/" >Student Setup</a></li>
+            
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </aside>
+  <article class="doc-content">
+    <div class="doc-breadcrumb">
+      <a href="/dev/docs/getting-started">Docs</a>
+       / <span>Online Autograder</span>
+      / <span>Test Configuration</span>
+    </div>
+    <h1>Test Configuration</h1>
+    <p>This guide covers how to configure the automated checks that grade student code. Each check tests a specific aspect of the student’s submission and awards points.</p>
+
+<h2 id="adding-a-check">Adding a Check</h2>
+
+<ol>
+  <li>Open an assignment in the editor and go to the <strong>Tests</strong> tab</li>
+  <li>Click <strong>Add Check</strong></li>
+  <li>Choose a check type from the dropdown</li>
+  <li>Configure the check fields</li>
+  <li>Set the <strong>point value</strong> and optionally add custom pass/fail feedback messages</li>
+  <li>Click <strong>Save</strong></li>
+</ol>
+
+<p>Every time you add, edit, or delete a check, a new <strong>version</strong> of the test configuration is created automatically.</p>
+
+<h2 id="common-fields">Common Fields</h2>
+
+<p>Every check type has these fields:</p>
+
+<ul>
+  <li><strong>Name</strong> — A label for the check, shown to students in their results (e.g., “Variable x has correct value”)</li>
+  <li><strong>Points</strong> — How many points this check is worth</li>
+  <li><strong>Pass Message</strong> — Custom feedback shown when the check passes (optional)</li>
+  <li><strong>Fail Message</strong> — Custom feedback shown when the check fails (optional)</li>
+</ul>
+
+<h2 id="check-types">Check Types</h2>
+
+<h3 id="variable-checks">Variable Checks</h3>
+
+<p>These checks inspect variables in the student’s code after it executes.</p>
+
+<p><strong>Variable Value</strong> — Check that a variable has a specific expected value.</p>
+<ul>
+  <li>Variable name, expected value, and a numeric tolerance for floating-point comparisons</li>
+  <li>Option to show or hide the expected value in student feedback</li>
+</ul>
+
+<p><strong>Variable Type</strong> — Check that a variable is a specific type (int, float, str, list, dict, tuple, set, bool, or numpy.ndarray).</p>
+
+<p><strong>Array Size</strong> — Check that an array or list has the expected length. You can set an exact size, or a minimum and/or maximum.</p>
+
+<p><strong>Array Values in Range</strong> — Check that all elements of an array fall within a numeric range.</p>
+
+<p><strong>Array Equals</strong> — Check that an array matches expected values element-by-element, with tolerance for floating-point values.</p>
+
+<p><strong>List Equals</strong> — Check that a list matches expected values. You can choose whether order matters.</p>
+
+<p><strong>Compare with Solution</strong> — Compare one or more student variables against the same variables in your solution file. Specify variable names as a comma-separated list. Supports partial credit (points split evenly across variables).</p>
+
+<p><strong>Check Relationship</strong> — Verify a mathematical relationship between two variables using a lambda expression (e.g., <code class="language-plaintext highlighter-rouge">lambda x: np.sin(x)</code>).</p>
+
+<h3 id="function-checks">Function Checks</h3>
+
+<p>These checks test functions defined in the student’s code.</p>
+
+<p><strong>Function Exists</strong> — Check that a function with a given name is defined.</p>
+
+<p><strong>Function Called</strong> — Check that a function was called during execution.</p>
+
+<p><strong>Function Not Called</strong> — Check that a function was NOT called (useful for ensuring students implement their own logic rather than using a built-in).</p>
+
+<p><strong>Compare with Solution Function</strong> — Test a student’s function against your solution function across multiple test cases. This check has a split-panel editor:</p>
+<ul>
+  <li><strong>Left panel</strong> — Configure the function name and solution file</li>
+  <li><strong>Right panel</strong> — Define test cases, each with a set of arguments to pass to the function</li>
+</ul>
+
+<p>Each test case calls both the student’s function and your solution function with the same arguments, then compares the return values. Supports partial credit (points split evenly across test cases).</p>
+
+<p>For arguments that should be NumPy arrays, check the <strong>np.array</strong> option next to the argument. This wraps the value in <code class="language-plaintext highlighter-rouge">np.array()</code> before passing it to the function.</p>
+
+<h3 id="code-checks">Code Checks</h3>
+
+<p>These checks inspect the source code text itself (not the execution results).</p>
+
+<p><strong>Code Contains</strong> — Check that the code contains a specific phrase or keyword. Case sensitivity is configurable.</p>
+
+<p><strong>Code Not Contains</strong> — Check that the code does NOT contain a specific phrase (e.g., to prevent use of a banned function).</p>
+
+<p><strong>Operator Used</strong> — Check that a specific operator appears in the code. Supports arithmetic operators (+, -, *, /, //, %, **), comparison operators (==, !=, &lt;, &gt;, &lt;=, &gt;=), and logical operators (and, or, not, in, is).</p>
+
+<h3 id="control-flow-checks">Control Flow Checks</h3>
+
+<p>These checks verify that the student used specific control structures.</p>
+
+<p><strong>For Loop Used</strong> — Check that the code contains a <code class="language-plaintext highlighter-rouge">for</code> loop.</p>
+
+<p><strong>While Loop Used</strong> — Check that the code contains a <code class="language-plaintext highlighter-rouge">while</code> loop.</p>
+
+<p><strong>If Statement Used</strong> — Check that the code contains an <code class="language-plaintext highlighter-rouge">if</code> statement.</p>
+
+<p><strong>Loop Iterations</strong> — Check that a specific loop runs the expected number of times.</p>
+
+<h3 id="plot-checks">Plot Checks</h3>
+
+<p>These checks inspect matplotlib plots created by the student’s code. All plot checks reference a <strong>figure number</strong> (default 1, for the first figure created).</p>
+
+<p><strong>Plot Created</strong> — Check that at least one matplotlib plot was created.</p>
+
+<p><strong>Plot Has X Label / Y Label / Title</strong> — Check that the plot has a non-empty label or title. Optionally specify the exact expected text.</p>
+
+<p><strong>Plot Line Style</strong> — Check the style of a specific line by index (e.g., “b-“ for blue solid, “r–” for red dashed).</p>
+
+<p><strong>Plot Has Line Style</strong> — Check if any line in the plot matches a given style.</p>
+
+<p><strong>Plot Line Width</strong> — Check the width of a specific plot line.</p>
+
+<p><strong>Plot Marker Size</strong> — Check the marker size of a specific plot line.</p>
+
+<p><strong>Plot Data Length</strong> — Check the number of data points in a plot line. You can specify an exact count, or a minimum and/or maximum.</p>
+
+<p><strong>Check Multiple Lines</strong> — Check that the plot has at least N lines.</p>
+
+<p><strong>Check Exact Lines</strong> — Check that the plot has exactly N lines.</p>
+
+<p><strong>Check Function Any Line</strong> — Check if any plotted line matches a mathematical function defined as a lambda expression.</p>
+
+<p><strong>Plot Properties</strong> — Check multiple plot properties at once: legend presence, grid presence, title, x-label, and y-label.</p>
+
+<p><strong>Compare Plot with Solution</strong> — Compare a plot line against the corresponding line in your solution’s plot. You can choose which properties to compare: color, line style, line width, marker, and marker size.</p>
+
+<h2 id="tips">Tips</h2>
+
+<ul>
+  <li><strong>Start simple</strong> — Begin with a few variable or output checks, then add more as needed.</li>
+  <li><strong>Use the Test Runner</strong> — Always run your tests locally (in the Test Runner tab) before publishing the assignment. This catches configuration errors early.</li>
+  <li><strong>Upload solutions first</strong> — If you are using solution-comparison checks, upload your solution files in the Files tab before configuring those checks.</li>
+  <li><strong>Partial credit</strong> — Solution comparison and function comparison checks can split their points across multiple variables or test cases. Enable this in the check editor.</li>
+  <li><strong>Versioning is automatic</strong> — Every save creates a new version. Students who already submitted are graded against the version they submitted to, not the latest one (unless you regrade).</li>
+</ul>
+
+    <div class="doc-footer">
+      
+      <a href="/dev/docs/online/managing-assignments" class="doc-nav-btn prev">← Managing Assignments</a>
+      
+      
+      <a href="/dev/docs/online/grading-and-submissions" class="doc-nav-btn next">Grading and Submissions →</a>
+      
+    </div>
+  </article>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/dev/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/dev/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Products</span>
+          <a href="/dev/offline">Offline Autograder</a>
+          <a href="/dev/online">Online Autograder</a>
+          <a href="/dev/pricing">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/dev/docs/getting-started">Documentation</a>
+          <a href="/dev/student-downloads">Student Downloads</a>
+          <a href="/dev/changelog">Changelog</a>
+          <a href="/dev/faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/dev/about">About</a>
+          <a href="/dev/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/dev/assets/js/main.js"></script>
+</body>
+</html>

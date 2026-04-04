@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building an Executable | PyAutoGrader</title>
+  <title>Grading and Submissions | PyAutoGrader</title>
   <meta name="description" content="Automated Python grading for educators" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Building an Executable | PyAutoGrader</title>
+<title>Grading and Submissions | PyAutoGrader</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Building an Executable" />
+<meta property="og:title" content="Grading and Submissions" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This page is a placeholder. Full content coming soon." />
-<meta property="og:description" content="This page is a placeholder. Full content coming soon." />
-<link rel="canonical" href="https://pyautograder.github.io/dev/docs/offline/building-executable/" />
-<meta property="og:url" content="https://pyautograder.github.io/dev/docs/offline/building-executable/" />
+<meta name="description" content="This guide covers how to review student submissions, regrade work, manage attempt overrides, and export grades." />
+<meta property="og:description" content="This guide covers how to review student submissions, regrade work, manage attempt overrides, and export grades." />
+<link rel="canonical" href="https://pyautograder.github.io/dev/docs/online/grading-and-submissions/" />
+<meta property="og:url" content="https://pyautograder.github.io/dev/docs/online/grading-and-submissions/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-04-04T15:52:01+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Building an Executable" />
+<meta property="twitter:title" content="Grading and Submissions" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T15:52:01+00:00","datePublished":"2026-04-04T15:52:01+00:00","description":"This page is a placeholder. Full content coming soon.","headline":"Building an Executable","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/offline/building-executable/"},"url":"https://pyautograder.github.io/dev/docs/offline/building-executable/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T15:52:01+00:00","datePublished":"2026-04-04T15:52:01+00:00","description":"This guide covers how to review student submissions, regrade work, manage attempt overrides, and export grades.","headline":"Grading and Submissions","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/online/grading-and-submissions/"},"url":"https://pyautograder.github.io/dev/docs/online/grading-and-submissions/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -45,8 +45,8 @@
       <span class="logo-text">PyAutoGrader</span>
     </a>
     <nav class="site-nav">
-      <a href="/dev/offline" class="active">Offline</a>
-      <a href="/dev/online" >Online</a>
+      <a href="/dev/offline" >Offline</a>
+      <a href="/dev/online" class="active">Online</a>
       <a href="/dev/docs/getting-started" class="active">Docs</a>
       <a href="/dev/pricing" >Pricing</a>
       <a href="/dev/faq" >FAQ</a>
@@ -119,7 +119,7 @@
             
           
             
-          <li><a href="/dev/docs/offline/building-executable/" class="active">Building an Executable</a></li>
+          <li><a href="/dev/docs/offline/building-executable/" >Building an Executable</a></li>
             
           
             
@@ -168,7 +168,7 @@
             
           
             
-          <li><a href="/dev/docs/online/grading-and-submissions/" >Grading and Submissions</a></li>
+          <li><a href="/dev/docs/online/grading-and-submissions/" class="active">Grading and Submissions</a></li>
             
           
             
@@ -183,32 +183,118 @@
   <article class="doc-content">
     <div class="doc-breadcrumb">
       <a href="/dev/docs/getting-started">Docs</a>
-       / <span>Offline Autograder</span>
-      / <span>Building an Executable</span>
+       / <span>Online Autograder</span>
+      / <span>Grading and Submissions</span>
     </div>
-    <h1>Building an Executable</h1>
-    <p><em>This page is a placeholder. Full content coming soon.</em></p>
+    <h1>Grading and Submissions</h1>
+    <p>This guide covers how to review student submissions, regrade work, manage attempt overrides, and export grades.</p>
 
-<h2 id="overview">Overview</h2>
+<h2 id="viewing-submissions">Viewing Submissions</h2>
 
-<p>Once your test cases are written and your grader is configured, you’ll run a build command that packages everything into a standalone executable for your target platform.</p>
+<p>Open an assignment in the editor and go to the <strong>Submissions</strong> tab. The left panel shows a list of students who have submitted, along with their best score and number of attempts.</p>
 
-<p>Topics that will be covered here:</p>
+<h3 id="student-submissions">Student Submissions</h3>
+
+<p>Click on a student to see all of their submissions. Each submission shows:</p>
 
 <ul>
-  <li>Running the build command</li>
-  <li>Choosing a target platform (Windows / macOS / Linux)</li>
-  <li>What the output executable looks like</li>
-  <li>How to test the executable before distributing it</li>
-  <li>How to distribute it to students (LMS, email, file share)</li>
+  <li><strong>Attempt number</strong> and timestamp</li>
+  <li><strong>Score</strong> and max score</li>
+  <li><strong>Late badge</strong> if submitted after the due date</li>
+  <li><strong>Best attempt badge</strong> for the highest-scoring submission (when using best-score grading)</li>
 </ul>
+
+<h3 id="submission-detail">Submission Detail</h3>
+
+<p>Select a specific submission to see:</p>
+
+<ul>
+  <li><strong>Per-check results</strong> — Each check with its pass/fail status, points earned, and feedback</li>
+  <li><strong>Submitted files</strong> — The code files the student submitted, with a preview viewer</li>
+  <li><strong>Filter controls</strong> — Filter checks by All, Passed, or Failed</li>
+</ul>
+
+<p>You can also download the student’s submitted files for local review.</p>
+
+<h2 id="regrading">Regrading</h2>
+
+<p>When you update your test configuration, existing submissions remain graded against the version they were originally submitted to. You may want to regrade submissions against a newer version.</p>
+
+<h3 id="regrade-a-single-submission">Regrade a Single Submission</h3>
+
+<ol>
+  <li>Select a student and submission in the Submissions tab</li>
+  <li>Click <strong>Regrade</strong></li>
+  <li>Choose a scoring policy:
+    <ul>
+      <li><strong>Use new score</strong> — Replace the old score with the new result</li>
+      <li><strong>Use best score</strong> — Keep whichever score is higher (old or new)</li>
+    </ul>
+  </li>
+  <li>Optionally add a reason for the regrade</li>
+  <li>Click <strong>Regrade</strong></li>
+</ol>
+
+<p>The grading engine runs locally on your machine and sends the new results to the server.</p>
+
+<h3 id="bulk-regrade">Bulk Regrade</h3>
+
+<p>To regrade all submissions for an assignment at once:</p>
+
+<ol>
+  <li>Click <strong>Bulk Regrade</strong> in the Submissions tab</li>
+  <li>Select the version to grade against (defaults to the latest)</li>
+  <li>Choose a scoring policy</li>
+  <li>Click <strong>Start Regrade</strong></li>
+</ol>
+
+<p>A progress overlay shows completion status as each submission is regraded. You can cancel at any time. The regrade runs in the background — each student’s code is downloaded, graded locally, and the results are sent back to the server.</p>
+
+<h2 id="attempt-overrides">Attempt Overrides</h2>
+
+<p>If a student needs extra attempts beyond the assignment’s maximum:</p>
+
+<ol>
+  <li>Select the student in the Submissions tab</li>
+  <li>Click <strong>Grant Extra Attempts</strong></li>
+  <li>Enter the number of additional attempts and optionally a reason</li>
+  <li>Click <strong>Grant</strong></li>
+</ol>
+
+<p>You can view and delete overrides from the same interface.</p>
+
+<h2 id="gradebook">Gradebook</h2>
+
+<p>Navigate to the <strong>Gradebook</strong> tab in the sidebar to see a class-wide view of all grades.</p>
+
+<h3 id="what-you-see">What You See</h3>
+
+<ul>
+  <li><strong>Class statistics</strong> — Total students, average percentage, median percentage, and completion rate</li>
+  <li><strong>Grade table</strong> — Each row is a student, each column is an assignment. Cells are color-coded:
+    <ul>
+      <li>Green (90%+), Yellow (70-89%), Orange (50-69%), Red (below 50%)</li>
+    </ul>
+  </li>
+  <li><strong>Search</strong> — Filter students by name or email</li>
+</ul>
+
+<h3 id="exporting-grades">Exporting Grades</h3>
+
+<p>Click <strong>Export</strong> to download the gradebook. Two formats are available:</p>
+
+<p><strong>Standard CSV</strong> — A straightforward spreadsheet with student names, emails, and scores for each assignment.</p>
+
+<p><strong>Canvas CSV</strong> — A CSV formatted for import into Canvas LMS. Column headers and student identifiers match Canvas’s expected format so you can upload grades directly.</p>
+
+<p>After choosing a format, you will be prompted to save the file to your computer.</p>
 
     <div class="doc-footer">
       
-      <a href="/dev/docs/offline/instructor-setup" class="doc-nav-btn prev">← Instructor Setup</a>
+      <a href="/dev/docs/online/test-configuration" class="doc-nav-btn prev">← Test Configuration</a>
       
       
-      <a href="/dev/docs/offline/student-usage" class="doc-nav-btn next">Student Usage →</a>
+      <a href="/dev/docs/online/student-setup" class="doc-nav-btn next">Student Setup →</a>
       
     </div>
   </article>

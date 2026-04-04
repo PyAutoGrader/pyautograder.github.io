@@ -11,17 +11,17 @@
 <meta property="og:title" content="Online Autograder Overview" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The Online Autograder is a hosted grading platform. Instructors use the instructor client to manage assignments and view results. Students use the student client to submit work." />
-<meta property="og:description" content="The Online Autograder is a hosted grading platform. Instructors use the instructor client to manage assignments and view results. Students use the student client to submit work." />
+<meta name="description" content="The Online Autograder is a hosted grading platform for Python programming assignments. Instructors create and manage assignments through a desktop client. Students submit their work through a separate desktop client and receive immediate feedback. All results are stored centrally on the grading server." />
+<meta property="og:description" content="The Online Autograder is a hosted grading platform for Python programming assignments. Instructors create and manage assignments through a desktop client. Students submit their work through a separate desktop client and receive immediate feedback. All results are stored centrally on the grading server." />
 <link rel="canonical" href="https://pyautograder.github.io/dev/docs/online/overview/" />
 <meta property="og:url" content="https://pyautograder.github.io/dev/docs/online/overview/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-16T00:05:21+00:00" />
+<meta property="article:published_time" content="2026-04-04T15:52:01+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Online Autograder Overview" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-03-16T00:05:21+00:00","datePublished":"2026-03-16T00:05:21+00:00","description":"The Online Autograder is a hosted grading platform. Instructors use the instructor client to manage assignments and view results. Students use the student client to submit work.","headline":"Online Autograder Overview","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/online/overview/"},"url":"https://pyautograder.github.io/dev/docs/online/overview/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T15:52:01+00:00","datePublished":"2026-04-04T15:52:01+00:00","description":"The Online Autograder is a hosted grading platform for Python programming assignments. Instructors create and manage assignments through a desktop client. Students submit their work through a separate desktop client and receive immediate feedback. All results are stored centrally on the grading server.","headline":"Online Autograder Overview","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/online/overview/"},"url":"https://pyautograder.github.io/dev/docs/online/overview/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -66,30 +66,118 @@
       <span>Documentation</span>
     </div>
     <nav class="sidebar-nav">
+      
+      
+      
       <div class="sidebar-section">
         <span class="sidebar-section-title">Getting Started</span>
         <ul>
-          <li><a href="/dev/docs/getting-started" >Introduction</a></li>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
         </ul>
       </div>
+      
       <div class="sidebar-section">
         <span class="sidebar-section-title">Offline Autograder</span>
         <ul>
-          <li><a href="/dev/docs/offline/overview" >Overview</a></li>
-          <li><a href="/dev/docs/offline/instructor-setup" >Instructor Setup</a></li>
-          <li><a href="/dev/docs/offline/building-executable" >Building an Executable</a></li>
-          <li><a href="/dev/docs/offline/student-usage" >Student Usage</a></li>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Offline Autograder Overview</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/building-executable/" >Building an Executable</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
         </ul>
       </div>
+      
       <div class="sidebar-section">
         <span class="sidebar-section-title">Online Autograder</span>
         <ul>
-          <li><a href="/dev/docs/online/overview" class="active">Overview</a></li>
-          <li><a href="/dev/docs/online/instructor-setup" >Instructor Setup</a></li>
-          <li><a href="/dev/docs/online/student-setup" >Student Setup</a></li>
-          <li><a href="/dev/docs/online/managing-assignments" >Managing Assignments</a></li>
+          
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/overview/" class="active">Online Autograder Overview</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/managing-assignments/" >Managing Assignments</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/test-configuration/" >Test Configuration</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/online/grading-and-submissions/" >Grading and Submissions</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/online/student-setup/" >Student Setup</a></li>
+            
+          
         </ul>
       </div>
+      
     </nav>
   </aside>
   <article class="doc-content">
@@ -99,22 +187,42 @@
       / <span>Online Autograder Overview</span>
     </div>
     <h1>Online Autograder Overview</h1>
-    <p>The Online Autograder is a hosted grading platform. Instructors use the instructor client to manage assignments and view results. Students use the student client to submit work.</p>
+    <p>The Online Autograder is a hosted grading platform for Python programming assignments. Instructors create and manage assignments through a desktop client. Students submit their work through a separate desktop client and receive immediate feedback. All results are stored centrally on the grading server.</p>
+
+<h2 id="how-it-works">How It Works</h2>
+
+<ol>
+  <li><strong>Instructors</strong> create assignments, define test cases, and upload solution files using the instructor client</li>
+  <li><strong>Students</strong> download starter files, write their code, and submit through the student client</li>
+  <li><strong>Grading runs locally</strong> on the student’s machine — their code never leaves their computer</li>
+  <li><strong>Results are submitted</strong> to the server so instructors can track scores, view submissions, and export grades</li>
+</ol>
 
 <h2 id="components">Components</h2>
 
-<p><strong>Instructor Client</strong> — Desktop application for instructors. Manage assignments, upload test cases, view student results.</p>
+<p><strong>Instructor Client</strong> — A desktop application for instructors. Create classes, manage student enrollment, build assignments with automated test cases, review submissions, and export grades.</p>
 
-<p><strong>Student Client</strong> — Desktop application for students. Submit Python files for grading and receive immediate feedback.</p>
+<p><strong>Student Client</strong> — A desktop application for students. Join classes, view assignments, download starter files, run the grader against your code, and submit results.</p>
 
-<p><strong>Grading Server</strong> — Hosted and managed by PyAutoGrader. You do not need to run your own server.</p>
+<p><strong>Grading Server</strong> — Hosted and managed by PyAutoGrader. Stores class data, assignments, enrollment, and grading results. You do not need to run your own server.</p>
+
+<h2 id="key-features">Key Features</h2>
+
+<ul>
+  <li><strong>Client-side grading</strong> — Student code executes on the student’s own machine, not on the server. This keeps the server lightweight and avoids security concerns with running untrusted code.</li>
+  <li><strong>Versioned test configurations</strong> — Every change to an assignment’s test cases is versioned, so you can track what changed and regrade against any version.</li>
+  <li><strong>Multiple check types</strong> — Output matching, variable checks, function return value checks, function-with-solution comparison, and more.</li>
+  <li><strong>Immediate feedback</strong> — Students see their score and per-check results as soon as grading finishes.</li>
+  <li><strong>Gradebook and export</strong> — View class-wide grades and export to CSV or Canvas-compatible format.</li>
+</ul>
 
 <h2 id="when-to-use-the-online-autograder">When to Use the Online Autograder</h2>
 
 <ul>
-  <li>You want centralized result tracking</li>
+  <li>You want centralized result tracking across your class</li>
   <li>You have a larger class and want submissions organized in one place</li>
-  <li>You want students to submit through a proper client rather than running an executable</li>
+  <li>You want students to submit through a structured workflow rather than running a standalone executable</li>
+  <li>You want to review individual student submissions and regrade when needed</li>
 </ul>
 
 <h2 id="getting-access">Getting Access</h2>

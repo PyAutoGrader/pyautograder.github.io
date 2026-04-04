@@ -11,17 +11,17 @@
 <meta property="og:title" content="Instructor Setup" />
 <meta name="author" content="PyAutoGrader" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This page is a placeholder. Full content coming soon." />
-<meta property="og:description" content="This page is a placeholder. Full content coming soon." />
+<meta name="description" content="This guide walks you through setting up the instructor client, creating your first class, and enrolling students." />
+<meta property="og:description" content="This guide walks you through setting up the instructor client, creating your first class, and enrolling students." />
 <link rel="canonical" href="https://pyautograder.github.io/dev/docs/online/instructor-setup/" />
 <meta property="og:url" content="https://pyautograder.github.io/dev/docs/online/instructor-setup/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-03-16T00:05:21+00:00" />
+<meta property="article:published_time" content="2026-04-04T15:52:01+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Instructor Setup" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-03-16T00:05:21+00:00","datePublished":"2026-03-16T00:05:21+00:00","description":"This page is a placeholder. Full content coming soon.","headline":"Instructor Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/online/instructor-setup/"},"url":"https://pyautograder.github.io/dev/docs/online/instructor-setup/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-04T15:52:01+00:00","datePublished":"2026-04-04T15:52:01+00:00","description":"This guide walks you through setting up the instructor client, creating your first class, and enrolling students.","headline":"Instructor Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/dev/docs/online/instructor-setup/"},"url":"https://pyautograder.github.io/dev/docs/online/instructor-setup/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/dev/assets/css/main.css" />
@@ -66,30 +66,118 @@
       <span>Documentation</span>
     </div>
     <nav class="sidebar-nav">
+      
+      
+      
       <div class="sidebar-section">
         <span class="sidebar-section-title">Getting Started</span>
         <ul>
-          <li><a href="/dev/docs/getting-started" >Introduction</a></li>
+          
+            
+          <li><a href="/dev/docs/getting-started/" >Introduction</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
         </ul>
       </div>
+      
       <div class="sidebar-section">
         <span class="sidebar-section-title">Offline Autograder</span>
         <ul>
-          <li><a href="/dev/docs/offline/overview" >Overview</a></li>
-          <li><a href="/dev/docs/offline/instructor-setup" >Instructor Setup</a></li>
-          <li><a href="/dev/docs/offline/building-executable" >Building an Executable</a></li>
-          <li><a href="/dev/docs/offline/student-usage" >Student Usage</a></li>
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/overview/" >Offline Autograder Overview</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/instructor-setup/" >Instructor Setup</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/building-executable/" >Building an Executable</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/offline/student-usage/" >Student Usage</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
         </ul>
       </div>
+      
       <div class="sidebar-section">
         <span class="sidebar-section-title">Online Autograder</span>
         <ul>
-          <li><a href="/dev/docs/online/overview" >Overview</a></li>
-          <li><a href="/dev/docs/online/instructor-setup" class="active">Instructor Setup</a></li>
-          <li><a href="/dev/docs/online/student-setup" >Student Setup</a></li>
-          <li><a href="/dev/docs/online/managing-assignments" >Managing Assignments</a></li>
+          
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/overview/" >Online Autograder Overview</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/instructor-setup/" class="active">Instructor Setup</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/managing-assignments/" >Managing Assignments</a></li>
+            
+          
+            
+          
+            
+          <li><a href="/dev/docs/online/test-configuration/" >Test Configuration</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/online/grading-and-submissions/" >Grading and Submissions</a></li>
+            
+          
+            
+          <li><a href="/dev/docs/online/student-setup/" >Student Setup</a></li>
+            
+          
         </ul>
       </div>
+      
     </nav>
   </aside>
   <article class="doc-content">
@@ -99,34 +187,170 @@
       / <span>Instructor Setup</span>
     </div>
     <h1>Instructor Setup</h1>
-    <p><em>This page is a placeholder. Full content coming soon.</em></p>
+    <p>This guide walks you through setting up the instructor client, creating your first class, and enrolling students.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ul>
   <li>An instructor account (request one at <a href="/contact/">/contact</a>)</li>
-  <li>The instructor client downloaded and installed</li>
+  <li>The instructor client downloaded from the <a href="/downloads/">downloads page</a></li>
 </ul>
 
-<h2 id="overview-of-steps">Overview of Steps</h2>
+<h2 id="running-the-application">Running the Application</h2>
+
+<p>The instructor client is a standalone desktop application. There is no installation process — just download and run the executable.</p>
+
+<h3 id="windows">Windows</h3>
+
+<p>When you first run the application, Windows may show a <strong>“Windows protected your PC”</strong> SmartScreen warning because the application is not signed with a commercial code-signing certificate. This is expected.</p>
 
 <ol>
-  <li>Request and receive your instructor login credentials</li>
-  <li>Download and install the instructor client</li>
-  <li>Log in to the client</li>
-  <li>Create your first assignment</li>
-  <li>Upload test cases</li>
-  <li>Share student credentials with your class</li>
+  <li>Click <strong>“More info”</strong></li>
+  <li>Click <strong>“Run anyway”</strong></li>
 </ol>
 
-<p>Full documentation will be added with the first release.</p>
+<p>You will only need to do this once.</p>
+
+<h3 id="macos">macOS</h3>
+
+<p>macOS will block the application because it is from an unidentified developer.</p>
+
+<ol>
+  <li>Right-click (or Control-click) the application and select <strong>Open</strong></li>
+  <li>In the dialog that appears, click <strong>Open</strong></li>
+</ol>
+
+<p>Alternatively, go to <strong>System Settings &gt; Privacy &amp; Security</strong> and click <strong>“Open Anyway”</strong> next to the blocked application message.</p>
+
+<h2 id="logging-in">Logging In</h2>
+
+<ol>
+  <li>Launch the instructor client</li>
+  <li>The server URL should be pre-filled. If not, enter the server address provided to you</li>
+  <li>Enter your <strong>email</strong> and <strong>password</strong></li>
+  <li>Click <strong>Log In</strong></li>
+</ol>
+
+<p>If this is your first time logging in with a temporary password, you will be prompted to change it before continuing.</p>
+
+<h3 id="forgot-password">Forgot Password</h3>
+
+<p>If you have forgotten your password, click <strong>Forgot Password</strong> on the login screen, enter your email address, and a reset link will be sent to you.</p>
+
+<h2 id="the-dashboard">The Dashboard</h2>
+
+<p>After logging in, you will see the <strong>Dashboard</strong>. This is your home screen showing:</p>
+
+<ul>
+  <li><strong>Statistics</strong> — Total classes, students, assignments, and pending submissions at a glance</li>
+  <li><strong>Favorite Classes</strong> — Classes you have starred for quick access</li>
+  <li><strong>All Classes</strong> — Every class you are an instructor on</li>
+</ul>
+
+<p>Click any class card to navigate into that class.</p>
+
+<h2 id="creating-a-class">Creating a Class</h2>
+
+<ol>
+  <li>From the Dashboard, click <strong>New Class</strong></li>
+  <li>Fill in the class details:
+    <ul>
+      <li><strong>Name</strong> (required) — e.g., “Introduction to Programming”</li>
+      <li><strong>Course Number</strong> — e.g., “CS 101”</li>
+      <li><strong>Section</strong> — e.g., “001”</li>
+      <li><strong>Term</strong> — e.g., “Fall 2026”</li>
+      <li><strong>Timezone</strong> — Used for displaying due dates and close dates to students</li>
+    </ul>
+  </li>
+  <li>Click <strong>Create</strong></li>
+</ol>
+
+<p>The class starts in <strong>draft</strong> status. You can set it up fully before publishing it to students.</p>
+
+<h3 id="publishing-a-class">Publishing a Class</h3>
+
+<p>When your class is ready for students, publish it:</p>
+
+<ol>
+  <li>Navigate into the class</li>
+  <li>Click <strong>Publish</strong> (or use the context menu on the class card)</li>
+</ol>
+
+<p>Published classes are visible to enrolled students. You can unpublish a class at any time to hide it temporarily.</p>
+
+<h2 id="enrolling-students">Enrolling Students</h2>
+
+<p>Navigate to the <strong>People</strong> tab within a class to manage enrollment. There are three ways to add students:</p>
+
+<h3 id="option-1-individual-enrollment">Option 1: Individual Enrollment</h3>
+
+<ol>
+  <li>Click <strong>Enroll Student</strong></li>
+  <li>Enter the student’s <strong>email address</strong> and optionally their first and last name</li>
+  <li>Choose whether to send a notification email</li>
+  <li>Click <strong>Enroll</strong></li>
+</ol>
+
+<p>If the student does not already have an account, one will be created automatically with a temporary password. The notification email includes their login credentials.</p>
+
+<h3 id="option-2-bulk-enrollment-csv">Option 2: Bulk Enrollment (CSV)</h3>
+
+<ol>
+  <li>Click <strong>Bulk Enroll</strong></li>
+  <li>Paste or upload a CSV with columns: <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">first_name</code>, <code class="language-plaintext highlighter-rouge">last_name</code></li>
+  <li>Review the preview and click <strong>Enroll All</strong></li>
+</ol>
+
+<p>Students without existing accounts will have accounts created automatically.</p>
+
+<h3 id="option-3-canvas-roster-import">Option 3: Canvas Roster Import</h3>
+
+<p>If you use Canvas LMS, you can import your roster directly:</p>
+
+<ol>
+  <li>Export your roster from Canvas as a CSV (from the People or Gradebook page)</li>
+  <li>In the People tab, click <strong>Import Canvas Roster</strong></li>
+  <li>Select the exported CSV file</li>
+  <li>The system will parse student names and emails, filtering out non-student roles</li>
+  <li>Review the preview and click <strong>Enroll All</strong></li>
+</ol>
+
+<h3 id="option-4-join-code">Option 4: Join Code</h3>
+
+<p>You can generate a join code that students use to self-enroll:</p>
+
+<ol>
+  <li>In the People tab, click <strong>Join Code</strong></li>
+  <li>Click <strong>Generate Code</strong></li>
+  <li>Optionally set an expiration date or maximum number of uses</li>
+  <li>Share the code with your students</li>
+</ol>
+
+<p>Students enter this code in their student client to join the class.</p>
+
+<h2 id="managing-instructors">Managing Instructors</h2>
+
+<p>If you are the class owner, you can add other instructors as collaborators:</p>
+
+<ol>
+  <li>In the People tab, scroll to the <strong>Instructors</strong> section</li>
+  <li>Click <strong>Add Instructor</strong></li>
+  <li>Enter their email address and select a role</li>
+  <li>Click <strong>Invite</strong></li>
+</ol>
+
+<p>You can also <strong>transfer ownership</strong> of a class to another instructor from this section.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Once your class is set up and students are enrolled, you are ready to <a href="/docs/online/managing-assignments/">create and manage assignments</a>.</p>
 
     <div class="doc-footer">
       
       <a href="/dev/docs/online/overview" class="doc-nav-btn prev">← Overview</a>
       
       
-      <a href="/dev/docs/online/student-setup" class="doc-nav-btn next">Student Setup →</a>
+      <a href="/dev/docs/online/managing-assignments" class="doc-nav-btn next">Managing Assignments →</a>
       
     </div>
   </article>
