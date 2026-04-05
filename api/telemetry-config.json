@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /api/telemetry-config.json
+---
+{
+  "webhook_url": "https://script.google.com/macros/s/AKfycbw5gw1__q2Lcl6Mle6hS9aFjBen5Sl6TjRwCFihhcEALyoiVWWHNEzo1A2HwSpAVMAS/exec"
+}
