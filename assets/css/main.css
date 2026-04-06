@@ -1143,6 +1143,13 @@ a:hover { color: var(--emerald-deeper); }
   color: var(--text-muted);
 }
 
+.about-photo-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--emerald), transparent);
+  margin: 8px auto;
+}
+
 .about-origin-text p {
   font-size: 1.05rem;
   color: var(--text-muted);
