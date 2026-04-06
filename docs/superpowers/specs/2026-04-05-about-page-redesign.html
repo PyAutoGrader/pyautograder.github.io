@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Page Redesign - Design Spec | PyAutoGrader</title>
+  <meta name="description" content="Automated Python grading for educators" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>About Page Redesign - Design Spec | PyAutoGrader</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="About Page Redesign - Design Spec" />
+<meta name="author" content="PyAutoGrader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Automated Python grading for educators" />
+<meta property="og:description" content="Automated Python grading for educators" />
+<link rel="canonical" href="https://pyautograder.github.io/docs/superpowers/specs/2026-04-05-about-page-redesign.html" />
+<meta property="og:url" content="https://pyautograder.github.io/docs/superpowers/specs/2026-04-05-about-page-redesign.html" />
+<meta property="og:site_name" content="PyAutoGrader" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="About Page Redesign - Design Spec" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"PyAutoGrader"},"description":"Automated Python grading for educators","headline":"About Page Redesign - Design Spec","url":"https://pyautograder.github.io/docs/superpowers/specs/2026-04-05-about-page-redesign.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="site-logo">
+      <!-- <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="8" fill="#1a2744"/>
+        <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+        <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+        <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg> -->
+      <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+      <span class="logo-text">PyAutoGrader</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/features" >Features</a>
+      <a href="/server" >Server</a>
+      <a href="/docs/getting-started" class="active">Docs</a>
+      <a href="/faq" >FAQ</a>
+      <a href="/about" class="active">About</a>
+      <a href="/contact" >Contact</a>
+      <a href="/offline" class="btn-nav-cta">Download</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <main>
+    <div class="page-wrapper">
+  <div class="page-hero">
+    <div class="container">
+      <h1 class="page-title">About Page Redesign - Design Spec</h1>
+      
+    </div>
+  </div>
+  <div class="container page-content">
+    <h1 id="about-page-redesign---design-spec">About Page Redesign - Design Spec</h1>
+
+<h2 id="context">Context</h2>
+
+<p>The About page is visually flat compared to the rest of the site - walls of body text, emoji icons, and a cramped bio section. The homepage has animated cards, workflow steps, and product screenshots. This redesign gives the About page its own identity: academic and honest rather than marketing-forward. It combines two redundant sections, replaces emoji with clean cards, and adds a definition callout for the Mastery section.</p>
+
+<h2 id="design-direction">Design Direction</h2>
+
+<p><strong>Academic / honest.</strong> The About page should feel like an engineering professor wrote it, not a marketing team. Text-driven, generous whitespace, minimal visual widgets. Let the writing carry the page.</p>
+
+<h2 id="files-to-modify">Files to Modify</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_pages/about.md</code> - Full HTML restructure</li>
+  <li><code class="language-plaintext highlighter-rouge">assets/css/main.css</code> - Replace existing ABOUT PAGE styles, add new ones</li>
+</ul>
+
+<h2 id="page-structure-5-sections">Page Structure (5 sections)</h2>
+
+<h3 id="1-hero---minimal">1. Hero - Minimal</h3>
+
+<p>Keep the existing <code class="language-plaintext highlighter-rouge">.page-hero</code> pattern. Dark background with grid pattern overlay, title + subtitle. No stats, no cards, no visual.</p>
+
+<ul>
+  <li>Title: “About PyAutoGrader”</li>
+  <li>Subtitle: “Built by an educator, for educators.”</li>
+  <li>No changes to the hero markup or CSS.</li>
+</ul>
+
+<h3 id="2-origin---combined-story--bio">2. Origin - Combined Story + Bio</h3>
+
+<p>Merges the old “The Story” and “The Developer” sections into one. Photo sits alongside the narrative text in a two-column grid.</p>
+
+<p><strong>Layout:</strong></p>
+<ul>
+  <li>Section header: eyebrow “Origin” + title “The Story” (centered, existing <code class="language-plaintext highlighter-rouge">.section-header</code> pattern)</li>
+  <li>Grid: <code class="language-plaintext highlighter-rouge">240px 1fr</code>, gap 40px, max-width 820px, centered</li>
+  <li>Left column: Photo (240x300px) with emerald border (2px solid <code class="language-plaintext highlighter-rouge">--emerald-dark</code>) and decorative offset rectangle behind it (absolute positioned, 8px offset, emerald border at 25% opacity). Name, title, university below photo, centered.</li>
+  <li>Right column: Original story text (3 paragraphs at 15px/1.85 line-height in <code class="language-plaintext highlighter-rouge">--text-muted</code>). Then a subtle emerald divider (48px wide, 2px tall, gradient to transparent). Then bio paragraphs (14px, lighter <code class="language-plaintext highlighter-rouge">--gray-500</code> color) providing personal/academic context.</li>
+  <li>Remove the “open source” line from bio text (project is not open source).</li>
+  <li>Background: white (default <code class="language-plaintext highlighter-rouge">.landing-section</code>)</li>
+</ul>
+
+<p><strong>Responsive (900px):</strong> Stack to single column, center photo, center text.</p>
+
+<h3 id="3-philosophy---minimal-stacked-cards">3. Philosophy - Minimal Stacked Cards</h3>
+
+<p>Three principles as vertically stacked bordered cards with no icons.</p>
+
+<p><strong>Layout:</strong></p>
+<ul>
+  <li>Section header: eyebrow “Principles” + title “The Philosophy” (centered)</li>
+  <li>Vertical flex column, gap 12px, max-width 620px, centered</li>
+  <li>Each card: padding 20px 24px, border 1.5px solid <code class="language-plaintext highlighter-rouge">--gray-200</code>, border-radius <code class="language-plaintext highlighter-rouge">--radius-lg</code>, white background</li>
+  <li>Card content: bold title (font-size ~1.05rem, weight 700, <code class="language-plaintext highlighter-rouge">--gray-900</code>) + paragraph (font-size ~0.88rem, <code class="language-plaintext highlighter-rouge">--text-muted</code>, line-height 1.65)</li>
+  <li>No hover effects, no icons, no emoji</li>
+  <li>Background: <code class="language-plaintext highlighter-rouge">--bg-light-alt</code> (alternating section)</li>
+</ul>
+
+<p><strong>Content (unchanged):</strong></p>
+<ol>
+  <li>“Free. Always.” - Educators already face enough budget constraints…</li>
+  <li>“Real Skills” - Students learn by setting up Python…</li>
+  <li>“Your Data, Your Infrastructure” - Grading results and student code stay…</li>
+</ol>
+
+<p><strong>Responsive (900px):</strong> Cards already stack naturally since they’re vertical.</p>
+
+<h3 id="4-mastery-based-learning---definition-callout--split-cards">4. Mastery Based Learning - Definition Callout + Split Cards</h3>
+
+<p><strong>Layout:</strong></p>
+<ul>
+  <li>Section header: eyebrow “Pedagogy” + title “Mastery Based Learning” (centered)</li>
+  <li>Definition callout: border-left 3px solid <code class="language-plaintext highlighter-rouge">--emerald</code>, padding 16px 24px, subtle emerald background tint (rgba emerald ~0.04), border-radius 0 8px 8px 0. Italic text defining the core idea. Max-width 660px, centered.</li>
+  <li>Below callout: two-column grid (1fr 1fr), gap 14px, max-width 660px, centered
+    <ul>
+      <li>“For Students” card: title + paragraph about running grader, getting feedback, iterating</li>
+      <li>“For Instructors” card: title + paragraph about class time shifting to new concepts</li>
+    </ul>
+  </li>
+  <li>Cards: padding 20px, <code class="language-plaintext highlighter-rouge">--bg-light-alt</code> background, border 1.5px solid <code class="language-plaintext highlighter-rouge">--gray-200</code>, border-radius <code class="language-plaintext highlighter-rouge">--radius-lg</code></li>
+  <li>Background: white (default <code class="language-plaintext highlighter-rouge">.landing-section</code>)</li>
+</ul>
+
+<p><strong>Responsive (768px):</strong> Split cards stack to single column.</p>
+
+<h3 id="5-cta---get-in-touch">5. CTA - Get in Touch</h3>
+
+<p>Keep existing structure. Dark background with grid pattern, centered heading, subtitle, two buttons (Contact Us primary, Download outline). Clean up inline styles to use proper CSS classes.</p>
+
+<h2 id="content-changes">Content Changes</h2>
+
+<ul>
+  <li><strong>Remove from bio:</strong> The sentence “The project is open source and actively maintained.” (first sentence of the third bio paragraph). The remainder of that paragraph (“I use it in my own courses every semester, which means the features reflect real classroom needs rather than hypothetical use cases.”) is kept as its own paragraph.</li>
+  <li><strong>All other copy preserved exactly</strong> as written in the current page.</li>
+  <li>No em dashes anywhere (per style rules). Use hyphens or spaced short dashes.</li>
+</ul>
+
+<h2 id="new-css-classes">New CSS Classes</h2>
+
+<p>All styles go in the ABOUT PAGE section of <code class="language-plaintext highlighter-rouge">main.css</code>, replacing existing about styles.</p>
+
+<p><strong>Origin section:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.about-origin</code> - The two-column grid container</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-origin-photo</code> - Photo wrapper with emerald border + decorative offset</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-origin-name</code> - Name/title/university block below photo</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-origin-text</code> - Narrative text column</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-origin-divider</code> - Emerald gradient divider between story and bio</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-origin-bio</code> - Bio paragraphs (smaller, lighter text)</li>
+</ul>
+
+<p><strong>Philosophy section:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.about-principles</code> (updated) - Vertical flex column instead of 3-column grid</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-principle</code> (updated) - Remove text-align center, remove hover effects</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-principle-icon</code> - Remove entirely (no more emoji icons)</li>
+</ul>
+
+<p><strong>Mastery section:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.about-mastery-callout</code> - Definition callout with emerald left border</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-mastery-cards</code> - Two-column grid for student/instructor cards</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-mastery-card</code> - Individual benefit card</li>
+</ul>
+
+<p><strong>Responsive updates at 900px:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.about-origin</code> stacks to single column, centers photo</li>
+  <li><code class="language-plaintext highlighter-rouge">.about-mastery-cards</code> stacks to single column at 768px</li>
+</ul>
+
+<h2 id="verification">Verification</h2>
+
+<ol>
+  <li>Run Jekyll server (<code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --port 4001</code>)</li>
+  <li>Check <code class="language-plaintext highlighter-rouge">/about/</code> at desktop width - all 5 sections render correctly</li>
+  <li>Verify photo displays properly with emerald border treatment</li>
+  <li>Check at 768px and 375px for responsive stacking</li>
+  <li>Verify no content was lost from the original page</li>
+  <li>Confirm “open source” line is removed</li>
+  <li>Confirm no em dashes in any text</li>
+</ol>
+
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="site-logo">
+          <!-- <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="8" fill="#1a2744"/>
+            <path d="M18 6 C11 6 7 11 7 17 C7 23 11 27 17 28 L17 30 L14 30 L14 32 L22 32 L22 30 L19 30 L19 28 C25 27 29 23 29 17 C29 11 25 6 18 6 Z" fill="white" opacity="0.9"/>
+            <circle cx="21" cy="13" r="2" fill="#1a2744"/>
+            <polyline points="13,20 16,23 23,16" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg> -->
+          <img src="/assets/images/logo.png" alt="PyAutoGrader" height="36" />
+          <span class="logo-text">PyAutoGrader</span>
+        </a>
+        <p class="footer-tagline">Automated Python grading<br/>for educators.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Product</span>
+          <a href="/features">Features</a>
+          <a href="/server">Self-Hosted Server</a>
+          <a href="/student">Student Downloads</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Resources</span>
+          <a href="/docs/getting-started">Documentation</a>
+          <a href="/faq">FAQ</a>
+          <a href="/offline">Download</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Project</span>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="https://github.com/PyAutoGrader" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 PyAutoGrader. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
