@@ -7,7 +7,6 @@ permalink: /student/offline/
 <!-- HERO -->
 <div class="page-hero">
   <div class="container" style="position:relative;">
-    <div class="product-hero-badge">Free</div>
     <h1 class="page-title">Student Download</h1>
     <p class="page-subtitle">Download the student executable and get started.</p>
   </div>
