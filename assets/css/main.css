@@ -2531,6 +2531,13 @@ a:hover { color: var(--emerald-deeper); }
   box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08);
 }
 
+.screenshot-wrap--wide {
+  width: 80vw;
+  max-width: 1600px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 .screenshot-img {
   display: block;
   width: 100%;
@@ -2557,21 +2564,17 @@ a:hover { color: var(--emerald-deeper); }
 /* --- GUI Showcase (side-by-side screenshots) --- */
 .gui-showcase {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1392fr 786fr;
   gap: 24px;
   margin: 40px auto 0;
-}
-
-.gui-showcase .screenshot-wrap {
-  display: flex;
-  flex-direction: column;
+  width: 80vw;
+  max-width: 1600px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .gui-showcase .screenshot-img {
-  flex: 1;
-  object-fit: contain;
-  min-height: 0;
-  background: #0d1117;
+  border-radius: 0;
 }
 
 @media (max-width: 768px) {
