@@ -48,8 +48,7 @@ permalink: /about/
     <div class="about-bio">
       <div class="about-photo-wrap">
         <div class="about-photo">
-          <div class="about-photo-icon">👤</div>
-          <span>Photo coming soon</span>
+          <img src="{{ '/assets/images/jesse-sestito.png' | relative_url }}" alt="Jesse Sestito">
         </div>
       </div>
       <div class="about-bio-text">
