@@ -352,6 +352,19 @@
         CSV or Canvas-compatible format for direct LMS import.
       </p>
     </div>
+
+    <!-- Import Safety Callout -->
+    <div class="batch-safety-callout">
+      <div class="batch-safety-header">
+        <span class="batch-safety-icon">🛡️</span>
+        <h3>Import Safety Scanning</h3>
+      </div>
+      <p>Before executing each file, the grader uses Python AST analysis to scan for dangerous imports across 15 blocked modules - including <code>subprocess</code>, <code>socket</code>, <code>shutil</code>, and more. If one is detected, a modal lets you <strong>allow</strong> or <strong>deny</strong> execution before proceeding.</p>
+      <div class="batch-safety-footer">
+        <span class="batch-safety-note">Student app is unrestricted - this applies in the instructor app (batch grading and inline tests)</span>
+        <a href="/docs/offline/batch-grading/#import-blocklist" class="batch-safety-link">See full blocklist →</a>
+      </div>
+    </div>
   </div>
 </section>
 
