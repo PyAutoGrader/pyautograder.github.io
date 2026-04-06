@@ -2621,6 +2621,88 @@ a:hover { color: var(--emerald-deeper); }
   margin: 0;
 }
 
+/* --- Batch Safety Callout --- */
+.batch-safety-callout {
+  max-width: 720px;
+  margin: 28px auto 0;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-left: 3px solid var(--emerald);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.batch-safety-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.batch-safety-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.batch-safety-header h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.batch-safety-callout > p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.batch-safety-callout code {
+  font-size: 0.82rem;
+  background: var(--gray-100);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--gray-700);
+}
+
+.batch-safety-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-100);
+  gap: 12px;
+}
+
+.batch-safety-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.batch-safety-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--emerald-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.batch-safety-link:hover {
+  color: var(--emerald-deeper);
+}
+
+@media (max-width: 600px) {
+  .batch-safety-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
 /* --- Free. Always. Callout --- */
 .landing-section--free {
   background: var(--bg-black);

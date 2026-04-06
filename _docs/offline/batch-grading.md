@@ -66,6 +66,44 @@ If you are running the submission server, the dashboard provides a Canvas-compat
 
 See [Server Setup](/docs/offline/server-setup/) for details on the submission server.
 
+## Import Blocklist
+
+When running student code in the instructor application - whether through batch grading or inline testing - the system scans each file for potentially dangerous imports before execution. If a blocked module is detected, a modal prompts you to allow or deny execution on a per-student or per-module basis. This protects your machine from student code that could open network connections, spawn processes, or modify your filesystem.
+
+The student application has **no import restrictions**. Students can use any module freely when running the grader themselves. The blocklist applies only in the instructor application.
+
+### How Detection Works
+
+Before executing each student's code, the system parses it using Python's `ast` module. All `import` and `from ... import` statements are checked against the blocklist, including aliased imports like `import subprocess as sp`.
+
+### Default Blocked Modules
+
+| Category | Modules | Why blocked |
+|----------|---------|-------------|
+| Process execution | `subprocess`, `multiprocessing`, `ctypes` | Can run shell commands, spawn processes, or access C libraries |
+| Networking | `socket`, `http`, `urllib`, `smtplib`, `ftplib` | Can open connections, start servers, send emails, or transfer files |
+| System control | `webbrowser`, `signal` | Can open URLs in your browser or send OS signals to processes |
+| File operations | `shutil`, `glob`, `tempfile`, `zipfile`, `tarfile` | Can copy/delete directory trees, enumerate files, or create archives |
+
+### The Blocklist Modal
+
+When a blocked import is found, the batch worker pauses and a modal appears showing:
+
+- Which student file triggered the block
+- The blocked module name
+- A code preview with the import line highlighted in red and all usage sites highlighted in amber (including aliases)
+- A reference count of how many times the module is used
+
+You have three options:
+
+1. **Allow** - permit this student's code to run (one-time, this student only).
+2. **Deny** - skip grading this student entirely. The CSV row will show an error.
+3. **Allow All Remaining** - allow this specific module for all remaining students in the batch. A safety warning confirms your choice. This does not carry over to other modules - if a later student uses a different blocked module, a new prompt appears.
+
+### Common Modules NOT Blocked
+
+Standard modules like `os`, `sys`, `math`, `numpy`, `pandas`, `matplotlib`, `re`, `json`, `csv`, `pathlib`, `collections`, `datetime`, and `random` are **not blocked**. These are commonly used in coursework and pose minimal risk during batch grading.
+
 ## Tips
 
 - Download student files with their original filenames from your LMS when possible. This helps with name extraction.
