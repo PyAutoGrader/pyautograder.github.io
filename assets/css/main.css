@@ -1089,6 +1089,8 @@ a:hover { color: var(--emerald-deeper); }
 /* =============================================
    ABOUT PAGE
    ============================================= */
+
+/* Bio section - photo + text grid */
 .about-bio {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -1118,70 +1120,64 @@ a:hover { color: var(--emerald-deeper); }
   border-radius: var(--radius-lg);
 }
 
-.about-photo-icon {
-  font-size: 3rem;
-  opacity: 0.4;
+.about-photo-name {
+  margin-top: 16px;
+  text-align: center;
 }
 
-.about-bio-text h3 {
-  font-size: 1.4rem;
+.about-photo-name h3 {
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--gray-900);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
-.about-bio-role {
-  font-size: 0.95rem;
+.about-photo-role {
+  font-size: 0.9rem;
   color: var(--emerald-dark);
   font-weight: 600;
-  margin-bottom: 16px;
 }
 
-.about-bio-text p {
-  font-size: 0.95rem;
+.about-photo-university {
+  font-size: 0.85rem;
   color: var(--text-muted);
-  line-height: 1.8;
-  margin-bottom: 14px;
 }
 
-.about-story {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.about-story p {
+.about-origin-text p {
   font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.85;
   margin-bottom: 16px;
 }
 
+.about-origin-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--emerald), transparent);
+  margin: 24px 0;
+}
+
+.about-origin-bio p {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+/* Philosophy - minimal stacked cards */
 .about-principles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 620px;
   margin: 0 auto;
 }
 
 .about-principle {
-  text-align: center;
-  padding: 32px 24px;
+  padding: 20px 24px;
   background: var(--white);
   border: 1.5px solid var(--gray-200);
   border-radius: var(--radius-lg);
-  transition: all var(--transition);
-}
-
-.about-principle:hover {
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
-}
-
-.about-principle-icon {
-  font-size: 2rem;
-  margin-bottom: 14px;
 }
 
 .about-principle h3 {
@@ -1198,6 +1194,24 @@ a:hover { color: var(--emerald-deeper); }
   margin: 0;
 }
 
+/* Mastery - callout + flowing prose */
+.about-mastery-callout {
+  border-left: 3px solid var(--emerald);
+  padding: 16px 24px;
+  background: rgba(52, 211, 153, 0.04);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  max-width: 720px;
+  margin: 0 auto 28px;
+}
+
+.about-mastery-callout p {
+  font-size: 1.05rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+  margin: 0;
+  font-style: italic;
+}
+
 .about-mastery {
   max-width: 720px;
   margin: 0 auto;
@@ -1211,11 +1225,30 @@ a:hover { color: var(--emerald-deeper); }
   margin-bottom: 16px;
 }
 
+/* About page CTA */
+.about-cta-text {
+  font-size: 1.05rem;
+  color: var(--text-on-dark-muted);
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 900px) {
   .about-bio { grid-template-columns: 1fr; justify-items: center; }
   .about-photo-wrap { position: static; }
   .about-bio-text { text-align: center; }
-  .about-principles { grid-template-columns: 1fr; }
+  .about-origin-text { text-align: center; }
+  .about-origin-bio { text-align: center; }
+  .about-origin-divider { margin: 24px auto; }
 }
 
 /* =============================================
