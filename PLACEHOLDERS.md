@@ -22,26 +22,9 @@ Replaced with `assets/images/batch-grading.png`.
 
 ---
 
-## 4. Download Page - Example .agrx Files
+## ~~4. Download Page - Example .agrx Files~~ DONE
 
-**Page:** `/offline/`
-**File:** `_pages/offline.md` (line ~102)
-
-Currently shows a "Coming Soon" disabled button.
-
-**What to add:** Example .agrx files that instructors can open in the editor to see how tests are configured.
-
-**How to add it:**
-1. Attach the files to a GitHub release, or host them in the repo under `assets/examples/`.
-2. In `_pages/offline.md`, replace the disabled span with a real link:
-
-```html
-<!-- Replace this: -->
-<span class="btn btn-sm btn-disabled">Coming Soon</span>
-
-<!-- With this: -->
-<a href="URL_TO_FILE" class="btn btn-outline btn-sm">Download</a>
-```
+Included in `assets/examples/PyAutoGrader-Example.zip` as part of the example course.
 
 ---
 
@@ -59,45 +42,21 @@ Same as above. Save the PDF to `assets/examples/` or attach to a GitHub release,
 
 ---
 
-## 6. Download Page - Example Solution File
+## ~~6. Download Page - Example Solution File~~ DONE
 
-**Page:** `/offline/`
-**File:** `_pages/offline.md` (line ~114)
-
-Currently shows a "Coming Soon" disabled button.
-
-**What to add:** A sample .py solution file showing how to structure code for solution-comparison tests.
-
-**How to add it:**
-Same pattern as items 4-5.
+Included in `assets/examples/PyAutoGrader-Example.zip` - two solution files across both assignments.
 
 ---
 
-## 7. Download Page - Example Data File
+## ~~7. Download Page - Example Data File~~ DONE
 
-**Page:** `/offline/`
-**File:** `_pages/offline.md` (line ~120)
-
-Currently shows a "Coming Soon" disabled button.
-
-**What to add:** A sample CSV data file demonstrating how bundled data files work with student assignments.
-
-**How to add it:**
-Same pattern as items 4-5.
+Included in `assets/examples/PyAutoGrader-Example.zip` - weather_data.csv in the Weather Data Analysis assignment.
 
 ---
 
-## 8. Download Page - Server Config Template
+## ~~8. Download Page - Server Config Template~~ DONE
 
-**Page:** `/offline/`
-**File:** `_pages/offline.md` (line ~126)
-
-Currently shows a "Coming Soon" disabled button.
-
-**What to add:** A starter `server_config.json` with documented fields.
-
-**How to add it:**
-Same pattern as items 4-5.
+Added `assets/examples/server_config.json` as a direct download under the Server section.
 
 ---
 
@@ -108,8 +67,8 @@ Same pattern as items 4-5.
 | ~~1~~ | ~~About page~~ | ~~Profile photo~~ | ~~DONE~~ |
 | ~~2~~ | ~~Homepage~~ | ~~Server analytics preview~~ | ~~DONE~~ |
 | ~~3~~ | ~~Homepage~~ | ~~Batch grading screenshot~~ | ~~DONE~~ |
-| 4 | Download page | Example .agrx files | Low |
+| ~~4~~ | ~~Download page~~ | ~~Example .agrx files~~ | ~~DONE~~ |
 | 5 | Download page | Getting Started PDF | Low |
-| 6 | Download page | Example solution .py | Low |
-| 7 | Download page | Example data CSV | Low |
-| 8 | Download page | server_config.json template | Low |
+| ~~6~~ | ~~Download page~~ | ~~Example solution .py~~ | ~~DONE~~ |
+| ~~7~~ | ~~Download page~~ | ~~Example data CSV~~ | ~~DONE~~ |
+| ~~8~~ | ~~Download page~~ | ~~server_config.json template~~ | ~~DONE~~ |
