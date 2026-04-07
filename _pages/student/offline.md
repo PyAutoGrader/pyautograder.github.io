@@ -16,7 +16,7 @@ permalink: /student/offline/
 <section class="landing-section" style="padding-bottom:0;">
   <div class="container">
     <div class="dl-notice">
-      Your instructor should provide you with a <strong>.agr assignment file</strong>. You will need it after installing the app.
+      Your instructor should provide you with a <strong>.agr assignment file</strong>. You will need it after downloading the app.
     </div>
   </div>
 </section>
