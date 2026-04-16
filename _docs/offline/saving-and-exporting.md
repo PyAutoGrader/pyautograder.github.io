@@ -53,31 +53,71 @@ Distribute the `.agr` file through your LMS (Canvas, Blackboard, etc.), email, o
 
 When you update tests or add new assignments, re-export the `.agr` file and redistribute it. Students load the new file to get the updates.
 
-## Exporting Assignments as JSON
+## Sharing via JSON
 
-You can export individual assignments as plain-text JSON files for portability:
+JSON is the plain-text format for sharing assignments and class configuration between instructors, courses, and the submission server. JSON files are not encrypted, so they are safe to share with other instructors, but do not distribute them to students (they contain test definitions, expected values, and solution references).
 
-- **Export**: Select an assignment and export it as JSON from the file menu.
-- **Import**: Import a JSON assignment file into any `.agrx` working file.
+### Export Tiers
 
-This is useful for:
+Open the overflow menu (the `...` button in the top bar of the instructor editor) to find the **Instructor Sharing (JSON)** options:
 
-- Sharing assignments between instructors
-- Moving assignments between courses
-- Keeping a plain-text backup of assignment definitions
+- **Export Class** - full course metadata, execution settings, and every assignment. Use this to hand off or back up an entire course, or when pre-configuring the submission server.
+- **Export All Assignments** - every assignment without course metadata. Use this to share an assignment bank without overwriting the recipient's course settings.
+- **Export Selected Assignment** - the currently selected assignment only. Use for quick one-off sharing.
 
-JSON files are not encrypted - they contain test definitions and configuration in readable format. Do not distribute them to students if they contain expected values or solution references.
+### What's Included
 
-## Exporting Class Settings as JSON
+- **Included**: assignment definitions, tests, point values, expected files, extra-file references, and solution file references (by relative path).
+- **Excluded**: passwords, API keys, webhook URLs, roster data, and solution file contents. JSON files are safe to share publicly.
 
-You can export your entire class-level settings (course name, section, semester, reporting configuration) as a JSON file from the **Settings** panel:
+### Example
 
-- **Export**: Save class settings to a JSON file.
-- **Import**: Load class settings from a JSON file into another `.agrx` working file.
+A Class-tier export for a course with one assignment looks like this:
+
+```json
+{
+  "file_info": {
+    "format": "pyautograder",
+    "export_version": "1.0",
+    "exported_at": "2026-04-15T14:30:00.123456+00:00"
+  },
+  "class_info": {
+    "course_name": "ENGR 101",
+    "section": "001",
+    "semester": "Fall 2026",
+    "instructor": "Dr. Smith",
+    "timeout_seconds": 60,
+    "allowed_packages": ["numpy"],
+    "require_server_submission": true
+  },
+  "assignments": {
+    "Beam Deflection": {
+      "tests": [
+        {
+          "id": "3f9a8c2e-1b4d-4a6c-9e8f-0a1b2c3d4e5f",
+          "type": "compare_output",
+          "name": "Prints beam length",
+          "points": 5,
+          "expected_output": "Length: 10.0 m"
+        }
+      ],
+      "expected_files": ["beam.py"],
+      "description": "Compute beam deflection under a point load.",
+      "main_file_label": "beam.py"
+    }
+  }
+}
+```
+
+Fields at default values (such as `timeout_seconds: 30` or an empty `allowed_packages`) are omitted to keep exports clean. The `class_info` block is absent entirely from All Assignments and Selected Assignment exports.
+
+### Importing JSON
+
+From the same overflow menu, choose **Import from JSON**. The editor validates the file, applies class settings if present, and adds the assignments. If an imported assignment name conflicts with one already in your working file, you are prompted per-assignment to keep the existing assignment, replace it, or append the imported one as a new copy.
 
 ### Pre-Configuring the Server
 
-The class settings JSON can also be imported into the submission server to pre-configure assignments and course metadata before students start submitting. This saves you from manually setting up assignments on the server dashboard.
+A Class-tier JSON file can be uploaded through the submission server dashboard to pre-create the course and assignments before students start submitting. This saves you from manually setting up assignments on the server dashboard. You must use the **Export Class** tier for this - the other tiers omit course metadata and cannot create a course on the server.
 
 ## When to Re-Export
 
