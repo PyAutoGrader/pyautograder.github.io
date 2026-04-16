@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://pyautograder.github.io/docs/offline/reporting-setup/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-07T05:01:14+00:00" />
+<meta property="article:published_time" content="2026-04-16T08:13:13+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Reporting Setup" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-07T05:01:14+00:00","datePublished":"2026-04-07T05:01:14+00:00","description":"PyAutoGrader supports multiple reporting channels for collecting student submission results. Configure any combination in the instructor editor under Reporting Channels.","headline":"Reporting Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/reporting-setup/"},"url":"https://pyautograder.github.io/docs/offline/reporting-setup/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-16T08:13:13+00:00","datePublished":"2026-04-16T08:13:13+00:00","description":"PyAutoGrader supports multiple reporting channels for collecting student submission results. Configure any combination in the instructor editor under Reporting Channels.","headline":"Reporting Setup","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/reporting-setup/"},"url":"https://pyautograder.github.io/docs/offline/reporting-setup/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -362,7 +362,7 @@
 <ol>
   <li><strong>Create a Google Sheet</strong> at <a href="https://sheets.google.com">sheets.google.com</a>.</li>
   <li><strong>Open Apps Script</strong>: Go to <code class="language-plaintext highlighter-rouge">Extensions &gt; Apps Script</code>.</li>
-  <li><strong>Paste the script</strong>: Delete any existing code and paste the contents of the <code class="language-plaintext highlighter-rouge">google_sheets_apps_script.js</code> file (included in the PyAutoGrader download).</li>
+  <li><strong>Paste the script</strong>: Download <a href="/assets/downloads/google_sheets_apps_script.js"><code class="language-plaintext highlighter-rouge">google_sheets_apps_script.js</code></a>, open it in a text editor, and paste its contents into the Apps Script editor (replacing any existing code).</li>
   <li><strong>Save</strong> the script (<code class="language-plaintext highlighter-rouge">Ctrl+S</code>).</li>
   <li><strong>Deploy</strong>: Click <code class="language-plaintext highlighter-rouge">Deploy &gt; New deployment</code>:
     <ul>
@@ -395,12 +395,14 @@
 
 <ol>
   <li>Download and start the submission server (see <a href="/docs/offline/server-setup/">Server Setup</a>).</li>
-  <li>In the instructor editor, configure under <strong>Reporting Channels</strong>:
+  <li>In the instructor editor, expand <strong>Submission Server</strong> in the sidebar:
     <ul>
-      <li><strong>REST API URL</strong>: <code class="language-plaintext highlighter-rouge">http://YOUR_SERVER:5000/api/submit</code></li>
-      <li><strong>API Key</strong>: The server’s API key (defaults to the server password if not set separately)</li>
+      <li><strong>Server URL</strong>: The base URL only, e.g. <code class="language-plaintext highlighter-rouge">http://YOUR_SERVER:5000</code>. The <code class="language-plaintext highlighter-rouge">/api/v1/</code> prefix is applied automatically.</li>
+      <li><strong>API Key</strong>: The server’s API key (defaults to the server password if not set separately).</li>
+      <li>If you run a custom server with a different path layout, open the <strong>Advanced</strong> panel and override the API Prefix directly.</li>
     </ul>
   </li>
+  <li>Expand <strong>Reporting Channels &gt; Submission Server</strong> and toggle <strong>Enabled</strong> on.</li>
   <li>Export the <code class="language-plaintext highlighter-rouge">.agr</code> file for students.</li>
 </ol>
 
@@ -443,7 +445,7 @@
 
 <p><strong>Google Sheets not receiving data</strong> - Verify the URL is the deployment URL (contains <code class="language-plaintext highlighter-rouge">/exec</code>), not the script editor URL. Make sure the deployment access is set to “Anyone”. Check the Apps Script execution log under <code class="language-plaintext highlighter-rouge">Extensions &gt; Apps Script &gt; Executions</code>.</p>
 
-<p><strong>Server not receiving data</strong> - Verify the student app can reach the server (check firewall, port). The API key in the <code class="language-plaintext highlighter-rouge">.agr</code> must match the server’s key. The submit URL must end with <code class="language-plaintext highlighter-rouge">/api/submit</code>.</p>
+<p><strong>Server not receiving data</strong> - Verify the student app can reach the server (check firewall, port). The API key in the <code class="language-plaintext highlighter-rouge">.agr</code> must match the server’s key. The <strong>Server URL</strong> under <strong>Submission Server</strong> should be the base URL only (e.g. <code class="language-plaintext highlighter-rouge">http://YOUR_SERVER:5000</code>); the <code class="language-plaintext highlighter-rouge">/api/v1/</code> prefix is added automatically.</p>
 
 <p><strong>Submissions not being sent</strong> - The queue flushes on app startup and every 5 minutes. Check the queue file:</p>
 <ul>

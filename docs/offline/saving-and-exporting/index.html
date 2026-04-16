@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://pyautograder.github.io/docs/offline/saving-and-exporting/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-07T05:01:14+00:00" />
+<meta property="article:published_time" content="2026-04-16T08:13:13+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Saving and Exporting" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-07T05:01:14+00:00","datePublished":"2026-04-07T05:01:14+00:00","description":"PyAutoGrader uses several file formats for different purposes. This guide covers saving your work, exporting assignments for students, and using JSON for portability.","headline":"Saving and Exporting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/saving-and-exporting/"},"url":"https://pyautograder.github.io/docs/offline/saving-and-exporting/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-16T08:13:13+00:00","datePublished":"2026-04-16T08:13:13+00:00","description":"PyAutoGrader uses several file formats for different purposes. This guide covers saving your work, exporting assignments for students, and using JSON for portability.","headline":"Saving and Exporting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/saving-and-exporting/"},"url":"https://pyautograder.github.io/docs/offline/saving-and-exporting/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -240,37 +240,74 @@
 
 <p>When you update tests or add new assignments, re-export the <code class="language-plaintext highlighter-rouge">.agr</code> file and redistribute it. Students load the new file to get the updates.</p>
 
-<h2 id="exporting-assignments-as-json">Exporting Assignments as JSON</h2>
+<h2 id="sharing-via-json">Sharing via JSON</h2>
 
-<p>You can export individual assignments as plain-text JSON files for portability:</p>
+<p>JSON is the plain-text format for sharing assignments and class configuration between instructors, courses, and the submission server. JSON files are not encrypted, so they are safe to share with other instructors, but do not distribute them to students (they contain test definitions, expected values, and solution references).</p>
 
-<ul>
-  <li><strong>Export</strong>: Select an assignment and export it as JSON from the file menu.</li>
-  <li><strong>Import</strong>: Import a JSON assignment file into any <code class="language-plaintext highlighter-rouge">.agrx</code> working file.</li>
-</ul>
+<h3 id="export-tiers">Export Tiers</h3>
 
-<p>This is useful for:</p>
+<p>Open the overflow menu (the <code class="language-plaintext highlighter-rouge">...</code> button in the top bar of the instructor editor) to find the <strong>Instructor Sharing (JSON)</strong> options:</p>
 
 <ul>
-  <li>Sharing assignments between instructors</li>
-  <li>Moving assignments between courses</li>
-  <li>Keeping a plain-text backup of assignment definitions</li>
+  <li><strong>Export Class</strong> - full course metadata, execution settings, and every assignment. Use this to hand off or back up an entire course, or when pre-configuring the submission server.</li>
+  <li><strong>Export All Assignments</strong> - every assignment without course metadata. Use this to share an assignment bank without overwriting the recipient’s course settings.</li>
+  <li><strong>Export Selected Assignment</strong> - the currently selected assignment only. Use for quick one-off sharing.</li>
 </ul>
 
-<p>JSON files are not encrypted - they contain test definitions and configuration in readable format. Do not distribute them to students if they contain expected values or solution references.</p>
-
-<h2 id="exporting-class-settings-as-json">Exporting Class Settings as JSON</h2>
-
-<p>You can export your entire class-level settings (course name, section, semester, reporting configuration) as a JSON file from the <strong>Settings</strong> panel:</p>
+<h3 id="whats-included">What’s Included</h3>
 
 <ul>
-  <li><strong>Export</strong>: Save class settings to a JSON file.</li>
-  <li><strong>Import</strong>: Load class settings from a JSON file into another <code class="language-plaintext highlighter-rouge">.agrx</code> working file.</li>
+  <li><strong>Included</strong>: assignment definitions, tests, point values, expected files, extra-file references, and solution file references (by relative path).</li>
+  <li><strong>Excluded</strong>: passwords, API keys, webhook URLs, roster data, and solution file contents. JSON files are safe to share publicly.</li>
 </ul>
+
+<h3 id="example">Example</h3>
+
+<p>A Class-tier export for a course with one assignment looks like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"file_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pyautograder"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"export_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exported_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-15T14:30:00.123456+00:00"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"class_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"course_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGR 101"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"section"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"semester"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fall 2026"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"instructor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeout_seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"allowed_packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"numpy"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"require_server_submission"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"assignments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Beam Deflection"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"tests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3f9a8c2e-1b4d-4a6c-9e8f-0a1b2c3d4e5f"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"compare_output"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prints beam length"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"points"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"expected_output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Length: 10.0 m"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"expected_files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"beam.py"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Compute beam deflection under a point load."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"main_file_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beam.py"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Fields at default values (such as <code class="language-plaintext highlighter-rouge">timeout_seconds: 30</code> or an empty <code class="language-plaintext highlighter-rouge">allowed_packages</code>) are omitted to keep exports clean. The <code class="language-plaintext highlighter-rouge">class_info</code> block is absent entirely from All Assignments and Selected Assignment exports.</p>
+
+<h3 id="importing-json">Importing JSON</h3>
+
+<p>From the same overflow menu, choose <strong>Import from JSON</strong>. The editor validates the file, applies class settings if present, and adds the assignments. If an imported assignment name conflicts with one already in your working file, you are prompted per-assignment to keep the existing assignment, replace it, or append the imported one as a new copy.</p>
 
 <h3 id="pre-configuring-the-server">Pre-Configuring the Server</h3>
 
-<p>The class settings JSON can also be imported into the submission server to pre-configure assignments and course metadata before students start submitting. This saves you from manually setting up assignments on the server dashboard.</p>
+<p>A Class-tier JSON file can be uploaded through the submission server dashboard to pre-create the course and assignments before students start submitting. This saves you from manually setting up assignments on the server dashboard. You must use the <strong>Export Class</strong> tier for this - the other tiers omit course metadata and cannot create a course on the server.</p>
 
 <h2 id="when-to-re-export">When to Re-Export</h2>
 

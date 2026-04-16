@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://pyautograder.github.io/docs/offline/troubleshooting/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-07T05:01:14+00:00" />
+<meta property="article:published_time" content="2026-04-16T08:13:13+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Troubleshooting" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-07T05:01:14+00:00","datePublished":"2026-04-07T05:01:14+00:00","description":"Common issues and solutions for students and instructors.","headline":"Troubleshooting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/troubleshooting/"},"url":"https://pyautograder.github.io/docs/offline/troubleshooting/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-16T08:13:13+00:00","datePublished":"2026-04-16T08:13:13+00:00","description":"Common issues and solutions for students and instructors.","headline":"Troubleshooting","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/troubleshooting/"},"url":"https://pyautograder.github.io/docs/offline/troubleshooting/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -256,10 +256,10 @@
 
 <ol>
   <li><strong>Server not running</strong> - Verify the submission server process is active.</li>
-  <li><strong>Wrong API URL</strong> - The URL in the <code class="language-plaintext highlighter-rouge">.agr</code> file must match the server’s address and port exactly, including the <code class="language-plaintext highlighter-rouge">/api/submit</code> path.</li>
+  <li><strong>Wrong Server URL</strong> - The <strong>Server URL</strong> configured under <strong>Submission Server</strong> must match the server’s address and port exactly. Enter the base URL only (e.g. <code class="language-plaintext highlighter-rouge">http://YOUR_SERVER:5000</code>); the <code class="language-plaintext highlighter-rouge">/api/v1/</code> prefix is added automatically.</li>
   <li><strong>API key mismatch</strong> - The API key in the <code class="language-plaintext highlighter-rouge">.agr</code> file must match the server’s <code class="language-plaintext highlighter-rouge">--api-key</code> or password.</li>
   <li><strong>Firewall/network</strong> - Ensure the server port is open and accessible from the student’s network.</li>
-  <li><strong>HTTPS required</strong> - If using a reverse proxy with TLS, make sure the API URL uses <code class="language-plaintext highlighter-rouge">https://</code>.</li>
+  <li><strong>HTTPS required</strong> - If using a reverse proxy with TLS, make sure the <strong>Server URL</strong> uses <code class="language-plaintext highlighter-rouge">https://</code>.</li>
 </ol>
 
 <h3 id="rate-limit-exceeded-429">Rate Limit Exceeded (429)</h3>

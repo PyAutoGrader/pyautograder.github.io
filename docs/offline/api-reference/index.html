@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://pyautograder.github.io/docs/offline/api-reference/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-07T05:01:14+00:00" />
+<meta property="article:published_time" content="2026-04-16T08:13:13+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Server API Reference" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-07T05:01:14+00:00","datePublished":"2026-04-07T05:01:14+00:00","description":"REST API reference for the PyAutoGrader submission server. All endpoints require Bearer token authentication.","headline":"Server API Reference","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/api-reference/"},"url":"https://pyautograder.github.io/docs/offline/api-reference/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"PyAutoGrader"},"dateModified":"2026-04-16T08:13:13+00:00","datePublished":"2026-04-16T08:13:13+00:00","description":"REST API reference for the PyAutoGrader submission server. All endpoints require Bearer token authentication.","headline":"Server API Reference","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/offline/api-reference/"},"url":"https://pyautograder.github.io/docs/offline/api-reference/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -185,9 +185,17 @@
 
 <hr />
 
+<h2 id="api-versioning">API Versioning</h2>
+
+<p>Endpoints live under a versioned path prefix. The current default is <code class="language-plaintext highlighter-rouge">/api/v1/</code>. The prefix is versioned so future releases (for example <code class="language-plaintext highlighter-rouge">/api/v2/</code>) can coexist with v1 without breaking existing clients.</p>
+
+<p>Instructors can override the prefix under Submission Server &gt; Advanced in the editor if they run a custom server with a different path layout. Endpoints must still be exposed at <code class="language-plaintext highlighter-rouge">prefix + submit</code>, <code class="language-plaintext highlighter-rouge">prefix + health</code>, and <code class="language-plaintext highlighter-rouge">prefix + roster</code>.</p>
+
+<hr />
+
 <h2 id="endpoints">Endpoints</h2>
 
-<h3 id="post-apisubmit">POST /api/submit</h3>
+<h3 id="post-apiv1submit">POST /api/v1/submit</h3>
 
 <p>Receive a student submission. This is the endpoint the student app calls after grading.</p>
 
@@ -381,7 +389,7 @@
 
 <hr />
 
-<h3 id="get-apihealth">GET /api/health</h3>
+<h3 id="get-apiv1health">GET /api/v1/health</h3>
 
 <p>Health check endpoint. Used by the student app for pre-flight server verification.</p>
 
@@ -395,7 +403,7 @@
 
 <hr />
 
-<h3 id="get-apiroster">GET /api/roster</h3>
+<h3 id="get-apiv1roster">GET /api/v1/roster</h3>
 
 <p>Fetch the student roster for a given course/section/semester. Used by the student app to populate a name dropdown when <a href="/docs/offline/roster-setup/">roster validation</a> is configured.</p>
 
@@ -440,7 +448,7 @@
 
 <p>The server enforces a rate limit of <strong>10 submissions per 60 seconds per IP address</strong>. When exceeded, the server returns HTTP 429. The counter resets after 60 seconds of inactivity from that IP.</p>
 
-<p>Rate limiting applies only to <code class="language-plaintext highlighter-rouge">/api/submit</code>. Health checks and roster queries are not rate-limited.</p>
+<p>Rate limiting applies only to <code class="language-plaintext highlighter-rouge">/api/v1/submit</code>. Health checks and roster queries are not rate-limited.</p>
 
 <p>If students share a network (lab computers behind NAT), the limit applies to the shared public IP.</p>
 
