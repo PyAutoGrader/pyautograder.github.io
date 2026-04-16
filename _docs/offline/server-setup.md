@@ -217,7 +217,7 @@ The server provides a roster management interface under each class:
 - **Sync unmatched** - Link submissions from students not yet in the roster.
 - **Duplicate detection** - Warns about duplicate usernames.
 
-The server also exposes a REST API endpoint (`/api/roster`) that the student app can use to fetch the roster at grading time. See [Roster Setup](/docs/offline/roster-setup/) for configuration.
+The server also exposes a REST API endpoint (`/api/v1/roster`) that the student app can use to fetch the roster at grading time. See [Roster Setup](/docs/offline/roster-setup/) for configuration.
 
 ---
 

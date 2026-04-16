@@ -116,10 +116,12 @@ The self-hosted submission server collects full results including student code, 
 ### Setup
 
 1. Download and start the submission server (see [Server Setup](/docs/offline/server-setup/)).
-2. In the instructor editor, configure under **Reporting Channels**:
-   - **REST API URL**: `http://YOUR_SERVER:5000/api/submit`
-   - **API Key**: The server's API key (defaults to the server password if not set separately)
-3. Export the `.agr` file for students.
+2. In the instructor editor, expand **Submission Server** in the sidebar:
+   - **Server URL**: The base URL only, e.g. `http://YOUR_SERVER:5000`. The `/api/v1/` prefix is applied automatically.
+   - **API Key**: The server's API key (defaults to the server password if not set separately).
+   - If you run a custom server with a different path layout, open the **Advanced** panel and override the API Prefix directly.
+3. Expand **Reporting Channels > Submission Server** and toggle **Enabled** on.
+4. Export the `.agr` file for students.
 
 ### What You Get
 
@@ -156,7 +158,7 @@ Common combinations:
 
 **Google Sheets not receiving data** - Verify the URL is the deployment URL (contains `/exec`), not the script editor URL. Make sure the deployment access is set to "Anyone". Check the Apps Script execution log under `Extensions > Apps Script > Executions`.
 
-**Server not receiving data** - Verify the student app can reach the server (check firewall, port). The API key in the `.agr` must match the server's key. The submit URL must end with `/api/submit`.
+**Server not receiving data** - Verify the student app can reach the server (check firewall, port). The API key in the `.agr` must match the server's key. The **Server URL** under **Submission Server** should be the base URL only (e.g. `http://YOUR_SERVER:5000`); the `/api/v1/` prefix is added automatically.
 
 **Submissions not being sent** - The queue flushes on app startup and every 5 minutes. Check the queue file:
 - Windows: `%APPDATA%\PyAutoGrader\Offline\submission_queue.jsonl`

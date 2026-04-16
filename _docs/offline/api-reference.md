@@ -26,9 +26,17 @@ The API key is set via `--api-key` on the command line or `api_key` in `server_c
 
 ---
 
+## API Versioning
+
+Endpoints live under a versioned path prefix. The current default is `/api/v1/`. The prefix is versioned so future releases (for example `/api/v2/`) can coexist with v1 without breaking existing clients.
+
+Instructors can override the prefix under Submission Server > Advanced in the editor if they run a custom server with a different path layout. Endpoints must still be exposed at `prefix + submit`, `prefix + health`, and `prefix + roster`.
+
+---
+
 ## Endpoints
 
-### POST /api/submit
+### POST /api/v1/submit
 
 Receive a student submission. This is the endpoint the student app calls after grading.
 
@@ -96,7 +104,7 @@ Receive a student submission. This is the endpoint the student app calls after g
 
 ---
 
-### GET /api/health
+### GET /api/v1/health
 
 Health check endpoint. Used by the student app for pre-flight server verification.
 
@@ -111,7 +119,7 @@ Health check endpoint. Used by the student app for pre-flight server verificatio
 
 ---
 
-### GET /api/roster
+### GET /api/v1/roster
 
 Fetch the student roster for a given course/section/semester. Used by the student app to populate a name dropdown when [roster validation](/docs/offline/roster-setup/) is configured.
 
@@ -140,7 +148,7 @@ Fetch the student roster for a given course/section/semester. Used by the studen
 
 The server enforces a rate limit of **10 submissions per 60 seconds per IP address**. When exceeded, the server returns HTTP 429. The counter resets after 60 seconds of inactivity from that IP.
 
-Rate limiting applies only to `/api/submit`. Health checks and roster queries are not rate-limited.
+Rate limiting applies only to `/api/v1/submit`. Health checks and roster queries are not rate-limited.
 
 If students share a network (lab computers behind NAT), the limit applies to the shared public IP.
 

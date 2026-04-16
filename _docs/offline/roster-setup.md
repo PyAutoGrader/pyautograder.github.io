@@ -107,8 +107,8 @@ The student app fetches the roster from the server's API endpoint.
 1. Start the submission server (see [Server Setup](/docs/offline/server-setup/)).
 2. Open the dashboard and go to the **Roster** page.
 3. Upload a CSV file or add students manually.
-4. In the instructor editor, set **Roster URL** to `http://YOUR_SERVER:5000/api/roster`.
-5. Make sure the **REST API Key** is set under Reporting Channels (same key is used for both submissions and roster).
+4. In the instructor editor, expand **Submission Server** in the sidebar and enter the **Server URL** (e.g., `http://YOUR_SERVER:5000`) and **API Key**. The `/api/v1/` prefix is applied automatically.
+5. Expand **Student Identity** and set **Roster Source** to **Submission Server**. The roster endpoint is derived from the Server URL automatically - no separate URL entry is needed.
 6. Export the `.agr` file and distribute.
 
 ### Late Adds
@@ -135,7 +135,7 @@ For maximum reliability, combine a remote roster source with a bundled CSV:
 
 ### Setup
 
-1. Configure the **Roster URL** (Google Sheet or REST API) as described above.
+1. Configure a remote roster source - either a Google Sheet via the **Roster URL** field, or the **Submission Server** (configured once under the **Submission Server** sidebar section, then selected as **Roster Source** under Student Identity) - as described above.
 2. Also **Import CSV** to bundle a baseline roster in the `.agr` file.
 3. Export and distribute.
 
@@ -160,6 +160,6 @@ This is recommended when using strict mode and students may not always have inte
 
 **Google Sheet URL not working** - Make sure you published as CSV (not "Web page"). The URL should contain `output=csv`. Verify the correct sheet tab is selected.
 
-**REST API not returning data** - Verify the API key matches the server's key. Check that the course name, section, and semester match exactly what was entered in the roster dashboard. The URL should be `/api/roster` (not `/api/submit`).
+**REST API not returning data** - Verify the API key matches the server's key. Check that the course name, section, and semester match exactly what was entered in the roster dashboard. Under **Student Identity**, **Roster Source** must be set to **Submission Server** (not freeform URL). The Server URL lives in the **Submission Server** sidebar section as a base URL only - the `/api/v1/roster` path is applied automatically.
 
 **Students see different rosters** - Each `.agr` file has its own bundled roster. If you exported HW1.agr before adding a student and HW2.agr after, they will have different bundled rosters. Use a remote URL source so all `.agr` files fetch the same live roster.

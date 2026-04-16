@@ -85,10 +85,10 @@ Common issues and solutions for students and instructors.
 **Possible causes**:
 
 1. **Server not running** - Verify the submission server process is active.
-2. **Wrong API URL** - The URL in the `.agr` file must match the server's address and port exactly, including the `/api/submit` path.
+2. **Wrong Server URL** - The **Server URL** configured under **Submission Server** must match the server's address and port exactly. Enter the base URL only (e.g. `http://YOUR_SERVER:5000`); the `/api/v1/` prefix is added automatically.
 3. **API key mismatch** - The API key in the `.agr` file must match the server's `--api-key` or password.
 4. **Firewall/network** - Ensure the server port is open and accessible from the student's network.
-5. **HTTPS required** - If using a reverse proxy with TLS, make sure the API URL uses `https://`.
+5. **HTTPS required** - If using a reverse proxy with TLS, make sure the **Server URL** uses `https://`.
 
 ### Rate Limit Exceeded (429)
 
