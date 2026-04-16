@@ -24,7 +24,7 @@ Replaced with `assets/images/batch-grading.png`.
 
 ## ~~4. Download Page - Example .agrx Files~~ DONE
 
-Included in `assets/examples/PyAutoGrader-Example.zip` as part of the example course.
+Included in `assets/downloads/PyAutoGrader-Example.zip` as part of the example course.
 
 ---
 
@@ -38,25 +38,25 @@ Currently shows a "Coming Soon" disabled button.
 **What to add:** A step-by-step PDF guide for creating a first assignment and distributing it to students.
 
 **How to add it:**
-Same as above. Save the PDF to `assets/examples/` or attach to a GitHub release, then replace the disabled span with a download link.
+Same as above. Save the PDF to `assets/downloads/` or attach to a GitHub release, then replace the disabled span with a download link.
 
 ---
 
 ## ~~6. Download Page - Example Solution File~~ DONE
 
-Included in `assets/examples/PyAutoGrader-Example.zip` - two solution files across both assignments.
+Included in `assets/downloads/PyAutoGrader-Example.zip` - two solution files across both assignments.
 
 ---
 
 ## ~~7. Download Page - Example Data File~~ DONE
 
-Included in `assets/examples/PyAutoGrader-Example.zip` - weather_data.csv in the Weather Data Analysis assignment.
+Included in `assets/downloads/PyAutoGrader-Example.zip` - weather_data.csv in the Weather Data Analysis assignment.
 
 ---
 
 ## ~~8. Download Page - Server Config Template~~ DONE
 
-Added `assets/examples/server_config.json` as a direct download under the Server section.
+Added `assets/downloads/server_config.json` as a direct download under the Server section.
 
 ---
 

@@ -59,6 +59,9 @@ permalink: /offline/
         <a href="https://github.com/PyAutoGrader/pyautograder-offline-releases/releases" style="color:var(--emerald-dark);">releases archive</a>.
       </p>
       <p class="dl-companion-link">
+        <a href="{{ '/assets/downloads/google_sheets_apps_script.js' | relative_url }}" download>📊 Google Sheets Apps Script</a>
+      </p>
+      <p class="dl-companion-link">
         <a href="/docs/getting-started/">📖 View Documentation</a>
       </p>
     </div>
@@ -86,7 +89,7 @@ permalink: /offline/
         See <a href="/docs/offline/server-setup/" style="color:var(--emerald-dark);">Server Setup</a> for installation and configuration instructions.
       </p>
       <p class="dl-companion-link">
-        <a href="{{ '/assets/examples/server_config.json' | relative_url }}" download>⚙️ Server Config Template</a>
+        <a href="{{ '/assets/downloads/server_config.json' | relative_url }}" download>⚙️ Server Config Template</a>
       </p>
     </div>
   </div>
@@ -110,7 +113,7 @@ permalink: /offline/
         <li><span class="tryit-file-icon">📊</span> Multi-file assignment - function tests and Matplotlib plot testing</li>
         <li><span class="tryit-file-icon">🎓</span> 10 student submissions for batch grading</li>
       </ul>
-      <a href="{{ '/assets/examples/PyAutoGrader-Example.zip' | relative_url }}" class="btn btn-primary btn-sm">Download Example</a>
+      <a href="{{ '/assets/downloads/PyAutoGrader-Example.zip' | relative_url }}" class="btn btn-primary btn-sm">Download Example</a>
       <span class="download-filename" style="display:block; margin-top:8px;">PyAutoGrader-Example.zip</span>
     </div>
   </div>

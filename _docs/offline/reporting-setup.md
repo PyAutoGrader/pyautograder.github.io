@@ -88,7 +88,7 @@ Student scores are posted to a Google Sheet via an Apps Script web app. This giv
 
 1. **Create a Google Sheet** at [sheets.google.com](https://sheets.google.com).
 2. **Open Apps Script**: Go to `Extensions > Apps Script`.
-3. **Paste the script**: Delete any existing code and paste the contents of the `google_sheets_apps_script.js` file (included in the PyAutoGrader download).
+3. **Paste the script**: Download [`google_sheets_apps_script.js`]({{ '/assets/downloads/google_sheets_apps_script.js' | relative_url }}), open it in a text editor, and paste its contents into the Apps Script editor (replacing any existing code).
 4. **Save** the script (`Ctrl+S`).
 5. **Deploy**: Click `Deploy > New deployment`:
    - Type: **Web app**
