@@ -3,6 +3,7 @@ layout: default
 title: Download PyAutoGrader
 permalink: /offline/
 description: Download PyAutoGrader free for Windows, macOS, or Linux. Instructor application, optional self-hosted server, Google Sheets integration, example course.
+last_modified_at: 2026-04-20
 ---
 
 <!-- HERO -->

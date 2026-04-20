@@ -3,6 +3,7 @@ layout: default
 title: Features - PyAutoGrader
 permalink: /features/
 description: Explore PyAutoGrader's 60+ Python test types, custom rubrics, reporting formats, batch grading, roster management, and self-hosted server features.
+last_modified_at: 2026-04-20
 ---
 
 <!-- HERO -->

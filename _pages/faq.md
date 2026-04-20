@@ -4,6 +4,7 @@ title: FAQ
 subtitle: Answers to common questions about PyAutoGrader.
 permalink: /faq/
 description: Answers to common questions about PyAutoGrader - what it is, how it compares to paid autograders, data privacy, test types, and student workflow.
+last_modified_at: 2026-04-20
 
 groups:
   - name: General

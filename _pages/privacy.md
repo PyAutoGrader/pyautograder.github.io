@@ -3,6 +3,7 @@ layout: default
 title: Privacy - PyAutoGrader
 permalink: /privacy/
 description: Privacy practices for pyautograder.github.io and the PyAutoGrader desktop applications. Cookieless analytics, opt-in anonymous app telemetry, no student data collection.
+last_modified_at: 2026-04-20
 ---
 
 <!-- HERO -->

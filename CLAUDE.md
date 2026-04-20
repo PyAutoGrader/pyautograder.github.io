@@ -5,6 +5,7 @@ PyAutoGrader is a free automated Python grading tool for educators. This repo is
 ## Style Rules
 
 - **Never use em dashes (-).**  Always use a regular hyphen (-) or a short dash surrounded by spaces ( - ) instead. This applies to comments, docstrings, user-facing strings, HTML, and all other text.
+- **When editing any page file** (`index.html`, `_pages/*.md`, `_pages/**/*.md`), update its `last_modified_at` front matter field to today's date (YYYY-MM-DD format). This keeps sitemap `<lastmod>` timestamps accurate for Google Search Console.
 
 ## Product & Branding
 

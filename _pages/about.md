@@ -3,6 +3,7 @@ layout: default
 title: About - PyAutoGrader
 permalink: /about/
 description: How PyAutoGrader grew from mastery-based learning in Jesse Sestito's engineering courses at Valparaiso University. Free forever, built by an educator.
+last_modified_at: 2026-04-20
 ---
 
 <!-- HERO -->
