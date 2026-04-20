@@ -138,6 +138,10 @@ a:hover { color: var(--emerald-deeper); }
   letter-spacing: -0.02em;
 }
 
+.logo-accent {
+  color: var(--emerald);
+}
+
 .site-nav {
   display: flex;
   align-items: center;
