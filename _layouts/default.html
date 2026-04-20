@@ -4,21 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
   {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" type="image/png" />
+  <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" />
+  {% if page.homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PyAutoGrader",
+    "description": "Free automated Python grading tool for educators. 60+ test types. Grading runs locally on student machines, with optional self-hosted submission server.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Jesse Sestito",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Valparaiso University"
+      }
+    }
+  }
+  </script>
+  {% endif %}
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
   {% include nav.html %}
-  <main>
+  <main id="main">
     {{ content }}
   </main>
   {% include footer.html %}
+  {% comment %}
+    Cloudflare Web Analytics: once set up via Manual mode at
+    https://dash.cloudflare.com/ (Analytics & Logs -> Web Analytics -> Add a site -> Manual setup),
+    paste the beacon script here replacing YOUR_TOKEN_HERE.
+    Example:
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script>
+  {% endcomment %}
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

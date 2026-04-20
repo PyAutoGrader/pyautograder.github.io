@@ -4,6 +4,8 @@ title: Overview
 section: Offline Autograder
 nav_order: 1
 permalink: /docs/offline/overview/
+prev_doc: /docs/quickstart
+prev_title: Get started in 5 minutes
 next_doc: /docs/offline/download-and-install
 next_title: Download and Install
 ---

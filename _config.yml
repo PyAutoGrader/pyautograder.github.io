@@ -1,5 +1,6 @@
 title: PyAutoGrader
-description: Automated Python grading for educators
+description: Free automated Python grading tool for educators. Create assignments with 60+ test types. Students grade on their own machines. Collect results your way.
+image: /assets/images/og-image.png
 
 # Feature toggles
 online_enabled: false
@@ -7,7 +8,7 @@ url: "https://pyautograder.github.io"
 baseurl: ""
 
 author:
-  name: PyAutoGrader
+  name: Jesse Sestito
 
 # Build settings
 theme: null
@@ -44,6 +45,7 @@ include:
 # Exclude from build
 exclude:
   - README.md
+  - MANUAL_TASKS.md
   - Gemfile
   - Gemfile.lock
   - node_modules

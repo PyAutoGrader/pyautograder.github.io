@@ -2,6 +2,7 @@
 layout: default
 title: About - PyAutoGrader
 permalink: /about/
+description: How PyAutoGrader grew from mastery-based learning in Jesse Sestito's engineering courses at Valparaiso University. Free forever, built by an educator.
 ---
 
 <!-- HERO -->
@@ -22,7 +23,7 @@ permalink: /about/
     <div class="about-bio">
       <div class="about-photo-wrap">
         <div class="about-photo">
-          <img src="{{ '/assets/images/jesse-sestito.png' | relative_url }}" alt="Jesse Sestito">
+          <img src="{{ '/assets/images/jesse-sestito.png' | relative_url }}" alt="Portrait of Jesse Sestito, Engineering Professor at Valparaiso University and creator of PyAutoGrader" loading="lazy">
         </div>
         <div class="about-photo-name">
           <h3>Jesse Sestito</h3>

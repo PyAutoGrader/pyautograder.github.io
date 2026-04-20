@@ -2,6 +2,7 @@
 layout: default
 title: Student Download - PyAutoGrader
 permalink: /student/offline/
+description: Download the PyAutoGrader student grader for Windows, macOS, or Linux. Open your instructor's .agr assignment, grade locally, submit results.
 ---
 
 <!-- HERO -->

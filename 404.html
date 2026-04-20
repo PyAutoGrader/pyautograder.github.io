@@ -1,0 +1,46 @@
+---
+layout: default
+title: Page Not Found
+permalink: /404.html
+description: The page you are looking for does not exist. Jump back to the PyAutoGrader homepage, documentation, downloads, or contact page.
+---
+
+<section class="not-found-section">
+  <div class="container">
+    <div class="not-found-grid">
+
+      <div class="not-found-terminal" role="presentation">
+        <div class="not-found-terminal-chrome">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="not-found-terminal-tab">grading.log</span>
+        </div>
+        <pre class="not-found-terminal-body"><span class="cm"># Resolving requested path...</span>
+
+<span class="not-found-mark not-found-mark--fail">&#x2717;</span> Verify URL              <span class="not-found-tag not-found-tag--fail">FAIL</span>
+<span class="not-found-mark not-found-mark--fail">&#x2717;</span> Verify Content          <span class="not-found-tag not-found-tag--fail">FAIL</span>
+<span class="not-found-mark not-found-mark--skip">-</span> Verify Link Integrity   <span class="not-found-tag not-found-tag--skip">SKIP</span>
+
+<span class="not-found-score">Score: 0/100  </span><span class="cm">0 tests passed</span>
+
+<span class="cm"># Suggested next steps below.</span></pre>
+      </div>
+
+      <div class="not-found-copy">
+        <div class="not-found-eyebrow">Error 404</div>
+        <h1 class="not-found-title">That page didn't grade.</h1>
+        <p class="not-found-subtitle">
+          The URL you requested moved, was renamed, or never existed. Here's where to go instead.
+        </p>
+        <div class="not-found-links">
+          <a href="{{ '/' | relative_url }}" class="btn btn-primary">Home</a>
+          <a href="{{ '/offline' | relative_url }}" class="btn btn-secondary">Download</a>
+          <a href="{{ '/docs/getting-started' | relative_url }}" class="btn btn-secondary">Docs</a>
+          <a href="{{ '/contact' | relative_url }}" class="btn btn-secondary">Contact</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

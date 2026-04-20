@@ -4,8 +4,8 @@ title: Introduction
 section: Getting Started
 nav_order: 1
 permalink: /docs/getting-started/
-next_doc: /docs/offline/overview
-next_title: Overview
+next_doc: /docs/quickstart
+next_title: Get started in 5 minutes
 ---
 
 Welcome to the PyAutoGrader documentation. PyAutoGrader is a free automated Python grading tool for educators. Students run the grader on their own machines, getting instant feedback on their code.

@@ -1,6 +1,8 @@
 ---
 layout: default
 title: PyAutoGrader - Free Python Autograding for Educators
+homepage: true
+description: Free automated Python grading for educators. Build assignments with 60+ test types, distribute a single file, and collect results via PDF, email, or server.
 ---
 
 <!-- SECTION 1: HERO -->
@@ -21,6 +23,7 @@ title: PyAutoGrader - Free Python Autograding for Educators
         <a href="{{ '/offline' | relative_url }}" class="btn btn-primary">Download for Free</a>
         <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
       </div>
+      <p class="hero-tertiary"><a href="{{ '/docs/quickstart' | relative_url }}">&rarr; See a 5-minute walkthrough</a></p>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
@@ -76,11 +79,30 @@ title: PyAutoGrader - Free Python Autograding for Educators
     <div class="gui-showcase">
       <div class="screenshot-wrap">
         <div class="screenshot-caption">Instructor application</div>
-        <img src="{{ '/assets/images/instructor-gui.png' | relative_url }}" alt="Instructor application showing assignment editor with test configuration and batch grading" class="screenshot-img">
+        <img src="{{ '/assets/images/instructor-gui.png' | relative_url }}" alt="Instructor application showing assignment editor with test configuration and batch grading" class="screenshot-img" loading="lazy">
       </div>
       <div class="screenshot-wrap">
         <div class="screenshot-caption">Student grader</div>
-        <img src="{{ '/assets/images/student-gui.png' | relative_url }}" alt="Student grader showing test results with pass/fail indicators and score breakdown" class="screenshot-img">
+        <img src="{{ '/assets/images/student-gui.png' | relative_url }}" alt="Student grader showing test results with pass/fail indicators and score breakdown" class="screenshot-img" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2.5: SOCIAL PROOF BAND -->
+<section class="social-proof-band" aria-label="In use by educators">
+  <div class="container">
+    <div class="social-proof-inner">
+      <div class="social-proof-avatar-wrap">
+        <img src="{{ '/assets/images/jesse-sestito.png' | relative_url }}" alt="Jesse Sestito, Engineering Professor at Valparaiso University and creator of PyAutoGrader" class="social-proof-avatar" loading="lazy">
+      </div>
+      <div class="social-proof-text">
+        <p class="social-proof-eyebrow">Verified in use</p>
+        <p class="social-proof-headline">In daily use at Valparaiso University's College of Engineering.</p>
+        <p class="social-proof-attribution">Created and maintained by Jesse Sestito, Engineering Professor at Valparaiso University.</p>
+      </div>
+      <div class="social-proof-logo-slot" aria-hidden="true">
+        <!-- Valpo logo goes here once permission is granted. Unhide via CSS when ready. -->
       </div>
     </div>
   </div>
@@ -103,6 +125,75 @@ title: PyAutoGrader - Free Python Autograding for Educators
         <h3>Your Data, Your Control</h3>
         <p>FERPA-friendly by design. Grading runs locally. The self-hosted server keeps data on your infrastructure - not ours.</p>
       </div>
+    </div>
+
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th scope="col">Criteria</th>
+            <th scope="col" class="comparison-us"><span class="comparison-header-brand">PyAutoGrader</span></th>
+            <th scope="col">Paid autograders</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="comparison-row-label">Cost</td>
+            <td class="comparison-us-cell">
+              <span class="comparison-badge comparison-badge--pass">Pass</span>
+              <span class="comparison-value">Free forever. No per-student or per-course fees.</span>
+            </td>
+            <td>
+              <span class="comparison-badge comparison-badge--fail">Fail</span>
+              <span class="comparison-value">Subscription or per-student pricing.</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="comparison-row-label">Data location</td>
+            <td class="comparison-us-cell">
+              <span class="comparison-badge comparison-badge--pass">Pass</span>
+              <span class="comparison-value">Your infrastructure. Local machines and your own server.</span>
+            </td>
+            <td>
+              <span class="comparison-badge comparison-badge--fail">Fail</span>
+              <span class="comparison-value">Vendor's cloud. Data processing agreement required.</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="comparison-row-label">Works offline</td>
+            <td class="comparison-us-cell">
+              <span class="comparison-badge comparison-badge--pass">Pass</span>
+              <span class="comparison-value">Students grade without internet. Results queue automatically.</span>
+            </td>
+            <td>
+              <span class="comparison-badge comparison-badge--fail">Fail</span>
+              <span class="comparison-value">Internet required to submit.</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="comparison-row-label">Deployment</td>
+            <td class="comparison-us-cell">
+              <span class="comparison-badge comparison-badge--pass">Pass</span>
+              <span class="comparison-value">Self-hosted or fully local. No vendor lock-in.</span>
+            </td>
+            <td>
+              <span class="comparison-badge comparison-badge--fail">Fail</span>
+              <span class="comparison-value">Vendor-hosted only.</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="comparison-row-label">Test types</td>
+            <td class="comparison-us-cell">
+              <span class="comparison-badge comparison-badge--pass">Pass</span>
+              <span class="comparison-value">60+ built-in. Functions, plots, code quality, performance, more.</span>
+            </td>
+            <td>
+              <span class="comparison-badge comparison-badge--fail">Fail</span>
+              <span class="comparison-value">Varies by platform.</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -337,7 +428,7 @@ title: PyAutoGrader - Free Python Autograding for Educators
       </div>
     </div>
     <div class="screenshot-wrap screenshot-wrap--wide" style="margin-top: 32px;">
-      <img src="{{ '/assets/images/batch-grading.png' | relative_url }}" alt="Batch grading interface showing per-student test results and scores" class="screenshot-img">
+      <img src="{{ '/assets/images/batch-grading.png' | relative_url }}" alt="Batch grading interface showing per-student test results and scores" class="screenshot-img" loading="lazy">
     </div>
   </div>
 </section>
@@ -359,10 +450,6 @@ title: PyAutoGrader - Free Python Autograding for Educators
     <div class="cta-actions">
       <a href="{{ '/offline' | relative_url }}" class="btn btn-primary">Download Now</a>
       <a href="{{ '/contact' | relative_url }}" class="btn btn-secondary">Contact Us</a>
-    </div>
-    <div class="roadmap-teaser">
-      <span class="roadmap-label">On the Roadmap</span>
-      <p>Managed cloud hosting - all the server features without running your own.</p>
     </div>
   </div>
 </section>

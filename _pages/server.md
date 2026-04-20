@@ -2,6 +2,7 @@
 layout: default
 title: Self-Hosted Submission Server - PyAutoGrader
 permalink: /server/
+description: Run PyAutoGrader's optional Flask submission server on your own infrastructure. Analytics dashboard, plagiarism detection, Canvas export, roster tools.
 ---
 
 <!-- HERO -->

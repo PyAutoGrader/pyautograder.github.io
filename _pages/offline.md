@@ -2,6 +2,7 @@
 layout: default
 title: Download PyAutoGrader
 permalink: /offline/
+description: Download PyAutoGrader free for Windows, macOS, or Linux. Instructor application, optional self-hosted server, Google Sheets integration, example course.
 ---
 
 <!-- HERO -->
@@ -33,6 +34,10 @@ permalink: /offline/
         configuration. Students load the .agr file, run the grader, and get instant feedback.
         Results can be collected via PDF, email, Google Sheets, or the self-hosted server.
       </p>
+      <p class="section-subtitle" style="margin-top: 1rem;">
+        <strong>New here? Start with the instructor application below.</strong> The server and Google
+        Sheets integration are optional add-ons you can enable later.
+      </p>
     </div>
   </div>
 </section>
@@ -41,7 +46,7 @@ permalink: /offline/
 <section class="landing-section landing-section--alt">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">Instructor</div>
+      <div class="section-eyebrow">Instructor <span class="start-here-pill">Start Here</span></div>
       <h2 class="section-title">Instructor Application</h2>
       <p class="section-subtitle">Create assignments, add tests, configure reporting, and batch grade submissions.</p>
     </div>

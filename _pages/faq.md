@@ -3,6 +3,7 @@ layout: faq
 title: FAQ
 subtitle: Answers to common questions about PyAutoGrader.
 permalink: /faq/
+description: Answers to common questions about PyAutoGrader - what it is, how it compares to paid autograders, data privacy, test types, and student workflow.
 
 groups:
   - name: General
@@ -142,9 +143,13 @@ groups:
     items:
       - q: Is PyAutoGrader FERPA-compliant?
         a: >
-          PyAutoGrader is FERPA-friendly by design. Grading runs on the student's own machine,
-          not on a cloud server. The self-hosted server keeps data on your institution's
-          infrastructure. There is no third-party data processing agreement needed.
+          PyAutoGrader is FERPA-friendly by design. "FERPA-friendly" means your students'
+          academic records never leave your institution's control. Grading runs on the student's
+          own machine, not on a cloud server. If you enable the optional self-hosted submission
+          server, data stays on your institution's infrastructure. There is no third-party data
+          processing agreement needed because PyAutoGrader is not a third party in the grading
+          pipeline - it is software you run. See the <a href="/privacy/">privacy page</a> for
+          details on what this marketing site itself collects.
 
       - q: Where is student data stored?
         a: >
