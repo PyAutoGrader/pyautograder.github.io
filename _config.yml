@@ -53,6 +53,10 @@ include:
 exclude:
   - README.md
   - MANUAL_TASKS.md
+  - CLAUDE.md
+  - PLACEHOLDERS.md
+  - new-chat-handoff.md
+  - docs/superpowers
   - Gemfile
   - Gemfile.lock
   - node_modules
