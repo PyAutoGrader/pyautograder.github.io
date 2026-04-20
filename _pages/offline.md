@@ -64,10 +64,10 @@ description: Download PyAutoGrader free for Windows, macOS, or Linux. Instructor
         <a href="https://github.com/PyAutoGrader/pyautograder-offline-releases/releases" style="color:var(--emerald-dark);">releases archive</a>.
       </p>
       <p class="dl-companion-link">
-        <a href="{{ '/assets/downloads/google_sheets_apps_script.js' | relative_url }}" download>📊 Google Sheets Apps Script</a>
+        <a href="/docs/getting-started/">📖 View Documentation</a>
       </p>
       <p class="dl-companion-link">
-        <a href="/docs/getting-started/">📖 View Documentation</a>
+        <a href="{{ '/assets/downloads/google_sheets_apps_script.js' | relative_url }}" download>📊 Google Sheets Apps Script</a>
       </p>
     </div>
   </div>
@@ -91,6 +91,10 @@ description: Download PyAutoGrader free for Windows, macOS, or Linux. Instructor
         <div class="os-other-platforms" id="server-other-downloads"></div>
       </div>
       <p class="form-note" style="margin-top:16px; font-size:0.82rem; color:var(--text-muted);">
+        Always links to the latest release. Older versions available in the
+        <a href="https://github.com/PyAutoGrader/pyautograder-offline-server-releases/releases" style="color:var(--emerald-dark);">releases archive</a>.
+      </p>
+      <p class="form-note" style="margin-top:8px; font-size:0.82rem; color:var(--text-muted);">
         See <a href="/docs/offline/server-setup/" style="color:var(--emerald-dark);">Server Setup</a> for installation and configuration instructions.
       </p>
       <p class="dl-companion-link">
@@ -211,17 +215,17 @@ var instructorDownloads = {
 var serverDownloads = {
   windows: {
     label: 'Windows', icon: '\uD83E\uDE9F',
-    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.exe',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-server-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.exe',
     filename: 'PyAutoGrader-Offline-SubmissionServer.exe'
   },
   mac: {
     label: 'macOS', icon: '\uD83C\uDF4E',
-    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.zip',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-server-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer.zip',
     filename: 'PyAutoGrader-Offline-SubmissionServer.zip'
   },
   linux: {
     label: 'Linux', icon: '\uD83D\uDC27',
-    url: 'https://github.com/PyAutoGrader/pyautograder-offline-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer',
+    url: 'https://github.com/PyAutoGrader/pyautograder-offline-server-releases/releases/latest/download/PyAutoGrader-Offline-SubmissionServer',
     filename: 'PyAutoGrader-Offline-SubmissionServer'
   }
 };
