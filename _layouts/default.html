@@ -46,13 +46,9 @@
     {{ content }}
   </main>
   {% include footer.html %}
-  {% comment %}
-    Cloudflare Web Analytics: once set up via Manual mode at
-    https://dash.cloudflare.com/ (Analytics & Logs -> Web Analytics -> Add a site -> Manual setup),
-    paste the beacon script here replacing YOUR_TOKEN_HERE.
-    Example:
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN_HERE"}'></script>
-  {% endcomment %}
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "813bbd680773410c888adae9d223cb44"}'></script>
+  <!-- End Cloudflare Web Analytics -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
