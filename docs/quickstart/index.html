@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction | PyAutoGrader</title>
+  <title>Get started in 5 minutes | PyAutoGrader</title>
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Introduction | PyAutoGrader</title>
+<title>Get started in 5 minutes | PyAutoGrader</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Introduction" />
+<meta property="og:title" content="Get started in 5 minutes" />
 <meta name="author" content="Jesse Sestito" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Welcome to the PyAutoGrader documentation. PyAutoGrader is a free automated Python grading tool for educators. Students run the grader on their own machines, getting instant feedback on their code." />
-<meta property="og:description" content="Welcome to the PyAutoGrader documentation. PyAutoGrader is a free automated Python grading tool for educators. Students run the grader on their own machines, getting instant feedback on their code." />
-<link rel="canonical" href="https://pyautograder.github.io/docs/getting-started/" />
-<meta property="og:url" content="https://pyautograder.github.io/docs/getting-started/" />
+<meta name="description" content="Go from download to a graded student submission in five steps. The fastest path to seeing PyAutoGrader in action before building your own course." />
+<meta property="og:description" content="Go from download to a graded student submission in five steps. The fastest path to seeing PyAutoGrader in action before building your own course." />
+<link rel="canonical" href="https://pyautograder.github.io/docs/quickstart/" />
+<meta property="og:url" content="https://pyautograder.github.io/docs/quickstart/" />
 <meta property="og:site_name" content="PyAutoGrader" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-04-20T01:58:45+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Introduction" />
+<meta property="twitter:title" content="Get started in 5 minutes" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jesse Sestito"},"dateModified":"2026-04-20T01:58:45+00:00","datePublished":"2026-04-20T01:58:45+00:00","description":"Welcome to the PyAutoGrader documentation. PyAutoGrader is a free automated Python grading tool for educators. Students run the grader on their own machines, getting instant feedback on their code.","headline":"Introduction","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/getting-started/"},"url":"https://pyautograder.github.io/docs/getting-started/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jesse Sestito"},"dateModified":"2026-04-20T01:58:45+00:00","datePublished":"2026-04-20T01:58:45+00:00","description":"Go from download to a graded student submission in five steps. The fastest path to seeing PyAutoGrader in action before building your own course.","headline":"Get started in 5 minutes","mainEntityOfPage":{"@type":"WebPage","@id":"https://pyautograder.github.io/docs/quickstart/"},"url":"https://pyautograder.github.io/docs/quickstart/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/main.css" />
@@ -76,7 +76,7 @@
         <ul>
           
             
-          <li><a href="/docs/getting-started/" class="active">Introduction</a></li>
+          <li><a href="/docs/getting-started/" >Introduction</a></li>
             
           
             
@@ -84,7 +84,7 @@
             
           
             
-          <li><a href="/docs/quickstart/" >Get started in 5 minutes</a></li>
+          <li><a href="/docs/quickstart/" class="active">Get started in 5 minutes</a></li>
             
           
             
@@ -175,44 +175,55 @@
     <div class="doc-breadcrumb">
       <a href="/docs/getting-started">Docs</a>
        / <span>Getting Started</span>
-      / <span>Introduction</span>
+      / <span>Get started in 5 minutes</span>
     </div>
-    <h1>Introduction</h1>
-    <p>Welcome to the PyAutoGrader documentation. PyAutoGrader is a free automated Python grading tool for educators. Students run the grader on their own machines, getting instant feedback on their code.</p>
+    <h1>Get started in 5 minutes</h1>
+    <p>Five steps from a fresh download to a graded student submission, each about a minute. No course build-out required - you will use the bundled example.</p>
 
-<h2 id="quick-links">Quick Links</h2>
+<h2 id="1-download-the-instructor-application">1. Download the instructor application</h2>
+
+<p>Head to the <a href="/offline/">download page</a> and grab the instructor application for your operating system. The page auto-detects Windows, macOS, or Linux. Install it the way you install any other desktop application.</p>
+
+<h2 id="2-download-the-example-course">2. Download the example course</h2>
+
+<p>On the same download page, scroll to “See What an Assignment Looks Like” and download <a href="/assets/downloads/PyAutoGrader-Example.zip">PyAutoGrader-Example.zip</a>. Extract it anywhere on your machine. Inside you will find a course file and a folder of student submissions.</p>
+
+<h2 id="3-open-the-agrx-course-in-the-instructor-app">3. Open the <code class="language-plaintext highlighter-rouge">.agrx</code> course in the instructor app</h2>
+
+<p>Launch the instructor application and open the extracted <code class="language-plaintext highlighter-rouge">.agrx</code> file. The course loads with its assignments already built - tests, rubrics, solution files, and preview output. Nothing has to be configured; the example is ready to grade.</p>
+
+<h2 id="4-batch-grade-the-included-student-submissions">4. Batch grade the included student submissions</h2>
+
+<p>From the loaded course, point batch grading at the <code class="language-plaintext highlighter-rouge">student submissions</code> folder that came in the ZIP. The instructor app runs every submission through the configured tests and gives you per-student scores, pass/fail output, and the graded code. This is the same workflow you will use at the end of a real assignment.</p>
+
+<h2 id="5-export-an-agr-file-for-distribution">5. Export an <code class="language-plaintext highlighter-rouge">.agr</code> file for distribution</h2>
+
+<p>With the course open, export the assignment as an <code class="language-plaintext highlighter-rouge">.agr</code> file. This encrypted file is what students actually receive. It contains the tests, rubric, and student-facing view - nothing else.</p>
+
+<h2 id="6-try-it-from-the-students-side">6. Try it from the student’s side</h2>
+
+<p>Download the <a href="/student/offline/">student application</a>, open the <code class="language-plaintext highlighter-rouge">.agr</code> file you just exported, and run the grader against the sample code in the example ZIP (or write your own solution). You will see exactly what a student sees when they run their submission.</p>
+
+<h2 id="how-distribution-works">How distribution works</h2>
+
+<p>In real courses, you email or post the <code class="language-plaintext highlighter-rouge">.agr</code> file through your LMS. Point students at the <a href="/student/offline/">student download page</a> for the grader application - they download it once and reuse it for every assignment. When they run the grader on their submission, results go wherever you configured: PDF, email, Google Sheets, or your self-hosted server.</p>
+
+<h2 id="whats-next">What’s next</h2>
 
 <ul>
-  <li><a href="/docs/offline/overview/">Overview</a> - What PyAutoGrader does and how it works</li>
-  <li><a href="/docs/offline/download-and-install/">Download and Install</a> - Get the instructor, student, and server applications</li>
-  <li><a href="/docs/offline/instructor-setup/">Instructor Setup</a> - Create assignments and configure tests</li>
-  <li><a href="/docs/offline/test-types-reference/">Test Types Reference</a> - Full catalog of 60+ test types</li>
-  <li><a href="/docs/offline/student-usage/">Student Usage</a> - How students run the grader</li>
+  <li><a href="/docs/offline/overview/">Overview</a> - How the instructor, student, and server applications fit together</li>
+  <li><a href="/docs/offline/instructor-setup/">Instructor Setup</a> - Build your own course from scratch</li>
+  <li><a href="/docs/offline/test-types-reference/">Test Types Reference</a> - Full catalog of 60+ available tests</li>
+  <li><a href="/docs/offline/reporting-setup/">Reporting Setup</a> - Configure PDF, email, Google Sheets, server submissions</li>
+  <li><a href="/docs/offline/batch-grading/">Batch Grading</a> - Detailed batch workflow and CSV output</li>
 </ul>
-
-<h2 id="for-instructors">For Instructors</h2>
-
-<p>Start with the <a href="/docs/offline/overview/">Overview</a> to understand the workflow, then <a href="/docs/offline/download-and-install/">Download and Install</a> to get the applications, and follow <a href="/docs/offline/instructor-setup/">Instructor Setup</a> to create your first assignment.</p>
-
-<h3 id="advanced-topics">Advanced Topics</h3>
-
-<ul>
-  <li><a href="/docs/offline/saving-and-exporting/">Saving and Exporting</a> - File formats, JSON export/import, distributing assignments</li>
-  <li><a href="/docs/offline/batch-grading/">Batch Grading</a> - Grade folders of student submissions with CSV output</li>
-  <li><a href="/docs/offline/roster-setup/">Roster Setup</a> - Optional student roster validation with CSV, Google Sheets, or server API</li>
-  <li><a href="/docs/offline/reporting-setup/">Reporting Setup</a> - Configure email, Google Sheets, server, and webhook channels</li>
-  <li><a href="/docs/offline/server-setup/">Server Setup</a> - Self-hosted submission server with dashboard, analytics, and plagiarism detection</li>
-  <li><a href="/docs/offline/troubleshooting/">Troubleshooting</a> - Common errors and fixes</li>
-</ul>
-
-<h2 id="for-students">For Students</h2>
-
-<p>Your instructor will provide you with a <code class="language-plaintext highlighter-rouge">.agr</code> assignment file. Download the student app from the <a href="/student/offline/">Student Downloads</a> page, load the file, and run the grader against your code. See <a href="/docs/offline/student-usage/">Student Usage</a> for a full walkthrough.</p>
 
     <div class="doc-footer">
       
+      <a href="/docs/getting-started" class="doc-nav-btn prev">&#x2190; Introduction</a>
       
-      <a href="/docs/quickstart" class="doc-nav-btn next">Get started in 5 minutes &#x2192;</a>
+      
+      <a href="/docs/offline/overview" class="doc-nav-btn next">Overview &#x2192;</a>
       
     </div>
   </article>
