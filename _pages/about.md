@@ -23,7 +23,7 @@ description: How PyAutoGrader grew from mastery-based learning in Jesse Sestito'
     <div class="about-bio">
       <div class="about-photo-wrap">
         <div class="about-photo">
-          <img src="{{ '/assets/images/jesse-sestito.png' | relative_url }}" alt="Portrait of Jesse Sestito, Engineering Professor at Valparaiso University and creator of PyAutoGrader" loading="lazy">
+          <img src="{{ '/assets/images/jesse-sestito.webp' | relative_url }}" alt="Portrait of Jesse Sestito, Engineering Professor at Valparaiso University and creator of PyAutoGrader" loading="lazy">
         </div>
         <div class="about-photo-name">
           <h3>Jesse Sestito</h3>
